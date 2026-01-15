@@ -17,6 +17,16 @@ def _baud_to_termios(baud: int) -> int:
     return value
 
 
+def _set_speed(attrs: list, baud_const: int) -> None:
+    if hasattr(termios, "cfsetispeed") and hasattr(termios, "cfsetospeed"):
+        termios.cfsetispeed(attrs, baud_const)
+        termios.cfsetospeed(attrs, baud_const)
+        return
+    # macOS fallback: c_ispeed/c_ospeed stored at indices 4/5.
+    attrs[4] = baud_const
+    attrs[5] = baud_const
+
+
 def _set_modem_line(fd: int, line: str, enabled: bool) -> None:
     if not hasattr(termios, "TIOCMGET") or not hasattr(termios, "TIOCMSET"):
         return
@@ -53,8 +63,7 @@ def configure_serial(
     attrs = termios.tcgetattr(fd)
 
     baud_const = _baud_to_termios(baud)
-    termios.cfsetispeed(attrs, baud_const)
-    termios.cfsetospeed(attrs, baud_const)
+    _set_speed(attrs, baud_const)
 
     cflag = attrs[2]
     cflag &= ~termios.CSIZE
@@ -212,4 +221,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

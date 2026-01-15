@@ -57,3 +57,15 @@ For every attempt, capture:
 - timestamps (even approximate).
 
 This log becomes the basis for inferring framing, prompts, and command/response behavior.
+
+## Recent successful action (self-test)
+From operator manual: self-test command is `'*'` (ASCII 0x2A). It performs system self-test and calibration and returns a variable-length ASCII data stream followed by a status string.
+
+Working attempt:
+- Port: `/dev/cu.usbserial-ABSCDEPH`
+- Settings: 9600 baud, 8 data bits, no parity, 2 stop bits, flow none
+- Command sent: `*` (self-test)
+- Result: instrument ran self-test without error
+- Log: `/tmp/elx808-selftest-star.log` (capture produced during the successful run)
+
+Note: self-test causes instrument movement; ensure the carrier is clear before running.

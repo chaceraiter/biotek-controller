@@ -44,3 +44,18 @@ Each transmit/receive line includes:
 - `hex=`: raw bytes in hex
 - `ascii=`: printable ASCII with `\r` and `\n` escaped
 
+## `adapter_probe.py`
+
+Best-effort USB-serial adapter probe. This script inspects USB descriptor
+strings and known chipset hints, but it cannot verify electrical levels.
+Always confirm RS-232 vs TTL by adapter labeling or measurement.
+
+Example (macOS or Linux):
+```bash
+python3 tools/elx808/adapter_probe.py
+```
+
+Watch for new serial nodes while plugging in the adapter:
+```bash
+python3 tools/elx808/adapter_probe.py --watch 15
+```
