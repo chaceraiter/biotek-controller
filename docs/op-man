@@ -1,0 +1,772 @@
+Follow these steps to establish communication between the ELx808TM and KCjunior:
+1. Turn off the computer and the reader. Connect the serial cable (PN 75053) between
+the two machines.
+2. Turn on both machines.
+3. Install KCjunior on the computer’s hard drive.
+4. Once installed, start KCjunior.
+5. Select Setup, then Reader 1. To select the reader and define the communications
+parameters, choose the following setup parameters:
+Reader: ELx808, EL808, or
+ELx808I, EL808I, or
+ELx808U, EL808U, or
+ELx808UI, EL808UI
+
+Com Port: Select the COM port used for the RS-232 serial cable
+
+connection
+
+Baud Rate: 9600 (change the baud rate on the reader if necessary)
+Data Bits: 8
+Parity: None
+Stop Bits: 2
+EOT Character: Keep the default number.
+6. Click the Test Communications button to attempt to establish communications with
+the reader, using the currently defined communication parameters. If a Serial Write
+Error dialog box is displayed, an incorrect Com Port may have been selected. Select
+a different port and then repeat this step.
+7. If the test passes, click OK to save the settings and close the dialog box. If the test
+fails, follow the directions provided by KCjunior, then click Test Communications
+again. See also the Problems section on the next page.
+
+B-4 Computer Control
+Problems
+If KCjuniorTM fails to communicate with the reader, and displays a serial communications error,
+check the cable plug-in location to make sure it matches the setup choices and is not a Null cable.
+If this is suspected, add another Null and try again.
+Getting Started With KCjunior
+The following instructions briefly describe how to read a plate using KCjunior. Refer to
+KCjunior's Help system and User's Guide early and often to learn how to create protocols, assign
+well identifiers, read plates, print reports, and more.
+To read a plate using KCjunior:
+1. Click Read Plate from KCjunior's main screen. The Read Plate dialog will appear.
+2. If desired, enter a Results ID and a Plate Description, and then click Read Plate.
+The Protocol Definition dialog will appear.
+3. Select a Read Method Type of Endpoint, Kinetic, or Multiwavelength.
+4. Define the wavelength(s) at which the plate will be read.
+5. Select a Plate Geometry from the drop-down list.
+6. Define other reading parameters as necessary. Click the Help button for assistance.
+7. When complete, click OK to return to the Read Plate dialog.
+8. If desired, enter a Plate ID.
+9. Place the plate on the carrier, then click OK to start the plate read.
+• The plate will be read and then the raw data results will display in KCjunior.
+Print the raw data by selecting Plate|Print Results.
+• To analyze or manipulate results, a protocol should be defined. Refer to
+KCjunior's Help system or User's Guide for instructions.
+
+Appendix B B-5
+Controlling the Reader With KC4TM
+Follow these steps to establish communication between the ELx808TM and KC4:
+1. Turn off the computer and the reader. Connect the appropriate serial cable
+(PN 75053) between the two machines.
+2. Turn on both machines.
+3. Install KC4 on the computer’s hard drive.
+4. Once installed, start KC4.
+5. Select System, Readers.
+6. Scroll through the list of Available Readers and select the appropriate ELx808
+reader model. Click the Port button (and subsequent Setup button), to define the
+following communications parameters:
+Port: Select the COM port used for the RS-232 serial cable
+
+connection
+
+Baud Rate: 2400 (default), 4800, or 9600 (must match the baud rate
+
+on the reader)
+
+Data Bits: 8
+Parity: None
+Stop Bits: 2
+7. Click the Current Reader button to attempt to establish communications with the
+reader, using the currently defined communication parameters.
+8. If the test passes, click OK to save the settings and close the dialog box. If the test
+fails, KC4 will provide appropriate instructions for resolving any problems. See also
+the Problems section on the next page.
+
+B-6 Computer Control
+Problems
+If KC4 fails to communicate with the reader and displays a serial communications error, check
+the cable plug-in location to ensure that it matches the setup choices and is not a Null cable. If
+this is suspected, add another Null and try again.
+If an Incorrect Reader Model Connected dialog box is displayed, click OK to clear the screen
+and select System, Readers, Available Readers. Verify that the reader selected is correct.
+Getting Started With KC4
+The following instructions briefly describe how to read a plate using KC4. Refer to KC4's Help
+system and User's Guide early and often to learn how to create protocols, assign well identifiers,
+read plates, print reports, and more.
+To read a plate using KC4:
+1. Select Data|New Plate.
+2. If prompted to select a protocol, select “Empty Protocol” and click OK. If not
+prompted, select Protocol|New, or use KC4’s Protocol Wizard to step through
+protocol creation.
+3. Select Protocol|Reading. The Reading parameters dialog will appear.
+4. Select a Reading Type of Endpoint or Kinetic.
+5. Define the wavelength(s) at which the plate will be read.
+6. Define other reading parameters as necessary. Click the Help button for assistance.
+7. When complete, click OK.
+8. Select Data|Read Plate. The Plate Reading dialog will appear.
+9. Enter any comments, place the plate on the carrier, then click Start Reading to begin
+the plate read.
+• The plate will be read and then the raw data results will display in KC4.
+• To analyze, manipulate, or print results, protocol parameters should be
+defined. Refer to KC4's Help system or User's Guide for instructions.
+
+Appendix B B-7
+Controlling the Reader Using Serial Protocol
+At baud rates of 1200, 2400, and 9600, the ELx808TM is capable of sending and receiving data
+through its serial port (RS-232C). The baud rate used for transmission is held in non-volatile
+memory and can be changed by the user. Other serial port parameters, Parity (None), Data Bits
+(8), and Stop Bits (2) are fixed and cannot be changed.
+The reader’s RS-232C serial port is configured as a DTE; that is, the unit is wired to resemble a
+modem. Data is received on Pin 3 (the RX Pin), and transmitted on Pin 2 (the TX pin).
+See Chapter 2, Set Up the Serial Port for Communications with Other Devices.
+
+B-8 Computer Control
+Computer Control Command Set
+A command from the computer to the reader consists of a single ASCII character, and in some
+cases, subsequent argument data. Upon receipt of a valid command character, the reader returns
+an <ACK> character. Some commands also return response data to the host computer. Upon
+completion of command processing, the ELx808 transmits a status string to the computer. When
+the reader sends data to the computer, the data is sent first, then the status string.
+While awaiting a command, the ELx808 responds to nulls or other unexpected characters by
+clearing its input buffer and transmitting a <NAK>. Therefore, if valid commands are preceded
+by invalid characters, they may be missed.
+Refer to Table B-2 for the ASCII Control Characters used in the computer control protocol.
+All ASCII character strings representing numbers or names are transmitted most significant digit
+or letter first. Data values not indicated as ASCII are treated as binary integers, and are
+transmitted least significant byte first.
+Some commands described here may not be available with older reader basecode versions (prior
+to v3.00), indicated if the Check Feature command returns a <NAK>. These commands are
+marked with a ‘#’.
+
+Table B-2
+
+ASCII Control Characters Used in Computer Control Protocol
+
+ASCII
+Code Function
+
+Hex
+Code
+Decimal
+Code
+
+Control
+Code
+
+Reader
+<-- >
+ACK Acknowledge 06 06 ^F --->
+NAK Negative
+acknowledge
+
+15 21 ^U --->
+RS Record separator 1E 30 ^^ --->
+ETX End of text 03 03 ^C <-->
+DLE Data link escape 10 16 ^P --->
+CR Carriage return 0D 13 ^M <---
+LF Line feed 0A 10 ^J <---
+CTRL-Z Control Z 1A 26 ^Z <---
+
+Appendix B B-9
+The following section describes the supported computer control command set.
+STORE PLATE CARRIER (‘A’)
+This command causes the plate carrier to move inside the instrument.
+host: valid limits: response:
+‘A’ no arguments <ACK>
+status string (5)
+# READ WELL SET (‘d’)
+This command causes the reader to return data collected at the center of each of the indicated
+wells, in the order specified. The parameters for the actual data collection are taken from the
+currently loaded assay definition table (see Set Assay Definition).
+host: valid limits: response:
+‘d’ <ACK/NAK>
+data bytes:
+1 – 2 well #1 row (“01” – “16”)
+3 – 4 well #1 column (“01” – “24”)
+5 – 8 well #2
+9 – 12 well #3
+13 – 16 well #4
+17 – 20 well #5
+21 – 24 well #6
+25 – 28 well #7
+29 – 32 well #8
+33 position in read series
+‘0’: single read
+‘1’: first read in series
+‘2’: next read in series
+‘3’: final read in series
+
+<ETX> <ACK> if data valid
+
+B-10 Computer Control
+reader response protocol:
+initial status string (5)
+for each kinetic interval (one if endpoint read):
+for each wavelength:
+data start code (1) <CR>
+for each of eight wells:
+comma separator (1) ','
+sign (1) '+' or '-'
+data (4) “1234”
+row terminator (2) <CR>, <LF>
+temperature (3) ***(if specified) “000” – “999”
+wavelength terminator (1) <^Z>
+checksum (1) 0 - 255
+final terminator (1) <^Z>
+final status string (5) (ELx status mode only)
+*** Temperature response included only if requested. Format is three ASCII bytes scaled up by
+ten, i.e. “275”correponds to 27.5 degrees C. See the Include Temperature Response command.
+Data is returned in the order wells are specified. If fewer than eight wells are to be read, each
+well’s unused row and column must be replaced with “00”. Data is always returned for eight
+wells, regardless of the actual number specified.
+See the Read Plate command for details concerning results data format, and error handling and
+status string information. This command always returns data using the ELx format.
+
+# GET BASECODE VERSION (‘e’)
+This command returns a string containing the part number and version number for the instrument
+downloadable basecode software.
+
+host: valid limits: response:
+‘e’ no arguments <ACK/NAK>
+reader response protocol:
+part number (7) “0000000” – “9999999”
+intermediate string (10) “ Version “
+version code (7) “x.xxyyy”
+status string (5)
+The version number is indicated by the first four characters of the version code (x.xx). The
+remaining characters in the version code (yyy) may either be blank or represent a specific beta or
+prototype release code.
+
+Appendix B B-11
+# INCLUDE TEMPERATURE RESPONSE (‘i’)
+This command causes the current temperature to be included in the results response for each plate
+read using the ‘S’, ‘c’, or ‘d’ commands.
+
+host: valid limits: response:
+‘i’ <ACK/NAK>
+data bytes: inclusion
+
+‘0’: no temperature with plate data
+‘1’: include temperature with plate data
+
+By default the instrument is initialized to not include a temperature response, and automatically
+reverts to this default when a new assay definition table is loaded, either from the front panel or
+by computer control.
+
+PRESENT PLATE CARRIER (‘J’)
+This command causes the plate carrier to move back outside the instrument where it can be
+loaded with a microplate.
+
+host: valid limits: response:
+‘J’ no arguments <ACK>
+status string (5)
+SET READ MODE (‘k’)
+This command selects the read mode controlling the speed, accuracy, and precision of all
+subsequent plate reads.
+
+host: valid limits: response:
+‘k’ no arguments <ACK>
+data bytes: mode
+
+‘0’: slow (enhanced) mode
+‘1’: fast mode
+
+status string (5)
+
+B-12 Computer Control
+SET STATUS FORMAT (‘n’)
+This command selects the format for the status string (see Status String Format).
+host: valid limits: response:
+‘n’ no arguments <ACK>
+data bytes: format
+
+‘0’: 312 status mode
+‘1’: ELx status mode
+
+status string (5)
+When the status format is set to ELx status mode, any error detected during the execution of any
+command described in this document will be transmitted to the host PC in this format; in
+addition, plate read and scan commands (‘d’ and ‘S’) shall return an additional status string at the
+very end of the read sequence. See Status String Format for error descriptions.
+
+GET CURRENT STATUS (‘o’)
+This command returns the most recent error status set by the instrument. In the event of a reader
+timeout or <DLE> receipt, it can be used to determine the error code associated with the reader
+failure. It can also be used in place of pressing a key on the reader to stop the beeping after an
+error. The status is always returned in the ELx status format.
+
+host: valid limits: response:
+‘o’ no arguments <ACK>
+status string (5)
+Requesting the current status through the use of this command will cause the status maintained
+on-board the instrument to be cleared except in the following situations:
+1. A fatal error has been detected. The only way to clear this type of error is by recycling
+power on the instrument.
+2. An error has been detected which requires a self-test to be executed before a read
+operation can be performed. In this case, only a successful self-test will cause the error to
+be cleared.
+This command is most useful when invoked in pairs. The first try will yield the most recent error
+detected (or no error), which will then be cleared by the reader if possible. The next call will then
+
+yield either no error, or a previously-detected error that still needs to be cleared by running a self-
+test. Commands other than read commands may always be sent regardless of the current reader
+
+status; if there is a hardware issue preventing successful execution, a subsequent error status will
+be generated.
+See Status String Format for error descriptions.
+
+Appendix B B-13
+SET QUIET MODE (‘q’)
+This command allows the user to select a “quiet” mode. When this mode is turned on, the reader
+bypasses the process of displaying an error code and beeping until a key is pressed. As long as
+the quiet mode is selected, errors detected while processing serial-control commands are available
+only if ELx Status Mode is selected, or in response to the Get Current Status (‘o’) command.
+Serial-only instruments are set to quiet mode automatically at powerup.
+
+host: valid limits: response:
+‘q’ no arguments <ACK>
+data bytes: mode
+‘0’: off
+‘1’: on (quiet)
+
+status string (5)
+READ PLATE (‘S’)
+This command causes a microplate to be read according to the currently loaded assay definition
+table.
+
+host: valid limits: response:
+‘S’ no arguments <ACK/NAK>
+reader response protocol:
+status string (5)
+for each kinetic interval (one if endpoint read):
+for each wavelength expected: (312 format: one, ELx format: up to three)
+wavelength start code (1) <CR>
+for each row within specified row range:
+for each column (well) within specified column range:
+comma separator (1) ','
+sign (1) '+' or '-'
+data (4) “1234”
+row terminator (2) <CR>, <LF>
+temperature (3) ***(if specified) “000” – “999”
+assay name (8 ) (312 format only) “ABCDEF”, <CR>, <LF>
+unused extra characters (49) (312 format only)
+wavelength terminator (1) <^Z>
+checksum (1) (ELx format only) 0 - 255
+final terminator (1) (ELx format only) <^Z>
+final status string (5) (ELx status mode only)
+
+B-14 Computer Control
+*** Temperature response included only if requested. Format is three ASCII bytes scaled up by
+ten, i.e. “275”correponds to 27.5 degrees C. See the Include Temperature Response command.
+Absorbance data is returned in the form of a 5-character ASCII string, with a sign character
+followed by four digits. A decimal point is not included, but should be inserted by the user after
+the first digit, i.e. “+1234” should be translated as +1.234 OD. Overrange readings are indicated
+by the 5-character string “*****” instead of a signed numerical value.
+If dual-wavelength subtraction has been selected in the reader definition table, the subtraction is
+performed by the reader and the result is sent as a single plate representing the difference in ODs
+per well. Otherwise a complete plate of ODs is sent for each wavelength selected.
+If an error is detected during a plate read, or the user aborts the process via serial ‘X’ or stop key
+press, the entire (remaining) data response is replaced by a single <DLE> character (0x10). In the
+ELx Status Mode, the final status string then indicates the error detected. In the case of reader
+error, data previously received during the current read sequence should be discarded.
+312 Format:
+This format is selected by default at reader powerup, and every time a new assay definition is
+loaded, either via serial control ‘V’ command, or by the user from the front panel. The reader
+always returns data as an 8 x 12 matrix, along with the assay name and extra characters. There
+are no checksums or final terminator.
+ELx Format:
+If any of the following occurs, the ELx format is selected and remains enabled until a new
+definition is loaded, either via serial control ‘V’ command, or by the user from the front panel:
+1. Multi-wavelength mode is selected in the assay definition
+2. A range of rows is set, even if for all rows (see Set Row Range).
+3. A range of columns is set, even if for all columns (see Set Column Range).
+The reader returns data in a matrix corresponding to the rows and columns selected, for up to
+three wavelengths. If dual-wavelength subtraction is selected, only one plate shall be returned
+(not available in the multi-wavelength mode).
+Checksum calculation starts with the first byte AFTER the wavelength start code, up through and
+including the <^Z> data terminator code at the end of each wavelength’s plate data. The
+checksum is transmitted as an integer data byte (not ASCII).
+The final terminator indicates that the data stream is complete for the corresponding Read Plate
+command. No more data shall be transmitted until another command is sent.
+
+Appendix B B-15
+312 Status Format:
+If the middle character in the status string is not ASCII ‘0’, an error has been detected and no
+results data is transmitted.
+ELx Status Format:
+If any character in the initial status string is not ASCII ‘0’, an error has been detected and no
+results data is transmitted. Otherwise, if an error is detected during the read process, the final
+status string reflects that error.
+See Status String Format for error descriptions.
+
+SET ASSAY DEFINITION (‘V’)
+This command downloads to the reader an assay definition table to be used in subsequent plate
+reads or wellset reads (‘S’ or ‘d’ commands) until a new definition replaces it, either via serial
+control or by the user from the front panel.
+
+host: valid limits: response:
+‘V’ <ACK/NAK>
+data bytes:
+1 don’t care
+2 - 7 assay name (ASCII characters)
+8 - 29 don’t care
+30 subtraction (0x00: none, 0x40: dual wavelength)
+31 encoded byte:
+bits 0 - 3 (0x0F) 0
+bit 4 (0x10) 1: shake, 0: no shake
+bit 5 (0x20) 1: shake before every read, 0: before first read only
+bit 6 (0x40) 1: continuous shake, 0: timed shake
+bit 7 (0x80) 1: use total kinetic time, 0: use kinetic read count
+32 1D scanning points (1 – 31, must be odd)
+33 - 49 don’t care
+50 – 52 measurement wavelength (“000”, “340” - “900”)
+53 - 55 reference wavelength (“000”, “340” - “900”)
+56 read type (0: endpoint, 2: kinetic, 3: 1D scan)
+57 - 59 don’t care
+60 - 61 kinetic interval (seconds, 0 - 9999)
+62 - 63 kinetic read count (2 - 9999)
+64 - 66 don’t care
+67 - 69 first wavelength (“000”, “340” - “900”)
+70 - 84 remaining wavelengths (“000”, “340” - “900”)
+85 - 162 don’t care
+
+B-16 Computer Control
+163 - 164 shake time (seconds, 0 - 999)
+165 shake speed (0: slow, 1: med, 2: fast, 3: variable)
+166 - 167 total kinetic read time (minutes, 1 - 9999)
+168 delay before first read (0: no, 1: yes)
+169 - 170 delay (seconds, 0 - 999)
+status string (5)
+The multi-wavelength mode returns a plate of data for each wavelength specified. To select the
+multi-wavelength mode, the “measurement wavelength” must be set to “000”, and wavelengths
+specified starting with “first wavelength”. Up to three wavelengths may be specified in this
+mode. However, if dual-wavelength subtraction is desired, the measurement and reference
+wavelengths must be specified. A single-wavelength read may use either mode.
+If a wavelength is not to be used, it must be replaced by “000”.
+If the multi-wavelength mode is selected, the ELx format for data response will be used until a
+new assay definition table is specified.
+A kinetic interval of zero will cause the plate to be read repeatedly with no pauses between reads.
+The assay definition table must be downloaded before other plate-specific commands are sent,
+such as Set Row Range and Set Column Range.
+To minimize confusion, all “don’t cares” should be set to 0.
+
+GET WAVELENGTH TABLE (‘W’)
+This command uploads the wavelength setup table from the reader.
+
+host: valid limits: response:
+‘W’ no arguments <ACK/NAK>
+reader response protocol:
+for each wavelength configured (six):
+wavelength (“000 - “900”)
+comma terminator ‘,’
+status string (5)
+
+Appendix B B-17
+HALT (‘X’)
+This command causes any read in progress to be halted.
+
+host: valid limits: response:
+‘X’ no arguments none (see below)
+The following events occur when this command is invoked:
+1. The read process is halted, and all axes are returned to their home positions (the plate is
+moved back outside where it can be accessed).
+2. The reader transmits a <DLE> character to the computer when the above process is
+completed.
+3. No more data is transmitted by the read or scan in progress. A final status string is
+transmitted in the ELx Status Mode.
+
+# SET ROW RANGE (‘r’)
+This command selects a range of adjacent rows (lettered on plate or strip carrier) to be read.
+
+host: valid limits: response:
+‘%’ <ACK/NAK>
+data bytes:
+1 first row (1 - 16)
+2 last row (1 - 16)
+status string (5)
+By default the instrument is initialized to perform full plate reads, and automatically reverts to
+this default when a new assay definition table is loaded, either from the front panel or by
+computer control.
+Once this command is invoked, the reader will use the ELx format for data response until a new
+assay definition table is specified.
+This command has no effect on the read parameters for a wellset read.
+
+B-18 Computer Control
+# SET COLUMN RANGE (‘%’)
+This command selects a range of adjacent columns (numbered on plate or strip carrier) to be read.
+
+host: valid limits: response:
+‘%’ <ACK/NAK>
+data bytes:
+1 first column (1 - 24)
+2 last column (1 - 24)
+status string (5)
+By default the instrument is initialized to perform full plate reads, and automatically reverts to
+this default when a new assay definition table is loaded, either from the front panel or by
+computer control. The well range is also reset when the Set Geometry command is sent.
+Once this command is invoked, the reader will use the ELx format for data response until a new
+assay definition table is specified.
+This command has no effect on the read parameters for a wellset read.
+
+# GET MINIMUM KINETIC INTERVAL (‘$’)
+This command provides a means for the user to determine the minimum kinetic read interval, as
+dictated by the current assay definition table, well range, and even baud rate selected.
+
+host: valid limits response:
+'$' no arguments <ACK/NAK>
+kinetic interval (2)
+status string (5)
+The reader returns the minimum kinetic interval as a 2-byte integer value (not ASCII, so low byte
+first).
+Minimum kinetic intervals are not available for wellset reads.
+
+Appendix B B-19
+SELF-TEST (‘*’)
+This command causes the reader to perform a system self-test and calibration. This should be
+performed any time the wavelength configuration is changed (‘M’ command).
+
+host: valid limits: response:
+'*' no arguments <ACK/NAK>
+data stream
+status string (5)
+The reader responds by sending a variable-sized stream of ASCII character data representing
+various calibration and test results. This data stream is followed by the standard status response
+string.
+
+SET TEMPERATURE (‘[’)
+This command sets the incubation chamber temperature setpoint.
+
+host: valid limits: response:
+'[' <ACK/NAK>
+data bytes:
+1 - 2 temperature setpoint (0, 22 - 50)
+
+status string (5)
+
+If the instrument is not equipped with a working incubator, or if the indicated temperature
+setpoint is out of range, an incubator setpoint error will be returned with the standard status
+response string. A setpoint of zero will turn the incubator heaters off.
+
+B-20 Computer Control
+GET TEMPERATURE (‘]’)
+This command returns the current temperature in the incubation chamber.
+
+host: valid limits response:
+']' no arguments <ACK/NAK>
+temperature (2)
+status string (5)
+The reader returns the current temperature as a 2-byte integer value (not ASCII, so low byte first).
+Temperature is returned scaled up by 10, i.e. 370 indicates a temperature of 37.0 degrees Celsius.
+Temperatures below the instrument minimum of 18 degrees are returned as 111 (0x006F);
+temperatures above the instrument maximum of 55 degrees are returned as 999 (0x03E7).
+If the instrument does not have incubation, or an incubation error has been detected, 0x0000 will
+be returned as temperature data. An incubator temperature error will then be flagged and returned
+with the standard status response string. Otherwise, the current temperature (averaged over four
+thermal zones) is returned as defined above.
+The reader will accept and process the Get Temperature command at any time, including during a
+read cycle. The temperature response will NOT interrupt a plate data response stream, however.
+If a Get Temperature command is received during a data transmission, it will not be processed
+until the transmission has completed, i.e. after the <^Z> checksum combination has been sent.
+
+GET PLATE BARCODE (‘s’)
+This command returns the barcode for the microplate currently in the instrument carrier.
+
+host: valid limits response:
+'s' no arguments <ACK/NAK>
+barcode (32)
+status string (5)
+The barcode is returned as a stream of 32 characters. If the barcode itself is less than 32
+characters it is padded with nulls (0x00) up through the 32nd character. Otherwise the barcode is
+truncated to 32 characters and sent with no null terminator.
+If no barcode is detected after two passes of the microplate carrier in front of the scanner, the
+null-terminated string “NR” is returned, followed by the remaining 29 nulls. A barcode error is
+flagged and returned with the standard status response string.
+OPEN PLATE ACCESS DOOR (‘(‘)
+This command opens the robotic plate access door
+
+Appendix B B-21
+host: valid limits response:
+'(' no arguments <ACK/NAK>
+status string (5)
+CLOSE PLATE ACCESS DOOR (‘)’)
+This command closes the robotic plate access door
+
+host: valid limits response:
+')' no arguments <ACK/NAK>
+status string (5)
+GET INSTRUMENT CONFIGURATION (‘}’)
+This command returns a 16-bit binary-encoded word defining the instrument configuration.
+
+host: valid limits response:
+'}' no arguments <ACK/NAK>
+configuration (2)
+no status string
+Instrument configuration data is returned low byte first. Encoding is defined as follows:
+
+code: description:
+0x0000 ELx808-UV
+0x0001 ELx808
+0x0008 ELx808-UV w/ Incubator
+0x0009 ELx808 w/ Incubator
+0x0080 ELx808-UV w/ Robot Access Door
+0x0081 ELx808 w/ Robot Access Door
+0x0088 ELx808-UV w/ Incubator and Robotic Access Door
+0x0089 ELx808 w/ Incubator and Robotic Access Door
+
+B-22 Computer Control
+# CHECK FEATURE (‘z’)
+This command answers queries regarding features which may have been added after the initial
+release of an instrument.
+
+host: valid limits: response:
+‘z’ no arguments <ACK/NAK>
+data bytes:
+1 - 4 updated feature: associated commands:
+
+“1001”: well set reads ‘d’
+“1002”: reads using two wavelength sets (legacy - ‘V’)
+“1003”: area scanning (not available)
+“1004”: serial wavelength configuration (legacy – ‘M’)
+“1005”: shaking (legacy – ‘V’)
+“1006”: absorbance reads (legacy)
+“1007”: high-speed sweep reads (not available)
+“1008”: partial plate reads ‘r’, ‘%’, ‘$’
+“1009”: incubation (legacy, ‘I’ readers only - ‘[‘, ‘]’, ‘i’)
+“1010”: sensitivity response (not available)
+“1011”: multi-wavelength read format ‘V’
+“1012”: serial read mode selection ‘k’
+“1013”: ELx format status response ‘n’, ‘o’
+“1014”: serial-only instrument
+“1015”: basecode checksum ‘p’
+“1016”: barcode scanning ‘s’
+
+<ETX>
+reader response protocol:
+feature available (1) ‘0’ / ‘1’
+miscellaneous additional data (16)
+status string (5)
+If the ‘z’ is acknowledged (ACK), the instrument shall then return ‘1’ if the feature is available,
+‘0’ if not.
+If the ‘z’ command is not recognized (indicated by a NAK response to the ‘z’), it means the
+instrument basecode version was released prior to implementation of this command (along with
+the other commands marked as such with a ‘#’). In this case, if the feature is marked in the table
+above as “legacy”, the indicated commands and functions are and always have been available
+anyway.
+
+Appendix B B-23
+Using the Stop Key to Halt Plate Reads
+Pressing the STOP key on the reader while a computer-control-initiated plate read is in progress
+causes the following to occur.
+1. The read process is halted, and all axes are returned to their home positions (the plate is
+moved back outside where it can be accessed).
+2. The reader transmits a <DLE> character to the computer when the above process is
+completed.
+3. No more data is transmitted by the read in progress. A final status string is transmitted in
+the ELx Status Mode.
+
+B-24 Computer Control
+Status String Format
+Following execution of each command (except as noted), the ELx808 sends a status string back to
+the computer.
+312 Status Mode Format:
+This status string consists of 5 successive ASCII characters -- RS, S1, S2, S3, and ETX:
+⇒ RS A record separator that marks the beginning of the status string.
+⇒ S1 Always ASCII zero (‘0’)
+⇒ S2 A single digit, used as a reader fault or error code number.
+
+ERROR CODES
+
+Error codes indicate the following:
+‘0’: no fault or error
+‘8’: instrument failure - perform self-test
+‘9’: error in assay, scan, or table definition
+‘A’: error in well range selection
+‘B’: incubator setpoint error
+‘C’: incubator temperature error
+‘E’: barcode error
+⇒ S3 Always ASCII zero (‘0’)
+⇒ ETX End Of Text -- marks the end of the status block.
+Instrument failures are usually accompanied by an error code on the reader display
+ELx Status Mode Format:
+This status string consists of 5 successive ASCII characters – a four-byte string representing a
+hexadecimal status code, and then ETX.
+Items described in angle brackets (<>) are indicated by an ASCII digit replacing the last ‘0’
+character in the status code.
+Items described in curly braces ({}) are indicated by an ASCII digit replacing the next-to-last ‘0’
+character in the status code.
+
+Appendix B B-25
+Fatal errors indicate a hardware failure, also shown on the instrument display screen, and require
+recycling of instrument power.
+Note – Errors listed below are common to all reader instruments, and may not all be applicable to
+any single given reader.
+Fatal Errors
+TCB NOT AVAIL ERR “A100” // task control block not available
+READ NOT AVAIL ERR “A200” // read already in progress
+NOT AVAIL ERR “A300” // <device> not available
+CHECKSUM ERR “A400” // failed code checksum test on powerup
+DR ALLOC ERR “A500” // DR steps alloc/free error <assay num)
+DFLASH TIMEOUT ERR “A600” // data flash write timed out
+DFLASH ERR “A700” // data flash readback didn’t match write {test}<chip>
+CFLASH TIMEOUT ERR “A800” // code flash write timed out
+HEAP CORRUPTION ERR “A900” // memory allocation heap corrupted
+Non-Fatal Errors
+NO ERR “0000” // no errors detected
+ABORT ERR “0100” // read function aborted
+NO SENSOR ERR “0200” // <motor> didn't find opto-sensor transition
+NO BEAM ERR “0300” // <motor> didn't find saturation transition
+MOTOR VERIFY ERR “0400” // <motor> failed positional verify
+SATURATION ERR “0500” // A/D signal saturated <test type>
+FILTER GAIN ERR “0600” // <filter> gain out of range
+NOISE TEST ERR “0700” // reader {channel} failed noise test
+OFFSET TEST ERR “0800” // reader {channel} failed offset test
+DARK RANGE ERR “0900” // read-time {channel}<filter> dark out of range
+AIR RANGE ERR “0A00” // read-time {channel}<filter> air/blank out
+ASSAY NUM ERR “0B00” // invalid <assay number>
+PRINT TIMEOUT ERR “0C00” // printer timed out
+CAL CHECKSUM ERR “0D00” // failed calibration checksum test
+WAVE NOT FOUND ERR “0E00” // wavelength not found in table <read filter>
+FILTER SIGNAL ERR “0F00” // {channel}<filter> signal out of range
+CNFG DATA ERR “1000” // necessary configuration data missing
+CNFG CHECKSUM ERR “1100” // failed configuration checksum test
+CAL DATA ERR “1200” // necessary calibration data missing
+MOTOR NOT HOMED ERR “1300” // <motor> not homed successfully
+INCUBATOR FAILURE “1500” // incubator failure {error code}<zone(s)>
+SC ASSAY DEF ERR “1600” // computer control assay definition error
+KIN INTERVAL ERR “1700” // interval too short for selected options
+KIN COUNT ERR “1800” // too many kinetic intervals
+MALLOC ERR “1900” // malloc failed
+
+B-26 Computer Control
+
+STORE CURVE ERR “1A00” // store curve failure
+GET CURVE ERR “1B00” // get curve failure
+ATOD INIT ERR “1C00” // A/D calib STBY transition not detected
+RESULTS DATA ERR “1D00” // results data error
+CLOCK ERR “1E00” // error in clock communications
+OVERLAP ERR “1F00” // bandpass overlap in filterset
+BARCODE ERR “2000” // no valid barcode detected
+INVALID PARAM ERR “2100” // invalid parameter value selected
+PMT ERR “2200” // PMT test signal too high <test type>
+LAMP ERR “2300” // lamp control failure <test type>
+SENSOR POS ERR “2400” // test sensor position incorrect <motor>
+FLASH MISS ERR “2500” // motor went by flash location too soon
+XY LIMIT ERR “2600” // physical limit exceeded for area scan request
+PANEL METHOD ERR “2700” // <assay> method doesn’t match first panel assay
+MOTOR TIMER ERR “2800” // <motor> timer not available
+Test Type Codes (lowest digit in returned error code)
+FAIL POWER 5V ‘1’ // 5V power failed
+FAIL POWER 24V ‘2’ // 24V power failed
+Motor Codes (lowest digit in returned error code)
+Carrier X Axis ‘0’
+Filter Wheel ‘1’
+Robotic Door ‘2’ (‘R’ instruments only)
+Incubator Codes (second lowest digit in returned error code)
+Range Error ‘0’
+Thermistor Error ‘1’
+A/D Error ‘2’
+
+Affected zones are encoded in the lowest digit returned – one bit per zone.
+Data Flash Codes (2nd lowest digit in returned error code)
+Readback Error ‘0’ // data read back didn’t match data written
+Copy Error ‘1’ // final data readback didn’t match original passed in
