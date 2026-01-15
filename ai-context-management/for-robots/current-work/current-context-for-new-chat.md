@@ -9,6 +9,7 @@
 - Operator manual excerpt indicates default serial settings: 2400 baud, 8 data bits, 2 stop bits, no parity (2400 8N2), with baud selectable to 1200 or 9600.
 - Appendix B excerpt indicates that under computer control the instrument suppresses onboard blanking/data reduction and returns raw data (including values > 3.000 OD); supports kinetic assays using up to three wavelengths.
 - KCjunior setup page recommends host serial settings of 9600 8N2 and references an “EOT Character” setting (default value not yet captured).
+- User reports the instrument baud rate is currently set to 9600 and the host target is macOS/Unix using a USB→USB‑C adapter as needed.
 
 ## What’s working
 - Documentation scaffolding exists under `research/elx808/` capturing the system model, pinouts, and a safe serial bring-up plan.

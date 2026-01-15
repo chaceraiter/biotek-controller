@@ -9,3 +9,4 @@ Start here:
 - `elx808/serial-settings.md`
 - `elx808/computer-control-notes.md`
 - `elx808/kcjunior-communications-setup.md`
+- `elx808/host-setup-macos.md`

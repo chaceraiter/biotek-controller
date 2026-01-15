@@ -19,6 +19,9 @@ Shorthand: **2400 8N2**
 - KCjunior has an “EOT Character” setting and instructs to keep its default value (exact value not shown).
 - See `research/elx808/kcjunior-communications-setup.md`.
 
+## Observed (current instrument state)
+- User reports the ELx808 baud rate is currently set to **9600**.
+
 ## Control/protocol references
 - Manual states: “Appendix B contains information on required protocols for computer control of the reader.”
 - Mentions compatibility with Bio-Tek KC4/KCjunior software and “standard communications software and/or RS232 protocols”.
