@@ -59,3 +59,26 @@ Watch for new serial nodes while plugging in the adapter:
 ```bash
 python3 tools/elx808/adapter_probe.py --watch 15
 ```
+
+## `protocol_probe.py`
+
+Safe-by-default protocol probe using Appendix B commands. By default it sends:
+- `o` (Get Current Status)
+- `e` (Get Basecode Version)
+
+These should not move the instrument. Self-test (`*`) is only sent with explicit confirmation.
+
+Example (status + version, log to file):
+```bash
+python3 tools/elx808/protocol_probe.py --port /dev/cu.usbserial-XXXX --log /tmp/elx808-probe.log
+```
+
+Force ELx status format before probing:
+```bash
+python3 tools/elx808/protocol_probe.py --port /dev/cu.usbserial-XXXX --set-status elx --log /tmp/elx808-probe.log
+```
+
+Self-test (movement):
+```bash
+python3 tools/elx808/protocol_probe.py --port /dev/cu.usbserial-XXXX --self-test --confirm-self-test --log /tmp/elx808-selftest.log
+```
