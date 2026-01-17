@@ -32,6 +32,7 @@
 - Added playback decode for read-wells logs plus optional `--well` labels.
 - Added `--manifest` to emit a JSON run summary (command, profile, timing, CSV/log paths, interval summary).
 - Updated `validate-short-run` defaults for ECO60 (`quiet=240`, `timeout=900`) and relaxed terminator check by default.
+- Added `web_ui.py` for a local web UI that can run validation or ECO590 reads with live output.
 - Added `get-wavelengths` command to query installed filters.
 - Documented Appendix B protocol details and successful self-test in `research/elx808/*`.
 - Converted EcoPlate and Gen5 PDFs into markdown + summaries under `docs/`.
@@ -47,6 +48,7 @@
 - Short 8-well capture produced `/tmp/elx808-read-wells.log` and `/tmp/elx808-read-wells.csv`.
 - ECO60 validation captured two intervals with default ECO60 quiet/timeout; missing terminator treated as warning by default.
 - Manifest output verified at `/tmp/elx808-validate.json`.
+- Local web UI available at `http://127.0.0.1:8088` for running and monitoring jobs.
 
 ## Unknowns / active questions
 - Status format persistence (ELx vs 312) and when the reader auto-switches formats.

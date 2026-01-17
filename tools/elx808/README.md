@@ -211,6 +211,17 @@ python3 tools/elx808/playback_decode.py \
   --csv /tmp/elx808-read-wells-playback.csv
 ```
 
+## `web_ui.py`
+
+Small local web UI to run ECO60 validation or ECO590 reads with live output.
+
+Start the server:
+```bash
+python3 tools/elx808/web_ui.py
+```
+
+Then open `http://127.0.0.1:8088` in your browser.
+
 Set assay definition (writes to instrument; requires confirm flags):
 ```bash
 python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
