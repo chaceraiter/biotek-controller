@@ -26,6 +26,9 @@
 - Added `read-plate --decode` support to export full-plate CSV (rows/cols configurable).
 - Added `run-ecoplate` wrapper to apply ECO590 and run `read-plate`, with auto timeout/quiet sizing.
 - Added incremental CSV logging for plate reads (`read-plate --incremental`), and enabled it by default for `run-ecoplate`.
+- Added short-run assay profiles `ECO60` and `ECO30` for quick kinetic validation.
+- Added `validate-short-run` to set a short assay, run `read-plate`, validate interval count/completeness, and restore ECO590.
+- Added `playback_decode.py` to decode captured logs into CSV without hardware.
 - Added `get-wavelengths` command to query installed filters.
 - Documented Appendix B protocol details and successful self-test in `research/elx808/*`.
 - Converted EcoPlate and Gen5 PDFs into markdown + summaries under `docs/`.
@@ -38,6 +41,7 @@
 - `read-wells` returns decoded numeric values; ECO30 test returned two intervals (`blocks=2 complete=True`).
 - `read-plate` decoding writes CSV to `/tmp/elx808-read-plate.csv` (initial ECO60 run captured only first interval; needs longer timeout to capture second).
 - `run-ecoplate` can run the standard ECO590 protocol and log CSV incrementally as intervals arrive.
+- Short 8-well capture produced `/tmp/elx808-read-wells.log` and `/tmp/elx808-read-wells.csv`.
 
 ## Unknowns / active questions
 - Status format persistence (ELx vs 312) and when the reader auto-switches formats.
