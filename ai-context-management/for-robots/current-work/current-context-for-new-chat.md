@@ -12,6 +12,8 @@
 - Host is macOS/Unix; USB-serial adapter enumerates as `/dev/cu.usbserial-ABSCDEPH` (FT232R USB UART).
 - Protocol probe results: `o` returns ELx status `0000` (no error), `e` returns part `7340201  Version 3.15` with 312 status `000`.
 - Using the control stack, `n1` (set status to ELx) causes subsequent `o` and `e` responses to return ELx status `0000`.
+- `get-wavelengths` (`W`) returns installed filters: 405, 450, 490, 590, 650, 750.
+- EcoPlate assay loaded as dual-wavelength subtraction (590/750) with 15-minute interval, 192 reads; status returns `ELx:0000`.
 - `T` is acknowledged but does not trigger self-test; `*` self-test runs successfully without error.
 
 ## Recent changes
@@ -22,6 +24,7 @@
 - Added `tools/elx808/assay_profiles.json` and `set-assay --profile` support for reusable assay presets.
 - Added `read-wells --decode` support to parse numeric values and optional CSV output.
 - Added `read-plate --decode` support to export full-plate CSV (rows/cols configurable).
+- Added `get-wavelengths` command to query installed filters.
 - Documented Appendix B protocol details and successful self-test in `research/elx808/*`.
 - Converted EcoPlate and Gen5 PDFs into markdown + summaries under `docs/`.
 
@@ -29,14 +32,20 @@
 - Documentation scaffolding exists under `research/elx808/` capturing the system model, pinouts, and Appendix B protocol details.
 - `protocol_probe.py` can read status and basecode version; status normalization works (ELx vs 312).
 - `*` self-test command runs and completes without error on the instrument.
+- `set-assay` succeeds (ACK for `V` then status `0000`); ECO30/ECO60 quick assays used to validate kinetic reads.
+- `read-wells` returns decoded numeric values; ECO30 test returned two intervals (`blocks=2 complete=True`).
+- `read-plate` decoding writes CSV to `/tmp/elx808-read-plate.csv` (initial ECO60 run captured only first interval; needs longer timeout to capture second).
 
 ## Unknowns / active questions
 - Status format persistence (ELx vs 312) and when the reader auto-switches formats.
 - Exact command/argument framing for read operations (`S`, `d`) and how errors propagate mid-stream.
+- Best timeout/quiet settings for capturing multiple kinetic intervals in `read-plate`.
 - Confirm whether the USB-serial adapter is true RS-232 level (FT232R often indicates TTL without level shifting).
 - Gen5 COMPLETE user guide OCR: current PDF text extraction fails due to damaged PDF.
 
 ## Next steps
 - Use `protocol_probe.py` to standardize status format (`n`) and test additional safe commands (`o`, `e`, `q`, `n`).
 - Implement a minimal protocol wrapper for command/response parsing and status handling.
+- Re-run `read-plate` with longer timeout/quiet to capture both intervals for ECO60 (and verify CSV).
+- Consider a one-command wrapper to load ECO60 → read-plate → restore ECO590, and allow global flags after subcommands.
 - Resolve Gen5 COMPLETE OCR (alternate PDF source or different OCR pipeline).
