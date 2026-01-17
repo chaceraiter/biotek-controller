@@ -56,6 +56,8 @@ Source: `docs/op-man` (Appendix B: computer control protocol).
 - `A` Store plate carrier (move inside), `J` Present plate carrier (move outside).
 - `S` Read plate: no arguments; uses the currently loaded assay definition.
 - `d` Read well set: 33-byte payload (8 wells × row/col as ASCII "01"-"16"/"01"-"24", unused wells "00"), plus position byte `'0'`-`'3'`, terminated by `<ETX>`; returns ELx-format data only.
+- `V` Set assay definition: 170-byte table. Wavelength fields are 3 ASCII digits; numeric interval/count/time fields are 16-bit little-endian integers (assumed, based on Appendix B constraints). Default/unused fields should be 0.
+  - Host flow: send `V`, wait for `<ACK>`, then transmit 170-byte table and read status string response.
 
 ## Data response notes (high level)
 - ELx format uses RS/ETX framing with checksum and final terminator (CTRL-Z).

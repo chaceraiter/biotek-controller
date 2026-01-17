@@ -18,6 +18,10 @@
 - Added `tools/elx808/protocol_probe.py` (safe status/version probe + status parsing + `--set-status`).
 - Added `tools/elx808/adapter_probe.py` and fixed `tools/elx808/serial_capture.py` macOS speed handling.
 - Added `tools/elx808/control_stack.py` read scaffolding (`read-plate`, `read-wells`) with ELx framing helpers and explicit `--confirm-read` gating.
+- Added `set-assay` encoder for `V` (assay definition) with `--confirm-assay` safety gate and dry-run output.
+- Added `tools/elx808/assay_profiles.json` and `set-assay --profile` support for reusable assay presets.
+- Added `read-wells --decode` support to parse numeric values and optional CSV output.
+- Added `read-plate --decode` support to export full-plate CSV (rows/cols configurable).
 - Documented Appendix B protocol details and successful self-test in `research/elx808/*`.
 - Converted EcoPlate and Gen5 PDFs into markdown + summaries under `docs/`.
 

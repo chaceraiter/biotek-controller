@@ -123,3 +123,60 @@ Advanced: override the read-wells payload directly (33 bytes):
 ```bash
 python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX read-wells --payload-hex "01 01 01 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 30" --confirm-write --confirm-movement --confirm-read
 ```
+
+Dry-run: print the encoded well-set payload without contacting the reader:
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX read-wells --well A1 --well B2 --dry-run
+```
+
+Decode read-wells values and write CSV:
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
+  read-wells --well A1 --confirm-write --confirm-movement --confirm-read \
+  --decode --wavelengths-per-interval 2 --csv /tmp/elx808-read-wells.csv
+```
+
+Decode full-plate read and write CSV (96-well, dual-wavelength subtraction uses 1 block per interval):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
+  read-plate --confirm-write --confirm-movement --confirm-read \
+  --decode --wavelengths-per-interval 1 --rows 8 --cols 12 \
+  --csv /tmp/elx808-read-plate.csv
+```
+
+Set assay definition (writes to instrument; requires confirm flags):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
+  set-assay \
+  --assay-name TEST01 \
+  --measurement-wavelength 450 \
+  --reference-wavelength 0 \
+  --read-type endpoint \
+  --confirm-write --confirm-assay
+```
+
+Dry-run assay encoder (no serial I/O):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
+  set-assay --assay-name TEST01 --measurement-wavelength 450 --dry-run
+```
+
+Probe installed wavelengths:
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX get-wavelengths
+```
+
+Apply a named assay profile:
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
+  set-assay --profile ECO590 --confirm-write --confirm-assay
+```
+
+Dry-run a named assay profile:
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
+  set-assay --profile ECO590 --dry-run
+```
+
+Profile file location (default):
+`tools/elx808/assay_profiles.json`

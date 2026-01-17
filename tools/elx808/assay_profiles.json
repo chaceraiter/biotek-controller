@@ -1,0 +1,22 @@
+{
+  "ECO590": {
+    "assay_name": "ECO590",
+    "read_type": "kinetic",
+    "measurement_wavelength": 590,
+    "reference_wavelength": 750,
+    "subtraction": "dual",
+    "kinetic_interval": 900,
+    "kinetic_read_count": 192,
+    "scan_points": 1,
+    "shake": false,
+    "shake_every_read": false,
+    "shake_continuous": false,
+    "shake_time": 0,
+    "shake_speed": 0,
+    "delay_seconds": 0,
+    "delay_enabled": 0,
+    "use_total_kinetic_time": false,
+    "total_kinetic_read_time": 0,
+    "wavelength": []
+  }
+}
