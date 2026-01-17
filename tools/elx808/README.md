@@ -144,6 +144,22 @@ python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
   --csv /tmp/elx808-read-plate.csv
 ```
 
+Incremental CSV logging (append rows as each interval arrives):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
+  read-plate --confirm-write --confirm-movement --confirm-read \
+  --decode --wavelengths-per-interval 1 --rows 8 --cols 12 \
+  --csv /tmp/elx808-read-plate.csv --incremental
+```
+
+Run the standard EcoPlate protocol (ECO590) and write CSV:
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
+  run-ecoplate --confirm-run --csv /tmp/elx808-ecoplate.csv
+```
+
+Tip: `run-ecoplate` uses incremental CSV logging and will auto-expand `--timeout` and `--quiet` based on the assay profile unless you override them.
+
 Set assay definition (writes to instrument; requires confirm flags):
 ```bash
 python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \

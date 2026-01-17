@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import select
 import sys
 import time
 
@@ -178,6 +179,58 @@ def _apply_assay_profile(
     if should_override("delay_enabled") and "delay_enabled" in profile:
         value = profile["delay_enabled"]
         args.delay_enabled = None if value is None else int(value)
+
+
+def _default_assay_args() -> argparse.Namespace:
+    return argparse.Namespace(
+        assay_name="",
+        measurement_wavelength=None,
+        reference_wavelength=0,
+        wavelength=[],
+        read_type="endpoint",
+        subtraction="none",
+        scan_points=1,
+        kinetic_interval=None,
+        kinetic_read_count=None,
+        use_total_kinetic_time=False,
+        total_kinetic_read_time=None,
+        shake=False,
+        shake_every_read=False,
+        shake_continuous=False,
+        shake_time=0,
+        shake_speed=0,
+        delay_seconds=0,
+        delay_enabled=None,
+    )
+
+
+def _load_assay_from_profile(profile_name: str, profile_file: str) -> argparse.Namespace:
+    args = _default_assay_args()
+    _apply_assay_profile(
+        args,
+        profile_name=profile_name,
+        profile_file=profile_file,
+        provided_flags=set(),
+    )
+    if not args.assay_name:
+        raise ValueError("--assay-name is required unless --profile provides one.")
+    return args
+
+
+def _estimate_kinetic_duration_seconds(args: argparse.Namespace) -> float | None:
+    if args.read_type != "kinetic":
+        return None
+    if args.use_total_kinetic_time and args.total_kinetic_read_time:
+        return float(args.total_kinetic_read_time) * 60.0
+    if args.kinetic_interval and args.kinetic_read_count:
+        return float(args.kinetic_interval) * float(args.kinetic_read_count)
+    return None
+
+
+def _flag_present(flags: set[str], name: str) -> bool:
+    if name in flags:
+        return True
+    return any(flag.startswith(f"{name}=") for flag in flags)
 
 
 def _build_assay_definition(args: argparse.Namespace) -> bytes:
@@ -609,6 +662,58 @@ def _write_read_plate_csv(rows: list[dict], path: str) -> None:
             )
 
 
+class _IncrementalPlateCsvWriter:
+    def __init__(self, path: str, *, rows: int, cols: int) -> None:
+        import csv
+
+        self._rows = rows
+        self._cols = cols
+        self._handle = open(path, "w", encoding="utf-8", newline="")
+        self._writer = csv.writer(self._handle)
+        self._writer.writerow(
+            [
+                "interval",
+                "wavelength_index",
+                "row",
+                "col",
+                "well",
+                "value",
+                "status",
+                "temperature_c",
+            ]
+        )
+
+    def write_block(
+        self, payload: bytes, *, interval_index: int, wavelength_index: int
+    ) -> int:
+        values_rows, status_rows, temp = _parse_plate_block(
+            payload, rows=self._rows, cols=self._cols
+        )
+        for r in range(self._rows):
+            row_letter = chr(ord("A") + r)
+            for c in range(self._cols):
+                value = values_rows[r][c]
+                temp_value = "" if temp is None else f"{temp:.1f}"
+                value_str = "" if value is None else f"{value:.3f}"
+                self._writer.writerow(
+                    [
+                        interval_index,
+                        wavelength_index,
+                        r + 1,
+                        c + 1,
+                        f"{row_letter}{c + 1}",
+                        value_str,
+                        status_rows[r][c],
+                        temp_value,
+                    ]
+                )
+        self._handle.flush()
+        return self._rows * self._cols
+
+    def close(self) -> None:
+        self._handle.close()
+
+
 def _parse_well_block(payload: bytes) -> tuple[list[float | None], list[str], float | None]:
     idx = payload.find(b"\r")
     if idx == -1:
@@ -734,6 +839,87 @@ def _read_response_with_continuation(
     return raw
 
 
+def _read_plate_streaming(
+    fd: int,
+    *,
+    overall_timeout: float,
+    quiet_timeout: float,
+    wavelengths_per_interval: int,
+    rows: int,
+    cols: int,
+    csv_path: str,
+    label: str,
+) -> tuple[bytes, int]:
+    raw = bytearray()
+    buf = bytearray()
+    ack_seen = False
+    leading_status_stripped = False
+    block_index = 0
+    done_marker = False
+    effective_quiet = quiet_timeout
+    writer = _IncrementalPlateCsvWriter(csv_path, rows=rows, cols=cols)
+    if wavelengths_per_interval < 1:
+        wavelengths_per_interval = 1
+    start = time.monotonic()
+    last_rx = None
+    try:
+        while True:
+            remaining = overall_timeout - (time.monotonic() - start)
+            if remaining <= 0:
+                break
+            timeout = min(0.25, remaining)
+            readable, _, _ = select.select([fd], [], [], timeout)
+            if readable:
+                data = os.read(fd, 4096)
+                if not data:
+                    continue
+                raw.extend(data)
+                buf.extend(data)
+                last_rx = time.monotonic()
+                if not ack_seen and buf:
+                    if buf[0] in (core.ACK, core.NAK):
+                        ack_seen = True
+                        if buf[0] == core.NAK:
+                            buf = buf[1:]
+                            return bytes(raw), block_index
+                        buf = buf[1:]
+                if not leading_status_stripped and len(buf) >= 5:
+                    status = core.parse_status(buf[:5])
+                    if status:
+                        leading_status_stripped = True
+                        buf = buf[5:]
+                while True:
+                    blocks, complete, trailing = core.parse_elx_wavelength_blocks(buf)
+                    if not blocks:
+                        buf = trailing
+                        break
+                    for block in blocks:
+                        interval_index = block_index // wavelengths_per_interval + 1
+                        wavelength_index = block_index % wavelengths_per_interval + 1
+                        rows_written = writer.write_block(
+                            block.payload,
+                            interval_index=interval_index,
+                            wavelength_index=wavelength_index,
+                        )
+                        print(
+                            f"{label}-interval {interval_index} "
+                            f"wavelength {wavelength_index}/{wavelengths_per_interval}: "
+                            f"wrote {rows_written} rows"
+                        )
+                        block_index += 1
+                    buf = trailing
+                    if complete:
+                        done_marker = True
+                        effective_quiet = min(effective_quiet, 2.0)
+                        break
+                continue
+            if raw and last_rx is not None and (time.monotonic() - last_rx) >= effective_quiet:
+                break
+    finally:
+        writer.close()
+    return bytes(raw), block_index
+
+
 def _run_simple_command(
     fd: int,
     label: str,
@@ -783,29 +969,51 @@ def _run_read_plate(
     rows: int,
     cols: int,
     csv_path: str,
+    incremental: bool,
 ) -> None:
     _log_tx(log, label, payload)
     os.write(fd, payload)
-    raw = _read_response_with_continuation(
-        fd, overall_timeout=timeout, quiet_timeout=quiet
-    )
-    parsed = _handle_response(label, raw, log=log, parse_read=True)
-    if decode:
-        rows_out = _decode_read_plate_payload(
-            parsed.data,
+    use_incremental = incremental and decode and bool(csv_path)
+    if use_incremental:
+        raw, block_count = _read_plate_streaming(
+            fd,
+            overall_timeout=timeout,
+            quiet_timeout=quiet,
             wavelengths_per_interval=wavelengths_per_interval,
             rows=rows,
             cols=cols,
+            csv_path=csv_path,
+            label=label,
         )
-        if rows_out:
-            if csv_path:
-                _write_read_plate_csv(rows_out, csv_path)
-                print(f"{label}-csv: {csv_path}")
-            else:
-                print(
-                    f"{label}-decode: rows={rows} cols={cols} "
-                    f"intervals={rows_out[-1]['interval']}"
-                )
+        _handle_response(label, raw, log=log, parse_read=False)
+        if csv_path:
+            print(f"{label}-csv: {csv_path}")
+        if block_count:
+            intervals = (block_count + max(1, wavelengths_per_interval) - 1) // max(
+                1, wavelengths_per_interval
+            )
+            print(f"{label}-intervals: {intervals}")
+    else:
+        raw = _read_response_with_continuation(
+            fd, overall_timeout=timeout, quiet_timeout=quiet
+        )
+        parsed = _handle_response(label, raw, log=log, parse_read=True)
+        if decode:
+            rows_out = _decode_read_plate_payload(
+                parsed.data,
+                wavelengths_per_interval=wavelengths_per_interval,
+                rows=rows,
+                cols=cols,
+            )
+            if rows_out:
+                if csv_path:
+                    _write_read_plate_csv(rows_out, csv_path)
+                    print(f"{label}-csv: {csv_path}")
+                else:
+                    print(
+                        f"{label}-decode: rows={rows} cols={cols} "
+                        f"intervals={rows_out[-1]['interval']}"
+                    )
     time.sleep(0.2)
 
 
@@ -934,6 +1142,11 @@ def main() -> int:
     parser.add_argument("--set-rts", type=int, choices=[0, 1], default=None)
     parser.add_argument("--log", default="", help="Write a log file.")
     parser.add_argument(
+        "--confirm-run",
+        action="store_true",
+        help="Shortcut for confirm-write/movement/read/assay.",
+    )
+    parser.add_argument(
         "--confirm-write",
         action="store_true",
         help="Required for state-changing commands (quiet/status format/raw).",
@@ -991,6 +1204,48 @@ def main() -> int:
     read_plate.add_argument(
         "--csv",
         default="",
+        help="Write decoded plate values to a CSV file.",
+    )
+    read_plate.add_argument(
+        "--incremental",
+        action="store_true",
+        help="Append decoded rows to CSV as intervals arrive.",
+    )
+    run_ecoplate = sub.add_parser(
+        "run-ecoplate",
+        help="Set an assay profile and run read-plate (defaults to ECO590).",
+    )
+    run_ecoplate.add_argument(
+        "--profile",
+        default="ECO590",
+        help="Assay profile name (default ECO590).",
+    )
+    run_ecoplate.add_argument(
+        "--profile-file",
+        default="",
+        help="Path to assay profile JSON (defaults to tools/elx808/assay_profiles.json).",
+    )
+    run_ecoplate.add_argument(
+        "--wavelengths-per-interval",
+        type=int,
+        default=1,
+        help="Number of wavelengths per kinetic interval (for grouping).",
+    )
+    run_ecoplate.add_argument(
+        "--rows",
+        type=int,
+        default=8,
+        help="Number of rows to decode (default 8 for 96-well plate).",
+    )
+    run_ecoplate.add_argument(
+        "--cols",
+        type=int,
+        default=12,
+        help="Number of columns to decode (default 12 for 96-well plate).",
+    )
+    run_ecoplate.add_argument(
+        "--csv",
+        default="/tmp/elx808-ecoplate.csv",
         help="Write decoded plate values to a CSV file.",
     )
     read_wells = sub.add_parser("read-wells", help="Read well set ('d') for up to 8 wells.")
@@ -1154,6 +1409,11 @@ def main() -> int:
 
     args, unknown = parser.parse_known_args()
     provided_flags = {arg for arg in sys.argv if arg.startswith("--")}
+    if args.confirm_run:
+        args.confirm_write = True
+        args.confirm_movement = True
+        args.confirm_read = True
+        args.confirm_assay = True
     if "--confirm-write" in unknown:
         args.confirm_write = True
     if "--confirm-movement" in unknown:
@@ -1207,6 +1467,31 @@ def main() -> int:
                 needs_movement = needs_movement or movement
                 needs_read = needs_read or read
                 needs_assay = needs_assay or assay
+        elif args.command == "run-ecoplate":
+            profile_path = args.profile_file
+            if not profile_path:
+                profile_path = os.path.join(os.path.dirname(__file__), "assay_profiles.json")
+            try:
+                assay_args = _load_assay_from_profile(args.profile, profile_path)
+            except ValueError as exc:
+                parser.error(str(exc))
+            payload = _build_assay_definition(assay_args)
+            commands.append(("set-assay", payload))
+            commands.append(("read-plate", b"S"))
+            needs_write = True
+            needs_movement = True
+            needs_read = True
+            needs_assay = True
+            if not _flag_present(provided_flags, "--timeout"):
+                duration = _estimate_kinetic_duration_seconds(assay_args)
+                if duration:
+                    interval = assay_args.kinetic_interval or 0
+                    buffer = max(600.0, float(interval) + 60.0)
+                    args.timeout = max(args.timeout, duration + buffer)
+            if not _flag_present(provided_flags, "--quiet"):
+                interval = assay_args.kinetic_interval or 0
+                if interval:
+                    args.quiet = max(args.quiet, float(interval) + 60.0)
         else:
             label, payload, needs_write, needs_movement, needs_read, needs_assay = _build_command(args)
             commands = [(label, payload)]
@@ -1248,17 +1533,29 @@ def main() -> int:
             "csv_path": args.csv,
             "well_labels": well_labels,
         }
-    if args.command == "read-plate":
+    if args.command in ("read-plate", "run-ecoplate"):
+        decode = True if args.command == "run-ecoplate" else bool(args.decode or args.csv)
+        incremental = False
+        if args.command == "run-ecoplate":
+            incremental = True
+        elif args.command == "read-plate":
+            incremental = bool(getattr(args, "incremental", False))
         read_plate_opts = {
-            "decode": bool(args.decode or args.csv),
+            "decode": decode,
             "wavelengths_per_interval": args.wavelengths_per_interval,
             "rows": args.rows,
             "cols": args.cols,
             "csv_path": args.csv,
+            "incremental": incremental,
         }
 
     log_path = args.log
     log = open(log_path, "w", encoding="utf-8") if log_path else None
+    if args.command == "run-ecoplate":
+        print(
+            f"run-ecoplate: profile={args.profile} timeout={args.timeout:.0f}s "
+            f"quiet={args.quiet:.0f}s csv={args.csv}"
+        )
 
     fd = os.open(args.port, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
     try:
