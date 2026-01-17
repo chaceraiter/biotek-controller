@@ -1162,9 +1162,9 @@ def _run_commands(
             _run_get_wavelengths(fd, label, payload, timeout, quiet, log)
             continue
         if label == "set-assay":
-        _run_set_assay(fd, label, payload, timeout, quiet, log)
-        continue
-    _run_simple_command(fd, label, payload, timeout, quiet, log)
+            _run_set_assay(fd, label, payload, timeout, quiet, log)
+            continue
+        _run_simple_command(fd, label, payload, timeout, quiet, log)
 
 
 def _run_validate_short_run(
