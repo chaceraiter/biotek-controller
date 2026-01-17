@@ -160,6 +160,39 @@ python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
 
 Tip: `run-ecoplate` uses incremental CSV logging and will auto-expand `--timeout` and `--quiet` based on the assay profile unless you override them.
 
+Short-run validation (ECO60 by default, then restore ECO590):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
+  validate-short-run --confirm-run --csv /tmp/elx808-validate.csv
+```
+
+Use `--no-restore` to skip restoring the ECO590 profile.
+
+## `playback_decode.py`
+
+Decode a captured log into CSV without hardware. Supports control-stack logs (`raw_hex=...`) and serial_capture logs (`rx ... hex=...`).
+
+Control-stack log example (decode last `read-plate` response):
+```bash
+python3 tools/elx808/playback_decode.py \
+  --log /tmp/elx808-run.log \
+  --format control-stack \
+  --label read-plate \
+  --wavelengths-per-interval 1 \
+  --rows 8 --cols 12 \
+  --csv /tmp/elx808-playback.csv
+```
+
+Serial capture log example (decode RX after last TX):
+```bash
+python3 tools/elx808/playback_decode.py \
+  --log /tmp/elx808-serial.log \
+  --format serial-capture \
+  --wavelengths-per-interval 1 \
+  --rows 8 --cols 12 \
+  --csv /tmp/elx808-playback.csv
+```
+
 Set assay definition (writes to instrument; requires confirm flags):
 ```bash
 python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
@@ -196,3 +229,5 @@ python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
 
 Profile file location (default):
 `tools/elx808/assay_profiles.json`
+
+Included profiles: `ECO590`, `ECO60`, `ECO30`.

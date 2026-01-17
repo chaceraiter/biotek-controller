@@ -233,6 +233,21 @@ def _flag_present(flags: set[str], name: str) -> bool:
     return any(flag.startswith(f"{name}=") for flag in flags)
 
 
+def _expected_intervals(args: argparse.Namespace) -> int | None:
+    if args.read_type != "kinetic":
+        return None
+    if args.kinetic_read_count:
+        return int(args.kinetic_read_count)
+    if (
+        args.use_total_kinetic_time
+        and args.total_kinetic_read_time
+        and args.kinetic_interval
+    ):
+        total_seconds = float(args.total_kinetic_read_time) * 60.0
+        return int((total_seconds + args.kinetic_interval - 1) // args.kinetic_interval)
+    return None
+
+
 def _build_assay_definition(args: argparse.Namespace) -> bytes:
     buf = bytearray(170)
     _write_bytes(buf, 1, b"\x00")
@@ -628,6 +643,19 @@ def _decode_read_plate_payload(
     return rows_out
 
 
+def _summarize_read_plate(
+    data: bytes, *, wavelengths_per_interval: int
+) -> tuple[int, int, bool]:
+    _, remainder = core.split_leading_status(data)
+    blocks, complete, _ = core.parse_elx_wavelength_blocks(remainder)
+    if wavelengths_per_interval < 1:
+        wavelengths_per_interval = 1
+    interval_count = 0
+    if blocks:
+        interval_count = (len(blocks) + wavelengths_per_interval - 1) // wavelengths_per_interval
+    return interval_count, len(blocks), complete
+
+
 def _write_read_plate_csv(rows: list[dict], path: str) -> None:
     import csv
 
@@ -849,13 +877,14 @@ def _read_plate_streaming(
     cols: int,
     csv_path: str,
     label: str,
-) -> tuple[bytes, int]:
+) -> tuple[bytes, int, bool]:
     raw = bytearray()
     buf = bytearray()
     ack_seen = False
     leading_status_stripped = False
     block_index = 0
     done_marker = False
+    complete_seen = False
     effective_quiet = quiet_timeout
     writer = _IncrementalPlateCsvWriter(csv_path, rows=rows, cols=cols)
     if wavelengths_per_interval < 1:
@@ -910,6 +939,7 @@ def _read_plate_streaming(
                     buf = trailing
                     if complete:
                         done_marker = True
+                        complete_seen = True
                         effective_quiet = min(effective_quiet, 2.0)
                         break
                 continue
@@ -917,7 +947,7 @@ def _read_plate_streaming(
                 break
     finally:
         writer.close()
-    return bytes(raw), block_index
+    return bytes(raw), block_index, complete_seen
 
 
 def _run_simple_command(
@@ -970,12 +1000,12 @@ def _run_read_plate(
     cols: int,
     csv_path: str,
     incremental: bool,
-) -> None:
+) -> dict:
     _log_tx(log, label, payload)
     os.write(fd, payload)
     use_incremental = incremental and decode and bool(csv_path)
     if use_incremental:
-        raw, block_count = _read_plate_streaming(
+        raw, block_count, complete_seen = _read_plate_streaming(
             fd,
             overall_timeout=timeout,
             quiet_timeout=quiet,
@@ -988,11 +1018,15 @@ def _run_read_plate(
         _handle_response(label, raw, log=log, parse_read=False)
         if csv_path:
             print(f"{label}-csv: {csv_path}")
+        intervals = 0
         if block_count:
             intervals = (block_count + max(1, wavelengths_per_interval) - 1) // max(
                 1, wavelengths_per_interval
             )
-            print(f"{label}-intervals: {intervals}")
+        print(
+            f"{label}-intervals: {intervals} blocks={block_count} complete={complete_seen}"
+        )
+        summary = {"intervals": intervals, "blocks": block_count, "complete": complete_seen}
     else:
         raw = _read_response_with_continuation(
             fd, overall_timeout=timeout, quiet_timeout=quiet
@@ -1014,7 +1048,12 @@ def _run_read_plate(
                         f"{label}-decode: rows={rows} cols={cols} "
                         f"intervals={rows_out[-1]['interval']}"
                     )
+        intervals, blocks, complete = _summarize_read_plate(
+            parsed.data, wavelengths_per_interval=wavelengths_per_interval
+        )
+        summary = {"intervals": intervals, "blocks": blocks, "complete": complete}
     time.sleep(0.2)
+    return summary
 
 
 def _run_read_wells(
@@ -1123,9 +1162,40 @@ def _run_commands(
             _run_get_wavelengths(fd, label, payload, timeout, quiet, log)
             continue
         if label == "set-assay":
-            _run_set_assay(fd, label, payload, timeout, quiet, log)
-            continue
-        _run_simple_command(fd, label, payload, timeout, quiet, log)
+        _run_set_assay(fd, label, payload, timeout, quiet, log)
+        continue
+    _run_simple_command(fd, label, payload, timeout, quiet, log)
+
+
+def _run_validate_short_run(
+    fd: int,
+    *,
+    assay_args: argparse.Namespace,
+    restore_args: argparse.Namespace | None,
+    timeout: float,
+    quiet: float,
+    log,
+    read_plate_opts: dict,
+) -> bool:
+    assay_payload = _build_assay_definition(assay_args)
+    _run_set_assay(fd, "set-assay-validate", assay_payload, timeout, quiet, log)
+    summary = _run_read_plate(fd, "read-plate", b"S", timeout, quiet, log, **read_plate_opts)
+    expected = _expected_intervals(assay_args)
+    ok = True
+    if expected is not None and summary["intervals"] != expected:
+        print(
+            f"validate-short-run: expected {expected} intervals, got {summary['intervals']}"
+        )
+        ok = False
+    if expected is not None and not summary["complete"]:
+        print("validate-short-run: response blocks incomplete (missing terminator)")
+        ok = False
+    if restore_args is not None:
+        restore_payload = _build_assay_definition(restore_args)
+        _run_set_assay(fd, "set-assay-restore", restore_payload, timeout, quiet, log)
+    if ok:
+        print("validate-short-run: ok")
+    return ok
 
 
 def main() -> int:
@@ -1246,6 +1316,53 @@ def main() -> int:
     run_ecoplate.add_argument(
         "--csv",
         default="/tmp/elx808-ecoplate.csv",
+        help="Write decoded plate values to a CSV file.",
+    )
+    validate_short = sub.add_parser(
+        "validate-short-run",
+        help="Run a short assay profile and validate interval capture.",
+    )
+    validate_short.add_argument(
+        "--profile",
+        default="ECO60",
+        help="Short-run assay profile name (default ECO60).",
+    )
+    validate_short.add_argument(
+        "--restore-profile",
+        default="ECO590",
+        help="Assay profile to restore after validation (default ECO590).",
+    )
+    validate_short.add_argument(
+        "--no-restore",
+        action="store_true",
+        help="Skip restoring the assay profile after validation.",
+    )
+    validate_short.add_argument(
+        "--profile-file",
+        default="",
+        help="Path to assay profile JSON (defaults to tools/elx808/assay_profiles.json).",
+    )
+    validate_short.add_argument(
+        "--wavelengths-per-interval",
+        type=int,
+        default=1,
+        help="Number of wavelengths per kinetic interval (for grouping).",
+    )
+    validate_short.add_argument(
+        "--rows",
+        type=int,
+        default=8,
+        help="Number of rows to decode (default 8 for 96-well plate).",
+    )
+    validate_short.add_argument(
+        "--cols",
+        type=int,
+        default=12,
+        help="Number of columns to decode (default 12 for 96-well plate).",
+    )
+    validate_short.add_argument(
+        "--csv",
+        default="/tmp/elx808-validate.csv",
         help="Write decoded plate values to a CSV file.",
     )
     read_wells = sub.add_parser("read-wells", help="Read well set ('d') for up to 8 wells.")
@@ -1451,6 +1568,7 @@ def main() -> int:
     needs_movement = False
     needs_read = False
     needs_assay = False
+    validation_plan: dict | None = None
     try:
         if args.command == "sequence":
             if not args.skip_set_status:
@@ -1478,6 +1596,35 @@ def main() -> int:
             payload = _build_assay_definition(assay_args)
             commands.append(("set-assay", payload))
             commands.append(("read-plate", b"S"))
+            needs_write = True
+            needs_movement = True
+            needs_read = True
+            needs_assay = True
+            if not _flag_present(provided_flags, "--timeout"):
+                duration = _estimate_kinetic_duration_seconds(assay_args)
+                if duration:
+                    interval = assay_args.kinetic_interval or 0
+                    buffer = max(600.0, float(interval) + 60.0)
+                    args.timeout = max(args.timeout, duration + buffer)
+            if not _flag_present(provided_flags, "--quiet"):
+                interval = assay_args.kinetic_interval or 0
+                if interval:
+                    args.quiet = max(args.quiet, float(interval) + 60.0)
+        elif args.command == "validate-short-run":
+            profile_path = args.profile_file
+            if not profile_path:
+                profile_path = os.path.join(os.path.dirname(__file__), "assay_profiles.json")
+            try:
+                assay_args = _load_assay_from_profile(args.profile, profile_path)
+                restore_args = None
+                if not args.no_restore:
+                    restore_args = _load_assay_from_profile(args.restore_profile, profile_path)
+            except ValueError as exc:
+                parser.error(str(exc))
+            validation_plan = {
+                "assay_args": assay_args,
+                "restore_args": restore_args,
+            }
             needs_write = True
             needs_movement = True
             needs_read = True
@@ -1533,10 +1680,14 @@ def main() -> int:
             "csv_path": args.csv,
             "well_labels": well_labels,
         }
-    if args.command in ("read-plate", "run-ecoplate"):
-        decode = True if args.command == "run-ecoplate" else bool(args.decode or args.csv)
+    if args.command in ("read-plate", "run-ecoplate", "validate-short-run"):
+        decode = True if args.command in ("run-ecoplate", "validate-short-run") else bool(
+            args.decode or args.csv
+        )
         incremental = False
         if args.command == "run-ecoplate":
+            incremental = True
+        if args.command == "validate-short-run":
             incremental = True
         elif args.command == "read-plate":
             incremental = bool(getattr(args, "incremental", False))
@@ -1554,6 +1705,11 @@ def main() -> int:
     if args.command == "run-ecoplate":
         print(
             f"run-ecoplate: profile={args.profile} timeout={args.timeout:.0f}s "
+            f"quiet={args.quiet:.0f}s csv={args.csv}"
+        )
+    if args.command == "validate-short-run":
+        print(
+            f"validate-short-run: profile={args.profile} timeout={args.timeout:.0f}s "
             f"quiet={args.quiet:.0f}s csv={args.csv}"
         )
 
@@ -1580,15 +1736,28 @@ def main() -> int:
             log.write(f"start={time.strftime('%Y-%m-%dT%H:%M:%S%z')}\n")
             log.flush()
 
-        _run_commands(
-            fd,
-            commands,
-            timeout=args.timeout,
-            quiet=args.quiet,
-            log=log,
-            read_wells_opts=read_wells_opts,
-            read_plate_opts=read_plate_opts,
-        )
+        if validation_plan is not None:
+            ok = _run_validate_short_run(
+                fd,
+                assay_args=validation_plan["assay_args"],
+                restore_args=validation_plan["restore_args"],
+                timeout=args.timeout,
+                quiet=args.quiet,
+                log=log,
+                read_plate_opts=read_plate_opts or {},
+            )
+            if not ok:
+                return 1
+        else:
+            _run_commands(
+                fd,
+                commands,
+                timeout=args.timeout,
+                quiet=args.quiet,
+                log=log,
+                read_wells_opts=read_wells_opts,
+                read_plate_opts=read_plate_opts,
+            )
     finally:
         if log:
             log.close()
