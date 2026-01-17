@@ -29,6 +29,9 @@
 - Added short-run assay profiles `ECO60` and `ECO30` for quick kinetic validation.
 - Added `validate-short-run` to set a short assay, run `read-plate`, validate interval count/completeness, and restore ECO590.
 - Added `playback_decode.py` to decode captured logs into CSV without hardware.
+- Added playback decode for read-wells logs plus optional `--well` labels.
+- Added `--manifest` to emit a JSON run summary (command, profile, timing, CSV/log paths, interval summary).
+- Updated `validate-short-run` defaults for ECO60 (`quiet=240`, `timeout=900`) and relaxed terminator check by default.
 - Added `get-wavelengths` command to query installed filters.
 - Documented Appendix B protocol details and successful self-test in `research/elx808/*`.
 - Converted EcoPlate and Gen5 PDFs into markdown + summaries under `docs/`.
@@ -42,17 +45,19 @@
 - `read-plate` decoding writes CSV to `/tmp/elx808-read-plate.csv` (initial ECO60 run captured only first interval; needs longer timeout to capture second).
 - `run-ecoplate` can run the standard ECO590 protocol and log CSV incrementally as intervals arrive.
 - Short 8-well capture produced `/tmp/elx808-read-wells.log` and `/tmp/elx808-read-wells.csv`.
+- ECO60 validation captured two intervals with default ECO60 quiet/timeout; missing terminator treated as warning by default.
+- Manifest output verified at `/tmp/elx808-validate.json`.
 
 ## Unknowns / active questions
 - Status format persistence (ELx vs 312) and when the reader auto-switches formats.
 - Exact command/argument framing for read operations (`S`, `d`) and how errors propagate mid-stream.
-- Best timeout/quiet settings for capturing multiple kinetic intervals in `read-plate`.
+- Best timeout/quiet settings for long kinetic runs beyond ECO60 (ECO590 still untested).
 - Confirm whether the USB-serial adapter is true RS-232 level (FT232R often indicates TTL without level shifting).
 - Gen5 COMPLETE user guide OCR: current PDF text extraction fails due to damaged PDF.
 
 ## Next steps
 - Use `protocol_probe.py` to standardize status format (`n`) and test additional safe commands (`o`, `e`, `q`, `n`).
 - Implement a minimal protocol wrapper for command/response parsing and status handling.
-- Re-run `read-plate` with longer timeout/quiet to capture both intervals for ECO60 (and verify CSV).
-- Consider a one-command wrapper to load ECO60 → read-plate → restore ECO590, and allow global flags after subcommands.
+- Validate ECO590 long run behavior (timeouts, completeness) after UI scaffolding is in place.
+- Decide on UI workflow: profile selection, run progress, CSV/manifest display, and error handling.
 - Resolve Gen5 COMPLETE OCR (alternate PDF source or different OCR pipeline).

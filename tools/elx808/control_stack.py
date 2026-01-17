@@ -1177,12 +1177,13 @@ def _run_validate_short_run(
     quiet: float,
     log,
     read_plate_opts: dict,
-) -> bool:
+) -> dict:
     assay_payload = _build_assay_definition(assay_args)
     _run_set_assay(fd, "set-assay-validate", assay_payload, timeout, quiet, log)
     summary = _run_read_plate(fd, "read-plate", b"S", timeout, quiet, log, **read_plate_opts)
     expected = _expected_intervals(assay_args)
     ok = True
+    warning = None
     if expected is not None and summary["intervals"] != expected:
         print(
             f"validate-short-run: expected {expected} intervals, got {summary['intervals']}"
@@ -1193,13 +1194,19 @@ def _run_validate_short_run(
             print("validate-short-run: response blocks incomplete (missing terminator)")
             ok = False
         else:
-            print("validate-short-run: warning: missing final terminator")
+            warning = "missing final terminator"
+            print(f"validate-short-run: warning: {warning}")
     if restore_args is not None:
         restore_payload = _build_assay_definition(restore_args)
         _run_set_assay(fd, "set-assay-restore", restore_payload, timeout, quiet, log)
     if ok:
         print("validate-short-run: ok")
-    return ok
+    return {
+        "ok": ok,
+        "expected_intervals": expected,
+        "summary": summary,
+        "warning": warning,
+    }
 
 
 def main() -> int:
@@ -1215,6 +1222,7 @@ def main() -> int:
     parser.add_argument("--set-dtr", type=int, choices=[0, 1], default=None)
     parser.add_argument("--set-rts", type=int, choices=[0, 1], default=None)
     parser.add_argument("--log", default="", help="Write a log file.")
+    parser.add_argument("--manifest", default="", help="Write a JSON run manifest.")
     parser.add_argument(
         "--confirm-run",
         action="store_true",
@@ -1569,6 +1577,10 @@ def main() -> int:
     if log_value is not None:
         args.log = log_value
 
+    manifest_value = _extract_option(unknown, "--manifest")
+    if manifest_value is not None:
+        args.manifest = manifest_value
+
     if "--confirm-run" in unknown:
         args.confirm_run = True
     if args.confirm_run:
@@ -1620,6 +1632,7 @@ def main() -> int:
     needs_read = False
     needs_assay = False
     validation_plan: dict | None = None
+    run_plan: dict | None = None
     try:
         if args.command == "sequence":
             if not args.skip_set_status:
@@ -1647,6 +1660,9 @@ def main() -> int:
             payload = _build_assay_definition(assay_args)
             commands.append(("set-assay", payload))
             commands.append(("read-plate", b"S"))
+            run_plan = {
+                "assay_args": assay_args,
+            }
             needs_write = True
             needs_movement = True
             needs_read = True
@@ -1682,12 +1698,16 @@ def main() -> int:
             needs_read = True
             needs_assay = True
             if not _flag_present(provided_flags, "--timeout"):
+                if assay_args.assay_name == "ECO60":
+                    args.timeout = max(args.timeout, 900.0)
                 duration = _estimate_kinetic_duration_seconds(assay_args)
                 if duration:
                     interval = assay_args.kinetic_interval or 0
                     buffer = max(600.0, float(interval) + 60.0)
                     args.timeout = max(args.timeout, duration + buffer)
             if not _flag_present(provided_flags, "--quiet"):
+                if assay_args.assay_name == "ECO60":
+                    args.quiet = max(args.quiet, 240.0)
                 interval = assay_args.kinetic_interval or 0
                 if interval:
                     args.quiet = max(args.quiet, float(interval) + 60.0)
@@ -1754,6 +1774,7 @@ def main() -> int:
 
     log_path = args.log
     log = open(log_path, "w", encoding="utf-8") if log_path else None
+    start_time = time.strftime('%Y-%m-%dT%H:%M:%S%z')
     if args.command == "run-ecoplate":
         print(
             f"run-ecoplate: profile={args.profile} timeout={args.timeout:.0f}s "
@@ -1785,11 +1806,13 @@ def main() -> int:
                 f"port={args.port} baud={args.baud} databits={args.databits} "
                 f"parity={args.parity} stopbits={args.stopbits} flow={args.flow}\n"
             )
-            log.write(f"start={time.strftime('%Y-%m-%dT%H:%M:%S%z')}\n")
+            log.write(f"start={start_time}\n")
             log.flush()
 
+        run_summary = None
+        validation_result = None
         if validation_plan is not None:
-            ok = _run_validate_short_run(
+            validation_result = _run_validate_short_run(
                 fd,
                 assay_args=validation_plan["assay_args"],
                 restore_args=validation_plan["restore_args"],
@@ -1799,8 +1822,18 @@ def main() -> int:
                 log=log,
                 read_plate_opts=read_plate_opts or {},
             )
-            if not ok:
-                return 1
+        elif run_plan is not None:
+            payload = _build_assay_definition(run_plan["assay_args"])
+            _run_set_assay(fd, "set-assay-ecoplate", payload, args.timeout, args.quiet, log)
+            run_summary = _run_read_plate(
+                fd,
+                "read-plate",
+                b"S",
+                args.timeout,
+                args.quiet,
+                log,
+                **(read_plate_opts or {}),
+            )
         else:
             _run_commands(
                 fd,
@@ -1815,6 +1848,41 @@ def main() -> int:
         if log:
             log.close()
         os.close(fd)
+
+    if args.manifest:
+        import json
+
+        manifest = {
+            "command": args.command,
+            "port": args.port,
+            "baud": args.baud,
+            "databits": args.databits,
+            "parity": args.parity,
+            "stopbits": args.stopbits,
+            "flow": args.flow,
+            "timeout": args.timeout,
+            "quiet": args.quiet,
+            "log": args.log,
+            "start": start_time,
+            "end": time.strftime('%Y-%m-%dT%H:%M:%S%z'),
+        }
+        if hasattr(args, "csv"):
+            manifest["csv"] = args.csv
+        if args.command in ("run-ecoplate", "validate-short-run"):
+            manifest["profile"] = args.profile
+        if args.command == "validate-short-run":
+            if not args.no_restore:
+                manifest["restore_profile"] = args.restore_profile
+            if validation_result is not None:
+                manifest["validation"] = validation_result
+        if run_summary is not None:
+            manifest["summary"] = run_summary
+        with open(args.manifest, "w", encoding="utf-8") as handle:
+            json.dump(manifest, handle, indent=2, sort_keys=True)
+        print(f"Wrote manifest: {args.manifest}")
+
+    if validation_result is not None and not validation_result["ok"]:
+        return 1
 
     if log_path:
         print(f"Wrote log: {log_path}")

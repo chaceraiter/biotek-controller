@@ -75,9 +75,21 @@ def main() -> int:
         help="Log format (auto-detect by default).",
     )
     parser.add_argument(
-        "--label",
+        "--mode",
+        choices=["read-plate", "read-wells"],
         default="read-plate",
-        help="control-stack label to decode (default: read-plate).",
+        help="Decode mode (read-plate or read-wells).",
+    )
+    parser.add_argument(
+        "--label",
+        default=None,
+        help="control-stack label to decode (default depends on --mode).",
+    )
+    parser.add_argument(
+        "--well",
+        action="append",
+        default=[],
+        help="Well labels for read-wells (repeat up to 8).",
     )
     parser.add_argument(
         "--wavelengths-per-interval",
@@ -94,6 +106,7 @@ def main() -> int:
     )
     args = parser.parse_args()
 
+    label = args.label or args.mode
     fmt = args.format
     if fmt == "auto":
         fmt = _detect_format(args.log)
@@ -102,7 +115,7 @@ def main() -> int:
         return 2
 
     if fmt == "control-stack":
-        raw = _parse_control_stack_log(args.log, label=args.label)
+        raw = _parse_control_stack_log(args.log, label=label)
     else:
         raw = _parse_serial_capture_log(args.log)
 
@@ -112,16 +125,36 @@ def main() -> int:
 
     parsed = core.parse_response(raw)
     print(f"response: {core.format_response_summary(parsed)}")
-    rows_out = stack._decode_read_plate_payload(
-        parsed.data,
-        wavelengths_per_interval=args.wavelengths_per_interval,
-        rows=args.rows,
-        cols=args.cols,
-    )
-    if not rows_out:
-        print("No decoded rows found; check --wavelengths-per-interval/rows/cols.", file=sys.stderr)
-        return 1
-    stack._write_read_plate_csv(rows_out, args.csv)
+    if args.mode == "read-wells":
+        well_labels = list(args.well)
+        if not well_labels:
+            well_labels = [f"W{i + 1}" for i in range(8)]
+        elif len(well_labels) < 8:
+            for idx in range(len(well_labels) + 1, 9):
+                well_labels.append(f"unused{idx}")
+        rows_out = stack._decode_read_wells_payload(
+            parsed.data,
+            wavelengths_per_interval=args.wavelengths_per_interval,
+            well_labels=well_labels,
+        )
+        if not rows_out:
+            print("No decoded rows found; check --wavelengths-per-interval.", file=sys.stderr)
+            return 1
+        stack._write_read_wells_csv(rows_out, args.csv)
+    else:
+        rows_out = stack._decode_read_plate_payload(
+            parsed.data,
+            wavelengths_per_interval=args.wavelengths_per_interval,
+            rows=args.rows,
+            cols=args.cols,
+        )
+        if not rows_out:
+            print(
+                "No decoded rows found; check --wavelengths-per-interval/rows/cols.",
+                file=sys.stderr,
+            )
+            return 1
+        stack._write_read_plate_csv(rows_out, args.csv)
     print(f"wrote csv: {args.csv}")
     return 0
 

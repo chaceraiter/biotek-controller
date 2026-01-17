@@ -166,7 +166,14 @@ python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
   validate-short-run --confirm-run --csv /tmp/elx808-validate.csv
 ```
 
-Use `--no-restore` to skip restoring the ECO590 profile. Add `--strict-complete` if you want missing terminators to fail validation.
+Use `--no-restore` to skip restoring the ECO590 profile. Add `--strict-complete` if you want missing terminators to fail validation. ECO60 defaults to a longer quiet/timeout to capture both intervals.
+
+Write a JSON run manifest:
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
+  validate-short-run --confirm-run --csv /tmp/elx808-validate.csv \
+  --manifest /tmp/elx808-validate.json
+```
 
 ## `playback_decode.py`
 
@@ -191,6 +198,17 @@ python3 tools/elx808/playback_decode.py \
   --wavelengths-per-interval 1 \
   --rows 8 --cols 12 \
   --csv /tmp/elx808-playback.csv
+```
+
+Read-wells log example:
+```bash
+python3 tools/elx808/playback_decode.py \
+  --log /tmp/elx808-read-wells.log \
+  --format control-stack \
+  --mode read-wells \
+  --well A1 --well A2 --well A3 --well A4 \
+  --well B1 --well B2 --well B3 --well B4 \
+  --csv /tmp/elx808-read-wells-playback.csv
 ```
 
 Set assay definition (writes to instrument; requires confirm flags):
