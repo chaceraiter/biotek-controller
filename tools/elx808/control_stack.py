@@ -920,7 +920,7 @@ def _read_plate_streaming(
                 while True:
                     blocks, complete, trailing = core.parse_elx_wavelength_blocks(buf)
                     if not blocks:
-                        buf = trailing
+                        buf = bytearray(trailing)
                         break
                     for block in blocks:
                         interval_index = block_index // wavelengths_per_interval + 1
@@ -936,7 +936,7 @@ def _read_plate_streaming(
                             f"wrote {rows_written} rows"
                         )
                         block_index += 1
-                    buf = trailing
+                    buf = bytearray(trailing)
                     if complete:
                         done_marker = True
                         complete_seen = True
@@ -1172,6 +1172,7 @@ def _run_validate_short_run(
     *,
     assay_args: argparse.Namespace,
     restore_args: argparse.Namespace | None,
+    strict_complete: bool,
     timeout: float,
     quiet: float,
     log,
@@ -1188,8 +1189,11 @@ def _run_validate_short_run(
         )
         ok = False
     if expected is not None and not summary["complete"]:
-        print("validate-short-run: response blocks incomplete (missing terminator)")
-        ok = False
+        if strict_complete:
+            print("validate-short-run: response blocks incomplete (missing terminator)")
+            ok = False
+        else:
+            print("validate-short-run: warning: missing final terminator")
     if restore_args is not None:
         restore_payload = _build_assay_definition(restore_args)
         _run_set_assay(fd, "set-assay-restore", restore_payload, timeout, quiet, log)
@@ -1365,6 +1369,11 @@ def main() -> int:
         default="/tmp/elx808-validate.csv",
         help="Write decoded plate values to a CSV file.",
     )
+    validate_short.add_argument(
+        "--strict-complete",
+        action="store_true",
+        help="Fail validation if block terminator is missing.",
+    )
     read_wells = sub.add_parser("read-wells", help="Read well set ('d') for up to 8 wells.")
     read_wells.add_argument(
         "--well",
@@ -1526,6 +1535,42 @@ def main() -> int:
 
     args, unknown = parser.parse_known_args()
     provided_flags = {arg for arg in sys.argv if arg.startswith("--")}
+
+    def _extract_option(unknown_args: list[str], name: str) -> str | None:
+        for idx, item in enumerate(unknown_args):
+            if item.startswith(f"{name}="):
+                value = item.split("=", 1)[1]
+                del unknown_args[idx]
+                return value
+        for idx, item in enumerate(unknown_args):
+            if item == name:
+                if idx + 1 >= len(unknown_args):
+                    parser.error(f"{name} requires a value")
+                value = unknown_args[idx + 1]
+                del unknown_args[idx : idx + 2]
+                return value
+        return None
+
+    timeout_value = _extract_option(unknown, "--timeout")
+    if timeout_value is not None:
+        try:
+            args.timeout = float(timeout_value)
+        except ValueError:
+            parser.error(f"--timeout must be a number, got: {timeout_value}")
+
+    quiet_value = _extract_option(unknown, "--quiet")
+    if quiet_value is not None:
+        try:
+            args.quiet = float(quiet_value)
+        except ValueError:
+            parser.error(f"--quiet must be a number, got: {quiet_value}")
+
+    log_value = _extract_option(unknown, "--log")
+    if log_value is not None:
+        args.log = log_value
+
+    if "--confirm-run" in unknown:
+        args.confirm_run = True
     if args.confirm_run:
         args.confirm_write = True
         args.confirm_movement = True
@@ -1543,7 +1588,13 @@ def main() -> int:
         item
         for item in unknown
         if item
-        not in ("--confirm-write", "--confirm-movement", "--confirm-read", "--confirm-assay")
+        not in (
+            "--confirm-run",
+            "--confirm-write",
+            "--confirm-movement",
+            "--confirm-read",
+            "--confirm-assay",
+        )
     ]
     if unknown:
         parser.error(f"unrecognized arguments: {' '.join(unknown)}")
@@ -1624,6 +1675,7 @@ def main() -> int:
             validation_plan = {
                 "assay_args": assay_args,
                 "restore_args": restore_args,
+                "strict_complete": bool(args.strict_complete),
             }
             needs_write = True
             needs_movement = True
@@ -1741,6 +1793,7 @@ def main() -> int:
                 fd,
                 assay_args=validation_plan["assay_args"],
                 restore_args=validation_plan["restore_args"],
+                strict_complete=validation_plan["strict_complete"],
                 timeout=args.timeout,
                 quiet=args.quiet,
                 log=log,

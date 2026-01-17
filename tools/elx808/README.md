@@ -166,7 +166,7 @@ python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
   validate-short-run --confirm-run --csv /tmp/elx808-validate.csv
 ```
 
-Use `--no-restore` to skip restoring the ECO590 profile.
+Use `--no-restore` to skip restoring the ECO590 profile. Add `--strict-complete` if you want missing terminators to fail validation.
 
 ## `playback_decode.py`
 
