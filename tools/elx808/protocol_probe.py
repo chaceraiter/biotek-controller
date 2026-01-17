@@ -11,102 +11,11 @@ from __future__ import annotations
 
 import argparse
 import os
-import select
 import sys
 import time
 
+import elx808_core as core
 import serial_capture as sc
-
-
-def _hexdump(data: bytes) -> str:
-    return " ".join(f"{b:02x}" for b in data)
-
-
-def _ascii_repr(data: bytes) -> str:
-    out = []
-    for b in data:
-        if 32 <= b < 127:
-            out.append(chr(b))
-        elif b == 0x0d:
-            out.append("\\r")
-        elif b == 0x0a:
-            out.append("\\n")
-        else:
-            out.append(".")
-    return "".join(out)
-
-
-def read_response(fd: int, *, overall_timeout: float, quiet_timeout: float) -> bytes:
-    start = time.monotonic()
-    last_rx = None
-    buf = bytearray()
-    while True:
-        remaining = overall_timeout - (time.monotonic() - start)
-        if remaining <= 0:
-            break
-        timeout = min(0.25, remaining)
-        r, _, _ = select.select([fd], [], [], timeout)
-        if r:
-            data = os.read(fd, 4096)
-            if data:
-                buf.extend(data)
-                last_rx = time.monotonic()
-                continue
-        if buf and last_rx is not None and (time.monotonic() - last_rx) >= quiet_timeout:
-            break
-    return bytes(buf)
-
-
-def _is_ascii_hex(b: int) -> bool:
-    return (48 <= b <= 57) or (65 <= b <= 70)
-
-
-def parse_status(candidate: bytes) -> dict | None:
-    if len(candidate) != 5 or candidate[-1] != 0x03:
-        return None
-    if candidate[0] == 0x1E:
-        code = candidate[1:4].decode("ascii", errors="replace")
-        return {"mode": "312", "code": code, "raw": candidate}
-    if all(_is_ascii_hex(b) for b in candidate[:4]):
-        code = candidate[:4].decode("ascii", errors="replace")
-        return {"mode": "ELx", "code": code, "raw": candidate}
-    return None
-
-
-def split_status(payload: bytes) -> tuple[bytes, bytes, dict | None]:
-    etx_idx = payload.rfind(b"\x03")
-    if etx_idx < 4:
-        return payload, b"", None
-    candidate = payload[etx_idx - 4 : etx_idx + 1]
-    parsed = parse_status(candidate)
-    if parsed is None:
-        return payload, b"", None
-    data = payload[: etx_idx - 4]
-    return data, candidate, parsed
-
-
-def parse_response(raw: bytes) -> dict:
-    ack = raw.startswith(b"\x06")
-    payload = raw[1:] if ack else raw
-    data, status_raw, status_parsed = split_status(payload)
-    return {
-        "ack": ack,
-        "data": data,
-        "status": status_raw,
-        "status_parsed": status_parsed,
-        "raw": raw,
-    }
-
-
-def log_block(log, label: str, raw: bytes, parsed: dict) -> None:
-    log.write(f"{label} raw_hex={_hexdump(raw)} raw_ascii={_ascii_repr(raw)}\n")
-    status_tag = "none"
-    if parsed["status_parsed"]:
-        status_tag = f"{parsed['status_parsed']['mode']}:{parsed['status_parsed']['code']}"
-    log.write(
-        f"{label} ack={parsed['ack']} data_hex={_hexdump(parsed['data'])} "
-        f"status_hex={_hexdump(parsed['status'])} status={status_tag}\n"
-    )
 
 
 def main() -> int:
@@ -180,17 +89,11 @@ def main() -> int:
 
         for cmd, label in cmds:
             os.write(fd, cmd.encode("ascii"))
-            raw = read_response(fd, overall_timeout=args.timeout, quiet_timeout=args.quiet)
-            parsed = parse_response(raw)
-            status_tag = "none"
-            if parsed["status_parsed"]:
-                status_tag = f"{parsed['status_parsed']['mode']}:{parsed['status_parsed']['code']}"
-            print(
-                f"{label}: ack={parsed['ack']} data_hex={_hexdump(parsed['data'])} "
-                f"status_hex={_hexdump(parsed['status'])} status={status_tag}"
-            )
+            raw = core.read_response(fd, overall_timeout=args.timeout, quiet_timeout=args.quiet)
+            parsed = core.parse_response(raw)
+            print(f"{label}: {core.format_response_summary(parsed)}")
             if log:
-                log_block(log, label, raw, parsed)
+                core.log_block(log, label, raw, parsed)
                 log.flush()
             time.sleep(0.2)
     finally:

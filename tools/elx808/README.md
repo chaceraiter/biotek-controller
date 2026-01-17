@@ -82,3 +82,44 @@ Self-test (movement):
 ```bash
 python3 tools/elx808/protocol_probe.py --port /dev/cu.usbserial-XXXX --self-test --confirm-self-test --log /tmp/elx808-selftest.log
 ```
+
+## `control_stack.py`
+
+Minimal control stack (transport + protocol wrapper). Read-only commands are
+safe by default; state-changing commands require explicit confirmation flags.
+
+Status:
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX status
+```
+
+Version (log to file):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX version --log /tmp/elx808-version.log
+```
+
+Set status format (state-changing):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX set-status elx --confirm-write
+```
+
+Self-test (movement):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX self-test --confirm-movement --log /tmp/elx808-selftest.log
+```
+
+Sequence (set status format, then status + version in one session):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX sequence --confirm-write
+```
+
+Scaffolded read commands (movement + write + read gated):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX read-plate --confirm-write --confirm-movement --confirm-read
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX read-wells --well A1 --well B2 --confirm-write --confirm-movement --confirm-read
+```
+
+Advanced: override the read-wells payload directly (33 bytes):
+```bash
+python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX read-wells --payload-hex "01 01 01 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 30" --confirm-write --confirm-movement --confirm-read
+```

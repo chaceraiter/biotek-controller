@@ -11,11 +11,13 @@
 - KCjunior setup recommends host 9600 8N2 and keeping the EOT character at default.
 - Host is macOS/Unix; USB-serial adapter enumerates as `/dev/cu.usbserial-ABSCDEPH` (FT232R USB UART).
 - Protocol probe results: `o` returns ELx status `0000` (no error), `e` returns part `7340201  Version 3.15` with 312 status `000`.
+- Using the control stack, `n1` (set status to ELx) causes subsequent `o` and `e` responses to return ELx status `0000`.
 - `T` is acknowledged but does not trigger self-test; `*` self-test runs successfully without error.
 
 ## Recent changes
 - Added `tools/elx808/protocol_probe.py` (safe status/version probe + status parsing + `--set-status`).
 - Added `tools/elx808/adapter_probe.py` and fixed `tools/elx808/serial_capture.py` macOS speed handling.
+- Added `tools/elx808/control_stack.py` read scaffolding (`read-plate`, `read-wells`) with ELx framing helpers and explicit `--confirm-read` gating.
 - Documented Appendix B protocol details and successful self-test in `research/elx808/*`.
 - Converted EcoPlate and Gen5 PDFs into markdown + summaries under `docs/`.
 

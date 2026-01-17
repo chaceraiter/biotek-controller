@@ -1,925 +1,18435 @@
-# Gen5 COMPLETE UserGuide
+# Gen5 User Guide (Agilent BioTek)
 
+
+
+---
+
+Gen5TM & Gen5 Secure
+User's Guide
+Microplate Data Collection & Analysis Software
+
+
+
+
+BioTek(R) Instruments, Inc.
+July 2007
+(c) 2006-2007
+PN 5321001
+Revision D
+
+
+---
+
+                                                                                                     Contents | i
+
+
+
+
+Contents
+
+      Notices ................................................................................ vii
+      About this Guide ................................................................... viii
+
+Chapter 1: Initial Setup............................................................. 1
+      Set up Gen5......................................................................... 2
+      Set up Gen5 Secure .............................................................. 8
+      Set up Gen5 Reader Control................................................... 20
+      Connecting a Reader ............................................................. 21
+      Setting up the Clarity Luminometer......................................... 23
+      Setting up Preferences .......................................................... 24
+
+Chapter 2: Getting Started ........................................................ 27
+      Getting Started..................................................................... 28
+      Gen5's Workspace ................................................................ 30
+      About the Plate Workspace .................................................... 32
+      Introducing the Protocol Workspace ........................................ 33
+      Gen5's Wizard ...................................................................... 35
+      Buttons and Icons Guide........................................................ 36
+      About the Menu Tree............................................................. 38
+      Tips for KC4 Users ................................................................ 39
+      Getting Technical Assistance .................................................. 41
+
+Chapter 3: Essential Concepts ................................................... 43
+      Essential Concepts ................................................................ 44
+      Experiment vs. Protocol ......................................................... 45
+      About File Storage ................................................................ 47
+      Best Practices....................................................................... 48
+
+Chapter 4: Assay Examples ....................................................... 51
+      Sample Protocols and Experiments ......................................... 52
+      How do I set up my assay? .................................................... 54
+      Quantitative ELISA Example ................................................... 55
+      Subtracting Blank Plate Reads ................................................ 58
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+ii|
+
+
+
+      Pathlength Correction Example ............................................... 60
+      Dual Wavelength Absorbance Endpoint .................................... 62
+      Basic Spectrum Analysis ........................................................ 64
+      Protein Quantification: Endpoint Absorbance ............................ 66
+      Basic Fluorescence Assay Example .......................................... 69
+      Kinetic Fluorescence Assay Example........................................ 71
+      Fluorescence Assay with Injection........................................... 74
+      Fluorescence Area Scan Example ............................................ 77
+      Fluorescence Polarization Example .......................................... 79
+      Basic Luminescence Glow Assay Example ................................ 81
+      Luminescence Flash Assay with Injection ................................. 82
+      Max Binding Determination/Competitive Assay ......................... 83
+      Toxicity/Cytotoxicity Assay .................................................... 86
+      Endotoxin Test ..................................................................... 89
+      ss-Galactosidase .................................................................... 92
+      Dispensing Reagent .............................................................. 94
+      Fast Kinetics with Injection for Absorbance .............................. 97
+
+Chapter 5: Basic Tasks .............................................................. 99
+      Quick Read .......................................................................... 100
+      How to Create a Standard Curve............................................. 101
+      Viewing Results .................................................................... 102
+      Printing Results .................................................................... 104
+      Quick Export ........................................................................ 105
+      Quick Output Options ............................................................ 106
+      Reader System Test .............................................................. 108
+      Setting up an Experiment ...................................................... 109
+      Read a Plate......................................................................... 110
+      Acquiring Data ..................................................................... 110
+
+Chapter 6: Designing a Protocol................................................ 111
+      Design a Protocol.................................................................. 112
+      Defining the Reading Procedure .............................................. 113
+      Modify a Protocol .................................................................. 114
+      Defining the Plate Layout ....................................................... 115
+
+
+                                                                                  BioTek Instruments, Inc.
+
+
+---
+
+                                                                                              Contents | iii
+
+
+
+      Setting up Data Reduction ..................................................... 116
+      Customizing Data Views, Reports, and Exports ......................... 117
+      Reporting Results ................................................................. 118
+      Using the Default Protocol...................................................... 119
+      Default Protocol Setup........................................................... 120
+
+Chapter 7: Defining the Procedure ............................................ 121
+      Defining the Reading Parameters ............................................ 122
+      Validate the Procedure .......................................................... 125
+      Read Step............................................................................ 127
+      Procedure Steps: Reading-Related Activities ............................ 138
+
+Chapter 8 : Fluorescence and Luminescence ............................. 149
+      Fluorescence Analysis............................................................ 150
+      Luminescence Analysis .......................................................... 153
+      Time-Resolved Fluorescence Analysis ...................................... 154
+      Fluorescence Polarization ....................................................... 155
+      Filter Set Options.................................................................. 156
+      PMT Sensitivity ..................................................................... 158
+      Measurement Options ........................................................... 162
+      Synchronized Modes ............................................................. 164
+      Troubleshooting Fluorescence/Luminescence............................ 169
+      Filters and Mirrors................................................................. 173
+      Multi-Detection/Multi-Mode Protocols ...................................... 182
+      Features and Restrictions of Kinetic Multi-Detection Protocols..... 183
+
+Chapter 9: Kinetic Analysis ....................................................... 185
+      How to set up a Kinetic Analysis ............................................. 186
+      Kinetic Minimum Interval ....................................................... 188
+      Discontinuous Kinetic Procedure ............................................. 189
+      Well Zoom ........................................................................... 191
+      Well Analysis Calculation Types .............................................. 196
+
+Chapter 10: Scanning Analysis Options ..................................... 199
+      Area Scan ............................................................................ 200
+      Linear Scan.......................................................................... 202
+
+
+
+Gen5 User Guide
+
+
+---
+
+iv|
+
+
+
+      Spectrum Scan ..................................................................... 203
+
+Chapter 11: Multi-Plate Protocols ............................................. 205
+      Designing a Multi-Plate Protocol.............................................. 206
+      About Multi-Plate Protocols .................................................... 207
+      Running a Multi-Plate Protocol ................................................ 209
+      Calibrator-Plate Protocols....................................................... 212
+      Multi-Plate Assay Protocols .................................................... 215
+      Processing a Batch of Samples ............................................... 218
+
+Chapter 12: Preparing Plates .................................................... 219
+      Defining the Plate Layout ....................................................... 221
+      Assigning Well IDs ................................................................ 223
+      Custom Plate Layout ............................................................. 229
+      Plate Information.................................................................. 230
+      Runtime Prompts .................................................................. 231
+      Assigning Sample IDs............................................................ 235
+
+Chapter 13: Data Reduction Options ......................................... 245
+      Setting up Data Reduction ..................................................... 246
+      Define Transformations ......................................................... 249
+      Plotting a Curve.................................................................... 261
+      Curve Fit ............................................................................. 264
+      Multiple Curves..................................................................... 282
+      Troubleshooting Curve Fits..................................................... 288
+      Kinetic Analysis Options......................................................... 289
+      Define Cutoffs ...................................................................... 296
+      Validation ............................................................................ 301
+      Fluorescence Polarization ....................................................... 307
+
+Chapter 14: Viewing Results ..................................................... 309
+      Viewing Results .................................................................... 310
+      Data Views .......................................................................... 315
+      Data Set Naming Convention ................................................. 316
+      Symbols and Special Notations ............................................... 317
+      Data Points Reference ........................................................... 319
+
+
+
+                                                                                    BioTek Instruments, Inc.
+
+
+---
+
+                                                                                                Contents | v
+
+
+
+      Gen5's Tables....................................................................... 320
+      Modify/Customize Views/Data ................................................ 323
+
+Chapter 15: Reporting Results .................................................. 333
+      Building Reports ................................................................... 334
+      How to create and customize a report ..................................... 336
+      Customizing Reports ............................................................. 338
+      Reporting Well Analysis Results .............................................. 340
+      Edit Report Items ................................................................. 344
+      Fields and Field Groups.......................................................... 346
+
+Chapter 16: Exporting Results .................................................. 351
+      Exporting Results.................................................................. 352
+      Quick Export ........................................................................ 354
+      Right-Click Menu Options ....................................................... 356
+      Export to File (File Export Builder) .......................................... 358
+      Power Export........................................................................ 362
+
+Chapter 17: Managing Files ....................................................... 369
+      Managing Files ..................................................................... 370
+      File Storage ......................................................................... 371
+      Database Management .......................................................... 372
+      Database Errors.................................................................... 379
+
+Chapter 18: Security ................................................................. 383
+      Security............................................................................... 384
+      Changing Your Password........................................................ 385
+      Login/Password Controls........................................................ 386
+      FDA's 21 CFR Part 11 ............................................................ 388
+      Signing Protocols .................................................................. 389
+      Audit Trail............................................................................ 391
+      User Accounts ...................................................................... 398
+
+Chapter 19: Reader Control....................................................... 405
+      When you have Two Readers ................................................. 406
+      Reader Configuration ............................................................ 408
+      Controlling the Clarity ........................................................... 409
+
+
+Gen5 User Guide
+
+
+---
+
+vi|
+
+
+
+      Reader Settings .................................................................... 413
+      Reader Control Panel............................................................. 417
+      Testing the Reader................................................................ 423
+
+Chapter 20: System Management.............................................. 425
+      System Requirements ........................................................... 426
+      Gen5's System Administrator ................................................. 427
+      Changing Your Password........................................................ 428
+      Changing Your Startup Preferences ......................................... 429
+      Customize the Toolbar........................................................... 430
+      Plate Types Database ............................................................ 431
+
+Chapter 21: Troubleshooting..................................................... 435
+      Troubleshooting.................................................................... 436
+      Communication Errors: Reader to Computer ............................ 437
+      Error Messages..................................................................... 438
+      Calculation Warnings............................................................. 439
+      Restoring Optimal Performance .............................................. 442
+      System Administrator's Password ........................................... 442
+
+Index ........................................................................................ 443
+
+
+
+
+                                                                                    BioTek Instruments, Inc.
+
+
+---
+
+                                                                                 Notices | vii
+
+
+
+
+Notices
+
+          BioTek Instruments, Inc.
+          Highland Park, P.O. Box 998
+          Winooski, Vermont 05404-0998 USA
+
+
+      All Rights Reserved
+              (c) 2007, BioTek(R) Instruments, Incorporated. No part of this publication may be
+              reproduced, transcribed, or transmitted in any form, or by any means electronic
+              or mechanical, including photocopying and recording, for any purpose other
+              than the purchaser's use without written permission of BioTek Instruments,
+              Inc.
+
+
+
+      Trademarks
+              BioTek(R) is a registered trademark, and Gen5TM, SynergyTM 4, SynTMrgy"! 2,
+              SynergyTM HT, and other instrument logos are trademarks of BioTek
+              Instruments, Inc. Microsoft(R), Windows(R), and the Windows logo are registered
+              trademarks of Microsoft Corporation in the United States and other countries.
+              All other trademarks are the property of their respective holders.
+
+
+
+      Restrictions and Liabilities
+              Information in this document is subject to change and does not represent a
+              commitment by BioTek Instruments, Inc. Changes made to the information in
+              this document will be incorporated in new editions of the publication. No
+              responsibility is assumed by BioTek for the use or reliability of software or
+              equipment that is not supplied by BioTek or its affiliated dealers.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+viii|
+
+
+
+
+About this Guide
+         This user guide is intended for licensed users of Gen5TM and Gen5TM Secure, BioTek's
+         microplate data collection and analysis software.
+
+
+Document Conventions
+
+             Special or important information uses this format to call your attention
+               to it.
+
+
+
+             Tips or suggestions, for example, to improve performance, are shown in this
+           manner, following a light bulb graphic.
+
+
+
+        Navigation instructions for the current topic are presented in this format
+
+
+
+
+Document History
+
+             Revision     Date             Changes
+                 A        May 2006         Initial Release
+                 B        Sept 2006        New features related to the SynergyTM 2 reader and
+                                           Filter Wheel Library
+                 C        March 2007       Added description of new features and
+                                           enhancements released in Gen5 version 1.02
+                 D        June 2007        New features related to the SynergyTM 4 reader and
+                                           enhancements released in Gen5 version 1.04
+
+
+
+
+                                                                         BioTek Instruments, Inc.
+
+
+---
+
+Chapter 1
+
+
+
+
+Initial Setup
+
+     This section provides instructions and suggestions for setting up
+     Gen5 to perform most efficiently and effectively in your lab.
+
+
+ Setting up Gen5 ...................................................................... 2
+ Setting up Gen5 Secure ............................................................ 8
+ Setting up Gen5 Reader Control................................................. 20
+ Connecting a Reader ................................................................ 21
+ Setting up Preferences.............................................................. 24
+
+
+---
+
+2| Chapter 1: Initial Setup
+
+
+
+
+Set up Gen5
+
+            For Gen5TM Only
+
+         Gen5TM fulfills the reader control and analytical needs for a wide range of laboratory
+         settings. The degree to which you follow the recommendations provided here depends
+         on the needs of your organization.
+
+   Recommended tasks to perform:
+              1.    Designate a System Administrator
+              2.    Install Gen5 on the Administrator's computer
+
+            Installation instructions are included in the Getting Started Guide
+              shipped with the CD.
+
+              3.    Change the System Administrator's Password (see below)
+              4.    Determine the optimal way to store Gen5's protocol and experiment files:
+                    File Storage (page 4)
+                     Organize the Database (page 10) or your Windows(R) file structure
+              5.    Install Gen5 for other users and Connect a Reader (page 21) to each
+                    computer
+              6.    If applicable, direct each user's Database Configuration (page 12) to point to
+                    the correct shared database
+              7.    Set User Preferences (page 24)
+              8.    Learn how to use Gen5:0.
+                     Check out the tutorials (animated demos) in the Help system: Select
+                        Help>Tutorials
+                     Alternatively, begin by performing the Learning Exercises in the Getting
+                       Started Guide.
+
+
+
+
+                                                                          BioTek Instruments, Inc.
+
+
+---
+
+                                                                                Set up Gen5 | 3
+
+
+
+Gen5's System Administrator
+    For all levels of Gen5 except Gen5 Secure
+        It is necessary to login as the System Administrator to change User Permissions and
+        Database Configuration, and to access any features which are denied as Users
+        Permissions
+
+  How to change the System Administrator's password:
+
+          This function is only available to the System Administrator. You
+            must login, System> Administrator LogIn, as the Administrator to
+            access these controls
+
+             1.   Select System> User Setup, and select the Administrator tab
+             2.   Enter the current password in the Current Password field. Gen5 ships with
+                  the password set to "admin."
+             3.   Enter the new password in both the New and Confirm password fields
+             4.   Click OK.0
+
+  How to maintain Users Permissions
+    Except in Gen5 Secure, access to Gen5's functions, like reading a plate, modifying a
+    protocol, and masking values, is defined equally for all users except the System
+    Administrator, who has all "permissions." Learn more on page 5.
+
+  Learn about Gen5's Databases
+        You can opt to save Gen5's protocol and experiment files in Gen5 SharedDB:
+           About Gen5 Databases (refer to the Managing Files chapter)
+           Organize Your Database Files (page 10)
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+4| Chapter 1: Initial Setup
+
+
+
+File Storage
+     System> Preferences> File Storage Mode
+         Use this control to select a method for storing protocol and experiment files.
+
+            Attention Gen5 Secure users: To ensure 21 CFR Part 11 compliance
+              use the Gen5 Database for file storage
+
+   About File Storage
+         Gen5 provides two methods for storing protocol and experiment files. You can use the
+         secure, shared-access database provided with Gen5, which is required for compliance
+         with the FDA's 21 CFR Part 11 regulation on electronic records submission.
+         Alternatively, you can use the file system provided with the Windows(R) operating
+         system on a local PC or network (LAN). If your organization is unconcerned with FDA
+         regulations, the choice is a matter of preference. However, one advantage to using the
+         Gen5 Database is its ability to recover from a system crash. New and modified files are
+         saved as Temporary Files in the database and can be used to recover information that
+         wasn't saved before a system failure.
+
+            ClarityTM Luminometer protocol files, with a .bpf extension, cannot be
+              stored in Gen5's shared database. They are typically stored in the
+              C:\Program Files\BioTek\Clarity\protocols folder.
+
+   How to
+             Select an option for storing Experiment and Protocol files:
+             Gen5 Database: all actions related to managing and maintaining files, like
+               File>Open, File>Save, Browse..., and so on, will occur in Gen5's SharedDB.
+             Windows File System: Gen5 will not control the management of files. Actions
+               related to managing and manipulating files will be determined by the
+               Windows operating system, e.g. you can use Windows(R) Explorer. Generally
+               during file management activities like File>Open, Windows begins at the last
+               directory and folder used.
+
+            AutoSave Feature: Gen5 offers this feature to give you additional
+              control over the storage of saved files.
+
+
+
+
+                                                                           BioTek Instruments, Inc.
+
+
+---
+
+                                                                              Set up Gen5 | 5
+
+
+
+User Setup
+
+          For all levels of Gen5 except Gen5 Secure
+
+    System> User Setup
+
+Gen5 User Permissions
+        Only the Gen5 Secure product level offers the multiple-user login and password
+        controls required to comply with the FDA's electronic-records submission directive.
+        This page describes the more limited security options provided in other Gen5
+        products.
+
+  About Gen5 User Accounts
+    There are only two types of Users in Gen5: Administrator and User, i.e. System
+    Administrator and non-administrator. Neither account be deleted
+
+       You Can:                         You Cannot:
+       Change the                       Login as a User; only the System
+       Administrator's password         Administrator requires login
+       Change the Permissions           Change the Permissions for
+       for User                         Administrator: all rights and privileges
+                                        are already given
+       Maintain/store Gen5 files        Keep track of which user is responsible
+       in a secure database             for Gen5 activities
+       Select a Startup option          Turn on/off Audit Trail notification.
+       and Protocol and                 Events for which users are invited to add
+       Experiment Folders for           comments to the change log/audit trail
+       users                            are fixed by Gen5
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+6| Chapter 1: Initial Setup
+
+
+
+
+Permissions
+
+   Prerequisite:
+         To change the User Permissions, you must login, System>Administrator LogIn, as
+         the System Administrator
+
+            Function
+
+            Add a New Plate: Access to menu options and toolbar buttons for Adding
+            one or multiple plates to an experiment
+
+            Delete a plate: Access to Plate menu option to Delete, i.e. remove the
+            plate information and all data associated with the plate (if any) from an
+            experiment
+
+            Mask/Unmask values: Access to Mask button in the Plate View to mask
+            the values for selected wells. Masked wells are ignored in data reduction and
+            curve plotting
+
+            Edit values: Access to Edit button in the Plate View to change the values of
+            selected wells
+
+            Re-read plate: Access to Read button after plate has been read to
+            overwrite the current measurement results with newly acquired
+            measurements
+
+            Simulate Read: Access to Simulate option of the Plate Read dialog to let
+            Gen5 simulate a reading instead of actually reading the plate. (Useful for
+            Gen5 training/tutorials.)
+
+            Read from File (import): Access to Read From File option of the Plate
+            Reading dialog to acquire/import reading data from a text file
+
+            Enter Manually (raw data): Access to Enter Manually option of the Plate
+            Reading dialog to manually enter (type in) reading data instead of actually
+            reading a plate
+
+
+   System Controls
+         This table describes the capability each Permission gives users.
+
+            Function
+
+            Manage and Maintain Systems: This switch gives or denies access to the
+            next five items. You can override it by individually assigning access to the
+            permissions
+
+            Edit Default Protocol: Access to define or modify the Default Protocol
+            Settings
+
+            Edit file storage mode: Access to menu option System>Preferences>File
+            Storage to alter the option: database or Windows(R) file system
+
+
+
+
+                                                                            BioTek Instruments, Inc.
+
+
+---
+
+                                                                             Set up Gen5 | 7
+
+
+
+
+          Function
+
+          Edit Read from File options:
+
+          Manage and Maintain Devices: This switch gives or denies access to the
+          next four related permissions. You can override it by individually assigning
+          access to them
+
+          Define Test Plates: Access to Diagnostics options to set up and modify the
+          Universal Test Plate records used to conduct testing
+
+          Delete Diagnostic Test History: Ability to delete test records. All users
+          can view the test history, only users with this permission can delete the
+          records
+
+          Manage and Maintain File Storage: This switch gives or denies access to
+          the next seven related permissions. You can override it by individually
+          assigning access to them. They are only applicable when File Storage "uses
+          the SharedDB"
+
+          Create folder in Database: Ability to create a new folder while maintaining
+          database files and when saving protocol and experiment files. Users denied
+          this function are limited to saving files in existing database folders
+
+          Delete/Overwrite folder in Database: Ability to delete or overwrite
+          (Save As) folders and files from/in the database
+
+          Export file from Database: When maintaining database files, ability to use
+          the right-click menu to Export to Disk
+
+          Rename folder/file in Database: Ability to rename database files and
+          folders in the database
+
+          Move folder/file in Database: Ability to relocate folders and files within
+          the database
+
+          Import file to Database: Ability to import, paste from clipboard, or drag
+          and drop files from another location
+
+          View hidden files and folders in Database: Ability to hide files, to see
+          hidden files, and to reveal hidden files
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+8| Chapter 1: Initial Setup
+
+
+
+
+Set up Gen5 Secure
+
+            For Gen5TM Secure Only
+
+         Follow these procedures to set up Gen5 Secure:
+              1.    Designate a System Administrator
+              2.    Complete the System Administrator's To Do List (see below)
+              3.    Organize the Database (page 10)
+              4.    Review/modify Signature Reasons and other security controls (see Gen5's
+                    Help)
+              5.    Define certain Preferences by using Gen5's Default Protocol. Each shared
+                    database has one Default Protocol which defines the initial settings for all
+                    newly-created protocols. (page 24)
+              6.    Set up each user's Database Configuration to point to the correct shared
+                    database, if applicable. (page 13)
+              7.    Connect a reader to each user's computer (page 21)
+              8.    Advise users to change their passwords (see Gen5's Help)
+              9.    Encourage users to watch the Help>Tutorials and run through the Learning
+                    Exercises provided in the Getting Started Guide.0
+
+
+System Administrator's To Do List
+            Also see information about the FDA's Requirements on the next page.
+
+   Initial Setup Tasks
+              1.    Make sure all designated computers (PCs) and BioTek readers meet the
+                    System Requirements
+              2.    Install Gen5 Secure on one computer (PC)
+
+            Installation instructions are included in the Getting Started Guide
+              shipped with the CD.
+
+              3.    Start Gen5 and log in as the System Administrator
+              4.    Change the System Administrator's password (page 14)
+              5.    Copy the database: Shared.mdb to a secure network location (page 13)
+              6.    Test Database Configuration of the Shared.mdb on the network (page 13)
+              7.    Create/modify User Groups, as needed, and assign User Permissions to the
+                    Groups (page 15)
+              8.    Create new user accounts and assign the users to a Group
+
+
+                                                                           BioTek Instruments, Inc.
+
+
+---
+
+                                                                        Set up Gen5 Secure | 9
+
+
+
+             9.   Connect reader(s) to the PC and establish communication (page 21)
+            10. Repeat steps 2, 3, 6, and 8 for the remaining PCs0
+
+  Periodic/As Needed Tasks
+               Customize the security features to accommodate your organization's needs
+               Organize your database files
+               Educate users on regulatory requirements and Gen5 best practices
+               Establish and implement a procedure and schedule for record retention and
+                 archival
+               Review records, including any training/user-qualification records
+
+          Before modifying a user's account, make sure he/she is not logged into
+            the system. You can check the System Audit Trail to determine who is
+            currently logged in.
+
+
+FDA's System Administrator Requirements
+        The FDA's Electronic Signatures Rule (21 CFR Part 11) contains requirements that sites
+        must meet in order to be in compliance. The System Administrator should be
+        cognizant of the following:
+           Administrator: The site shall select an "Administrator" who will be the person
+             responsible for all high-level administration of the program. This person will
+             control access to the program by adding new users, structuring the individual
+             users authority levels, and reporting to management, as appropriate, on any
+             unauthorized use of the program.
+           Personnel Qualifications: Personnel who develop, maintain, or use electronic
+             records/electronic signatures shall have the education, training and experience
+             necessary to perform their assigned tasks.
+           Written Policies: There shall be written policies which hold individuals
+             accountable and responsible for action initiated under their electronic
+             signatures, in order to deter record and signature falsification. There shall be
+             written revision and change control procedures to ensure that the program is
+             administered in compliance with the FDA's requirements.
+           Record Archiving and Deletion: The site is responsible to ensure that
+             archiving or other file management techniques are suitable such that electronic
+             records generated by the system shall be accurate and readily retrievable.
+              Records may be removed by deleting the entire shared database or individual
+             files within the database. This action may be conducted by the Administrator
+             or by any Power User.
+           User Identity: Any person who will be authorized to use an electronic
+             signature will have their identity confirmed by the Administrator prior to
+             granting them program access. Only the genuine owner of the electronic
+
+
+Gen5 User Guide
+
+
+---
+
+10| Chapter 1: Initial Setup
+
+
+
+               signature is allowed to access the program through their ID/password
+               combination. System users should be informed that accessing the program
+               using someone else's login is a violation of the FDA rule.
+            Password Expiration/Recall: All passwords must be checked, recalled, or
+              revised at an interval appropriate with the security needs of the organization.
+              Personnel who no longer work at the establishment shall have their program
+              access capabilities deactivated in a timely manner.
+            Certification to FDA: The site must certify to FDA that the electronic
+              signatures utilized on records are intended to be as legally binding as
+              handwritten signatures, prior to or at the time of record submission to FDA.
+              The FDA rule should be consulted for details and method to be used.
+            Notification of Attempted Security Breaches: The software utilizes an error
+              log system to notify the Administrator of log-in failure incidents that exceed
+              the limits they have established. The administrator is responsible to
+              "immediately and urgently" notify the appropriate personnel at the site if the
+              activity appears to be an attempt to breach security.
+            Signature Representations: The administrator should be made aware that
+              while electronic signatures representations cannot be excised or added they can
+              be copied by screen copy techniques and pasted into other documents. These
+              modified documents cannot be re-saved in the secure program but may be
+              printed out as is.
+
+
+Organize Your Database Files
+
+           During regular installation, Gen5 Secure installs and enables the
+             shared database to store experiment and protocol files. All other
+             levels of Gen5 must elect to use the database at System>
+             Preferences> File Storage
+
+         All of your file management requirements can be fulfilled using Gen5's secure
+         databases. You'll be most satisfied with the final structure if you spend some time
+         planning it up-front. In a multiple-user environment, you can set up Gen5's database
+         on a shared-network drive (LAN) so multiple users can access the same protocol and
+         experiment files, including the Default Protocol.
+         Multiple Databases: You can create multiple copies of the clean, installed SharedDB,
+         renaming them with meaningful titles for use by various projects or teams or
+         researchers. Within each database you can set up a consistent file structure, e.g. specific
+         folders for specific types of Protocols and Experiments, or a different folder for each
+         user. The possibilities are endless.
+         Backups: Performing backups on a regular schedule is highly recommended to
+         preserve your data. And, Gen5 provides a tool to schedule backups to occur
+         periodically. See below.
+
+
+
+
+                                                                            BioTek Instruments, Inc.
+
+
+---
+
+                                                                          Set up Gen5 Secure | 11
+
+
+
+
+ File Management Recommendations
+           Put a copy of the SharedDB on a shared-network drive where all your Gen5
+             users can access it. Be sure to set each user's Database Configuration to point to
+             the correct location.
+           Before moving the SharedDB to a network location, make a copy of it to use as
+             a template for future use:
+                  1.   In the default SharedDB folder, highlight the original, right-click and
+                       select Copy
+                  2.   De-select the original (click elsewhere in the dialog), right-click and
+                       select Paste
+                  3.   Highlight the copy, right-click and select Rename
+                  4.   Give the copy a unique name, like SharedDB_original.mdb.0
+
+
+
+
+           Consider setting up shared databases for different projects or teams within
+             your organization. You can follow the steps defined above to create multiple
+             databases in the same folder (or directory), or you can move the unique
+             databases to a different network location/folder. Use Database Configuration
+             to point user's Gen5 sessions to the correct database.
+           Regularly archive and backup the database to preserve your records. There are
+             numerous ways to do this, so BioTek recommends following your
+             organization's existing policy for securing data. For example, if you put the
+             shared database on the network and your network is backed up every night,
+             this may be sufficient. You can use Gen5's Optimize and Backup Settings to
+             facilitate your data-protection policy.
+           Consider using Gen5's automatic Save feature to create a new, date-stamped
+             folder for storing experiment records. This is an especially good practice for
+             large labs with multiple users who run hundreds of plates per day. Gen5 will
+             keep all that data organized by date. Define this kind of file management
+             setting in the Default Protocol so it will apply to all newly-created protocols.
+           Gen5 handles multiple, simultaneous users performing database management
+             tasks by giving precedence to the user with the greater administrative rights.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+12| Chapter 1: Initial Setup
+
+
+
+
+File Storage
+     System> Preferences> File Storage Mode
+         Use this control to select a method for storing protocol and experiment files.
+
+           Attention Gen5 Secure users: To ensure 21 CFR Part 11 compliance
+             use the Gen5 Database for file storage
+
+   About File Storage
+         Gen5 provides two methods for storing protocol and experiment files. You can use the
+         secure, shared-access database provided with Gen5, which is required for compliance
+         with the FDA's 21 CFR Part 11 regulation on electronic records submission.
+         Alternatively, you can use the file system provided with the Windows(R) operating
+         system on a local PC or network (LAN). If your organization is unconcerned with FDA
+         regulations, the choice is a matter of preference. However, one advantage to using the
+         Gen5 Database is its ability to recover from a system crash. New and modified files are
+         saved as Temporary Files in the database and can be used to recover information that
+         wasn't saved before a system failure.
+
+           ClarityTM Luminometer protocol files, with a .bpf extension, cannot be
+             stored in Gen5's shared database. They are typically stored in the
+             C:\Program Files\BioTek\Clarity\protocols folder.
+
+   How to
+            Select an option for storing Experiment and Protocol files:
+            Gen5 Database: all actions related to managing and maintaining files, like
+              File>Open, File>Save, Browse..., and so on, will occur in Gen5's SharedDB.
+              Learn About Gen5's Databases
+            Windows File System: Gen5 will not control the management of files. Actions
+              related to managing and manipulating files will be determined by the
+              Windows operating system, e.g. you can use Windows(R) Explorer. Generally
+              during file management activities like File>Open, Windows begins at the last
+              directory and folder used.
+
+           AutoSave Feature: Gen5 offers this feature to give you additional
+             control over the storage of saved files.
+
+
+
+
+                                                                          BioTek Instruments, Inc.
+
+
+---
+
+                                                                        Set up Gen5 Secure | 13
+
+
+
+
+Database Configuration
+    System> Database Configuration
+
+  Prerequisite
+         Some features of this dialog require System Administrator privileges.
+
+
+         When Gen5 is installed, there are two primary databases, a shared and a local
+         database. They are named SharedDB.mdb and LocalDB.mdb respectively. The
+         LocalDB cannot be moved or renamed. The SharedDB can be moved and renamed. All
+         operations affecting them take place using their respective tabs, except the upgrade
+         utility. Learn more: About Gen5's Databases
+
+  Source
+
+            Gen5 displays the current location of the database.
+            LocalDB: You cannot move or rename the LocalDB database, thus the 3-dot
+              button is disabled. If necessary to see the full pathname of its location, you can
+              click inside the text field and scroll to the right.
+            SharedDB: Click the 3-dot button to view the current location of the database.
+              You can move, rename or copy the SharedDB database.
+
+  Test
+
+                         Use the Test button to check the connection to the Gen5 database.
+            Potential error messages are referenced in the Troubleshooting section above.
+
+
+
+
+Move/Copy Database to Network
+    System> Database Configuration
+
+           Gen5 Secure installs and enables the databases during regular
+             installation. All other levels of Gen5 must elect to use the database to
+             store protocol and experiment files at System>Preferences>File
+             Storage
+
+         In a multiple-user environment, you can set up Gen5's database on a shared network
+         drive so multiple users can access the same protocol and experiment files. This is a
+         recommended step for Gen5 Secure System Administrators. You can also set up
+         multiple databases, one for each user, for example. During a Gen5 session, access is
+         provided to only one database at a time.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+14| Chapter 1: Initial Setup
+
+
+
+   How to:
+              1.   Select System> Database Management> Database Configuration
+
+              2.               Select the SharedDB tab
+
+              3.       Next to the Source field, click the 3-dot button
+
+              4.                  In the Open dialog, highlight and right-click the file
+                   SharedDB.mdb, and select Copy or Cut: use cut to move and copy to copy
+                   (see File Management Recommendations below)
+                   Note: SharedDB is the installed/original name for the shared database.
+                   Since you can change the name, it's possible it has already been changed.
+              5.   Use the browse tools to navigate to the desired location in the Look in field
+              6.   When the correct location is selected, right-click in the window and select
+                   Paste
+              7.   Click the Open button to save and close the window and return to the Gen5
+                   Database Configuration dialog
+              8.   Shut down and restart Gen5 to make the changes take effect.0
+
+           Important: if you're moving the Shared DB to a network drive you
+             may want to consider Disabling Write Caching. Consult your IT
+             department or Microsoft's knowledge base.
+
+
+Changing the System Administrator's Password
+
+           For Gen5TM Secure Only
+
+     System> Security> Users
+         BioTek recommends changing the System Administrator's password immediately
+         following Gen5 installation to ensure a secure operating environment.
+         To change the password:
+              1.   Login as the System Administrator, if you haven't already done so:
+              2.   Select System> Login/Logout
+              3.   Set the User to Administrator
+              4.   Enter the default password: admin
+              5.   Select System> Security> Users
+              6.   Double click the System Administrator user (to Edit the record)
+              7.   Define and confirm the new password.0
+
+           Important: Do not forget the Administrator's password. If you do,
+             you'll have to reinstall Gen5.
+
+
+                                                                          BioTek Instruments, Inc.
+
+
+---
+
+                                                                       Set up Gen5 Secure | 15
+
+
+
+
+About User Accounts
+
+          For Gen5TM Secure Only
+
+    System> Security> Users
+
+  Prerequisite
+        This function is only available to the System Administrator.
+
+  How to Create, Modify or Delete User Accounts
+        Only an Administrator can add, modify, or delete users. Except for the Administrator,
+        any user account can be changed or deleted:
+
+                        Click New to set up a new user
+
+                       (Double-click or) Highlight a user and click Edit to modify its
+               name, password, or Group assignment
+           Highlight a user and click Delete to remove the user account
+
+
+Creating/Maintaining User Accounts
+
+          For Gen5TM Secure Only
+
+    System> Security> Users
+
+  Prerequisite
+        Most options for user accounts are only available to the System Administrator. Non-
+        administrators are limited to changing their own password and selecting a Startup
+        Action and Protocol Folder.
+
+  User ID
+        Enter a unique ID using 1 to 16 alphanumeric characters. The user will enter or select
+        this ID when logging into Gen5 and when signing files.
+
+  Full Name
+        Enter the user's name. This name will be associated with events logged by this user's
+        actions and with the digital signature applied by this user.
+
+  Group
+        Choose a Group membership to assign access rights and permissions to the user. Users
+        receive the rights assigned to the Group.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+16| Chapter 1: Initial Setup
+
+
+
+   Status
+         The checkbox shows whether or not the user's account is currently locked. The System
+         Administrator can lock or unlock the account. When a user's account is locked, the
+         user cannot log into Gen5 and cannot sign files. A user's account may become locked
+         due to one of three events:
+                Intentional lock by the Administrator through this dialog
+                Automatic lock if the user exceeded the number of successive failed login
+                  attempts
+                Automatic lock if the user's password expired
+
+            Important: Unlocking a user's account following an automatic lock
+              resets its counter or clock. The reset is specific to the reason for the
+              lockout: when it is caused by password expiration, the password
+              expiration clock is reset and when it is caused by failed logins, the
+              user's history of "successive failed login attempts" is reset to 0.
+
+         When lock out occurs due to an expired password, unlocking the account allows the
+         user to login to Gen5 with the same password, giving them a chance to change it.
+         Alternatively, as system administrator, you can simply change the password yourself
+         (which will by default unlock the account) and tell the user to login with the password
+         you have assigned him/her.
+
+   Startup Action
+         Use the drop-down to select the preferred method for starting Gen5:
+                Startup Window is the default setting, it offers several options including
+                  creating a new item or opening a recently used item
+                Create new experiment opens Gen5 with the Protocol selection dialog
+                  open, as if the user had selected File>New Experiment
+                Start at main menu opens Gen5 showing the File, System and Help menus
+                  only. Since neither a protocol nor experiment is open, the workspace is
+                  blank.
+
+   Protocol and Experiment Folders
+         Browse to or enter the full path and directory to define the folder in which the current
+         user will typically store protocol and experiment files. If a folder is not specified, Gen5
+         will default to the most recently accessed folder.
+
+   Password
+         Assign a password for the user to enter the first time he/she logs in to Gen5. Instruct
+         users to change their password after the first login using the Password you've
+         assigned. Users can only change their own password. System Administrators can
+         change any user's password.
+
+
+
+
+                                                                            BioTek Instruments, Inc.
+
+
+---
+
+                                                                      Set up Gen5 Secure | 17
+
+
+
+Login/Password Controls
+
+          For Gen5TM Secure Only
+
+     System> Security> Login
+
+Prerequisite
+        Only the System Administrator can access these controls. You must login:
+        System>Login/Logout, as the Administrator to change the settings.
+
+          Important: The default settings shipped with Gen5 Secure, and
+            shown in the screenshot below, comply with the FDA's 21 CFR Part 11
+            requirements for controls for identification codes/passwords.
+
+Login
+           Lock user account after: Specify the number of successive failed login attempts
+             a user may make before being locked out of Gen5. This feature does not apply
+             to System Administrator accounts and only a System Administrator can
+             reinstate a locked out account. Valid entry range: 2-10. When this feature is
+             unchecked, users login attempts are unlimited. Compliance with 21 CFR Part
+             11 requires setting a limit for failed login attempts.
+           Lock session after: Specify the number of minutes that a Gen5 session can be
+             idle before it is locked and requires successful user login to reactivate. A
+             session is considered idle when there is no keyboard or mouse activity and
+             Gen5 is not controlling a reader activity. Valid entry range: 1-1440 minutes.
+             Compliance with 21 CFR Part 11 requires setting an idle-time limit.
+           Force user to type ID: apply this control if your security rules require users to
+             enter their ID at login and to apply their Signature. When this feature is
+             unchecked, the last user's ID is displayed in the login and signature screens and
+             users can select an ID from a drop-down list of users. This is not a requirement
+             for compliance with 21 CFR Part 11.
+
+Password
+           Minimum password length: Specify the minimum number of alphanumeric
+             characters required for a valid password. Valid entry range: 2-10 characters.
+           Password expiration: Specify the number of days a password can be used
+             before users are required to change it. When users let their password expire
+             without changing it, their accounts are locked out and only a System
+             Administrator can reinstate a locked out account. Valid entry range: 1-10000
+             days. If this feature is unchecked passwords do not expire. Compliance with 21
+             CFR Part 11 requires an expiration period.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+18| Chapter 1: Initial Setup
+
+
+
+
+           Lock out: when a user's password has expired, the system administrator has two
+           choices:
+                    manually remove the Locked out flag: this resets the password
+                      expiration period allowing the user to login using his/her current
+                      password.
+                    enter a new password for the user (which unlocks the account) and tell
+                      the user to login with the password you have assigned him/her. Advise
+                      the user to change the password after logging in.
+            Advise user: If password expiration is set, specify the number of days before
+              their password expires to alert users to change their password. Valid entry
+              range: 1-30 days, but cannot exceed the number of days to Password
+              Expiration.
+            Password reuse: Specify the number of passwords Gen5 will remember for
+              each user's account to prevent a recently used password from being reused.
+              Valid entry range: 2-20.
+
+
+About User Groups
+
+           For Gen5TM Secure Only
+
+     System> Security> Groups
+
+   Prerequisite
+         This function is only available to the System Administrator.
+         Gen5 Secure uses Groups to manage the rights or permissions granted to users. When
+         creating (or maintaining) a group, you define the level of access and the controls
+         available to certain types of users, and then assign actual users to the groups. Gen5
+         ships with three groups: Administrator, Power User, and Standard User.
+         The System Administrator and Power User groups are given access rights to all
+         functions. The Administrator's rights cannot be changed, and include additional rights
+         to manage user accounts that are not extended to Power Users. When Gen5 Secure is
+         installed, the Standard User is limited to the following permissions. The System
+         Administrator can change these controls as needed:
+                Quick Read/Use Default Protocol
+                Add a New Plate
+                Create/Edit Sample IDs
+                Edit Plate Information
+                Edit Report Builder
+                Create folder in database
+
+
+                                                                        BioTek Instruments, Inc.
+
+
+---
+
+                                                                       Set up Gen5 Secure | 19
+
+
+
+  How to create new and modify existing groups:
+        Only a System Administrator can add, modify, or delete groups. Except for the
+        Administrator group, any group can be changed or deleted, and any group can be
+        renamed.
+
+                           Click New to set up a new group
+
+                           Highlight a group and click Edit to modify its name and
+               permissions
+
+                         Highlight a group and click Delete to remove it as an option. First
+               you must reassign any users to another group. You cannot delete a group with
+               users assigned to it.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+20| Chapter 1: Initial Setup
+
+
+
+
+Set up Gen5 Reader Control
+
+           For Gen5TM Reader Control Only
+
+         Recommended tasks to perform:
+              1.   Install Gen5 on the computer
+
+           Installation instructions are included in the Getting Started Guide
+             shipped with the CD.
+
+              2.   Determine the optimal way to store Gen5's protocol and experiment files:
+                   File Storage (page 4)
+              3.   Connect a Reader to the computer (page 21)
+              4.   Set User Preferences (page 24)
+              5.   Learn how to use Gen5: 0
+                    Watch the online demos, select Help>Tutorials
+                    Alternatively, begin by performing the Learning Exercises in the Getting
+                      Started Guide.
+
+
+
+
+                                                                       BioTek Instruments, Inc.
+
+
+---
+
+                                                                       Connecting a Reader | 21
+
+
+
+
+Connecting a Reader
+    System> Reader Configuration
+        After following the Operator's Manual instructions for attaching the reader to the
+        computer, you must tell Gen5 what type of reader it is and which communications port
+        (Com Port) it is plugged into. Gen5 and Gen5 Secure allow up to two readers to be
+        assigned at a time.
+
+          Special note for Clarity users: Configuration parameters and port
+            settings can only be defined through the Clarity PC software: Follow
+            instructions on page 23.
+
+             1.   Turn on the reader
+             2.   From the menu, select System> Reader Configuration
+
+             3.                Click the Add button to define the Reader Settings
+
+             4.      Use the drop-down list to select the Reader Type
+             5.   Except for the Clarity (see page 23), in the Com Port text field, enter the
+                  number of the communications port.
+             6.   Retain the default Baud Rate.
+             7.   Click Test Comm. Gen5 will attempt to communicate with the reader.
+             8.   After you receive a passing message, "The reader is communicating," click
+                  OK and then click Close at Reader Configuration. If you receive any other
+                  message look for a remedy in the Troubleshooting section of this guide.0
+        That's it! Gen5 captures the information it needs from the reader itself, including probe
+        size, wavelength and bandwidth capability, and any other applicable information.
+
+  Instrument-Specific Information
+           SynergyTM HT: For this multi-detection reader, Gen5 must obtain the
+             fluorescence/luminescence filter sets. BioTek sets the reader's on-board
+             software with the ordered configuration before shipping the reader. Gen5 will
+             capture the stored information when it initiates communication with the
+             reader.
+           SynergyTM 2: For this multiple-module, multiple-detection reader, Gen5 must
+             obtain both the fluorescence/luminescence filter sets and the mirror-holder
+             configuration. BioTek sets the reader's on-board software with the ordered
+             configuration before shipping the reader. Gen5 will capture the stored
+             information when it initiates communication with the reader.
+           SynergyTM 4: For this multiple-module, multiple-detection reader, Gen5 must
+             obtain both the fluorescence/luminescence filter sets and the mirror-holder
+             configuration. BioTek sets the reader's on-board software with the ordered
+
+
+
+Gen5 User Guide
+
+
+---
+
+22| Chapter 1: Initial Setup
+
+
+
+               configuration before shipping the reader. Gen5 will capture the stored
+               information when it initiates communication with the reader.
+            ClarityTM: A Clarity luminometer can be added or deleted in the instrument
+              configuration dialog. But, unlike other readers, the COM port that is used to
+              attach to the Clarity cannot be set or modified in Gen5's Reader Configuration
+              dialog. You must use the Clarity software to define the connection settings. Use
+              the Clarity Control Panel.
+            FLx800TM: Gen5 must obtain the fluorescence/luminescence filter wheel
+              configuration. BioTek sets the reader's on-board software with the ordered
+              configuration before shipping the reader. Gen5 will capture the stored
+              information when it initiates communication with the reader.
+            PowerWaveTM: This 8-channel monochromator does not need special set up.
+              When Gen5 communicates with the reader the Absorbance Wavelength table
+              currently stored in the reader's memory is displayed. When defining a Read
+              Step select from the stored wavelengths or enter a different one.
+            PowerWaveTM XS: This single-channel monochromator does not need special
+              set up. When Gen5 communicates with the reader the Absorbance Wavelength
+              table currently stored in the reader's memory is displayed. When defining a
+              Read Step select from the stored wavelengths or enter a different one.
+
+           Two models of PowerWave XS are listed in the Gen5: PowerWave XS
+             and PowerWave XS2. If you are connecting a PowerWave XS reader
+             that has a USB port and an MQX200R2 product number (take note of
+             the 2), you must select the PowerWave XS2. Our changes to the
+             PowerWave XS hardware to incorporate a USB/RS-232 com port
+             requires unique reader identification in Gen5. There is no difference in
+             the optical performance characteristics of the reader.
+
+            ELx800TM and ELx808TM: BioTek configures the on-board software of these
+              filter-wheel-based readers with the installed filters. Gen5 will capture the filter
+              configuration when it initiates communication with the reader.
+            uQuantTM: This single-channel monochromator does not need special set up.
+              When Gen5 communicates with the reader the Absorbance Wavelength table
+              currently stored in the reader's memory is displayed. When defining a Read
+              Step select from the stored wavelengths or enter a different one.
+
+           Learn about the Absorbance Wavelengths tables in the Reader Control
+             and Configuration chapter.
+
+
+
+
+                                                                          BioTek Instruments, Inc.
+
+
+---
+
+                                                           Setting up the Clarity Luminometer | 23
+
+
+
+Setting up the Clarity Luminometer
+        Clarity users must follow a slightly different sequence of steps to establish
+        communication between the Clarity and Gen5. First, follow the installation instructions
+        provided with the Clarity, including installing the Clarity PC software. After
+        installation, when you're running assays, Gen5 uses the Clarity PC software in place of
+        its StepWiseTM Procedure. But, you define the other elements of the Protocol and run
+        the Experiment with Gen5.
+
+          Important: Install the Clarity PC software before proceeding.
+
+             1.   Connect the luminometer to the computer (if not already connected) and
+                  turn it on.
+             2.   Start the Clarity software and set up the communications port (Options>
+                  Com Port Settings).
+             3.   Then, select Options> Instrument Info to test communication. Details
+                  about the current instrument should be displayed on-screen. If not, repeat
+                  Step 2, making sure the correct port is selected.
+             4.   Important: Close the Clarity software.
+             5.   Start Gen5 and log in (if required).
+             6.   Select System> Reader Configuration and set the Reader Type to
+                  Clarity
+             7.   Select System> Reader Control> Clarity to make sure Gen5 is
+                  communicating with the Clarity. If the control panel does not open, repeat
+                  Step 6 and retry. Contact BioTek TAC if problems persist.0
+                  If the control panel does not open:
+                   on Windows(R) XP and 2000 systems, repeat Step 6 and retry.
+                   on Windows(R) Vista systems:
+                     1   Locate and right-click the Clarity desktop icon, and select Run as
+                         administrator. If prompted, enter the password,
+                     2   At the User Account Control dialog, click Allow,
+                     3   The Clarity software will launch and communicate with the reader.
+                         Close the Clarity software.
+                     4   Return to Gen5 and test communication with the Clarity by
+                         performing Step 7 above.
+                   Contact BioTek TAC if problems persist.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+24| Chapter 1: Initial Setup
+
+
+
+
+Setting up Preferences
+         Gen5TM offers tools for defining certain preferences. Take advantage of them to save
+         time and enforce consistency of use. They can be overridden, as needed, during normal
+         use of the software.
+
+Set up the Default Protocol
+         The Default Protocol can be used to define numerous settings that you're likely to
+         apply to all experiments. Consider using the Default Protocol to:
+            Customize Well IDs in the Plate Layout
+            Set up Protocol Options to automatically save files and to automatically execute
+              your preferred method of results output immediately after reading a plate.
+              Define File Naming Conventions and File Locations for your export files under
+              Export Options
+
+Set Startup Preferences
+         Set user's Startup Preference and Protocol and Experiment Folders:
+                Gen5 Secure: Creating/Maintaining User Accounts (page 15)
+                All other Gen5 levels select System>User Setup
+
+   Define Startup Preferences
+              1.       Use the drop-down to select the preferred method for Startup Action:
+                    Display Welcome dialog is the default setting, it opens Gen5 with a
+                      screen that offers links to several common tasks including creating a
+                      new item or opening a recently used item. Note: the only way to access
+                      the Welcom page is to launch Gen5.
+                    Create new experiment opens Gen5 with the Protocol selection dialog
+                      open, as if the user had selected File>New Experiment
+                    Start at main menu opens Gen5 showing the File, System and Help
+                      menus only. Since neither a protocol nor experiment is open, the
+                      workspace is blank.
+
+              2.      Use the 3-dot button to change your Protocol and Experiment Folders:
+                   browse to the full path and directory to define the folder where you will
+                   typically store protocol and experiment files. Gen5 will point to these
+                   folders when you save and open a protocol or experiment.
+              3.   Click OK.0
+         The changes will take effect the next time you log into Gen5.
+
+
+
+
+                                                                         BioTek Instruments, Inc.
+
+
+---
+
+                                                                    Setting up Preferences | 25
+
+
+
+Customize the Toolbar
+        Gen5 has two toolbars, one for each mode: Protocol or Experiment. You can change
+        their configuration to facilitate your work. Find instructions in the System
+        Management chapter.
+
+Select a List Separator for Import Files
+        If you regularly import data files, rather than obtaining measurements from the reader,
+        take a moment to identify for Gen5 your normal list separator. Select
+        System>Preferences> Read from File Settings
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+26| Chapter 1: Initial Setup
+
+
+
+
+                               BioTek Instruments, Inc.
+
+
+---
+
+Chapter 2
+
+
+
+
+Getting Started
+
+     This section provides a basic introduction to Gen5. It also includes
+     contact information for obtaining technical support and tips for
+     users of BioTek's KC4 software.
+
+
+ Getting Started........................................................................ 28
+ Gen5's Workspace.................................................................... 30
+ Introducing the Protocol Workspace ........................................... 33
+ Gen5's Wizard ......................................................................... 35
+ Buttons and Icons Guide ........................................................... 36
+ About the Menu Tree ................................................................ 38
+ Tips for KC4 Users ................................................................... 39
+ Getting Technical Assistance ..................................................... 41
+
+
+---
+
+28| Chapter 2: Getting Started
+
+
+
+
+Getting Started
+         Welcome to Gen5TM! To make you feel comfortable with this very capable reader
+         control and data analysis software, we've provided several learning tools. Tackle them
+         progressively and you'll be a pro in no time. You'll find these tools in Gen5's Help.
+
+           Important: these topics do not describe the Initial Setup
+             requirements, like connecting a reader. Unless your System
+             Administrator has already done so, complete the initial setup
+             requirements before trying the lessons described here.
+
+ Watch an Online Demonstration: select Help> Tutorials
+            Basic #1: Intro to Gen5
+            Basic #2: Setting up the Procedure
+            Basic #3: Defining the Plate Layout (not for Gen5 Reader Control)
+            Basic #4: Creating Data Reduction Steps (not for Gen5 Reader Control)
+            Basic #5: Runtime Prompts
+            Basic #6: Building Reports
+            Data Views: Create a New View
+            Intro to Power Export (to use Microsoft(R) Excel for reporting) (not for Gen5
+              ELISA or Reader Control)
+            How to create multiple standard curves
+            Intro to Calibrator-Plate Protocols (not for Gen5 Reader Control)
+            How to select the optimal PMT Sensitivity (for fluorescence and luminescence)
+            Synergy 2 and Synergy 4: Filter-based FL Detection Methods
+
+
+ Practice using Gen5 with the Learning Exercises:
+            Refer to the Getting Started Guide shipped with the product CD or Gen5's Help
+              system for step-by-step learning exercises
+
+
+
+
+                                                                        BioTek Instruments, Inc.
+
+
+---
+
+                                                                          Getting Started | 29
+
+
+
+
+ Open a Sample Protocol:
+        Gen5 ships with numerous protocols so you can load one up, customize it to fit your
+        particular requirements, and run an experiment.
+             1.   Select File>Open Protocol
+
+             2.      At the top of the Open dialog, click the "Up One Level" button
+             3.   In the Gen5 folder or the DB (shared database), select the Samples folder
+             4.   Select the folder for the desired detection method: Absorbance,
+                  Fluorescence or Luminescence
+             5.   Open the Protocol (or Synergy 2_Synergy 4) folder and select one. 0.
+
+          Recommendation: Before making any modifications to the sample
+            protocols, we recommend selecting File>Save As after opening them
+            and assigning a unique name to the protocol. This will preserve the
+            original sample protocol for future use. Also recommended when
+            saving a copy of the original protocol is selecting the most convenient
+            location for it. You may want to use the Up One Level button a few
+            times to get back to the Gen5/Protocol folder, a more likely location
+            for your "in use" protocols. Note: the step-by-step instructions for
+            opening a sample protocol are based on the default filenames and
+            path.
+
+          Important: The sample protocols must be considered as examples
+            provided for demonstration and guidance purposes. If you plan to use
+            these protocols or similar ones in a real application, it is your
+            responsibility to validate the protocol parameters, including the report
+            and export content (if applicable), before using them.
+
+          One more thing: your reader may not support all of the sample
+            protocols provided. Review the descriptions in the Sample Protocols
+            and Experiments Guide to see if your reader is compatible with the
+            defined steps. If you can read PDF files: click the Windows(R) Start
+            button, select All Programs>Gen5>Sample Protocols and
+            Experiments Guide
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+30| Chapter 2: Getting Started
+
+
+
+Gen5's Workspace
+         Gen5 offers several controls and workspaces for developing protocols, running
+         experiments, and viewing and reporting results:
+
+
+
+
+           Gen5's Welcome screen is only available when Gen5 is initially
+             launched. You restart Gen5 to get to the Welcome screen.
+
+1 Protocol
+     Every experiment is based on a protocol. The differences between a Protocol and an
+     Experiment in Gen5 are described in the Essential Concepts chapter.
+
+2 Plate View
+     Gen5 provides a view or workspace for each plate processed (or to be processed) in an
+     Experiment. You must have an Experiment, rather than a Protocol, open to have a Plate
+     View:
+
+   Opening the Plate View/Workspace
+     In an Experiment, if it is not already open in the main view of Gen5TM:
+
+            from the menu tree: Double-click the desired              item
+            Or, select Plate> View
+
+
+
+
+                                                                          BioTek Instruments, Inc.
+
+
+---
+
+                                                                         Gen5's Workspace | 31
+
+
+
+
+        Gen5 offers several ways to modify and customize the Plate View for on-screen display
+        and reporting/outputting results, see the Viewing Results chapter to learn more.
+
+3 Menu Tree
+    The menu tree, docked at the left side of the workspace, provides a quick and easy way to
+    open all the tools needed to create and run experiments.
+               About the Menu Tree (page 38)
+
+4 Toolbars and Menus
+    Here is a reference guide to learn about Gen5's buttons and icons:
+               Buttons and Icon Guide (page 36)
+
+5 Running an Experiment
+    All of the views and components come into play when running an experiment (File>New
+    Experiment). The Protocol menu tree is the primary engine for an experiment and Plates
+    (one for each plate processed or to be processed) are added to the menu tree. The Plate
+    View and other plate components are made available:
+
+        Information contains the text input at the Runtime Prompts when the plate is read
+    and Bio-CellTM results when this pathlength-correction option is used
+
+        Sample IDs are user-defined sample names or bar codes
+
+        Calculation Log keeps track of and displays any data reduction errors
+
+        Audit Trail logs changes (masking and editing) of data points for all levels of Gen5,
+    and numerous other events for Gen5 Secure. Audit trail events can be included in reports
+    and export files.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+32| Chapter 2: Getting Started
+
+
+
+About the Plate Workspace
+         The Plate View represents the microplates processed (or to be processed) in an
+         Experiment. The following tabs are available depending on the Protocol definition:
+                Matrix: a representation of the microplate layout. Each cell in the grid
+                  shows the data-set results for the well it represents in the plate. The Layout
+                  data set shows the current Plate Layout. You can use this view for masking
+                  or editing results.
+                Statistics: a standard set of statistical values are determined for you and
+                  displayed in a table
+                Graphs: when a standard curve is defined it is shown in the Graphs tab
+                Cutoff Values: when a Cutoff Data Reduction step has been defined, this
+                  tab displays the values or results of the cutoff formulas
+                Validation Results: when a Validation Data Reduction step has been
+                  defined, this tab displays the results of any calculations
+
+
+
+
+                                                                         BioTek Instruments, Inc.
+
+
+---
+
+                                                         Introducing the Protocol Workspace | 33
+
+
+
+
+Introducing the Protocol Workspace
+    When you create a new protocol, Gen5 opens a special workspace limited to the protocol's
+    components:
+
+
+
+
+    The workspace is made up of the menu tree with a branch for each of the protocol's
+    elements. The order of the protocol elements reflects the order to follow when defining
+    most protocols:
+
+         Defining the Procedure or reading parameters, like detection method, wavelength,
+    and other factors, is the most important step to Gen5. The Procedure describes the data
+    sets which are used in most subsequent steps to generate results output. The Plate Layout
+    is the only other protocol element that is not affected by the Procedure.
+
+         For most protocols, it's best to define the Plate Layout in your second step. Gen5
+    automatically performs a blank-subtraction calculation when Blanks are defined in the
+    plate layout. (You'll see this Transformation in the Data Reduction workspace.) Defining
+    the standards and their concentrations in the plate layout is a prerequisite to generating a
+    standard curve.
+
+         Data Reduction is one of Gen5's most powerful features, and it requires the
+    information provided by the two previous steps to logically offer you its capabilities.
+    Automatically-generated transformations, like pathlength correction, and the ability to
+    conduct well analysis, for example, depend on the Procedure. To plot a standard or titer
+    curve, and to validate Transformation formulas requires knowing the Plate Layout.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+34| Chapter 2: Getting Started
+
+
+
+          Runtime Prompts are user-defined text fields that are presented to users when they
+     read a plate. The information obtained is stored in the Plate Information component of the
+     experiment and can be included in reports and export files.
+
+
+     Viewing and Reporting Results: the next four options (or three options if you're running
+     Gen5 ELISA or Reader Control, which do not offer Power Export) are tools for selecting
+     and customizing the appearance of data sets: raw data measurements and data reduction
+     results. Data Views controls the on-screen appearance of data. Data Views also stores and
+     makes available for reporting and exporting any customizations made to the data sets. For
+     example, you can build your own matrix, table, or curve view of a data set by combining
+     and formatting data elements. When you do this in Data Views, that user-defined data set
+     is available for printing or exporting using the Report Builder, File Export Builder and
+     Power Export Builder.
+
+         Protocol Options provide several special features and preferences. Many of the
+     options may be rarely used by your organization. Review the options provided and if your
+     preferences vary from the default settings, use the Default Protocol to set them for all
+     newly-created protocols. The exception to this rule occurs with multi-plate protocols:
+     Calibrator-Plate Protocols and, for Gen5 and Gen5 Secure users, multi-plate assay
+     protocols. These types of protocols begin by selecting the Protocol Type defined in the
+     Protocol Options.
+
+
+
+
+                                                                        BioTek Instruments, Inc.
+
+
+---
+
+                                                                            Gen5's Wizard | 35
+
+
+
+
+Gen5's Wizard
+        Use Gen5's Wizard to create a new protocol. Then, you can run an unlimited number
+        of experiments based on that protocol. Learn the difference between a Protocol and
+        Experiment in Gen5, in the Essential Concepts chapter to make the most of Gen5.
+
+  How to use the wizard:
+             1.   On each screen of the wizard, click the button to define that protocol
+                  element (each function is described in a subsequent chapter):
+
+                      Defining the Reading Procedure
+
+                      Defining the Plate Layout
+
+                      Setting up Data Reduction
+
+                      Building Reports
+
+                      Using the File Export Builder
+
+                      How to use Power Export
+
+             2.   After defining a protocol element, click Next to proceed to the next one.
+                  Gen5 displays a checkmark for an element that has been defined.
+             3.   Click Finish to generate the protocol based on your selections.
+             4.   Select File>Save and give the protocol a unique name.
+                  Now you're ready to run an experiment.
+             5.   Select File>New Experiment. The just-created protocol will be
+                  highlighted, click OK to select it. 0
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+36| Chapter 2: Getting Started
+
+
+
+
+Buttons and Icons Guide
+
+  Buttons Descriptions
+
+             The 3-dot (three-dot) button is a tool for customizing or modifying the item's
+             contents. In some report options, you must click in a field to activate its 3-dot
+             button
+
+             Open an existing Experiment
+
+             Create a new Experiment or Protocol
+
+             Add another plate to the current Experiment
+
+             Read the plate (or Simulate, Manually Enter, or Import data)
+
+             Save the Experiment
+
+             Gen5's Wizard to help you create an Experiment
+
+             Print the results, but first use Report Builder to select what to include
+
+             Print Preview
+
+             Reader Control: check the status, open the control panel
+
+             Duplicate View: click the button in the upper-right corner of the Plate View
+             to open a coincident display of the plate's results
+
+             Gen5 Secure Only: Sign a protocol or experiment
+
+             384- and 1536-well Plate View Toggle: zoom in to view the top-left
+             section of the plate, zoom out to view the whole plate
+
+
+
+  Menu Tree Icons
+
+               Plate - Not read. Put the plate in the reader and click the Read button
+
+               Plate read successful
+
+               Plate read paused by Stop/Resume step. When you're ready, put the plate
+               in the reader, click the Read button and select Resume to continue
+
+               Plate read aborted. To begin again, put the plate in the reader, click the
+               Read button and select Re-Read
+
+               Plate read in progress
+
+
+
+                                                                        BioTek Instruments, Inc.
+
+
+---
+
+                                                                      Buttons and Icons Guide | 37
+
+
+
+              Plate read error, which is always preceded by an error message
+
+              Protocol
+
+              Procedure: define the reading parameters
+
+              Plate Layout: assign location of samples
+
+              Data Reduction: set up calculations
+
+              Runtime Prompts: define the information requested when a plate is read
+
+              Report Builder: select the content to print
+
+              File Export Builder: select the content to export
+
+              Power Export Builder: select the content to export to Excel(R)
+
+              Data Views: customize the appearance of data for online viewing and
+              reporting
+
+              Protocol Options: miscellaneous options for saving, naming, exporting and
+              calculating results
+
+              Plate Information: information obtained at runtime
+
+              Sample IDs: user-defined names or IDs assigned to samples
+
+              Calculation Warning Log: Data Reduction-related errors issued by
+              unexpected curve or calculation results
+
+              Multi-Plate plate view of data reduction statistics and curves
+
+              Audit Trail displays any logged events
+
+
+
+3-dot (Edit) Button
+        The 3-dot button leads to editing features for the field or data point it is associated
+        with. Click the button when it is next to or in a field to change the selection list or
+        format of the field's items.
+
+          Note: In Field Groups and in Headers and Footers you must click
+            inside a field in the table to enable a 3-dot button.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+38| Chapter 2: Getting Started
+
+
+
+
+About the Menu Tree
+
+            In an experiment, the menu tree is docked at the left side of the workspace,
+              unless its position has been previously altered. When you're working with a
+              protocol file, the menu tree, like the toolbar, is limited to related operations.
+              Learn the difference between Gen5's Protocols and Experiments in the next
+              chapter
+            The menu tree provides a visual cue of the steps to follow when creating a
+              protocol
+            All of the controls available from the menu tree can alternatively be accessed
+              using toolbar buttons or the drop-down menus
+
+                 and   icons next to an item expand or close it to reveal or hide its
+                components
+            Highlight an item in the menu tree and right click for a context-sensitive menu
+              of options, including Read when a plate is selected, for example.
+            * asterisks are displayed next to plate icons (and in the title bar) of an
+              experiment when a change is made or an action is taken but the file has not yet
+              been saved
+                You can move the menu tree to another corner of the workspace or let it float
+                undocked like the Plate workspace: click the undock button, drag the title bar
+                and drop it in the desired location
+            When you Add multiple plates to an experiment, highlight a plate and right-
+              click for menu options to delete and renumber plates.
+
+
+
+
+                                                                           BioTek Instruments, Inc.
+
+
+---
+
+                                                                           Tips for KC4 Users | 39
+
+
+
+
+Tips for KC4 Users
+        BioTek relied on input from KC4 users to develop this improved next-generation
+        product. It may take a bit of practice to learn how to use them, but we think you'll find
+        the new features worth it.
+         1.   In Gen5, reading parameters are not defined in one dialog (screen), but set up
+              as steps in the StepWiseTM Procedure. This gives you far more flexibility in
+              defining an experiment. Depending on the level of Gen5 you're running, this
+              includes multiple read steps and reading-related functions, like shaking and
+              dispensing.
+         2.   The filename extensions are slightly different and file formats are simpler.
+              Gen5 replaces the .pla and .glb formats with one experiment file: .xpt. Gen5
+              keeps the .prt filename for protocol files. The experiment file (.xpt) like its
+              predecessor the .glb or global data file, contains the .prt or protocol as it was
+              defined at runtime
+                  KC4           Gen5
+                  .pla          .xpt
+                  .glb
+                  .prt          .prt
+
+         3.   Gen5 does not offer Power Reports for Microsoft(R) Word. Power Export to Excel
+              is available and a full-featured, user-customizable Report Builder eliminates
+              the need for Word for most users. In addition, a new Quick Export to Excel
+              feature and a user-customizable File Export tool are offered, which can be used
+              to port files to Word. Learn more: Reporting Results
+         4.   Append to Kinetic File, a KC4 feature, has been replaced in Gen5 with new
+              features:
+               multiple read steps can be performed in one experiment, and Gen5 offers to
+                 Append to previous Kinetic data when multiple kinetic loops are defined
+                 in a Procedure
+               a long, discontinuous-interval Kinetic analysis can be performed using the
+                 Discontinuous Kinetic option
+               multiple plates can be used to run a single assay, review Multi-Plate
+                 Protocols
+         5.   Eject Between Filter Sets, a KC4 option, is omitted from Gen5 because it is not
+              needed. Instead, you can set up multiple read steps interspersed with a Plate
+              In/Out or Stop/Resume step
+         6.   Lag time defined in Reading Parameters in KC4 is accomplished with a Delay
+              step in the Procedures in Gen5
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+40| Chapter 2: Getting Started
+
+
+
+          7.   In Gen5, add a Kinetic loop to the Procedure rather than ticking a checkbox in
+               KC4. See Setting up a Kinetic Analysis. Also note that the Data Reduction
+               options for kinetic analysis do not include KC4's "Formula" and individual
+               reading point identifier "R." These calculations can be replicated using Gen5's
+               Transformation dialog.
+          8.   In Gen5, to "Pre-Read Blank Plate" you'll set up two Read Steps with a
+               Stop/Resume step between them: for instructions see Subtracting a Blank
+               Plate (This is not available for Gen5 ELISA)
+          9.   Gen5 does not automatically generate dual-wavelength subtraction or Delta
+               OD data reductions, for instructions see: How to perform Dual-Wavelength
+               Subtraction
+         10. Set up a Dispense step in the Procedures, rather than ticking a checkbox in
+               KC4. Here are instructions for setting up Dispensing Protocols
+         11. Luminescence reading parameters in Gen5 require definition of Integration
+               Time rather than the number of samples per well and delay time before and
+               after sampling. When selecting the Emission filter setting, Lum/E has been
+               replaced with Hole.
+         12. Don't confuse what was called "Multi-Plate Transformations" in KC4 with
+               multi-plate protocols or multiple-plate experiments in Gen5. Multi-plate
+               transformations have been replaced with the StepWiseTM Data Reduction
+               steps, where an almost unlimited number of calculations can be performed
+         13. Multi-Detection was called Multi-Mode in KC4
+         14. Raw Data Correction options in KC4 are engaged differently in Gen5:
+
+                Blank Plate Subtraction is described above
+                Blank Wells Subtraction occurs automatically when there are Blanks
+                  assigned to the Plate Layout. You'll find these automatically-generated
+                  Transformations in the Data Reduction dialog
+                Pathlength Correction can be enabled when defining an Absorbance Read
+                  Step
+         15. When viewing Well Analysis results in the Well Zoom view:
+
+                Gen5 uses brackets [ ] to show the revised Calculation Zone, instead of
+                  showing the data points in different colors as in KC4
+                Setting "Scales for Kinetic Reads" and "Individual Well Auto Scaling" for
+                  scanning reads is replaced with more feature-rich tools for editing the
+                  results output, see Modify a Graph. When you combine these features with
+                  the ability to define the calculation zone (select Calculation Options when
+                  defining the Well Analysis step), you have enormous control over the
+                  appearance of the results
+         16. Monitoring Wells is more flexible in Gen5 because it is defined as a separate
+               step in the Procedure. The read parameters are specific to the monitoring
+               process and can be different than those defined to obtain measurements0.
+
+
+                                                                        BioTek Instruments, Inc.
+
+
+---
+
+                                                                 Getting Technical Assistance | 41
+
+
+
+
+Getting Technical Assistance
+    Gen5TM is backed by a superior support staff. If the software fails to work perfectly, please
+    contact BioTek's Technical Assistance Center (TAC). You can call, write, fax, or email your
+    questions and concerns to BioTek:
+
+Email Support: tac@biotek.com
+
+Fax Support
+          Send a fax with your questions or requests for help 24 hours a day:
+              Technical Assistance Center (TAC): 802.655.3399
+               European Coordination Center: +49 (0) 7136.968.111
+
+Phone Support:
+          You can telephone the Technical Assistance Center between 8:30 AM and 5:30 PM
+          Eastern Standard Time (EST), Monday through Friday, excluding holidays.
+          Customer Service:          (802) 655-4040
+          Technical Assistance Center:
+               In the US call: (800) 242.4685
+               Outside the U.S. call: (802) 655.4740
+          European Coordination Center: +49 (0) 7136.9680
+
+Whichever method of contact you choose, please be prepared to provide the
+following information:
+        The software version and revision numbers displayed at Help>About Gen5...
+        The license type or software level: Gen5, Gen5 Secure, Gen5 ELISA, or Reader
+          Control
+        The specific steps that produce your problem
+        Any error codes displayed
+        A daytime phone number
+        Your name and company information
+        An email address and/or a fax number, if available.
+
+
+
+
+Gen5 User Guide
+
+
+---
+
+42| Chapter 2: Getting Started
+
+
+
+
+                                 BioTek Instruments, Inc.
+
+
+---
+
+Chapter 3
+
+
+
+
+Essential Concepts
+
+     This section reveals the basic concepts upon which Gen5 was built.
+     Learning them will enhance your experience using Gen5.
+
+
+ Experiment vs. Protocol ............................................................ 45
+ File Storage............................................................................. 47
+ Best Practices.......................................................................... 48
+
+
+---
+
+44 | Chapter 3: Essential Concepts
+
+
+
+
+Essential Concepts
+         Understanding the basic concepts behind Gen5's structure and behavior will help you
+         make the most of it. A few topics are covered here, on the next few pages, more
+         information is provided in Gen5's Help.
+            Experiment vs. Protocol on page 45
+            File Formats:
+               Gen5's files are identified by their filename extension:
+                .prt = Protocol file
+                .xpt = Experiment file (contains the protocol and any data acquired or
+                  generated within the experiment)
+            File Storage on page 47
+            Best Practices on page 48
+
+In Gen5, select Help>Help Topics to find:
+            Multiple-Plate Experiments
+            Security and FDA Electronic Records Compliance
+
+           Only the Gen5 Secure level of software offers all the capability
+             required to meet the FDA's electronic records requirements: SS21 CFR
+             Part 11.
+
+
+---
+
+                                                             Experiment vs. Protocol | 45
+
+
+
+Experiment vs. Protocol
+    Gen5TM uses two common terms to define distinct elements of its toolkit. The
+    distinction is subtle and understanding it will improve your Gen5 experience.
+
+   Protocol      (*.prt)                       Experiment       (*.xpt)
+
+   A protocol is a "recipe" or set of          An experiment has a copy of the
+   instructions designed to capture,           protocol and at least one plate. It
+   transform and report and/or export          executes the instructions provided by
+   data                                        the protocol to produce results
+
+   Protocols are created and saved as          While an experiment is created using an
+   standalone files. They function as a        existing protocol, the experiment's copy
+   template; an unlimited number of            of the protocol can be modified within
+   experiments can be based on one             the experiment
+
+   A protocol consists of reading              Running an experiment is the only way
+   requirements, like detection method         to process a protocol. Gen5's Quick
+   and wavelength, and reading-related         Read function may at first appear to
+   actions, like shaking and incubation        skip the protocol development stage,
+   (Procedure), plate layout, data             but it uses the default protocol, and
+   reduction, and data viewing, reporting      generally requires reading parameters
+   and exporting definitions                   to be defined
+
+   A protocol can be used repeatedly (as-      Multiple plates can be processed in an
+   is or modified) within experiments. By      experiment; each one considered a
+   itself, a protocol does not produce         unique assay with independently
+   results. Protocols do not have plates       reported or exported results. The
+   associated with them                        exception is multi-plate protocols,
+                                               described later
+
+   .prt is the protocol's filename extension   .xpt is the experiment's filename
+                                               extension
+
+   A copy of the protocol is saved within      An experiment is saved as the full
+   an experiment, or as a standalone .prt      collection of procedures, formulas,
+   file. Since protocols do not have plates,   reporting definitions, and other details,
+   they cannot generate data outside of an     i.e., the protocol, and the plate data
+   experiment                                  from readings and calculation results
+
+   The Gen5TM Secure level of software          Data acquired and transformed in an
+   maintains an audit trail of all activity    experiment is protected by an audit trail
+   and changes related to a protocol. All      in both Gen5 Secure and other Gen5
+   other Gen5TM software levels do not          software editions. The Reader Control
+   support this feature                        edition does not support this feature
+
+
+---
+
+46 | Chapter 3: Essential Concepts
+
+
+
+
+       Protocol      (*.prt)                      Experiment      (*.xpt)
+
+       Changes made to a standalone protocol      Within an experiment, you can select
+       are not reflected in any previously        Save Protocol As to capture the current
+       created experiments based on that          details of the protocol and save them as
+       protocol. A new experiment must be         either a new protocol or as an overwrite
+       created to apply the revised protocol      of the original protocol
+
+
+
+           All newly created protocols and (unless another protocol is selected)
+             experiments are based upon the Default Protocol
+
+           Gen5TM also supports more complex multi-plate protocols that are not
+             covered in this introductory material. Check out: Designing a Multi-
+             Plate Protocol in a subsequent chapter.
+
+
+---
+
+                                                                       About File Storage | 47
+
+
+
+About File Storage
+
+File Types
+    Gen5TM creates two file types: Protocol = .prt and Experiment = .xpt
+          The Gen5 executable file (.exe) and numerous other types of supporting files,
+            like an Excel(R) template, are also installed on the computer.
+          In addition, ClarityTM Microplate Luminometer users will work with Clarity
+            protocol files, which use a .BPF extension. Gen5 references the Clarity files as
+            they contain the reading parameters required to control the luminometer.
+
+Databases
+       Gen5 installs two databases on your system called LocalDB and SharedDB. While the
+       databases are always used for critical, internally-used files, Gen5 offers you the choice
+       of using the Windows(R) File System or the Gen5 (SharedDB) database for storing Gen5's
+       Protocol (.prt) and Experiment (.xpt) files. This option, combined with the ability to
+       create multiple databases, allows you to structure file storage according to your
+       organization's requirements.
+          Files may be stored on the computer's hard drive, on a network, or on a CD or
+            other portable medium. Windows Explorer or a similar application can be used
+            to view the file names and locations, and to move, copy, rename, and delete
+            files.
+          Alternatively, protocol and experiment files may be stored in a secure, shared-
+            access database. This database, initially named SharedDB.mdb, can be stored
+            on a user's computer or on a shared-access network/computer (LAN). Gen5
+            provides a special file maintenance utility for viewing the file names and their
+            locations, and for moving, copying, renaming, deleting, importing, and
+            exporting files.
+          Select the preferred method of storing protocol and experiment files at
+             System>Preferences>File Storage
+
+File Location
+       During a conventional installation:
+              the program files are stored in this default location: C:\Program
+                Files\BioTek\Gen5 (software edition)
+              the databases are stored in these default locations:
+                Windows XP and 2000 systems: C:\Documents and Settings\All
+                Users\Application Data\BioTek Instruments\Gen5 (software
+                edition)\(version #)\SharedDB or LocalDB
+                Windows Vista: Windows XP and 2000 operating systems: C:\Program
+                Data\BioTek \Gen5 (software edition)\(version #)\SharedDB or LocalDB
+              Gen5 installs Protocol and Experiment folders in the respective File Storage
+                locations, e.g. C:\Program Files\BioTek\Gen5 (software edition)\Protocol
+
+
+---
+
+48 | Chapter 3: Essential Concepts
+
+
+
+
+Best Practices
+         Like most software tools, Gen5TM is flexible, it offers several ways to accomplish a task.
+         Here are some recommendations for saving time and using it most efficiently:
+
+Efficiencies
+            For an assay or experiment that you will run numerous times, develop a
+              Protocol to define the Procedure, Data Reduction, Data Views and Reports
+              required. Then you can run an Experiment (File>New Experiment) based on
+              the Protocol whenever necessary. You can fine-tune the protocol within an
+              experiment, but remember to select File>Save Protocol As to update the
+              original protocol with your improvements.
+            Just like word processing documents, when you run similar types of
+              experiments, you can use File>Save As to give you a head start creating a new
+              protocol based an existing protocol that contains the same plate layout, reading
+              parameters, or other elements that will be repeated in your new protocol.
+            Define and customize Data Views before selecting what to include in reports or
+              export files. All the on-screen data (i.e. data views) can be reported or exported.
+              If you use on-screen views and paper reports equally, it is most efficient to first
+              fine-tune the Data Views, and then include them in reports/exports.
+            Always assign Blanks to the plate. Blanks can be deionized (DI) water, buffer,
+              reagent without analyte, substrate and so on. When running fluorescence
+              cellular assays, a DI-water blank illustrates the background contributed by the
+              instrument and labware as separate from the cells and media. Identify the
+              location of the Blanks in the Plate Layout and Gen5 will automatically create
+              the blank-subtraction data reductions.
+            Backup your database regularly, BioTek recommends once per week for most
+              organizations. If you're using Gen5's Database for protocol and experiment file
+              storage, use the built-in Periodic Optimization feature.
+            Take action if you get a warning message about the remaining size of your
+              databases, see Maintaining Files for instructions on reducing the database size.
+            Consider using Gen5's automatic Save feature to create a new, date-stamped
+              folder for storing experiment records. This is an especially good practice for
+              large labs with multiple users who run hundreds of plates per day. Gen5 will
+              keep all that data organized by date. Define this kind of file management
+              setting in the Default Protocol so it will apply to all newly created protocols.
+            Turn off the Multi-Read Calculation option to improve Gen5's performance.
+              Calculation results will be the same, but your PC's resources will not be
+              diverted for performing interim calculations.
+
+
+---
+
+                                                                            Best Practices | 49
+
+
+
+Time Savers
+        Partial Plate: for assays using strips or partially-filled plates, especially if the
+          read steps are long or complicated, you can save time by telling the reader
+          exactly which wells or portion of the plate to read
+        Default Protocol: all newly created protocols and Quick Reads are based on the
+          Default Protocol. If some protocol elements, like plate layout, runtime prompts,
+          report headers and footers, etc., are largely the same for most of your projects,
+          you'll save significant time by defining these elements before creating the next
+          protocol/experiment
+        Print Preview: save time and paper by viewing reports on-screen before
+          sending them to the printer
+
+
+---
+
+50 | Chapter 3: Essential Concepts
+
+
+---
+
+Chapter 4
+
+
+
+
+Assay Examples
+
+    This section contains step-by-step instructions for programming
+    commonly known assays using Gen5. Gen5 also ships with Sample
+    Protocols for most of these assays. Both the Sample Protocols and
+    the assay descriptions are learning tools. It is your responsibility to
+    customize and validate them to meet your needs. Find a list of the
+    assays described in this chapter in the "How do I set up my assay"
+    section.
+
+
+ Sample Protocols and Experiments............................................. 52
+ How do I set up my assay? ....................................................... 54
+
+
+---
+
+52 | Chapter 4: Assay Examples
+
+
+
+
+Sample Protocols and Experiments
+        Numerous sample protocols are shipped with Gen5. You can use the protocols to learn
+        more about Gen5 and as a timesaver, customizing them to meet your needs and then
+        running them in an experiment to obtain results.
+
+          Recommendation: Before making any modifications to the sample
+            protocols, we recommend selecting File>Save As after opening them
+            and assigning a unique name to the protocol. This will preserve the
+            original sample protocol for future use.
+
+        A matching experiment file is also shipped with Gen5 for use as a learning tool. Many
+        of the experiment files contain actual data so you can see how Gen5 presents the
+        results on-screen and in reports.
+
+         Find the sample protocols and experiments shipped with Gen5 in the default file
+     storage locations. A folder for each detection method is available: Absorbance,
+     Fluorescence, Luminescence and and for Synergy 2 and Synergy 4 users, there is a Synergy
+     2_Synergy 4 folder within each detection method folder:
+        Gen5 Secure (and database users): Select File>Open Protocol, in the DB
+          directory select the Samples folder.
+        All other levels of Gen5: Select File>Open Protocol and browse to C:/Program
+          Files/BioTek/Gen5/Samples.
+
+
+           Tip: Select File>Open Protocol and use       (the Up One Level button).
+
+
+        Gen5's Welcome screen also offers the option to open a Sample File.
+
+          Important: The sample protocols must be considered as examples
+            provided for demonstration and guidance purposes. If you plan to use
+            these protocols or similar ones in a real application, it is your
+            responsibility to validate the protocol parameters, including the report
+            and export content (if applicable), before using them.
+
+          Notes: Your system administrator can change the path and filenames
+            described above. If you cannot find the Samples folder, contact your
+            system administrator. Also note, your reader may not support all of
+            the sample protocols provided. Review the descriptions in the Samples
+            Protocol Listing to see if your reader is compatible with the defined
+            steps.
+
+Sample Protocols and Experiments Guide
+     You can review a complete description of samples in the Sample Protocols and
+     Experiments Guide.PDF shipped with Gen5: click the Windows(R) Start, select All
+     Programs>Gen5>Sample Protocols and Experiments Guide
+
+
+---
+
+                                                 Sample Protocols and Experiments | 53
+
+
+
+  Gen5 installs a copy of the Sample Protocols and Experiments Guide in
+    the Samples folder of the main Gen5 directory. (By default this is
+    C:\Program Files\BioTek\Gen5\Samples)
+
+You can also find a summary listing and brief description of the sample protocols in
+Gen5's Help. Review the description of the sample protocol to make sure it is
+compatible with your reader.
+
+
+---
+
+54 | Chapter 4: Assay Examples
+
+
+
+
+How do I set up my assay?
+        Here are step-by-step instructions for creating Gen5 Protocols to run common assays.
+        (More Assay Examples can be found in Gen5's Help.) We hope that by following the
+        instructions, making some changes to names and other details, you can adapt them for
+        use in your lab. Also see the Kinetic Analysis chapter.
+
+Absorbance
+           Quantitative ELISA Example on page 55
+           Subtracting Blank Plate Reads on page 58
+           Pathlength Correction Example on page 60
+           Dual Wavelength Absorbance Endpoint on page 62
+           Basic Spectrum Analysis on page 64
+           Protein Quantification Assay on page 66
+           Max Binding Determination on page 83
+           Toxicity/Cytotoxicity Assay on page 86
+           Endotoxin Test on page 89
+           ss-Galactosidase Kinetic Assay on page 92
+
+Fluorescence
+           Basic Fluorescence Assay on page 69
+           Kinetic Fluorescence Assay on page 71
+           Fluorescence Assay with Injection on page 74
+           Fluorescence Area Scan Example on page 77
+           Fluorescence Polarization on page 79
+
+Luminescence
+           Basic Luminescence Glow Assay on page 81
+           Luminescence Flash Assay with Injection on page 82
+
+Dispensing Reagent
+           Dispensing Reagent in a Kinetic Analysis on page 94
+           Dispensing Reagent in an Endpoint Analysis on page 95
+           Fast Kinetics with Injection for Absorbance on page
+
+
+---
+
+                                                              Quantitative ELISA Example | 55
+
+
+
+
+Quantitative ELISA Example
+      To help you set up your own assay here is an example of the steps required to run a
+      quantitative ELISA assay. In this example we set up an endpoint Absorbance read,
+      subtract Blank wells from all others, plot a standard curve, and define a Control to
+      express the samples as a percentage of the control.
+
+
+          It may be easier to follow these instructions if you have already watched the Gen5
+      Basic series of online tutorials: select Help>Tutorials or if you've completed the
+      learning exercises described in the Getting Started Guide.
+
+
+      To set up the protocol, we'll define the:
+            1.   Reading Procedure
+            2.   Plate Layout
+            3.   Data Reductions0.
+
+        Reporting Results is the same process for all types of experiments
+
+1. Defining the reading Procedure
+   This assay example has the simplest read Procedure: a single-wavelength Absorbance
+   endpoint read:
+       1.   Select File>New Protocol
+       2.   Select Protocol>Procedure
+       3.   Click the Read button and select the wavelength. Use the drop-down list or
+            type the wavelength in the text field (overwrite the current value).
+       4.   Click OK twice to save the Procedure0.
+
+
+---
+
+56 | Chapter 4: Assay Examples
+
+
+
+2. Defining the Plate Layout
+        This step is critical for the data reduction steps to be defined later. Here's the plate
+        layout we need:
+
+
+
+
+        The critical factor is using the Well IDs, not their location on the plate. We did not need
+        to customize the Well IDs for this example. We simply selected the Type, defined the
+        known concentration of the standards and assigned them to the plate:
+
+              Well ID      Type                Description
+
+              BLK          Blank               DI water only
+
+              STD          Standard            Known concentrations
+
+              CTL1         Assay Control       Known Control
+
+              SPL          Sample              Unknown samples
+
+        Find specific instructions in the Preparing Plates chapter.
+
+3. Defining the Data Reduction Steps
+        Now that we've defined the reading parameters and plate layout, we can define the
+        data reduction steps: blank-well subtraction, standard curve, and expressing samples
+        as a percentage of the control. Gen5 creates the blank-subtraction step for you
+        automatically.
+         1.   Select Protocol> Data Reduction
+              Notice that one Transformation, named "Blank nnn" where nnn is the
+              wavelength, has already been created. We'll use the results of this calculation to
+              plot the standard curve.
+         2.   Click Curve Analysis
+
+
+---
+
+                                                         Quantitative ELISA Example | 57
+
+
+
+ 3.   Notice on the Data In tab, the Well ID is set to STD and X Axis Data to <Plate
+      Layout Settings>. The known concentrations entered for Standards are plotted
+      on the X Axis. Use the drop-down list for the Y Axis Data to select Blank nnn
+      (wavelength)
+ 4.   Click the Curve Fit tab: depending on your assay, you may want to change the
+      curve fit method to 4 Parameters or another option, or use Log values on the X
+      or Y axis. For now, retain the defaults and click the Data Out tab. Take note
+      that the Data Set Name produced from the standard curve is called Conc (by
+      default. You can change it.). Click OK to save and close the curve.
+ 5.   Click Transformation
+      1.   For the Data In use the drop-down list to select Conc.
+      2.   Enter a New Data Set Name for the results of this calculation, e.g.
+           %Control
+      3.   In the Formula field enter: (X/CTL1)*100
+           Retain the default setting to Use single formula for all wells. X represents
+           the value of the current well. CTL1 is the well ID for the control we
+           assigned in Plate Layout.
+
+
+   After the plate is read, you can return to the Data Reduction dialog to make any
+needed changes, like the Curve Fit Method. Do not change the Data Out or Data Set
+Names, this would invalidate the data reduction steps that use those data sets.
+
+
+ 6.   Save the protocol.0.
+Now you're ready to define your reporting requirements, and run the protocol in an
+experiment.
+
+
+---
+
+58 | Chapter 4: Assay Examples
+
+
+
+
+Subtracting Blank Plate Reads
+        To perform a blank-plate subtraction in your experiment, set up an additional Read
+        Step for the blank plate, and then, create a Data Reduction Transformation to subtract
+        the measurements of the blank plate from the samples plate.
+        You can insert a Plate in/Out step in the Procedure sequence to first read the blank
+        plate, pause the experiment to pipette samples to the plate, and then, read the samples
+        plate.
+
+Step-by-step procedure:
+         1.   Select File>New Protocol
+         2.   Double click Procedures to set the reading parameters:
+                 1   First, create a Read Step for the blank plate: enter Blank for the Step
+                     Label to easily identify the raw data.
+
+
+
+
+                 2   Add a Plate In/Out step to eject the plate to pipette samples, standards,
+                     etc. Optionally, enter "Load Samples" in the comment field.
+                 3   Finally, create a Read Step for the samples plate. 0
+
+          Other steps can be included in the sequence, like Set Temperature and
+            Shake, if required.
+
+         3.   Set up the Plate Layout to match the distribution of samples and standards or
+              controls.
+         4.   Double click Data Reduction to define a transformation: Blank Plate Data
+              Reduction
+                 1   The dialog will contain any automatically generated data reductions.
+                     Highlight the top-most one and click Transformation, to position the
+                     blank subtraction as the first calculation.
+
+                 2   Click
+                 3   In the Multiple Data Sets screen, use the drop-down lists to select the
+                     Blank plate read data for DS1 and the samples plate data for DS2.
+
+          In multiple wavelength protocols there may be several data sets to
+            choose from. If you've used the Step Labels for each Read Step, it's
+            easy to match up the blank plate with the samples plate.
+
+
+---
+
+                                                             Subtracting Blank Plate Reads | 59
+
+
+
+
+                 4   Enter a New Data Set Name for the resulting data set, e.g. Blanked 390
+                 5   Enter DS2-DS1 in the Plate Formula field and click OK.
+                 6   Repeat steps 2-4 to create as many blank-plate subtraction
+                     Transformations as needed, e.g. one per wavelength.
+                 7   Now you're ready to create other Data Reduction steps using the
+                     blanked data sets. For example, select Curve Analysis to generate a
+                     standard curve based on the blank-subtracted test plate.0
+         5.   Customize the Data Views and fine-tune the Report Builder as needed before
+              saving and closing this protocol. File>Save0.
+              Now you're ready to run the protocol in an experiment: File> New
+              Experiment
+
+Running the experiment:
+      After reading the blank plate, Gen5 ejects the carrier so you can load the samples
+
+
+
+
+                                     If you entered a comment, e.g. Load Samples in the Plate
+              In/Out step, it is displayed on screen. Here's how to proceed:
+           Click OK after loading the samples, when you're ready to continue reading the
+             plate
+
+
+---
+
+60 | Chapter 4: Assay Examples
+
+
+
+
+Pathlength Correction Example
+        Here is an example of the steps required to perform pathlength correction in an ELISA
+        assay. In this example we set up an endpoint Absorbance read, subtract Blank wells
+        from all others, and transform the data to determine the concentrations of the
+        unknown samples. This is the process used to create the Direct Oligo Quantification
+        assay shipped as a sample protocol with Gen5.
+
+
+            It may be easier to follow these instructions if you have already watched the Gen5
+        Basic series of online tutorials: select Help>Tutorials or if you've completed the
+        learning exercises described in the Getting Started Guide.
+
+
+        To set up this protocol, we'll define the:
+         1.   Reading Procedure
+         2.   Plate Layout
+         3.   Data Reductions0.
+
+          Reporting Results is the same process for all types of experiments
+
+1. Defining the reading Procedure
+     This assay example has the simplest read Procedure: a single-wavelength Absorbance
+     endpoint read:
+         1.   Select File>New Protocol
+         2.   Select Protocol>Procedure
+         3.   Click the Read button and keep the default settings for Detection Method,
+              Read Type and Read Speed
+         4.     Fill in the checkbox next to Pathlength Correction. [Optionally, click the 3-
+              dot button to view (and modify if desired) the test and reference wavelengths
+              used in the process.]
+         5.   Set the Wavelength. Use the drop-down list or type the wavelength in the text
+              field (overwrite the current value). For this example, enter 260.
+         6.   Click OK twice to save the Read step and the Procedure0.
+
+2. Defining the Plate Layout
+        For this assay example, the plate layout is very simple, comprising two blank wells and
+        94 unknown samples:
+
+         1.       Select Protocol> Plate Layout
+
+
+---
+
+                                                           Pathlength Correction Example | 61
+
+
+
+       2.   In the Well Settings box, select the Type of specimen, first Blanks, then
+            Samples
+       3.   Assign the blanks to cells A1 and B1
+       4.   Change the Type to Sample, make sure Next ID is enabled, click and drag over
+            the remaining wells to assign the unknown samples0.
+
+3. Defining the Data Reduction Steps
+      After defining the reading parameters and plate layout, we can define the data
+      reduction steps. Gen5 creates the blank subtraction and the pathlength correction for
+      you automatically.
+       1.   Select Protocol> Data Reduction
+            Notice the two Transformations, "Blank 260" and "Corrected [Blank 260]", Gen5
+            first subtracts the blanks and then applies the Pathlength Correction
+            Calculation.
+       2.   Click Transformation to add anther Data Reduction step
+       3.   For the Data In use the drop-down list to select Corrected [Blank 260] data set
+       4.   Enter a New Data Set Name for the results of this calculation, e.g.
+            Concentration
+       5.   In the Plate Formula field enter: X*32.5
+            Retain the default setting to Use single formula for all wells. X represents the
+            value of the current well. The extinction coefficient for ssDNA oligonucleotides
+            (1 mg/ml) at 260 nm is 13 ODs for a 1 cm pathlength; this can be recalculated to
+            mean 1.0 OD has a concentration of 32.5 ug/ml.
+       6.   Save the protocol.0.
+      Now you're ready to define your reporting requirements, and run the protocol in an
+      experiment.
+
+
+---
+
+62 | Chapter 4: Assay Examples
+
+
+
+
+Dual Wavelength Absorbance Endpoint
+   Here are step-by-step instructions for setting up a dual-wavelength absorbance read with
+   known concentrations of standards against which a linear regression curve is plotted.
+
+Create the protocol:
+         1.   Select File>New Protocol
+
+         2.      Double-click Procedure in the menu tree:
+               Click Read to set the reading parameters: Keep the default settings for
+                 Detection Method and Read Type: Absorbance Endpoint
+               For Wavelengths, click the button for 2 and use the drop-down list to
+                 select (or enter) the test and reference wavelengths: 410 and 630 for this
+                 example.
+               Click OK twice to close the Read Step, and then, the Procedure dialogs.
+
+         3.       Double-click Plate Layout to define the location of standards, samples,
+              and blanks on the microplate. For this example, the standards are placed in the
+              center of the plate, modify the instructions to match the distribution of samples
+              and standards on your plate:
+               Set the Well Settings Type to Standard and click the 3-dot button next to the
+                 Conc. field to enter the expected concentrations. For this example, leave 0 in
+                 the STD1 cell at the top of the table. Select Incr. with a tick mark, and enter
+                 10 in the field, then click in the STD1 cell, then in the STD2 cell, and each
+                 subsequent cell in the table until STD8. Click OK to save and close the
+                 concentrations.
+               At the grid, set the Number of Replicates to 2, and select Next Conc. under
+                 Auto Select. Click and hold as you roll the mouse over the 5 and 6 columns,
+                 (the cursor changes to a black, down-facing arrow) to fill the entire
+                 columns.
+               Set the Well Settings Type to Blank, keep the Number of Replicates at 2,
+                 and click and drag over wells A1 and A2.
+               Set the Well Settings Type to Sample, keep the Number of Replicates at 2,
+                 and select Next ID under Auto Select. Click and drag the cursor over the
+                 remaining wells in columns 1 and 2, and then 3-4, and then 7-12, to assign
+                 samples to all the other wells of the plate.
+
+         4.      Double-click Data Reduction
+              Gen5 automatically creates the Blank-Subtraction transformations.
+               Click Transformation to set up the calculation:
+
+         5.   Click
+
+
+---
+
+                                                      Dual Wavelength Absorbance Endpoint | 63
+
+
+
+        6.    For DS1 (selected by default) use the drop-down list to select Blank 410
+        7.         Select DS2 and use the drop-down list to select Blank 630
+        8.    Click OK to close the Multiple Data Set dialog
+        9.    For this example, we'll call the New Data Set Name: Dual Wavelength. Enter
+              the name in the text box. Dual wavelength is also known as Delta OD, you may
+              want to use this name instead .
+        10. In the Plate Formula field enter: DS1-DS2 to subtract the reference
+              wavelength (630) measurements from the test (410) measurements. Retain the
+              default: Use single formula for entire plate.
+        11. Click OK to save and close the Transformation
+
+               Click Curve Analysis. In the Data In tab, use the drop-down list to select Y
+                 Data: Dual Wavelength and click OK.
+
+         For this simple protocol, the remaining default settings are acceptable.
+           More options are available, like customizing the names of data sets,
+           plotting interpolations in the generated curve, and so on. See Plotting
+           a Curve in the Data Reduction Options chapter.
+
+               Click OK to close the Data Reduction dialog.
+
+        12.      Set the Report parameters and Data Views as desired. For instructions, see
+              Viewing Results.
+        13. Save the protocol: select File>Save and name it DualWave1 for this example.
+              0.
+
+Run the protocol:
+Now, you're ready to run the DualWave1 protocol in an experiment.
+        1.    Select File>New Experiment. By default, Gen5 highlights the DualWave1
+              protocol in the dialog, making selection quick and easy.
+        2.    If the reader is all set up, you're ready to go: Click Read and follow the online
+              prompts.
+
+
+---
+
+64 | Chapter 4: Assay Examples
+
+
+
+
+Basic Absorbance Spectrum Analysis
+        Numerous applications can profit by a preliminary spectral screening. Here are
+        instructions for setting up a basic spectrum protocol in Gen5.
+
+
+            It may be easier to follow these instructions if you have already watched the Gen5
+        Basic series of online tutorials: select Help>Tutorials, or if you've completed the
+        learning exercises described in the Getting Started Guide.
+
+
+1. Defining the reading Procedure
+        This assay example uses a kinetic read for analysis.
+         1.   Select File>New Protocol
+         2.   Open the Procedure (double click Procedure in the menu tree)
+         3.   Click Read and change the Read Type to Spectrum
+         4.   Set the Wavelength range: for this exercise set Start to 200 and Stop to 550
+         5.   Set the Step to 3, and close the Read step
+         6.   Click OK to save and close it.0.
+
+2. Defining the Plate Layout
+        Define the plate layout in the usual way to reflect the arrangement of unknown
+        samples, standards and blanks on the microplate.
+
+3. Defining the Data Reduction Steps
+        Now that you've defined the reading parameters and plate layout, you can define the
+        data reduction steps:
+         1.   Select Protocol> Data Reduction
+              Gen5 automatically sets up the a Well Analysis for Min/Max OD. If Blanks
+              have been assigned to the plate, it will be preceded by and based on a blank-
+              subtraction Transformation step.
+         2.   Click Well Analysis to add another step
+         3.   Enter a unique name for this step in the Label field
+         4.   Select one of the offered Calculation Types: Integral or Formula
+         5.   Click OK to save and close the step
+         6.   Click OK to save and close Data Reduction0.
+
+
+---
+
+                                                    Basic Absorbance Spectrum Analysis | 65
+
+
+
+
+4. Save the Protocol
+       1.   Define the Reporting Requirements using the Report Builder or export options
+
+       2.       Save the protocol0.
+      Now you can run it in an experiment: select File>New Experiment
+
+5. Viewing the Results
+      After you read the plate, you can take advantage of Gen5's Well Zoom to examine the
+      results. This feature is described in the Kinetic Analysis chapter.
+
+
+---
+
+66 | Chapter 4: Assay Examples
+
+
+
+
+Protein Quantification: Endpoint Absorbance
+        Here are instructions for the Gen5 portion of running this type of assay - the easy
+        part. Correctly mixing and dispensing the standards, and pipetting reagents to the
+        plate is the tricky part. Follow the assay instructions closely and modify these steps, as
+        needed. Click the links for instructions at each step.
+         1.   Select File>New Protocol
+         2.   Define the Procedure
+
+
+
+
+                1.        Select Protocol>Procedure
+                2.   Click Read to add one read step
+                3.   Keep the default settings:
+                      Detection Method = Absorbance
+                      Read Type = Endpoint
+                4.   Set the Wavelength using the drop-down or enter 650 in the nm field
+                5.   Click OK twice to close and save the Read step and the Procedure0
+
+
+---
+
+                                        Protein Quantification: Endpoint Absorbance | 67
+
+
+
+ 3.   Define the Plate Layout
+
+
+
+
+Set up Gen5's plate layout to match your placement of samples and standards on the
+plate, for example:
+
+        1.       Select Protocol> Plate Layout
+        2.   In the Well Settings box, select the Type of specimen, first Standards,
+             then Blanks, then Samples
+
+        3.      Define the Concentration of the Standards:
+        4.   Set the Replicates to 4
+        5.   Assign the well IDs to their corresponding locations in the plate matrix
+             by clicking in the respective wells in the matrix. Use the Auto Select
+             options to speed up your work. 0
+
+ 4.   Define the Data Reduction:
+
+
+
+
+Gen5 creates a Blank Subtraction data set when you put blanks on the plate, as defined
+above. Click in the white space below the Transformation step:
+       Click Curve Analysis to create a standard curve:
+       Data In: Well ID is set to STD. Set the Y Axis = Blank [650]
+
+
+---
+
+68 | Chapter 4: Assay Examples
+
+
+
+               Curve Fit: Method is set to Linear Regression
+
+         5.   Define the Reporting Requirements 0.
+
+Save the Protocol
+      Select File> Save when you're finished setting up the protocol. You'll be able to use
+      this protocol repeatedly to run this assay in an experiment.
+        Select File> New Experiment and select the protocol when you're ready to run it, i.e.
+        reagents are reconstituted, the plate is prepared, etc.
+
+
+---
+
+                                                          Basic Fluorescence Assay Example | 69
+
+
+
+
+Basic Fluorescence Assay Example
+       To help you set up your own assay in Gen5 here is an example of the steps required for
+       nucleic acids quantitation using a fluorescent stain, such as the dsDNA specific
+       PicoGreenTM.
+
+1. Defining the reading Procedure
+    This assay example defines a single-filter-set Fluorescent endpoint read:
+        1.   Select File>New Protocol
+        2.   Select Protocol>Procedure
+        3.   Click the Read button and change the Detection Method to Fluorescence
+        4.   To set the Filter Set: filter-based reads use the drop-down list to select the
+             filter for Excitation and Emission, for this exercise 485/20 and 528/20,
+             respectively; monochromator-based reads enter 485 and 528 in the text fields.
+        6.   Keep the Optics Position set to Top and if applicable select a mirror, e.g. Top
+             510, that corresponds to the selected filters. Top 50% works with any filter.
+        7.   Enter 65 for the Sensitivity setting when using filters or enter 100 for the
+             setting when using the monochromator
+        8.   Click OK twice to save and close the Procedure0.
+
+2. Defining the Plate Layout
+       Define the plate layout in the usual way to reflect the arrangement of unknown
+       samples, standards and blanks, if any, on the microplate. For the sample protocol
+       shipped with Gen5, we set up the plate this way:
+
+
+---
+
+70 | Chapter 4: Assay Examples
+
+
+
+        Defining the expected concentration of the standards is the required to plot a curve.
+        Find specific instructions in the Preparing Plates chapter.
+
+3. Defining the Data Reduction Steps
+        With the reading parameters and plate layout defined, Data Reduction steps can be
+        created: a standard curve for determining the concentrations of the unknown samples:
+         1.   Select Protocol> Data Reduction
+         2.   Click Curve Analysis
+         3.   Notice on the Data In tab, the Well ID is set to STD and X Axis Data to <Plate
+              Layout Settings>. The known concentrations entered for Standards are plotted
+              on the X Axis. Use the drop-down list for the Y Axis Data to select
+              485/20,528/20 (or 485,528).
+         4.   Retain the default settings for Curve Fit and the Data Out tab. Take note that
+              the Data Set Name produced from the standard curve is called Conc (by
+              default. You can change it.). Click OK to save and close the curve.
+         5.   Click OK twice to save and close Data Reduction0.
+
+
+           After the plate is read, you can return to the Data Reduction dialog to make any
+        needed changes, like the Curve Fit Method. Do not change the Data Out or Data Set
+        Names, this would invalidate the data reduction steps that use those data sets.
+
+
+4. Save the Protocol
+         1.   Define the Reporting Requirements using the Report Builder or export options
+
+         2.       Save the protocol
+        Now you can run it in an experiment: select File>New Experiment
+
+
+---
+
+                                                        Kinetic Fluorescence Assay Example | 71
+
+
+
+
+Kinetic Fluorescence Assay Example
+      To help you set up your own assay in Gen5 here is an example of the steps required to
+      measure antioxidant capacity based on the free radical damage to a fluorescent probe,
+      as in the Oxygen Radical Absorbance Capacity (ORAC) Assays. This protocol deploys
+      Gen5's Synchronized Plate Mode for precise timing of the measurements.
+
+1. Defining the reading Procedure
+   This assay example defines a single-filter-set Fluorescent endpoint read:
+
+
+
+
+       1.   Select File>New Protocol
+       2.   Select Protocol>Procedure
+       3.   Click Set Temperature and enter 37 for the temperature
+       4.   Click Plate Out/In and select Move plate in
+       5.   Click Delay and enter 0:30:00 minutes to let the reader warm up
+       6.   Click Plate Out/In and select Move plate out
+       7.   Under Synchronized Modes, click Plate for a synchronized-plate mode block
+       8.   Click Shake and change the Intensity to Fast and the Duration to 0:15 seconds
+       9.   Click Kinetic and set the Run Time to 1:00:00 hour and the Interval to 0:01:00
+            minute
+       10. Click the Read button, change the Detection Method to Fluorescence and set
+            the Filter Set: filter-based reads use the drop-down list to select the filter for
+            Excitation and Emission, for this exercise 485/20 and 528/20, respectively;
+            monochromator-based reads enter 485 and 528 in the text fields.
+       11. Keep the Optics Position set to Top and if applicable select a mirror, e.g. Top
+            510, that corresponds to the selected filters. Top 50% works with any filter.
+       12. Enter 65 for the Sensitivity setting when using filters or enter 100 for the
+            setting when using the monochromator
+       13. Click OK twice to close and save the Read step and the Procedure0.
+
+
+---
+
+72 | Chapter 4: Assay Examples
+
+
+
+2. Defining the Plate Layout
+       Define the plate layout in the usual way to reflect the arrangement of unknown
+       samples, standards, controls and blanks on the microplate. For the sample protocol
+       shipped with Gen5, we set up the plate this way:
+
+
+
+
+        Defining the expected concentration of the standards is required to plot a curve. Find
+        instructions in the Preparing Plates chapter.
+
+3. Defining the Data Reduction Steps
+        Now that we've defined the reading parameters and plate layout, we can define the
+        data reduction steps: two well analysis steps and a standard curve.
+         1.   Select Protocol> Data Reduction
+              Gen5 automatically creates two steps: the Blank Subtraction Transformation
+              and Well Analysis for Max V
+         2.   Click Well Analysis to add another step to perform a calculation on the results
+              of individual read intervals:
+                6.   Enter a unique Label for this step, e.g. AUC
+                7.   Select Formula and enter it in the text field:
+                     (R1/R1)+(R2/R1)+(R3/R1)+(R4/R1)+(R5/R1)+(R6/R1)+(R7/R1)+(R8/
+                     R1)+...(R61/R1). This formula normalizes the AUC (area under the
+                     curve), the results are used to plot the standard curve to determine
+                     unknown concentrations
+                8.   Click OK
+         3.   Click Curve Analysis to plot a standard curve:0.
+                 1   On the Data In tab, select the Y-Axis Data. In this example, choose the
+                     Well Analysis "AUC: Formula Result [Blank 485/20, 528/20]" or [Blank
+                     485,528]"
+
+
+---
+
+                                                     Kinetic Fluorescence Assay Example | 73
+
+
+
+              2    Click OK twice to save and close the Curve and the Data Reduction
+                   dialog
+
+
+         After the plate is read, you can return to the Data Reduction dialog to make any
+      needed changes, like the Curve Fit Method. Do not change the Data Out or Data Set
+      Names, this would invalidate the data reduction steps that use those data sets.
+
+
+4. Save the Protocol
+       1.   Define the Reporting Requirements using the Report Builder or export options
+
+       2.       Save the protocol
+      Now you can run it in an experiment: select File>New Experiment
+
+
+---
+
+74 | Chapter 4: Assay Examples
+
+
+
+
+Fluorescence Assay with Injection
+        To help you set up your own assay in Gen5 here is an example of the steps required to
+        develop an ion channel assay and similar FRET assays which are well suited for
+        sodium, potassium, calcium and ligand-gated ion channel research. This protocol
+        deploys Gen5's Synchronized Well Mode to quickly switch between two emission
+        filters in well kinetic mode.
+
+1. Defining the reading Procedure
+     This assay defines a kinetic dual-filter-set Fluorescent read:
+
+
+
+
+          1.   Select File>New Protocol
+          2.   Select Protocol>Procedure
+          3.   Under Synchronized Modes, click Well for a synchronized-well mode block
+          4.   Click Kinetic and set the Run Time to 0:40.00 and the Interval to 00.15 second
+          5.   Click the Read button and change the Detection Method to Fluorescence
+                  1   Define the Filter Set using the filter wheels, for this exercise set the first
+                      filter set to 360/40 and 460/40, and the second filter set to 360/40 and
+                      590/35
+                  2   Set the Optics Position set to Bottom and enter 65 for the Sensitivity
+                      setting
+                  3   Click OK to close and save the Read step
+          6.   In the Procedure workspace, highlight the End Mode step and click Dispense.
+               Define the parameters for injecting the wells with 100 ul of a High K+ solution
+               to initiate depolarization. Select Tip priming
+          7.   Click Kinetic and again set the Run Time to 0:40.00 and the Interval to 00.15
+               second
+          8.   Click the Read button. Gen5 offers the limited-form read step because the
+               parameters must match the first read step. De-select Append to previous
+               Kinetic data and click OK (We're going to compare the before and after
+               injection data sets, so we do not want them combined into one.)
+          9.   Click OK to save and close the Procedure0.
+
+
+---
+
+                                                             Fluorescence Assay with Injection | 75
+
+
+
+2. Defining the Plate Layout
+       Define the plate layout in the usual way to reflect the arrangement of the cells and
+       blanks on the microplate. For this assay we set it up the plate this way:
+
+
+
+
+        Find instructions in the Preparing Plates chapter.
+
+3. Defining the Data Reduction Steps
+        Now that we've defined the reading parameters and plate layout, we can define the
+        data reduction steps. This type of FRET assay supports a direct comparison between
+        the 590-nm and 460-nm fluorescence results via a ratiometric data reduction.
+          1.   Select Protocol> Data Reduction
+               Gen5 automatically creates four Blank Subtraction Transformation steps and
+               four Well Analysis for Max V (one for each data set)
+          2.   Click Transformation to add another step to determine the ratio of the pre-
+               injection (polarized) reads:
+                 1    Click the Select multiple data sets button: click the button for DS2,
+                      use the drop-down lists to select DS1: Blank Read 1:360/40,460/40 and
+                      for DS2: Blank Read 1: 360/40,590/35
+                 2    Enter a New Data Set Name, e.g. Polarized Em Ratio
+                 3    In the Plate Formula field enter DS1/DS2
+                 4    Click OK
+          3.   Repeat Step 2 selecting Read 2 data sets to calculate the post-injection
+               (depolarized) ratio: DS1: Blank Read 2:360/40,460/40 and for DS2: Blank Read
+               2: 360/40,590/35. For this assay we called the New Data Set: Depolarized Em
+               Ratio
+          4.   Create one more Transformation to calculate the response ratio:
+
+
+---
+
+76 | Chapter 4: Assay Examples
+
+
+
+                 1   Click the Select multiple data sets button: click the button for DS2,
+                     use the drop-down lists to select the previously calculated ratios, we
+                     named them DS1: Depolarized Em Ratio and for DS2: Polarized Em
+                     Ratio
+                 2   Enter a New Data Set Name, e.g. Response Ratio
+                 3   In the Plate Formula field enter DS1/DS2
+                 4   Click OK
+         5.   Perform additional Data Reduction steps, as needed, for further analysis
+              outputs.
+         6.   Define the Reporting Requirements using the Report Builder or export options
+
+         7.       Save the protocol0.
+        Now you can run it in an experiment: select File>New Experiment
+
+
+---
+
+                                                            Fluorescence Area Scan Example | 77
+
+
+
+
+Fluorescence Area Scan Example
+       To help you set up your own assay in Gen5 here is an example of the steps required to
+       perform a fluorescent area scan.
+
+          The Synergy 2's and Synergy 4's probe size limits its ability to
+            perform Fluorescence area scan in plates with a small well diameter.
+            Generally, this means you must use a plate with fewer than 96 wells.
+
+1. Defining the reading Procedure
+    This assay example defines a single-filter-set Fluorescent area scan read on four wells:
+         1.   Select File>New Protocol
+         2.   Select Protocol>Procedure
+           Synergy 2/4 users must change the Plate Type
+         3.   Click the Read button and change the Detection Method to Fluorescence
+         4.   Set the Read Type to Area Scan
+         5.   Click the Full Plate button in the upper right corner of the screen
+         6.   Turn off the Use all wells by clicking the checkbox
+         7.   Click and drag over the matrix to select four adjacent wells to read
+         8.   Define the Filter Set
+         9.   Keep the Optics Position set to Top and if applicable select a mirror, e.g. Top
+              510, that corresponds to the selected filters. Top 50% works with any filter.
+        10. Enter 65 for the Sensitivity setting when using filters or enter 100 for the
+              setting when using the monochromator
+        11. Click OK twice to save and close the Procedure0.
+
+2. Defining the Plate Layout
+       Define the plate layout to reflect the arrangement of unknown samples, standards and
+       blanks, if any, on the microplate. Find instructions in the Preparing Plates chapter.
+
+3. Defining the Data Reduction Steps
+       Gen5 automatically creates a Well Analysis Data Reduction step to determine the
+       Mean, Standard Deviation and CV% of the scanned wells. You can additional
+       calculations as needed: Protocol> Data Reduction
+
+
+---
+
+78 | Chapter 4: Assay Examples
+
+
+
+4. Viewing the Results
+
+
+
+
+                                         To view the results on-screen:
+         1.   Open the Plate View, and select the Scans data set in the Data field.
+         2.   For a Well Zoom click on a well
+        Area scans can be used to determine the optimal settings for an assay.
+
+
+---
+
+                                                             Fluorescence Polarization Example | 79
+
+
+
+
+Fluorescence Polarization Example
+     To help you set up your own assay in Gen5 here is an example of the steps required to
+     perform a fluorescent polarization experiment.
+
+
+         It may be easier to follow these instructions if you have already watched the Gen5
+     Basic series of online tutorials: select Help>Tutorials or if you've completed the learning
+     exercises described earlier. Learn more about Fluorescence Polarization in Gen5's Help.
+
+
+     To set up the protocol, we'll define the:
+          1.   Reading Procedure
+          2.   Plate Layout
+          3.   Data Reductions 0.
+
+           Reporting Results is the same process for all types of experiments
+
+1. Defining the reading Procedure
+       This assay example defines a single-filter-set Fluorescent area scan read on four wells:
+          1.   Select File>New Protocol
+          2.   Select Protocol>Procedure
+          3.   Click the Read button and change the Detection Method to Fluorescence
+          4.      Select Polarization by clicking the checkbox
+          5.   Optionally, you can change the default settings for Light Source and Read
+               Speed
+          6.   To set the Filter Set, use the drop-down list to select the filter for Excitation
+               and Emission, for this exercise 485/20 and 528/20, respectively
+          7.   Gen5 automatically sets the Optics Position to Top and selects the mirror in
+               position 3 because the polarizers are located above this mirror in the mirror
+               holder. Since the mirror position is fixed for FP analysis, you must select a filter
+               set that corresponds to the mirror in position 3.
+          8.   Enter 65 for the Sensitivity setting
+          9.   Click OK twice to save and close the Procedure0.
+
+2. Defining the Plate Layout
+     Define the plate layout to reflect the arrangement of unknown samples, standards and
+     blanks, if any, on the microplate.
+
+
+---
+
+80 | Chapter 4: Assay Examples
+
+
+
+3. Defining the Data Reduction Steps
+    Gen5 automatically creates the Fluorescence Polarization steps, preceded by the blank-
+    subtraction transformations if Blanks were assigned to the plate layout. You can add other
+    Data Reduction steps as needed: Protocol> Data Reduction
+
+4. Save the Protocol
+         1.   Define the reporting requirements using the Report Builder or export options
+
+         2.       Save the protocol. 0.
+        Now you can run it in an experiment: select File>New Experiment
+
+
+---
+
+                                                  Basic Luminescence Glow Assay Example | 81
+
+
+
+
+Basic Luminescence Glow Assay Example
+       To help you set up your own assay in Gen5 here is an example of the steps required to
+       use reporter genes, such as luciferase, for studying gene expression. The step-by-step
+       instructions provided here mirror the sample protocol shipped with Gen5 for Glow
+       Luciferase Assay.
+
+1. Defining the reading Procedure
+    This assay example defines a single-filter-set Luminescent endpoint read:
+        1.   Select File>New Protocol
+        2.   Select Protocol>Procedure
+        3.   Click the Read button and change the Detection Method to Luminescence
+        4.   Set the Integration Time to 1.0 SS.ss
+        5.   To set the Filter Set, use the drop-down list to select the Hole for Emission
+        6.   Keep the Optics Position set to Top and enter 200 for the Sensitivity setting
+        7.   Click OK twice to save and close the Procedure
+
+2. Defining the Plate Layout
+       Define the plate layout in the usual way to reflect the arrangement of unknown
+       samples, standards and blanks on the microplate. For the sample protocol shipped
+       with Gen5, a Blank well and 47 unknown Sample wells in duplicate were defined.
+       Find instructions in the Preparing Plates chapter.
+
+3. Defining the Data Reduction Steps
+       With the reading parameters and plate layout defined, Data Reduction steps can be
+       created. Gen5 automatically creates the Blank Subtraction transformation. You can add
+       additional calculations as needed.
+
+4. Save the Protocol
+        1.   Define the Reporting Requirements using the Report Builder or export options
+
+        2.       Save the protocol
+       Now you can run it in an experiment: select File>New Experiment
+
+
+---
+
+82 | Chapter 4: Assay Examples
+
+
+
+
+Luminescence Flash Assay with Injection
+        To help you set up your own assay in Gen5 here is an example of the steps required to
+        use automated injection and luminescence detection for studying gene expression. The
+        step-by-step instructions provided here mirror the sample protocol shipped with Gen5
+        for Flash Luciferase Assay.
+
+1. Defining the reading Procedure
+     This assay example defines a single-filter-set Fluorescent endpoint read:
+         1.   Select File>New Protocol
+         2.   Select Protocol>Procedure
+         3.   Click Well to set up a Synchronized Well Mode block
+         4.   Click Dispense and set the Volume to 100 and the Rate to 300
+         5.   Click Delay to define a Delay Time of 0:02.00 (two seconds)
+         6.   Click the Read button and change the Detection Method to Luminescence
+                 1    Set the Integration Time to 5.0 SS.ss
+                 2    To set the Filter Set, use the drop-down list to select the Hole for
+                      Emission
+                 3    Keep the Optics Position set to Top and enter 180 for the Sensitivity
+                      setting
+                 4    Click OK twice to save and close the Procedure
+
+2. Defining the Plate Layout
+        Define the plate layout in the usual way to reflect the arrangement of unknown
+        samples, standards and blanks on the microplate. For the sample protocol shipped
+        with Gen5, 48 unknown Sample wells in duplicate were defined.
+
+3. Defining the Data Reduction Steps
+        With the reading parameters and plate layout defined, Data Reduction steps can be
+        created. Gen5 automatically creates the Blank Subtraction transformation. You can add
+        additional calculations as needed.
+
+4. Save the Protocol
+         1.   Define the Reporting Requirements using the Report Builder or export options
+
+         2.        Save the protocol
+        Now you can run it in an experiment: select File>New Experiment
+
+
+---
+
+                                                Max Binding Determination/Competitive Assay | 83
+
+
+
+
+Max Binding Determination/Competitive Assay
+       To help you set up your own assay in Gen5 here is an example of the steps required to
+       run a competitive ELISA assay to determine maximum binding. In this example we set
+       up an endpoint Absorbance read, subtract Blank wells from all others, subtract NSB
+       (non-specific binding) wells from all others, plot a standard curve, and define B/B0 as a
+       percentage of bound sample and identify the Total Activity (TA) wells.
+
+1. Defining the reading Procedure
+    This assay example has a simple read Procedure: a single-wavelength Absorbance
+    endpoint read:
+        1.   Select File>New Protocol
+        2.   Select Protocol>Procedure
+        3.   Click the Read button and select the wavelength. Use the drop-down list or
+             type the wavelength in the text field (overwrite the current value).
+        4.   Click OK twice to save the Procedure
+
+2. Defining the Plate Layout
+       This step is critical for the data reduction steps to be defined later. Here's the plate
+       layout we need:
+
+
+
+
+       The critical factor is using the Well IDs, not their location on the plate. We customized
+       the Well IDs for this example, changing the first three Assay Control IDs to NSB, Bo,
+       and TA. Then, defined the known concentration of the standards and assigned all of
+       them to the plate:
+
+
+---
+
+84 | Chapter 4: Assay Examples
+
+
+
+              Well ID Type               Description
+
+              BLK        Blank           DI water only
+
+              NSB        Assay Control Assay-specific
+
+              Bo         Assay Control Assay-specific
+
+              TA         Assay Control Assay-specific
+
+              STD        Standard        Known concentrations
+
+              SPL        Sample          Unknown samples
+
+
+
+3. Defining the Data Reduction Steps
+        Now that we've defined the reading parameters and plate layout, we can define the
+        data reduction steps: blank-well subtraction, NSB subtraction, determine the percentage
+        bound and plot a standard curve. Gen5 creates the blank-subtraction step for you
+        automatically.
+         1.   Select Protocol> Data Reduction
+              Notice that one Transformation, named "Blank nnn" where nnn is the
+              wavelength, has already been created. We'll use the results of this calculation to
+              build the next step.
+         2.   Click Transformation
+                   1   For the Data In use the drop-down list to select Blank nnn.
+                   2   Enter a New Data Set Name for the results of this calculation, e.g.
+                       B/Bo
+                   3   In the Formula field enter: (X-NSB)/(Bo-NSB)*100
+         3.   Click Curve Analysis
+                   1   Notice on the Data In tab, the Well ID is set to STD and X Axis Data to
+                       <Plate Layout Settings>. The known concentrations entered for
+                       Standards are plotted on the X Axis. Use the drop-down list for the Y
+                       Axis Data to select B/Bo (or whatever you named the New Data Set
+                       Name in the previous step.)
+                   2   Click the Curve Fit tab: depending on your assay, you may want to
+                       change the curve fit method to 4 Parameters or another option, or use
+                       Log values on the X or Y axis. For now, retain the defaults and click the
+                       Data Out tab. Take note that the Data Set Name produced from the
+                       standard curve is called Conc (by default. You can change it.).
+                   3   Click OK to save and close the curve.
+         4.   Save the protocol.
+        Now you're ready to define your reporting requirements, and run the protocol in an
+        experiment.
+
+
+---
+
+                                          Max Binding Determination/Competitive Assay | 85
+
+
+
+More Advanced Options
+        Monitor Wells: Sometimes it is necessary/desirable to wait until a certain
+          amount of activity has occurred in the plate before reading it. Gen5 will
+          periodically check designated wells until they've reached a certain
+          measurement when the Monitor Wells option is used. When the criterion is
+          met, Gen5 continues the Procedure, i.e. the regular plate reading is performed.
+
+
+---
+
+86 | Chapter 4: Assay Examples
+
+
+
+
+Toxicity/Cytotoxicity Assay
+        To help you set up your own assay in Gen5 here is an example of the steps required to
+        run a Toxicity or Cytotoxicity assay to determine LD50 (lethal dose). In this example
+        the Read step is straightforward, but the Plate Layout takes full advantage of Gen5's
+        ability to customize Well IDs. We'll create two samples with six dilutions each, and a
+        control and blank for each sample. Then, we'll plot a standard curve based on blank-
+        subtraction and toxicity percentage. We'll use Gen5's Curve Interpolation to identify
+        LD50. toxicology
+
+1. Defining the reading Procedure
+     This assay example has a simple read Procedure: a single-wavelength Absorbance
+     endpoint read:
+         1.   Select File>New Protocol
+         2.   Select Protocol>Procedure
+         3.   Click the Read button and select the wavelength. Use the drop-down list or
+              type the wavelength in the text field (overwrite the current value).
+              Alternatively, you may want to perform a kinetic analysis.
+         4.   Click OK twice to save the Procedure
+
+
+2. Defining the Plate Layout
+This step is critical for the data reduction steps to be defined later. Here's the plate layout we
+need:
+
+
+---
+
+                                                              Toxicity/Cytotoxicity Assay | 87
+
+
+
+      The critical factor is setting up the Well IDs and dilution values. For the Samples,
+      (notice there are only two samples on the plate) we defined the known dilution values
+      and assigned them to the plate using the Auto Select features Next ID and Next Dil for
+      3 Replicates. We customized the Well IDs for the Sample Control IDs to BLK to have
+      sample-specific blanks and assigned them to plate without using the Auto Select
+      features. Assay Controls were assigned to the plate in the same way as the BLK1 and
+      BLK2.
+
+            Well ID Type               Description
+
+            SPL      Sample            Unknown samples with dilution values
+
+            CTL      Assay Control     Sample-specific
+
+            BLK      Sample Control Customized to be sample specific
+
+
+
+3. Defining the Data Reduction Steps
+      Now that we've defined the reading parameters and plate layout, we can define the
+      data reduction steps: blank-well subtraction, toxicity percentage determination and a
+      standard curve.
+       1.   Select Protocol> Data Reduction
+       2.   Click Transformation
+              1    For the Data In only one data set, the raw data from the Read step is
+                   available.
+              2    Enter a New Data Set Name for the results of this calculation, e.g.
+                   %Toxicity
+              3       De-select the Use single formula for all wells
+              4    In the Current Formula field enter: (X-BLK1)/(CTL1-BLK1)*100
+              5    Click and drag over the SPL1 wells to assign the formula to them
+              6    Change the Current Formula for SPL2 wells: (X-BLK2)/(CTL2-
+                   BLK2)*100 and assign the formula to them
+              7    Click OK to save and close the Transformation
+       3.   Click Curve Analysis
+              1    On the Data In tab, the Well ID is set to SPL- All IDs and X Axis Data
+                   to <Plate Layout Settings>. The known dilutions entered for Samples
+                   are plotted on the X Axis. Use the drop-down list for the Y Axis Data to
+                   select % Toxicity (or whatever you named the New Data Set Name in
+                   the previous step.)
+              2    Click the Curve Fit tab and change the curve fit method to 4 Parameters
+                   (unless you prefer another method).
+
+
+---
+
+88 | Chapter 4: Assay Examples
+
+
+
+                 3   Click the Data Out tab, in the Interpolations table enter 50 (and 90, if
+                     desired). 50 represents 50% toxicity and it will be plotted on the curve.
+                     Click OK to save and close the curve.
+         4.   Save the Data Reduction steps (click OK)
+
+         5.       Save the protocol
+        Now you're ready to define your reporting requirements, and run the protocol in an
+        experiment.
+
+
+---
+
+                                                                           Endotoxin Test | 89
+
+
+
+
+Endotoxin Test
+       Here are some guidelines for setting up a protocol to detect endotoxins in test samples
+       using a Limulus Amebocyte Lysate assay kit.
+
+         There are numerous variables when running this type of experiment.
+           This example uses a kinetic analysis rather than an endpoint, for
+           instance. Modify these procedures to comply with your assay kit
+           instructions.
+
+First, create a new Protocol: Select File>New Protocol
+
+Set up the Procedure
+
+
+
+
+        1.   Begin with Set Temperature
+        2.   Add a Delay step to incubate the plate
+        3.   Add a Shake step to mix the ingredients in the well
+        4.   Add a Monitor Well step to delay the start time for collecting actual
+             measurements until selected wells reach an OD of 0.05.
+             Gen5 sets up well monitoring as a loop in the Procedure.
+               1    Click Monitor Well to add the loop to the Procedure.
+               2    Define the criteria that must be met before the reader moves onto the
+                    next step
+               3    With the End Monitoring step highlighted, click Read to define the
+                    reading parameters for well monitoring.
+               4    Select the wells to monitor and define the same reading parameters as
+                    the actual read step: Absorbance read at 405 nm.
+        5.   Add Kinetic and set the Run Time to 50 minutes and the Interval to 15
+             seconds
+        6.   Set the Read step to Absorbance at 405 nm.
+        7.   Click OK twice to save and close the Procedure.
+
+
+---
+
+90 | Chapter 4: Assay Examples
+
+
+
+Define the Plate Layout
+
+
+
+
+        Take note of some of the conditions particular to this type of assay: Standards with
+        decreasing concentration values, and only one Sample, with known dilution values, is
+        assigned to the plate using the Auto Select features Next ID and Next Dil, in duplicate.
+        For the "Spiked Samples" we customized the Well ID of Sample Controls (SPLC),
+        changing it to Spike and assigned a concentration value. The Assay Control IDs were
+        customized to Pos and Neg.
+
+              Well Type          ID
+
+              Standard           STD
+
+              Sample             SPL
+
+              Sample Control     Spike
+
+              Assay Control      Pos & Neg
+
+              Blanks             BLK
+
+
+Set up Data Reduction
+      Data reduction, in this endotoxin example, requires a blank-subtraction, an onset OD
+      well analysis, a standard curve and a transformation for % Recovery determination.
+      Gen5 creates the blank-subtraction data set and a Max V Well Analysis step
+      automatically.
+         1.   Select Protocol>Data Reduction
+              Gen5 created the Blank 405 data set (if you defined this wavelength for the
+              Read step) and used Blank 405 as the Data In for the Well Analysis step. (You
+              can retain or replace the Max V step.)
+
+
+---
+
+                                                                         Endotoxin Test | 91
+
+
+
+       2.   Click Well Analysis to determine the Onset OD (if this is the second Well
+            Analysis step, give it an unique Label):
+              1    Set the Data In to Blank 405
+              2    Select the button for Onset OD
+              3    Enter 0.03 for the value.
+       3.   Click Curve Analysis to create a standard curve:
+              1    On the Data In tab: set the Well ID to STD and the Y Axis Data to t at
+                   Total OD [405]
+              2    On the Curve Fit tab: select Linear Regression for the method and
+                   change the X Axis Data and Y Axis Data Transformation to Log
+              3    On the Data Out tab: select both Calculate Concentrations options.
+                   Enter a Data Set Name for the Concentration X Dilution results: Conc
+                   X Dil.
+       2.   Click Transformation to calculate the percentage recovery:
+              1    For the Data In select Conc X Dil
+              2    Enter a New Data Set Name: % Recovery
+              3       De-select the Use single formula for all wells
+              4    In the Current Formula field enter: (Spike1-SPL1:1)/(.125)*100
+              5    Click in the Spike1 wells to assign the formula to them
+              6    Change the Current Formula for SPL1:2 wells: (Spike2-
+                   SPL1:2)/(.125)*100 and assign the formula to the Spike2 wells
+              7    Change the Current Formula for SPL1:3 wells: (Spike3-
+                   SPL1:3)/(.125)*100 and assign the formula to the Spike3 wells
+       3.   Repeat the process for all the spiked samples
+       4.   Create two Validation steps:
+              1    Click Validation and set the Data In = t at Total OD [Blank 405]
+                    enter the Formula = Neg>STD5*1.1
+
+              2    Click Validation and set the Data In = % Recovery
+                    enter the Formula = 50%<Spike#<200%
+
+
+Set up the Report
+      Define your reporting requirements as with all other types of experiments.
+
+Save the Protocol
+      Select File>Save when you're finished setting up the protocol. You'll be able to use
+      this protocol repeatedly to run this endotoxin assay in an experiment. Select
+      File>New Experiment and select the endotoxin protocol when you're ready to run it,
+      i.e. reagents are reconstituted, the plate is prepared, etc.
+
+
+---
+
+92 | Chapter 4: Assay Examples
+
+
+
+
+ss-Galactosidase
+        Quantitation of ss-galactosidase (ss-gal) enzymatic activity is a commonly used
+        determination in cellular and molecular biology. A colorimetric assay using o-
+        nitrophenol-B-D-galactoside (ONPG) as the substrate for ss-gal is described in an
+        Application Note on BioTek's website. Here are instructions for setting up this type of
+        assay in Gen5.
+
+1. Defining the reading Procedure
+        This assay example uses a kinetic read for analysis.
+         1.   Select File>New Protocol
+         2.   Open the StepWise Procedure
+         3.   Click Kinetic. Gen5 opens the Kinetic Step controls. Define the timelines:
+               Enter 0:30:00 minutes for the Run Time
+               Set the Interval to 0:00:30 seconds
+         4.   With the End Kinetic step highlighted, click Read and set the Wavelength to
+              420
+         5.   At the Procedure dialog, click OK to save and close it.
+
+2. Defining the Plate Layout
+        This assay requires 12 standards are decreasing concentration. The plate layout is
+        critical to the data reduction steps defined later:
+
+
+
+
+        The Standard concentrations can be defined in Gen5 using the Auto entry tools:
+
+
+---
+
+                                                                         ss-Galactosidase | 93
+
+
+
+                                                     1.   Set the Well Type to Standard
+                                                          and click the 3-dot button next to
+                                                          the Conc. field
+                                                     2.   Enter 10 in the table for STD1
+                                                     3.   Fill the checkbox next to Fact. and
+                                                          enter .5 in the text field
+                                                     4.   Click in the STD2 cell in the table
+                                                          to apply the factor
+                                                     5.   Click in or use the down arrow
+                                                          key to move to each next cell
+                                                          until STD12
+                                                     6.   Change STD12 to 0
+
+
+
+
+      Assign the location of the standards and unknown samples to the plate.
+
+3. Defining the Data Reduction Steps
+      Now that we've defined the reading parameters and plate layout, we can define the
+      data reduction steps: two well analysis steps and a standard curve.
+       1.   Select Protocol> Data Reduction
+            Gen5 automatically sets up the first Well Analysis for MaxV
+       2.   Click Well Analysis to add another step
+              1    Enter a unique name for this step in the Label field, e.g. Mv for this
+                   exercise
+              2    Select the Mean V Calculation Type
+              3    Click OK to save and close the step
+       3.   Click Curve Analysis to define a standard curve
+              1    On the Data In tab set the Y-Axis Data to Mv: Mean V[420]
+              2    On the Curve Fit tab select 4 Parameters
+              3    Click OK to save and close the curve step
+       4.   Click OK to save and close Data Reduction0.
+
+4. Save the Protocol
+       1.   Define the reporting requirements using the Report Builder or export options
+
+       2.       Save the protocol0.
+      Now you can run it in an experiment: select File>New Experiment
+
+
+---
+
+94 | Chapter 4: Assay Examples
+
+
+
+
+Dispensing Reagent
+        Dispensing reagent during an experiment is affected by the type of analysis. Select the
+        option that most closely fits your requirements:
+           Dispensing Reagent in a Kinetic Analysis
+           Dispensing Reagent in an Endpoint (non-kinetic) Analysis
+
+
+
+Dispensing Reagent in Kinetic Analysis Protocols
+        If dispensing is required during a kinetic read, here are two options:
+
+Manually Dispensing Reagent:
+        Create a protocol with an extended kinetic interval; add enough time to dispense
+        reagent to the plate between readings. During an interval, when the reader is idle:
+         1.   Push the carrier eject button on the front of the reader to eject the plate
+         2.   Perform the dispense using a pipette
+         3.   Push the carrier eject button to draw the plate back in
+         4.   The read will continue as scheduled0.
+
+
+
+
+Readers with Injectors:
+
+Standard Mode:
+        Define two kinetic read steps around a dispense step in the Procedures:
+         1.   Set the Kinetic timelines, define the Reading parameters, and End the loop.
+         2.   After the loop, add a Dispense step to dispense the reagent. (You can add a
+              Delay and/or Shake step after dispensing and before the next kinetic loop.)
+         3.   Add a second Kinetic loop, kinetic settings can differ. Add a Read step to the
+              loop, and check Append to Previous Kinetic Data. Selecting this option copies
+              the previous defined reading parameters, e.g. wavelength/filter set, to this
+              step. 0.
+
+
+---
+
+                                                                     Dispensing Reagent | 95
+
+
+
+
+Synchronized Mode:
+      For Fluorescence or Luminescence analysis select Plate or Well Mode to most precisely
+      control the timing of your experiment. Learn About Synchronized Modes in Gen5's
+      Help.
+       1.   Add a Plate or Well mode block to the Procedure
+       2.   Create a Dispense step to dispense the reagent. (You can add a Delay, and in
+            Plate mode a Shake step, after dispensing and before reading.)
+       3.   Add a Read step to the block, defining the reading parameters as needed.
+       4.   Within the block you can repeat any or all of the options: Dispense, Delay,
+            Shake in Plate mode, and Read, again. Note: the first Read step in the block sets
+            the parameters0.
+
+
+Dispensing Reagent in Endpoint Analysis
+
+Manually Dispensing Reagent:
+      Add a Plate In/Out step to the Procedure:
+       1.   You might want to incubate the plate before adding the reagent. If so, and your
+            reader is capable, add a Set Temperature step.
+       2.   Add a Plate In/Out step. Enter "Add Reagent" in the Comment field.
+       3.   Add a Read Step.0.
+
+
+
+
+Readers with Injectors:
+      Define a dispense step in the Procedure:
+       1.   Create a Dispense step to dispense the reagent.
+       2.   Add a Delay and/or Shake step after dispensing, if desired.
+       3.   Add a Read step.0.
+
+
+---
+
+96 | Chapter 4: Assay Examples
+
+
+
+
+ Other Options
+        Multi-Detection Methods
+        For readers capable of performing multiple detection methods, like BioTek's Synergy
+        models, Gen5 supports multi-detection kinetic protocols.
+
+        Discontinuous Kinetic Procedure
+        A Discontinuous Kinetic Procedure can be defined to execute a sequence of readings
+        over an extended time period. Use the Procedure's Advanced Options to conduct an
+        experiment that requires long periods of downtime (for rest or incubation) between
+        reads. Learn more in the Gen5 Help.
+
+
+---
+
+                                                 Fast Kinetics with Injection for Absorbance | 97
+
+
+
+
+Fast Kinetics with Injection for Absorbance
+
+
+
+
+                       for Synergy HT with Injectors, Synergy 2, and Synergy 4
+
+
+
+ BioTek's multi-detection readers Synergy 2 and Synergy 4 can perform
+   absorbance reads in Synchronized Mode, providing more ways to perform fast
+       kinetics. You may need to experiment with the various options to determine the
+       best method for your assays. Generally, for the shortest kinetic intervals, < 2
+       seconds, use Well Mode. For intervals > 15 seconds, use Synchronized Plate
+       Mode. Alternatively, copy the procedure described here, it is a work-around for
+       Synergy HT.
+
+    Gen5 lets you dispense fluid to wells when performing a kinetic absorbance analysis, but
+    the Synergy HT cannot perform Absorbance reads in Synchronized Mode. Here is a way to
+    mimic this fast kinetic behavior: define the Procedure to dispense and read one row at a
+    time, like this:
+
+
+
+
+        3.   Add a Dispense step
+             1.   Click the Full Plate button and change it to read the first row, A1-A12
+             2.   Select Priming and set the Volume to 20 ul
+             3.   Set the Dispense Volume
+             4.   Click OK0.
+        4.   Click Kinetic, set the Run Time and click Minimum Interval
+
+
+---
+
+98 | Chapter 4: Assay Examples
+
+
+
+         5.   Add the Read step
+              5.   Click the Full Plate button and change it to read the first row, A1-A12
+              6.   Set the Read Speed to Sweep
+              7.   Select the wavelength
+              8.   Click OK0.
+         6.   Now, repeat steps 3-5 selecting the next row (e.g., B1-B12, then, C1-C12 ...) for
+              each series of steps. Note: Highlight the empty space beneath the End Kinetic
+              step before adding the next Dispense step. When defining the subsequent Read
+              steps, de-select Append to previous Kinetic data to enable the reading
+              parameters controls.
+         7.   When you've defined a Dispense step and Kinetic read for each row of the
+              plate, click Validate to obtain the minimum kinetic interval for each read and to
+              make sure the reader can perform the Procedure. 0.
+
+
+---
+
+Chapter 5
+
+
+
+
+Basic Tasks
+
+     This section provides instructions for performing basic tasks in
+     Gen5. It also describes the process for creating an Experiment
+     (based on a protocol).
+
+
+ Quick Read ............................................................................. 100
+ Create a Standard Curve........................................................... 101
+ View Results............................................................................ 102
+ Print Results............................................................................ 104
+ Quick Export ........................................................................... 105
+ Quick Output Options ............................................................... 106
+ Test the Reader ....................................................................... 108
+ Setting up an Experiment ......................................................... 109
+ Read a Plate ............................................................................ 110
+
+
+---
+
+100 | Chapter 5: Basic Tasks
+
+
+
+
+Quick Read
+        In Gen5, a Quick Read is using the microplate reader connected to the PC to read a
+        plate and report the results. It's called quick because it is accomplished without taking
+        the time to set up a protocol.
+
+To perform a Quick Read:
+          1.    Click Read a Plate from the Welcome page (and skip down to Step 4)
+                or Click     or select File>New Experiment
+          2.    Select Default Protocol
+
+          3.    Click    (the Read button)
+                The Procedures dialog opens.
+
+          4.    Click               and enter the desired reading parameters, and any other
+                needed steps. When you click OK to save and close the Procedure, the Plate
+                Reading dialog opens.
+          5.    Click Read0.
+
+               When the reading is done you can report the results or select a view and click the
+        Quick Export button to use Excel(R) to manipulate the data.
+
+
+---
+
+                                                     How to Create a Standard Curve | 101
+
+
+
+
+How to Create a Standard Curve
+    Gen5 lets you create one or more standard or calibration curves for determining the
+    concentration of test samples:
+     1.   Select File> New Protocol
+     2.   Select Procedure and define the Read step (and any other required steps)
+     3.   Select Plate Layout:
+           Define the Concentrations of the Standards
+           Assign the location of the standards, samples, and blanks (if any) on the
+             plate
+     4.   Select Data Reduction> Curve Analysis
+           Gen5 may have generated a "corrected" data set: if you assigned blanks to
+             the plate or selected Pathlength Correction in the Read step, you'll want to
+             select these data sets for Data In for the Y-Axis Data when plotting the
+             curve
+
+     5.      On the Data In tab, use the drop-down to select the Y-Axis Data
+     6.   On the Curve Fit tab, choose a curve fit method
+     7.   Other options and requirements when defining multiple curves:
+           Curve Name: replace the default "Curve" with a more meaningful or unique
+             name
+           On the Data Out tab, replace the default "Conc" for the Data Set Name with
+             a more meaningful or unique name
+           On the Data Out tab, define interpolations to plot on the curve
+     8.   Define the reporting or export requirements and Save the protocol. Now,
+          you're ready to run an experiment: select File> New Experiment to read the
+          plate and generate the curve.0.
+
+
+---
+
+102 | Chapter 5: Basic Tasks
+
+
+
+
+Viewing Results
+
+           Learn more in the Viewing Results chapter.
+
+        You can instantly view the results of an experiment in Gen5's main workspace using
+        the Plate View:
+
+
+
+
+            After reading the plate (or otherwise acquiring data), in the Plate View use the
+              drop-down list for Data to display the raw data and any data reduction results
+
+                 Click the 3-dot button next to a data set to customize the view's
+                appearance, including changing the numeric Format, e.g. number of decimal
+                places, and the Font. (This feature is also available in the Data Views dialog.)
+            ** Asterisks are used to signal a change: in Gen5's title bar an asterisk
+              indicates the current file has been changed but not-yet saved. When asterisks
+              enclose a data set it has been become invalid. Generally this is because a Read
+              step or Data Reduction step has been altered. Edit custom-made data views to
+              select valid data sets
+
+                  384- and 1536-well plates require resizing to effectively see the data. Gen5
+                adds a button to the Plate View to zoom in on the top-left quadrant of the plate
+                and zoom out to view the entire plate. After zooming in, use the scroll bars to
+                bring the other quadrants into focus. Find more on resizing the views in Gen5's
+                Help
+
+                  Click the Quick Export button to instantly open the current view in Excel(R).
+                Learn more about Gen5's Export Options
+
+
+
+            Multi-index readings offer another viewing option. Kinetic and scanning reads
+              generate views based on the number of read intervals, wavelengths, or
+
+
+---
+
+                                                                       Viewing Results | 103
+
+
+
+            positions defined. Use the spin buttons or enter the desired read index and
+            click Show to display it. Gen5 displays the time, wavelength, or position of the
+            selected read number.
+
+             Kinetic and Scanning protocols can generate Well Analysis data sets
+            labeled Curves in the Matrix drop-down list, open the Curves data set and click
+            on a well for a Well Zoom
+
+
+          Starting at the Curves data set, you can display multiple well zooms
+       simultaneously by holding down the Ctrl key while selecting (up to 8) wells
+
+
+        You can also select Create new Matrix to define a new view
+        Select the Statistics tab to view a table of data reduction results
+        Select the Graphs tab (when available) to view any Curves, except kinetic
+          analysis curves, which Gen5 calls Well Analysis and is described above
+        Select the Cutoffs tab (when available) to view the values or results of the
+          cutoff formulas
+        Select the Validation tab (when available) to view the values and results of the
+          validation formulas
+        Review this description of Gen5's naming convention for the raw data/results:
+          Data Set Naming on page 316
+
+
+ Important Notes:
+             Gen5 may not display some data points by default; to see them you must
+               create your own Data Views. If you expected to see certain results that are
+               not currently displayed, try creating your own views.
+             All data views are also available for Reporting and/or Exporting
+             Gen5 always uses your computer's Regional Settings to display and input
+               data.
+             Modify a data view to change the way results are reported, including the
+               number of decimal places and significant digits. Learn more in the Viewing
+               Results chapter, including the meaning of the Symbols and Notations
+               displayed
+
+
+---
+
+104 | Chapter 5: Basic Tasks
+
+
+
+
+Printing Results
+     Gen5 offers numerous options for results output. It's report engine offers two primary
+     outputs:
+
+                  Click the Print button to print the results of an experiment AFTER you
+                have created a report.
+            QuickPrint instantly generates a print out of the current view or selection.
+              After selecting the current view or specific content, right-click and select
+              QuickPrint. Click and drag to select contiguous cells or hold down the Ctrl key
+              and click to select non-contiguos cells.
+
+Create a Report:
+
+         Before you can print a report, you must select the report content using Gen5's Report
+     Builder.
+        Reporting in an experiment is done on a per plate basis:
+
+                 Highlight a            in the menu tree and select Print/Print Preview.
+                 In a multi-plate experiment: You can select multiple plates by holding the
+                   Ctrl key while highlighting them, or to select contiguously-ordered plates,
+                   highlight the first plate, hold down the Shift key and select the last plate.
+                   Then, click the Print button.
+            Gen5 offers enormous flexibility in report output. After defining the report
+        elements, use the Print Preview option to view the report on-screen before printing it
+        to paper. Unneeded columns and other individual report elements can be removed or
+        modified to improve the appearance and usefulness of the report.
+
+More Information:
+        Find step-by-step instructions for creating and customizing reports in the Reporting
+        Results chapter.
+
+
+---
+
+                                                                          Quick Export | 105
+
+
+
+
+Quick Export
+
+         Click the Quick Export button to instantly create a copy of the current screen in
+     Excel(R).
+  Where it works:
+     Wherever you see the Quick Export button, you can export the view. Almost every
+     Data View has a Quick Export button. For example, the Matrix, Statistics, Cutoff and
+     Validation tabs offer it and the Graph tab has two, one for the curve and another for
+     the Curve Results Table.
+
+
+     Adjust the Quick Export Settings to select the target spreadsheet for the Quick
+  Export. You can add items to the bottom of an existing Excel worksheet, for example.
+  Select Protocol>Protocol Options>Quick Export Settings.
+
+
+
+  If you don't have MS Excel:
+     Use one of these options (described in the Exporting Results chapter) to select content
+     and export it for use in another software application:
+        File Export Builder: to export selected data to a text file
+        Right-Click Menu Options - Copy to Clipboard and Save As: to copy or save
+          the current selection for use in another software application
+
+
+---
+
+106 | Chapter 5: Basic Tasks
+
+
+
+
+ Quick Output Options
+
+     In addition to the      Quick Export option, Gen5 offers several ways to output data,
+     results and current views. Use the right-mouse-click menu that is available in most views
+     for instant printing or exporting content for use in other software applications.
+
+
+         Simply right-click to select the entire current view for a quick output. Or, to limit the
+     output: click and drag to select contiguous cells or hold down the Ctrl key and drag to
+     select noncontiguous cells, then right-click for an option.
+
+
+Copy to Clipboard
+
+
+
+
+          1.   After selecting specific content or a current view, right-click and select the
+               Copy to Clipboard feature
+          2.   Open another software application, e.g. Microsoft(R) Word, WordPad, Paint,
+               Outlook and similar products offered by other manufacturers, where you want
+               to use the Gen5 content
+          3.   Paste the selected content. Try:0.
+                    Ctrl-V
+                    Right-click and select Paste
+                    From the menu, select Edit> Paste
+
+Quick Print
+
+
+
+
+        You can print the whole view or click and drag an area to select specific content for the
+        QuickPrint.
+            After selecting specific content or a current view, right-click and select the
+              QuickPrint feature.
+
+
+---
+
+                                                                       Quick Output Options | 107
+
+
+
+        It is similar to printing from the Report Builder, you can select a local printer. The
+        current view or selected content is printed in formatted text with row and column
+        headers.
+
+Save As
+
+
+
+
+        In any graph, i.e. Curve or Well Zoom, you can:
+          1.   Right-click and select the Save As feature
+          2.   Gen5 opens the standard Save As dialog so you can browse to any
+               file/directory available to your PC to choose the Save In location
+
+
+
+          3.   Use the drop-down list to select the Save as type: 0.
+                   Portable Network Graphic (.png)
+                   24-bit Bitmap (.bmp)
+                   CompuServe Graphics Interchange Format (.gif)
+                   JPEG Format (.jpg)
+                   Windows Enhanced Meta File (.emf)
+
+Export Multiple Plates to One File
+       When you run multiple plates in an experiment you can export all the data to one text
+       file:
+          1.   In the menu tree, select/highlight multiple plates (by holding down the Ctrl
+               key)
+          2.   Right-click and select File Export0.
+
+          Make sure the File Export Settings are defined to automatically append
+            the data.
+
+
+---
+
+108 | Chapter 5: Basic Tasks
+
+
+
+Reader System Test
+     System> Diagnostics> Run System Test
+
+           The System Test for the ClarityTM Microplate Luminometer must be
+             performed using the Clarity PC software. Refer to the Clarity
+             Operator's Manual for instructions.
+
+Run the Test
+     Most BioTek readers perform a self-test every time they're turned on, but when you want
+     to view and/or print the results of a system (aka optics) test:
+          1.   Select System> Diagnostics>Run System Test
+          2.   When there is more than one reader attached to the PC, select the desired
+               reader and click OK
+          3.   When the test is completed:0.
+               1.   Fill in the text fields, User, Company, Comments, to be included in the
+                    report of the test results. Then, click OK.
+               2.   Print the report to retain a hard copy for your records
+               3.   Save As to convert the results to a text file. This is especially useful when
+                    troubleshooting a reader. You can email the text file to BioTek TAC.0.
+
+Test History
+        Gen5 keeps the results of System Tests when they are performed using the menu
+        controls. To review or print them, select System> Diagnostics> Test History...
+
+
+---
+
+                                                                  Setting up an Experiment | 109
+
+
+
+
+Setting up an Experiment
+   File> New Experiment
+
+About Experiments
+      In Gen5, all plates are processed in an Experiment, which is based on a protocol. The
+      Experiment holds all the information: the Protocol as it was executed, the plate layout,
+      the raw data, and the transformed data and calculation results from Data Reductions.
+      An experiment is stored in a file with an .xpt extension.
+
+How to:
+
+          1.   Click the    button or select File>New Experiment
+               This opens the Protocol selection dialog with the most recently
+               opened/modified protocol selected
+          2.   Select a protocol:
+                You can select an existing one: double-click the desired protocol, or
+                Select Default Protocol
+          3.   Review (and modify as needed) the elements of the selected protocol, and
+               when you're ready click the Read button
+
+          4.   Select File>Save or click       and give the experiment file a unique name.0.
+
+
+ In an experiment, you can:
+                      Add Plates: to process additional plates using the same protocol
+
+                Delete and Renumber Plates: When multiple plates have been added to an
+                  experiment, highlight a plate in the menu tree, right click and select Delete.
+                  After removing a plate, right click and select Renumber All, if needed
+
+                      Read multiple plates: when multiple plates have been defined in an
+                    experiment, highlight one and hold the Ctrl key to select others, then right
+                    click for options: Read or Print
+
+                      Use the Quick Export feature to instantly export the current view to
+                    Excel(R)
+
+
+     You can make changes to the Protocol when running it in an Experiment. Select
+  File>Save Protocol As to save the changes for a future experiment. Otherwise, the
+  Experiment's protocol and the original Protocol will be different.
+
+
+---
+
+110 | Chapter 5: Basic Tasks
+
+
+
+
+Read a Plate
+
+            Highlight the plate in the menu tree and click the Read button on the toolbar or
+        right-click and select Read to read the plate.
+
+Prerequisites and other issues:
+            Minimally, you must define some reading directions, like wavelength. In Gen5
+              this is a Quick Read
+            If the reading is part of an experiment or assay that you'll perform numerous
+              times, create a new protocol
+
+            Click the Read button when an experiment is stopped and you want to begin
+              again:
+               you can Resume a reading procedure: continue from the stopping point, if
+                  a Stop/Resume step has been defined
+               or Re-Read the plate, starting from scratch, i.e. overwriting any previously
+                 obtained measurements
+            Define the Runtime Prompts: You can customize the "prompts" or text fields
+              users see when they read a plate
+
+Immediately before a read:
+            Runtime Prompts: Fill in the fields defined in the Protocol as Runtime Prompts
+            Set Temperature: Gen5 displays a warning message telling users to wait until
+              the defined temperature is reached before proceeding with the read
+            Load Plate: Gen5 displays the current reading-chamber temperature (if the
+              reader has an incubator). If the temperature is too high, you can Cancel the
+              read to wait until it cools down
+
+
+
+Acquiring Data
+        There are three ways for Gen5TM to acquire the data used in calculations and analysis:
+            Reading a plate
+            Manual entry
+            Import a text file
+        In Gen5 select Help>Help Topics to learn about the latter two options.
+
+
+---
+
+Chapter 6
+
+
+
+
+Designing a Protocol
+
+     This chapter covers the steps required to create a protocol. It also
+     provides instructions for using the Default Protocol.
+
+
+ Define the Procedure ................................................................ 113
+ Define the Plate Layout............................................................. 111
+ Define the Data Reduction ........................................................ 116
+ Define the Reporting Requirements ............................................ 118
+ Using the Default Protocol......................................................... 119
+
+
+---
+
+112 | Chapter 6: Designing a Protocol
+
+
+
+
+Design a Protocol
+         The menu tree provides a visual clue to the steps involved in creating most protocols
+         (File>New Protocol... opens only the Protocol section of the menu tree):
+          1.   Define the Procedure (or Reading Parameters)
+          2.   Define the Plate Layout (for all except Gen5 Reader Control software)
+          3.   Define the Data Reduction Requirements (for all except Gen5 Reader Control)
+          4.   Define the Runtime Prompts to collect user input at runtime (plate reading)
+          5.   Define the Reporting Requirements
+          6.   Save the Protocol0.
+
+           Important: follow this sequence of tasks, when developing a protocol
+             to take advantage of Gen5's automatically created data reduction
+             events. For example, when you add Blanks to the Plate Layout, Gen5
+             automatically creates a Blank-Subtraction data set.
+
+         You can find specific, step-by-step instructions for numerous types of protocols in
+         Gen5's Help system.
+     Protocols are run or executed within an Experiment. Learn more about the differences
+     between Experiments and Protocols in the Essential Concepts chapter
+
+           Alternatively, you may want to begin with one of Gen5's Sample
+             Protocols described in Chapter 4. They can give you a head start.
+
+
+---
+
+                                                             Defining the Reading Procedure | 113
+
+
+
+Defining the Reading Procedure
+    Protocol> Procedure
+
+      Set up the Procedure to control the reader: define the                   reading
+      parameters and related activities of the Protocol/Experiment.
+
+          Grayed out? Once a reading has been done in an experiment, the
+            Procedure cannot be changed for the current experiment. If this isn't
+            the case, your System Administrator may have restricted your ability
+            to modify the protocol elements.
+
+          Grayed out buttons mean the action cannot be performed by the
+            current reader or because previously defined steps, e.g. kinetic loop,
+            limit the function.
+
+How to:
+          1.   Click a button to add that step to the procedure. Most buttons open a screen for
+               defining the parameters of that step, e.g. Read lets you define wavelengths, etc.
+               When defining a kinetic or synchronized well/plate mode analysis, add the
+               Kinetic or Synchronized Mode steps first. Kinetic and Synchronized Mode
+               steps form a loop or block. Put the Read and other valid steps to be performed
+               inside the loop, between the Start and End. Monitor Well is similar, first add
+               the Monitor Well step and then, add a Read step inside the monitor-well loop.
+          2.   Define the details of the step and click OK
+          3.   Click Validate to check the selection and sequence of the steps
+
+          Your reader must be communicating with Gen5 for it to fully validate
+            the Procedure: make sure your reader is turned on, not busy, and
+            properly connected to the PC.
+
+
+
+
+         More details and a Validation Checklist are provided in the Defining a Procedure
+      chapter beginning on page 121.
+
+
+---
+
+114 | Chapter 6: Designing a Protocol
+
+
+
+
+Modify a Protocol
+     Gen5 does not restrict your ability to change a protocol, but other factors may:
+            the Procedure cannot be changed in an Experiment after more than one plate
+              has been read. Other protocol elements, like Data Reduction and reporting
+              parameters can be changed at any time.
+            Gen5 Secure's System Administrator can prohibit a user's ability to modify a
+              protocol.
+            All Gen5 System Administrators can limit users' ability to modify the Default
+              Protocol.
+
+To change the Procedure, you can:
+                When only one plate has been read in an Experiment, you can modify the
+                  Procedure and then re-read the plate, but this requires deleting the data
+                  originally obtained from the reader,
+                Alternatively, create a new Experiment based on the Protocol, then change
+                  the Procedure and re-read the plate,
+                Or, open the original Protocol, revise and save it, then create a new
+                  Experiment based upon it.
+
+           Gen5 tracks plate deletions in the Audit Trail
+
+Changing the protocol is easy:
+          7.   Open the protocol element you want to modify. For example, double-click
+               Procedure in the menu tree.
+          8.   Make the required changes:
+                In the Procedure and Data Reduction dialogs, double-click an already-
+                  defined step to open it for editing
+                For other protocol elements, use the controls to make the needed changes.
+          9.   When you're happy with the changes, save the file (File>Save or File>Save
+               Protocol As). 0.
+
+
+---
+
+                                                                Defining the Plate Layout | 115
+
+
+
+
+Defining the Plate Layout
+  Protocol> Plate Layout
+  It's easy to define the plate layout with Gen5's tools for identifying samples, standards,
+  controls and blanks. Follow these steps:
+
+       1.        In the Well Settings box in the top-left corner, select the Type of specimen
+
+       2.      Customize the ID or Well Identifiers, if necessary, by clicking the 3-dot
+            button.
+
+       3.      Define the Concentration or Dilution, if applicable, by clicking the 3-dot
+            button.
+       4.   Assign the well IDs to their corresponding locations in the plate grid by
+            clicking in the wells in the matrix.0.
+
+                          When you select a corresponding starting # the ID changes
+                 accordingly for assignment to the plate.
+             Use the Auto Select and Replicates options to speed up your work: set the
+               options and click and drag to fill multiple wells at once. Click a column or
+               row header to fill it.
+
+        The type of plate, e.g., 96-well, is defined in the Procedure and
+          displayed in a representative matrix or grid format in the Layout and
+          Transformation screens.
+
+        More details are provided in the Plate Preparation chapter beginning
+          on page 219, and Gen5's Help offers an instructive animated demo of
+          the process: Select Help>Tutorials.
+
+
+---
+
+116 | Chapter 6: Designing a Protocol
+
+
+
+
+Setting up Data Reduction
+     Protocol> Data Reduction
+         There are several options available for interpreting the results of your experiment.
+         Gen5TM automatically creates the most commonly applied data reduction steps (based
+         on previously-defined Protocol parameters). You can design your own or modify the
+         calculations.
+
+           Find more details and the Top 6 Things You Should Know about
+             Data Reduction in the chapter beginning on page 245.
+
+Data Reduction Options
+      Find details about each option in the Data Reduction Options chapter.
+
+                 Define a Transformation
+
+                 Define a Curve Analysis
+
+                 Define a Well Analysis
+
+                 Define Cutoffs
+
+                 Define Validation criteria
+
+                 Fluorescence Polarization
+
+
+               Gen5 shows an invalid data reduction step by blocking out its icon.
+             Changing the Procedure, e.g. reading parameters or sequence of
+             events, renaming a Read step or data set, or making other Protocol
+             changes can invalidate a data reduction step. Generally, it is easiest to
+             delete the invalid step and recreate it, selecting valid options.
+
+
+---
+
+                                           Customizing Data Views, Reports, and Exports | 117
+
+
+
+
+Customizing Data Views, Reports, and Exports
+      Gen5TM provides several tools for changing the appearance of views and reports. All
+      selections and customizations to views and to report and export elements can be saved
+      with the protocol, (File>Save Protocol As) so they are retained for all future
+      experiments based on that protocol.
+      Check out the tips and rules for customizing the views and output format of data
+      elements:
+
+ Best Practice:
+         A good habit to develop when setting up a Protocol is customizing the content
+           and format of the Data Views: the on-screen presentation of data. The settings
+           defined in Data Views become available for selection in the Report Builder and
+           Export definition screens, so it is most efficient to begin with Data Views (after
+           defining the Procedures, Plate Layout, and Data Reduction details)
+         Important: Attributes applied to data items and field groups in the Data Views
+           dialog take effect going forward. They do not replace, update, or overwrite an
+           item that has previously been assigned to a Report or Export output. You must
+           refresh the Report/Export contents after making any changes to a data element,
+           to capture them in the report. Any previously saved Experiment will not reflect the
+           content or formatting changes.
+         Gen5 limits the ability to customize system-provided views, but creating new
+           ones offers enormous flexibility. For example, if you do not use Sample IDs,
+           you'll always have an empty Name column in the system-provided Statistics
+           tables. But, you can create your own view that excludes the Name/Sample ID
+           data point.
+         You can choose the way Gen5 formats data/text that is too long to fit
+           completely in a field or column by Changing the Font settings for a data
+           elements.
+         Protocol Summary report sections can be added to the Default Protocol so that
+           all future protocols will include them. These are the only Data Views you
+           cannot view on-screen, so they are only available in the reporting tools: Report
+           and Export Builders. Unlike most of the other data views, these report elements
+           are always available, even before you have defined the Protocol.
+         Field Groups (for use in reports) can only be created in the Data Views dialog,
+           but they can be modified in the Report Builder and Export dialogs
+
+
+---
+
+118 | Chapter 6: Designing a Protocol
+
+
+
+
+Reporting Results
+         Gen5 offers several tools for reporting results from experiments.
+         You can use:
+                Gen5's full-featured report engine: begin with the Report Builder described
+                  in the Reporting Results chapter beginning on page 333.
+                or Export the results and use Excel(R) or another software application to
+                  generate a report; its described in the Exporting Results chapter.
+
+
+---
+
+                                                               Using the Default Protocol | 119
+
+
+
+
+Using the Default Protocol
+      Use the default protocol to work more efficiently in Gen5.
+
+About the Default Protocol
+   System> Preferences> Default Protocol...
+   Gen5 provides a mirror-image of the Protocol menu tree to create a Default Protocol, a
+   template, to help you save time when creating new Protocols. If some protocol elements
+   remain the same from experiment to experiment in your lab, you can make them default
+   settings that are applied to all new protocols. Any aspect of the Default Protocol can be
+   overridden in a newly-created protocol or experiment using the regular menu options.
+   There is a limiting factor controlling the use of the Default Protocol for most users,
+   defining the Procedure or read parameters is a prerequisite to defining Data Reduction
+   and selecting Report and Export content. Since reading parameters generally vary from
+   experiment to experiment, the role of the Default Protocol is somewhat limited. However,
+   it can still be used to define numerous settings that you're likely to apply to all
+   experiments.
+   The Default Protocol is stored in Gen5's database: SharedDB. When this is stored on a
+   network drive that all your Gen5 users can access, they can also share the Default Protocol.
+
+         Unless the reading parameters, like wavelengths, remain the same for
+           all experiments in your lab, it is best to NOT define a Procedure for the
+           Default Protocol. Users can alter the Procedure when they define a
+           new protocol, but this action will invalidate any Data Reduction steps
+           and report content, which may go unobserved by the user.
+
+Customize Well IDs
+      A major advantage of the Default Protocol is to customize the Well IDs (see next page)
+      used in the Plate Layout. You may also be able to define the concentration values and
+      location of Standards, and Blanks on the plate. Similarly, for Sample Identification
+      fields. The customized IDs become available for selection in new protocols. Find
+      instructions for defining customized Well IDs and Sample Identification fields in the
+      Plate Preparation chapter beginning on page 219.
+
+Common Default Settings
+      You may want to define Runtime Prompts, Report Headers and Footers, and Export
+      Options, which are commonly static elements in an organization's protocol design. The
+      pre-built Protocol Summary data views, Procedure Summary and Data Reduction
+      Summary, can be added to the Report and/or Export Builder in the Default Protocol so
+      they are automatically included in reports for every experiment.
+
+         Important: Defining the default protocol settings takes effect going
+           forward, i.e. they are only applied to newly created protocols and have
+           no effect on existing protocols or experiments.
+
+
+---
+
+120 | Chapter 6: Designing a Protocol
+
+
+
+Default Protocol Setup
+     System> Preferences> Default Protocol...
+         Use these controls to define the default settings for newly created protocols.
+
+How To
+         Define the Default Protocol as you would a standard protocol, keeping in mind that
+         your selections will be applied to all newly created protocols.
+
+
+            As with standard protocols, you cannot define Data Reduction steps until the
+         reading Procedure has been defined. Conversely, altering the Procedure can
+         invalidate any previously defined Data Reduction steps.
+
+
+Reset
+         Use the Reset button to clear the Default Protocol settings, erasing any selections or
+         customizations. Reset returns the Default Protocol to its out-of-the-box definition.
+
+
+Customizing IDs in the Default Protocol
+         Gen5 ships with certain abbreviations for the various well types, but they may not
+         match your organization's naming convention. Customizing the Well IDs in the
+         Default Protocol's Plate Layout makes them available for all newly created protocols.
+         This can be a real timesaver for your users.
+
+Common Changes
+           Well Type         Default ID      New Default ID
+
+           Sample            SPL             SMP
+
+           Assay             CTL1            PC (Positive Control)
+           Control
+
+                             CTL2            NC (Negative Control)
+
+                             CTL3            HPC (High Pos)
+
+
+---
+
+Chapter 7
+
+
+
+
+Defining the Procedure
+
+     This chapter provides instructions for setting up Gen5's Procedure,
+     the reading parameters.
+
+
+ Defining the Reading Parameters ............................................... 122
+ About Gen5's StepWiseTM Procedure ........................................... 123
+ Validate the Procedure.............................................................. 125
+ Read Step ............................................................................... 127
+ Procedure Steps (Reading Related) ............................................ 137
+
+
+---
+
+122 | Chapter 7: Defining the Procedure
+
+
+
+
+Defining the Reading Parameters
+     Protocol> Procedure
+
+        Set up the Procedure to control the reader: define the                 reading
+        parameters and related activities of the Protocol/Experiment.
+
+           Grayed out? When more than one plate has been read in an
+             experiment, the Procedure cannot be changed for the current
+             experiment. If this isn't the case, your System Administrator may have
+             restricted your ability to modify the protocol elements.
+
+           Grayed out buttons mean the action cannot be performed by the
+             current reader or because previously defined steps, e.g. kinetic loop,
+             limit the function.
+
+How to:
+          1.   Use the drop-down list to define the Plate Type
+          2.   Click a button to add that step to the procedure. Most buttons open a screen for
+               defining the parameters of that step, e.g. Read lets you define wavelengths, etc.
+               When defining a kinetic or synchronized well/plate mode analysis, add the
+               Kinetic or Synchronized Mode steps first. Kinetic and Synchronized Mode
+               steps form a loop or block. Put the Read and other valid steps to be performed
+               inside the loop, between the Start and End. Monitor Well is similar, first add
+               the Monitor Well step and then, add a Read step inside the monitor-well loop.
+          3.   Define the details of the step and click OK
+          4.   Click Validate to check the selection and sequence of the steps0.
+
+           Gen5 must be communicating with the reader to fully validate the
+             Procedure. Make sure the reader is correctly attached, turned on, and
+             not busy reading a plate or performing a test.
+
+Features:
+            You can Drag and Drop steps in the Procedure to change their sequence order
+            Highlight a step in the Procedure, and then click an action button to add a step
+              before it
+            Double click a step to open it for editing
+            Select a step in the sequence and right click for additional options
+            Click Validate at any time to verify the reader's ability to perform the current
+              sequence of steps
+            Highlight a step and press Delete to remove it from the procedure
+
+
+---
+
+                                                          Defining the Reading Parameters | 123
+
+
+
+         Drag and Drop is limited in Synchronized Modes, for example, you
+           cannot drag and drop a step into or out of a Well Mode block
+
+Review the Validation Checklist on page 125
+
+       Learn about: Synchronized Modes (for Synergy 2, Synergy 4; Synergy HT and FLx800
+       with Injectors) in the Fluorescence and Luminescence chapter.
+
+
+About Gen5's StepWise Procedure
+       Gen5TM offers lots of flexibility in defining a Procedure: the read steps and related
+       activities, like incubation, shaking (or mixing), dispensing reagent, and so on. Each
+       activity or requirement is defined chronologically or StepWise.
+       The StepWise Procedure can be simple, performing only one reading at one
+       wavelength. It can also be complex, a series of events that includes multiple readings,
+       incubation, shaking, and ejecting plates between reads to add reagent. The sequence of
+       steps in the StepWise Procedure workspace defines the order of events performed by
+       the reader.
+       After a plate has been read based on the Procedure, it cannot be changed unless the
+       data obtained is discarded. Gen5 offers several ways to modify the Procedure, as
+       described on page 114.
+
+
+The current reader determines the availability of options:
+          Readers are set up under System>Reader Configuration.
+          When more than one reader is connected to the PC, Gen5 opens the Instrument
+            Selection dialog to let you select the desired reader before offering the
+            Procedures dialog.
+       Depending on your reader, the possible combination of steps in a Procedure is
+       numerous. For example, you can:
+              Set the Temperature followed by a Delay to reach the correct setting,
+                before adding a multiple-wavelength Read step
+              Give the plates a long time to react in an experiment by adding a
+                Stop/Resume step between readings. This frees up the reader for use in
+                other experiments during the down time
+              Perform multiple Read steps, each interspersed with a Plate In/Out to add
+                reagent, followed by a Shake step to mix the contents before performing the
+                next read
+              Define a kinetic analysis: Click Kinetic, followed by a Read step. Gen5 adds
+                an End Kinetic event to close the kinetic loop
+              Apply different read methods within a Procedure, performing a Scanning
+                step, followed by a multi-read Endpoint step, and finish with a kinetic loop
+
+
+---
+
+124 | Chapter 7: Defining the Procedure
+
+
+
+               Define one Read step for half the plate, and another Read step (with
+                 different parameters) for the other half of the plate
+               Perform a multi-mode or multi-detection experiment by defining
+                 Absorbance and Fluorescence Read steps in the same Procedure
+               and so on ...
+
+                    Along with the reader's capabilities, the sequence of a step in the
+        Procedure, especially the steps immediately before and after it, determines its validity.
+        Click Validate to test the sequence of steps.
+
+
+---
+
+                                                                  Validate the Procedure | 125
+
+
+
+
+Validate the Procedure
+  About Procedure Validation
+          Gen5TM supports your effort to design a protocol by validating the Procedure
+          based on the capabilities of the current microplate reader and the sequence of
+          steps to be performed. Validation is also helpful at runtime, when a protocol may
+          have been designed without a specific reader attached to Gen5, and the actual
+          reader's capabilities are more limited than expected by the protocol. Gen5's
+          validation feature will display an error message alerting you of the need to fix the
+          Procedure.
+
+       Important: Gen5 must be communicating with the reader to fully
+         validate the Procedure.
+
+
+                 Click the Validate button in the Procedure dialog to validate the reading
+     events. Certain activities in the Procedure sequence, like Shake, cannot be standalone
+     events, but must be related to a read or other activity. Here are the rules:
+
+     Device Step                 Valid Combination/Limitations
+
+     Read                        May be a standalone event. At least one read step is
+                                 required.
+
+     Set Temperature             May be a standalone event
+                                 Cannot be inside a Kinetic loop
+                                 Cannot be in a synchronous block
+
+     Shake                       Shake >> Read
+                                 Shake >> Start Kinetic >> Read >> End Kinetic
+     These restrictions          Star? End Kinetic
+     apply to all readers
+                                 Shake cannot:
+     except the Synergy
+                                   precede a Spectral or Area Scan
+     4, which supports a
+     shake step anywhere            be included in a Well Mode block
+     in the Procedure.
+                                     be the first step in a multi-detection
+                                      kinetic loop if the first read is
+                                      Luminescence
+
+     Dispense                    May be a standalone event
+
+     Delay                       May be a standalone event
+                                 Cannot be in a kinetic loop
+                                 Cannot be between Shake and Read
+
+     Kinetic                     Requires at least one read step
+                                 Start Kinetic >> Read >> End Kinetic
+                                 Sh? End Kinetic
+                                 Start Kinetic >> Shake >> Read >> End Kinetic
+
+
+---
+
+126 | Chapter 7: Defining the Procedure
+
+
+
+
+         Device Step                Valid Combination/Limitations
+
+                                    Cannot include Scanning and Spectral reads
+                                    Only one read step allowed in Synchronized Well
+                                    Mode
+                                    Only one read and one shake step allowed in
+                                    Synchronized Plate Mode
+
+         Monitor Well               Monitor Well >> Read >> End Monitoring
+                                    Monitor Well >> Shake >> Read >> End Monitoring
+                                    ? End Monitoring
+
+         Plate In/Out               May be a standalone event
+                                    Cannot be inside a Kinetic loop
+                                    Cannot be in a synchronous block
+
+         Stop/Resume                May be a standalone event
+                                    Cannot be inside a Kinetic loop
+                                    Cannot be in a synchronous block
+                                    Cannot be the final event in a sequence
+
+         Well Mode                  Requires at least one read step
+                                    Excluding a Delay step:
+                                    Synergy HT: can have up to 9 steps
+                                    Synergy 2/4: can have up to 20 steps
+                                    FLx800: can have up to 3 steps;
+                                    Kinetic loop is limited to one read, except Synergy
+                                    2/4 allows a Shake
+                                    Multi-Detection kinetic loop is not allowed
+
+         Plate Mode                 Requires at least one read step
+                                    Synergy HT: can have up to 9 steps (excluding
+                                    Delay)
+                                    Synergy 2/4: can have up to 20 steps (excluding
+                                    Delay)
+                                    FLx800: can have up to 3 steps (excluding Delay)
+                                    Kinetic loop is limited to one read and one shake
+                                    Multi-Detection kinetic loop is not allowed
+
+
+---
+
+                                                                                 Read Step | 127
+
+
+
+
+Read Step
+   Protocol> Procedure> Read
+  Define the reading parameters based on the capability of the current reader:
+        1.   (Optional) Enter a Step Label or unique name for this step. Data sets based on
+             the reading results will use the label in online views, reports, and export files.
+        2.   Keep the Full Plate or set a portion of the plate to process.
+             (The Plate Type is set for all steps in the Procedure.)
+        3.   Select the Detection Method. Options are controlled by the current reader.
+        4.   Select the Read Type. Options are controlled by the current reader and the
+             detection method selected above.
+        5.   Select the Read Speed from the list offered for the current reader
+        6.   Set the Wavelengths or Filter Sets:
+                1   Use the numbered buttons to set the number of wavelengths/filter sets
+                    to obtain measurements with. Kinetic, Spectrum, Area and Linear Scans
+                    limit this option.
+                2   Click the down arrow or type in the text field to set the wavelengths.
+        7.   If applicable, define:0.
+              Pathlength Correction
+              Optics Position
+              Sensitivity and Filter Set Options
+              Top Probe Vertical Offset
+
+
+Read Types
+   Depending on the reader, detection method, Gen5 product level, and the type of analysis
+   you're conducting, one of several read types can be selected:
+          Endpoint
+                 The most commonly used Read Type, Endpoint, performs one read in the
+                 center of the well for each wavelength. It is the only read type that
+                 supports Pathlength Correction.
+                    Check your assay kit instructions to determine if this type of reading is
+                    required. Endpoint reads are generally conducted after a Stopping
+                    Solution is applied to the samples or when the effects of the chemistry
+                    occur at an expected time point.
+
+
+---
+
+128 | Chapter 7: Defining the Procedure
+
+
+
+            Area Scan
+                   When performing an Area Scan, the reader takes multiple measurements
+                   down and across each well, in a "matrix" format. This method is more
+                   effective for cellular assays than reading once in the center of the well.
+                         Learn more in the Scanning Analysis Options and Features chapter
+                         Readers that support Area Scanning include the ELx800, uQuant, FLx800,
+                         SynergyHT, Synergy 2, and Synergy 4.
+
+           Note: If the Scanning options are inaccessible, well scanning cannot
+             be performed with the currently defined plate type. This may be due to
+             a hardware limitation or an unacceptable combination of optic probe
+             size and well diameter.
+
+                         Read Matrix Size represents the number of measurements taken across
+                         and down each well. If, for example, the Read Matrix Size is 5 x 5 a total
+                         of 25 measurements are taken. The potential Read Matrix Size is a
+                         function of the well size of the current plate.
+            Linear Scan
+                   When performing a Linear Scan, the reader takes multiple measurements
+                   in a line across the center of each well. Linear scanning allows you to
+                   observe a pattern that may be present in the well bottom, such as an
+                   agglutination pattern.
+                         Learn more in the Scanning Analysis Options and Features chapter
+                         Readers that support linear scanning include the ELx808 and all
+                         PowerWave models. Note for PowerWave X Select: Linear scanning is
+                         supported for the 96-well plate type only.
+                         Horizontal Reading Points setting represents the total number of points
+                         to be read across the center of each well. Valid entries are odd integers
+                         from 1 to 39.
+
+                  Note: If the Scanning options are inaccessible, well scanning
+                    cannot be performed with the currently defined plate type. This
+                    may be due to a hardware limitation or an unacceptable
+                    combination of optic probe size and well diameter.
+
+            Spectrum
+                   During a Spectrum Read, multiple readings are taken across a wavelength
+                   range. The objective is to plot a graph with absorbance versus wavelength.
+                         Learn more in the Scanning Analysis Options and Features chapter
+                         The Stop wavelength must be greater than or equal to the Start
+                           wavelength + the Step
+                         Readers that support spectrum reads are uQuant, and all models of the
+                         PowerWave, Synergy HT, Synergy 2, and Synergy 4.
+
+
+---
+
+                                                                                    Read Step | 129
+
+
+
+
+Fluorescence Read Step for FLx800 and Synergy HT
+
+       Synergy 2/4 users find instructions beginning on page 131
+
+   Protocol> Procedure> Read
+
+
+
+                                           When defining reading parameters for
+     Fluorescence analysis, setting the PMT Sensitivity (for the Filter Sets) is important for
+     obtaining useful measurements. The valid range is 25 to 255, but too low a setting, like
+     25, can result in insufficient readings, and too high a setting, >120, can damage the
+     PMT. BioTek recommends a setting between 40 -120 for Fluorescence assays and
+     between 150 - 255 for Time Resolved Fluorescence.
+
+
+      1.   (Optional) Enter a Step Label or unique name for this step. Data sets based on
+           the reading results will use the label in online views, reports, and export files.
+      2.   Keep the Full Plate or set a portion of the plate to process.
+           (The Plate Type is set for all steps in the Procedure.)
+
+      3.      Click the down arrow at Detection Method to select Fluorescence
+      4.   Select Time Resolved to perform this type of fluorescence analysis (learn more
+           in the Florescence and Luminescence chapter)
+
+      5.   In Synchronized mode, you can select Close Light Shutter to turn off the light
+           between reads. Optionally, to protect the fluorescent nature of your samples,
+           use this feature to block the light between measurements to prevent photo-
+           bleaching effects. Gen5 blocks the light with a Plug in the filter wheel.
+           Important:
+           A plug or blocking filter in the excitation filter wheel must be adjacent to the filter used
+           in the reading. Two plugs must be placed next to each other (which ensures they are
+           adjacent to the two filters used) in a dual-filter-set read step. Define the Reader
+           Settings
+      5.   For the Read Type select:
+            Endpoint
+                          The most common read type, Endpoint, performs one reading per
+                          well for each filter set defined.
+            Area Scan (not available in Synchronized mode)
+                       When performing an Area Scan, the reader takes multiple
+                       measurements down and across each well, in a "matrix" format.
+                        This method is more effective for cellular assays than reading once
+                       in the center of the well.
+      6.   Set the Filter Sets:0.
+              1       Use the numbered buttons to set the number of wavelengths.
+
+
+---
+
+130 | Chapter 7: Defining the Procedure
+
+
+
+                 2    Click the down arrow to select the filter
+                 3    If applicable, define:0
+                       Optics Position
+                       Sensitivity or click Options to let Gen5 determine the optimal
+                         setting
+                       Filter Switching: reading each well with both filters before moving
+                         to the next well, is offered when only two filters are selected.
+
+           In Synchronized Mode, the read step settings for the first read in a
+             Plate or Well mode block are applied to any subsequent read steps in
+             the block.
+
+     Learn more in the Florescence and Luminescence chapter
+
+
+---
+
+                                                                              Read Step | 131
+
+
+
+Filter-based Fluorescence Read for Synergy 2 and Synergy 4 readers
+    Protocol> Procedure> Read
+
+
+
+      When defining reading parameters for Fluorescence analysis, setting the PMT
+   Sensitivity (for the Filter Sets) is important for obtaining useful measurements.
+
+
+       1.   (Optional) Enter a Step Label or unique name for this step. Data sets based on
+            the reading results will use the label in online views, reports, and export files.
+       2.   Keep the Full Plate or set a portion of the plate to process.
+            (The Plate Type is set for all steps in the Procedure.)
+
+       3.      Click the down arrow at Detection Method to select Fluorescence
+       4.   Optionally, select Time Resolved or Polarization to perform this type of
+            fluorescence analysis. Your choice enables or disables related options as
+            appropriate for the process.
+       5.   Read Speed: Use the drop-down list to make a selection and/or click the 3-dot
+            button to change the default settings for Measurement Options
+       6.   For the Read Type select:
+             Endpoint: The most common read type, Endpoint, performs one reading
+               per well for each filter set defined.
+             Area Scan: (not available in Kinetic or Synchronized mode): When
+               performing an Area Scan, the reader takes multiple measurements down
+               and across each well, in a "matrix" format. This method is more effective
+               for cellular assays than reading once in the center of the well. But, The
+               Synergy 2's and Synergy 4's probe size limits its ability to perform
+               Fluorescence area scan in plates with a small well diameter. Generally, this
+               means you must use a plate with fewer than 96 wells.
+       7.   Light Source: except for TRF, you can select the lamp to use for this read step:
+            Xenon Flash (Xe) or Tungsten (Tg)
+
+              Using the Xenon Flash (Xe)
+
+              Advantages                                Disadvantages
+
+              Enables Sweep mode as a Read Speed        Prohibits use of the Extended Range
+
+              Very high energy, slightly more           It is expensive compared to the Tg
+              sensitive than Tg bulb
+
+              High light output below 300 nm (UV        Noise
+              Fluorescence)
+
+
+---
+
+132 | Chapter 7: Defining the Procedure
+
+
+
+                Performs direct protein and amino
+                acid quantification assays
+
+
+                Using the Tungsten Lamp (Tg)
+
+                Advantages                                   Disadvantages
+
+                Inexpensive, with high sensitivity for       Sweep read speed is prohibited
+                Fluorescence Intensity (FI) and
+                Fluorescence Polarization (FP)
+
+                Enables Extended Dynamic Range               Cannot perform TRF
+
+                Strong and stable light output in            Slightly less sensitivity than Xe Flash
+                visible range
+
+                                                             No light output below 300 nm
+
+
+          8.   In Synchronized (non-kinetic) mode, you can select Close Light Shutter to turn
+               off the light between reads. To protect the fluorescent nature of your samples,
+               use this feature to block the light between measurements to prevent photo-
+               bleaching effects. Gen5 blocks the light with a Plug in the filter wheel.
+          9.   Set the Filter Sets:
+         10.     Use the numbered buttons to set the number of wavelengths
+         11. Click the down arrow to select the filter
+         12. If applicable, define:
+
+                Optics Position: for top reading select the mirror
+
+                Sensitivity or click              to let Gen5 determine the optimal setting
+                Filter Switching: reading each well with both filters before moving to the
+                  next well, is offered when only two filters are selected.
+                Top Probe Vertical Offset
+
+           In Synchronized mode, the read step settings for the first read in a
+             Plate or Well mode block are applied to any subsequent read steps in
+             the block.
+
+           The Filters offered for selection are defined by the Filter Wheel Library
+             or Reader Configuration
+
+
+---
+
+                                                                              Read Step | 133
+
+
+
+
+Monochromator-based Fluorescence Read for Synergy 4
+    Protocol> Procedure> Read
+
+Prerequisites
+         Filter wheel: to perform monochromator reads, the reader's excitation filter
+           wheel must contain a Hole and a Mono LP filter.
+         PMT Sensitivity: a setting between 50-150 for monochromator-based reads is
+           required for obtaining useful measurements.
+         Well volume: a minimum volume of 200 ul is needed for regular 96-well plates,
+           100 ul for 384-well plates. Consider using 96-well half-area plates for smaller
+           volumes.
+
+Procedure
+       1.   (Optional) Enter a Step Label or unique name for this step. Data sets based on
+            the reading results will use the label in online views, reports, and export files.
+       2.   Keep the Full Plate or set a portion of the plate to process.
+            (The Plate Type is set for all steps in the Procedure.)
+
+       3.        Click the down arrow at Detection Method to select Fluorescence
+
+       4.        Optionally, click the Read Type down arrow to select a different option
+       5.   For endpoint reads you can select Time Resolved to perform this type of
+            fluorescence analysis. Your choice enables or disables related options
+       6.   Read Speed: Use the drop-down list to make a selection and/or click the 3-dot
+            button to change the default settings for Measurement Options
+       7.   Light Source: except for TRF, you can select the lamp to use for this read step:
+            Xenon Flash (Xe) or Tungsten (Tg)
+       8.   In Synchronized (non-kinetic) mode, you can select Close Light Shutter to turn
+            off the light between reads.
+       9.        De-select Use Filter Wheel to use the monochromator
+       10. Set the Filter Sets:
+            1.     Use the numbered buttons to set the number of wavelengths
+            2.   Enter wavelengths for the monochromator. Valid values for Excitation
+                 wavelengths depend on the Light Source selected above: Xe supports 250-
+                 700 nm, while Tg supports 340-700 nm; for Emission wavelengths the range
+                 is 300-800 nm.
+       11. If applicable, define:0.
+
+             Sensitivity or click             to let Gen5 determine the optimal setting
+               Top Probe Vertical Offset
+
+
+---
+
+134 | Chapter 7: Defining the Procedure
+
+
+
+               Column Offset
+                      Valid Range: 0.0 - 3.0
+                      Due to the angled approach of the probe, lowering it may also require a
+                      small adjustment to the plate position beneath it.
+
+           In Synchronized Mode, the read step settings for the first read in a
+             Plate or Well mode block are applied to any subsequent read steps in
+             the block.
+
+
+---
+
+                                                                              Read Step | 135
+
+
+
+
+Read Step for Luminescence
+   Protocol> Procedure> Read
+
+
+
+                                         When defining reading parameters for
+     Luminescence analysis, setting the PMT Sensitivity is important for obtaining useful
+     measurements. The valid range is 25 to 255, but BioTek recommends a setting between
+     100 - 160 for Luminescence assays.
+
+
+      1.   (Optional) Enter a Step Label or unique name for this step. Data sets based on
+           the reading results will use the label in online views, reports, and export files.
+      2.   Keep the Full Plate or set a portion of the plate to process.
+           (The Plate Type is set for all steps in the Procedure.)
+
+      3.      Click the down arrow at Detection Method to select Luminescence
+           The Read Type must be set to Endpoint
+      4.   Enter the Integration Time: to set the read duration for each well in seconds or
+           milliseconds. Click in the field and enter the Sec.Msec or use the spin buttons to
+           set the duration.
+           Valid values:
+                Synergy HT: 0.1 - 19.9 seconds;
+               Synergy 2/4: 0.1 - 99.9 seconds, in 20 ms intervals
+               FLx800: 0.1 - 6.0 seconds
+      5.   Synergy 2/4: Click the 3-dot button to change the default settings for
+           Measurement Options
+      6.   Set the Filter Sets:0.
+              1      Use the numbered buttons to set the number of wavelengths.
+              2   Click the down arrow to select the filter or Hole (to not filter the light)
+              3   If applicable, define: (Learn more in the Florescence and Luminescence
+                  chapter)0
+                   Optics Position
+
+                   Sensitivity or click             to let Gen5 determine the optimal
+                     setting
+
+       In Synchronized Mode, the read step settings for the first read in a
+         Plate or Well mode block are applied to any subsequent read steps in
+         the block.
+
+
+---
+
+136 | Chapter 7: Defining the Procedure
+
+
+
+
+Read Step for Spectrum Analysis
+     Protocol> Procedure> Read
+        Define the reading parameters based on the capability of the current reader:
+          1.   (Optional) Enter a Step Label or unique name for this step.
+          2.   Keep the Full Plate or set a portion of the plate to process.
+          3.   Set the Detection Method to Absorbance (except for Synergy 4, Absorbance is
+               the only option.)
+
+          4.      Click the down arrow to set the Read Type to Spectrum.
+           Certain parameters specific to the detection method and reader's capability must
+           be defined:
+                Read Speed: Use the drop-down list to make a selection and/or click the 3-
+                  dot button to change the default settings for Measurement Options
+                Calibrate Before Read: When selected, the reader will always perform
+                  calibration at the wavelengths specified in the protocol, just prior to plate
+                  reading. If Calibrate is not selected, the reader will calibrate at only those
+                  wavelengths specified in the protocol that have not yet been calibrated since
+                  the reader was turned on.
+                Spectrum Type (for Fluorescence Only): Fluorescence spectrum analysis
+                  can be performed on either the Excitation or Emission wavelength, with the
+                  opposite wavelength set to a fixed value. And the range of wavelengths
+                  scanned can either be lower or higher than the fixed wavelength (including
+                  bandwidth). See the description of Acceptable Values below.
+                Light Source (for Fluorescence Only)
+                Integration Time (for Luminescence Only): Enter the Integration Time: to
+                  set the read duration for each well in seconds or milliseconds. Click in the
+                  field to enter the Min:Sec:Msec (MM.SS.ss) or use the spin buttons to set the
+                  duration. Valid values.
+          5.   Set the range of Wavelengths:
+               Acceptable Values:
+                The acceptable range for the Start wavelength is from the lowest
+                  wavelength the reader supports to one less than the Stop wavelength
+                  selected.
+                The acceptable range for the Stop wavelength is any wavelength greater
+                  than the Start wavelength to the highest wavelength allowed by the reader.
+                The acceptable range for the Step value is any number equal to or less than
+                  the difference between the Start and Stop values.
+                The only read speeds available for Spectrum reads are Normal and Sweep.
+          6.   Enter the Start and Stop wavelengths to define the spectral range.
+
+
+---
+
+                                                                                 Read Step | 137
+
+
+
+              For Fluorescence reads: select a Spectrum Type, enter a fixed wavelength
+                for the opposite type, and enter a wavelength range that does not overlap
+                the fixed wavelength.
+        7.   Enter the number of Steps to define the number of measurements to take.
+              Fluorescence and Luminescence readers let you adjust the Top Probe
+                Vertical Offset and the Column Offset.
+
+
+
+Read Step for Clarity
+    Protocol> Procedure
+   Gen5 communicates with the ClarityTM software to define the Procedure.
+
+         Learn about the relationship between Gen5 and the Clarity PC
+           software, if you haven't already done so.
+
+   When creating a new protocol or experiment for the Clarity, Gen5 replaces its StepWiseTM
+   Procedure dialog with a gateway to the Clarity PC software, which you must use to define
+   the read command. Select:
+          Create New... to create a new procedure (.bpf file)
+          Browse... to select/run an existing Clarity protocol (.bpf file)
+          Edit... after using Browse to select a file, to modify an existing Clarity protocol
+             (.bpf file)
+   After the read step (Procedure) is defined/selected, you can set up the rest of the Protocol
+   elements, like Plate Layout and Data Reduction, and so on.
+   Double-click Procedure in the menu tree to modify it (select Edit). This is possible before
+   the plate is read. After the plate is read, like all Gen5 protocols, the Procedure can not be
+   modified.
+
+
+      Specific instructions for defining the Clarity read parameters are provided in the
+   Clarity Operator's Manual.
+
+
+---
+
+138 | Chapter 7: Defining the Procedure
+
+
+
+
+Procedure Steps: Reading-Related Activities
+     Protocol > Procedure
+     The following features may or may not be available for creating a protocol depending on
+     the attached reader, and your level of software.
+            Set Temperature (Incubation): page 138
+            Shake the plate: page 139
+            Dispensing Reagent: page 140
+            Kinetic Analysis: page 142
+            Delay Step: page 143
+            Monitor Wells: page 144
+            Plate In/Out: page 145
+            Stop/Resume the experiment: page 146
+            Synchronized Modes: refer to the Fluorescence and Luminescence chapter
+
+
+
+
+   Set Temperature
+     Use these controls to set the desired temperature for the reading chamber or incubator.
+     Most BioTek readers allow a temperature range of 20-50^0C. Add a Delay step to the
+     Procedure to incubate the plate. Learn more below. turn off the incubator
+          1.   Enter the desired temperature in the Temperature field.
+          2.   Select (or de-select) the option to Preheat before continuing with next step
+               to wait for the temperature to reach the set point before proceeding with the
+               next step in the Procedure. Selecting this option activates the Pre-Heating
+               function available from the Control Panel: System>Control Panel.0.
+
+           Stop/Resume: Gen5 considers a Stop/Resume step the end point of
+             the series of steps that precede it. It frees up the reader for running
+             other experiments. If you want the steps following a Stop/Resume to
+             be performed at a certain temperature you must add a Set
+             Temperature step after the Stop/Resume step.
+
+           You cannot put a Temperature Step inside a kinetic loop
+
+           When the experiment is started (the Read button is pressed) before
+             the reader has reached the defined temperature, Gen5 offers the
+             option to override the Set Temperature step.
+
+
+---
+
+                                                 Procedure Steps: Reading-Related Activities | 139
+
+
+
+
+            Reporting the temperature: you can include the temperature of a read step in a
+         report or export file. Add the Fields to your report: from the Plate Information
+         category, select the desired Temperature field.
+
+
+   How to incubate the plate:
+         The Set Temperature step in Gen5's StepWise Procedure does not by itself incubate the
+         plate. It heats up or cools down the reader to the defined setting. To use your reader to
+         incubate the plate define the Procedure this way:
+              1.   Set Temperature with preheating
+              2.   Plate Out/In step, enter Incubate Plate in the Comments field
+              3.   Delay for the incubation duration
+              4.   Read
+
+
+
+    Shake the Plate
+Use these controls to set the Intensity and Duration of a Shake step to mix the plate contents:
+            Intensity - use the drop-down list to select a level. The reader's operator's
+              manual may define the specifications of each level.
+            Duration - enter a time period (minutes:seconds) to shake the plate. The
+              potential range is 1 second to 60 minutes.
+            Continuous Shake - within a kinetic loop, if the reader is capable of
+              performing it, you can select this option to shake the plate whenever it is not
+              being read during the kinetic time interval
+
+As part of a Kinetic Analysis:
+                To shake the plate only before the first reading in a kinetic analysis define
+                  the sequence of activities: Sha? End Kinetic
+                To shake the plate before every reading in a kinetic loop define the
+                  sequence of activities: Start Kinetic >> Shake >> Read >> End Kinetic
+                To continually shake the plate whenever it is not being read, select
+                  Continuous Shake instead of a time interval
+
+           In multi-mode kinetic analysis a Shake step cannot precede the kinetic
+             loop, but can be the first step in the loop: Start Kinetic >> Shake >> Read
+             >> Read >> End Kinetic
+
+
+---
+
+140 | Chapter 7: Defining the Procedure
+
+
+
+
+    Dispensing
+        This option is only available for Readers with Injectors.
+        The Dispense dialog fields are described here and information to help you choose the
+        optimal Dispense Rate begins on page 141.
+Dispenser
+        Select the number of the Dispenser to be used for this step. The numbers correspond to
+        the numbers on the dispense module.
+Partial or Full Plate?
+
+
+
+     The button to define a full or partial plate is dynamic, it changes from Full Plate to a plate-
+     map description of the area to be dispensed to/read, e.g. A1..H5. Click the button to define
+     the specific wells for dispensing, and if this step is in a loop, for reading in the subsequent
+     Read Step(s).
+
+            In Synchronized Mode the first step in a block controls the full or
+              partial plate for the entire block. For example, if the steps in a Well
+              Mode block are Dispense>Delay>Read, when the Dispense step is
+              defined to dispense to the first two columns of the plate, the Read step
+              is also limited to the first two columns. Likewise, if the steps in a Plate
+              Mode block are Read>Dispense>Read, and the first Read step is a
+              partial plate read E5...H12, the Dispense and Read steps to follow will
+              automatically be set to the same portion of the plate
+
+Tip Prime
+        Priming: select an option:
+                none: Do not prime the tip
+                before the dispense step: Prime the tip with fluid before injection of fluid
+                  to the plate
+                once before the Well/Plate Mode block: In Synchronized mode, you can
+                  prime the tip one-time-only before the process begins
+                before this dispense step: In Synchronized Plate Mode, you can prime the
+                  tip before each dispense step in the block
+                More About Tip Priming: Priming is performed in a small, removable priming trough
+                   located in the rear of the carrier. The purpose of tip priming is to compensate for
+                   any fluid loss at the dispense tip due to evaporation since the last dispense. Each
+                   trough holds up to 1500 ul of liquid and must be periodically emptied and cleaned.
+                   Gen5 warns you to empty the trough before the first Dispense event and keeps
+                   track of the amount of fluid primed into the trough during the Procedure. Selecting
+                   Yes at one of Gen5's messages to empty the trough resets the trough volume
+                   record to zero.
+
+
+---
+
+                                                     Procedure Steps: Reading-Related Activities | 141
+
+
+
+           Do not perform Tip Priming when using tall plates. Generally, plates with fewer
+             than 96 wells are too tall for error-free tip priming, and it is rarely required for
+             these larger-volume plates.
+
+      Volume: enter the amount of fluid in microliters. The valid range is 5 to 20.
+
+           Important: For optimal dispense accuracy and precision when
+             dispensing volumes less than or equal to 20 ul/well, BioTek
+             recommends priming the tip: use a tip prime volume equal to the
+             dispense volume. For dispense volumes greater than 20 ul/well, we
+             recommend a tip prime volume of 20 ul.
+
+Dispense
+      Volume: Enter the dispense volume in microliters. The valid range is 5 to 1000
+
+            Rate: Select the dispense rate (microliters per second) based on the volume.
+
+
+          Keep the fluid path clean: You'll get the best results from your BioTek reader with
+      Injectors if you keep the fluid path clean. Minimally, you should Purge the reagent and
+      flush the lines with DI water when the experiment is finished. Follow instructions for
+      daily maintenance in your Operator's Manual.
+
+
+           When the Dispense step is the last step in the Procedure, add a Plate
+             Out step to eject the plate carrier when the Procedure is finished.
+
+Dispense Rate
+      Gen5's options are:
+
+               Rate (ul/sec) Volume Range (ul)
+
+                 225                  5-1000
+
+                 250                  15-1000
+
+                 275                  25-1000
+
+                 300                  30-1000
+      The maximum volume for a dispense operation is 1000ul. The minimum volume
+      depends on the dispense rate. For example, when dispensing <= 10ul you must use a
+      rate of 225.
+      Here are some factors to consider when selecting the dispense rate or injection speed:
+            Use the fastest rate for the best mixing affect in the wells
+            Use the slowest rate (225) when a cell layer is involved; especially if the level of
+              liquid in the well is low (<100ul) before injection
+
+
+---
+
+142 | Chapter 7: Defining the Procedure
+
+
+
+            Lower the rate if you notice some spills on the plate after injection. (This may
+              be caused by a high (>200ul) or low (<50ul) pre-injection volume, or to a
+              specific plate type, like round-bottom wells.)
+            Assay kits generally provide guidelines, review the kit insert to determine its
+              recommendation for a slow or high dispense speed
+            High-viscosity fluids perform better with a slow rate
+
+    Kinetic
+
+           Learn more in the Kinetic Analysis chapter beginning on page 185.
+
+        To set up a kinetic (or time-course) analysis, put one or more Read steps within the
+        Start Kinetic and End Kinetic loop. The steps are conducted within the specified
+        timelines:
+        Run Time: Enter the full duration of the kinetic analysis, i.e. the length of time
+        required to perform all the steps within the kinetic loop:
+               Time Format: Hours (HH): Minutes (MM): Seconds (SS) in standard mode
+                 and Minutes (MM): Seconds (SS): Milliseconds (ss) in synchronized mode.
+               Maximum time period is 168 hours except in Synchronized Modes. Well
+                 Mode kinetic run time is limited to 60 minutes and the block must be
+                 completed in 2.78 hours. Plate Mode kinetic run time is limited to 24 hours
+                 and the block must be completed in 27.8 hours.
+        Interval: Enter the desired time interval between readings or select Minimum Interval.
+        Gen5 will read the plate at every interval, e.g. every 00:10:30 = 10 minutes and 30
+        seconds, for the duration of the Run Time
+        Minimum Interval: Select this option to let Gen5 determine the fastest possible
+        processing time. Follow the instructions in the Kinetic Analysis chapter.
+        Reads: Gen5 calculates the number of reads from your input of Run Time and Interval.
+        The maximum number of reads depends on your reader and detection method.
+
+           Important: Numerous factors affect the acceptable kinetic run time.
+             To make sure your reader can process the steps in the kinetic loop
+             within the defined timelines, click Validate (with the reader attached
+             and communicating with Gen5) when all the Procedure steps have
+             been defined. If the interval is too short for the parameters chosen, an
+             error will be displayed.
+
+           Discontinuous Kinetic Interval: Gen5 let's you perform a
+             discontinuous-interval analysis that requires long periods of downtime
+             (for rest, manipulation, or incubation) between reads. Engage this
+             feature with the Procedure's Advanced Options.
+
+           Note: The actual runtime of a kinetic loop may exceed the defined
+             Run Time by +1 Interval. Gen5 does this to ensure that the number
+             of Reads displayed are actually captured.
+
+
+---
+
+                                         Procedure Steps: Reading-Related Activities | 143
+
+
+
+Delay the Procedure
+  Use this command to add a Delay event to the series of steps defined, telling the reader
+  to halt processing for the defined duration. You cannot put a Delay step in a kinetic
+  loop, nor can you have a Delay between Shake and Read steps.
+  Delay Time: Enter a time period for the duration: HH:MM:SS
+
+
+     You may want to use a Stop/Resume step or Plate In/Out instead
+
+
+
+
+Delay in Synchronized Mode
+  Use these controls to add a Delay event to the steps in a Synchronized Mode block,
+  telling the reader to halt processing for the defined duration.
+  Delay Time: Enter a time period for the duration
+        In Plate mode: HH:MM:SS (hours:minutes:seconds)
+        In Well mode: Min:Sec.Msec (minutes:seconds:milliseconds)
+  Start Delay From: Select an option
+        Beginning of Previous Step: to define the delay time to include the time it
+          takes to perform the previous step, as well as the delay time
+        End of Previous Step: to set the delay time to begin when the previous step
+          is finished. This is the default and most typical setting
+
+
+        Example: You may want to use the Start Delay from Beginning of Previous Step
+    option in a Dispense>Wait>Read protocol when the precise timing of every step is
+    critical to your experiment.
+
+
+
+
+       FLx800: In Well Mode it is necessary to include a Delay step set to "Start delay
+    from Beginning of previous step" to precisely control the reader to process each
+    well within the same timeline. Set the Delay Time sufficient to perform the
+    previous step with a little padding: this is usually 0:00.10 milliseconds or more.
+    When you click the Validate button, Gen5 communicates with the FLx800 to
+    determine if the Procedure is doable. If not, it provides instructions for adding a
+    Delay step or increasing the Delay Time.
+
+
+---
+
+144 | Chapter 7: Defining the Procedure
+
+
+
+    Monitor Wells
+        Use these controls to define well-monitoring criteria that must be met before the reader
+        begins to capture the actual measurement values used in the experiment.
+
+   About Monitoring Wells
+        Gen5's Monitor Wells feature can be used to detect a certain level of activity in the
+        plate before capturing regular, saved measurements. You define measurement criteria
+        that must be met in one or more specific wells before the complete plate read can
+        begin. Gen5 directs the reader to continuously read the wells at the defined time
+        interval until the criteria are met. This feature sets up a loop, like a Kinetic loop, with a
+        start step and an end step in the Procedure. A Monitor Read step must be defined
+        within the loop. A Shake step is also permitted either before the read or before the
+        entire Monitor Well loop.
+        Example: you can specify that the average of the measurements in wells A1, A2, B1
+        and B2 must be greater than or equal to 0.500 OD before initiating the plate read. When
+        the Monitor Wells step is executed, the following information will be displayed: wells
+        being monitored, current value of the wells, the required measurement value, and the
+        elapsed time since the last well was read. At any point the user can choose to bypass
+        the monitoring process and continue forward with the read or cancel the operation,
+        aborting the entire Procedure.
+
+  How To:
+          1.    Click Monitor Well to start the loop
+                 Interval: enter the time interval between readings for the duration of the
+                   well monitoring. Alternatively, check the Minimum Interval option (if you
+                   have a reader attached) to let Gen5 determine the shortest possible interval
+                   for monitoring
+                 Stop Monitoring When: tells the reader when to conclude the monitoring
+                   process. Use the drop-down list to select a conditional option and an
+                   operator, and enter a measurement value to be met:
+
+               Condition                  Operator                 Measurement Value
+
+               At least one well          > greater than,          Absorbance valid range: -
+                                          >= or equal to           1.000 to 5.000
+
+               Average of wells           < less than,             Fluorescence/ Luminescence
+                                          <= or equal to           valid range: 0 - 99998
+               All wells
+
+          2.    Define a read and shake step, if desired, for the Monitor Well loop:
+                 Read: with End Monitoring highlighted in the Procedure, click Read and
+                   define the Wells to Monitor:
+                    Click             to select the wells to monitor for the "Stop Monitoring
+
+
+---
+
+                                             Procedure Steps: Reading-Related Activities | 145
+
+
+
+              When" criteria. Single or multiple wells can be selected by clicking in the
+              grid. Multiple wells must be contiguous.
+            Define the reading parameters using the modified Read step dialog. .
+            Add a Shake step, if desired, as normal.
+      3.   Add the regular Procedure steps to follow the Monitor Well loop, i.e. an
+           endpoint or kinetic reading and any associated activities. Gen5 always requires
+           at least one actual read step. The "Monitor Read Step" does not fill this
+           requirement.0.
+
+
+         Important: Gen5 does not save the reading results (measurements) obtained during
+     the Monitor Well step. Only measurements collected during a regular read step are
+     retained for analysis and data reduction.
+
+
+
+
+ Plate In/Out
+     Add a Plate In/Out step to a Procedure to pause the run and change the position of the
+     plate carrier. This command can be used to perform a manual task, like adding reagent
+     to the plate between reads steps, for example. You can also use this step to change the
+     behavior of the plate carrier, for example, if you want to move the carrier back into the
+     reader at the end of a run.
+
+       Unlike the Stop/Resume step, this command does not completely
+         interrupt or end the run.
+
+Select one:
+            Move carrier out, Display dialog, Move carrier in
+
+
+
+              Enter text in the Comment field. When the plate is ejected Gen5 will display
+              the comment.
+            Move carrier out (no dialog)
+            Move carrier in (no dialog)
+
+Results:
+     Move carrier out, Display dialog, Move carrier in:
+
+
+---
+
+146 | Chapter 7: Defining the Procedure
+
+
+
+            When the first option is selected, Gen5 displays
+            the comment in a dialog like this when the plate
+            carrier is moved out:
+            When the user clicks OK, the plate carrier is
+            moved back in. The plate can be handled in the
+            interim.
+
+
+
+        The other two options open or close the plate carrier without displaying a message.
+
+
+
+    Stop/Resume
+        Use this command to stop the experiment where it is inserted in the Procedure. It is
+        typically used for long interruptions (such as incubation periods), and allows the
+        reader to be used for other experiments. Gen5 will stop the experiment until you
+        resume it. See how to resume below. Only then will it continue to perform the
+        Procedure steps that follow the Stop/Resume step. You can close the experiment when
+        it is stopped and reopen it when you're ready to resume.
+
+            Set Temperature: Gen5 considers a Stop/Resume step the end point
+              of the series of steps that precede it. If you want the steps following a
+              Stop/Resume to be performed at a certain temperature you must add
+              a Set Temperature step after the Stop/Resume step.
+
+  Set up:
+           Eject Plate Before Stop: Gen5 will open the plate carrier to eject the plate before
+        stopping the experiment, unless you de-select this option. When this option is not
+        selected, Gen5 lets the previous Procedure step determine the position of the plate
+        carrier. Since most Procedure steps do eject the plate upon completion, to keep the
+        plate inside the reader during the downtime, you may need to add a Plate In step
+        before the Stop/Resume step.
+        Comment: Enter a comment to be displayed on-screen
+
+  Results:
+         The Comment you enter, "Add reagent" in this example, is
+         displayed in a message like this when the experiment is
+         stopped. Users must click OK to acknowledge the message.
+         The experiment is stopped, until it is resumed.
+
+
+
+
+         Gen5 signals the experiment has been stopped using the
+         plate-paused icon in the menu tree.
+
+
+---
+
+                                            Procedure Steps: Reading-Related Activities | 147
+
+
+
+To Resume:
+     1.   Open the experiment, if it was closed.
+
+     2.       Click the Read button when you're ready to resume the experiment. The
+          standard read screen changes, offering Resume instead of Read.
+
+     3.                                Click the Resume button to continue with the
+          Procedure. Note: If Re-Read is selected, Gen5 restarts the Procedure from its
+          beginning (first step), reading the plate again and discarding the initial data.0.
+
+
+---
+
+148 | Chapter 7: Defining the Procedure
+
+
+---
+
+Chapter 8
+
+
+
+
+Fluorescence and
+Luminescence
+
+     This chapter provides useful information for conducting
+     Fluorescence and Luminescence analysis, including Time-Resolved
+     Fluorescence. For Synergy HT, Synergy 2 and Synergy 4 readers,
+     there is also a section on Multi-Mode assays. You'll find details
+     about how to set the PMT Sensitivity and use Gen5's Synchronized
+     Modes in this chapter.
+
+
+ Fluorescence Analysis ............................................................... 150
+ Luminescence Analysis ............................................................. 153
+ Time-Resolved Fluorescence...................................................... 154
+ Fluorescence Polarization .......................................................... 155
+ Filter Set Options ..................................................................... 156
+ PMT Sensitivity ........................................................................ 158
+ Measurement Options............................................................... 162
+ Synchronized Modes................................................................. 164
+ Troubleshooting ....................................................................... 169
+ Multi-Mode Detection................................................................ 182
+
+
+---
+
+150 | Chapter 8: Fluorescence and Luminescence
+
+
+
+
+Fluorescence Analysis
+        Your choice of fluorescent detection method depends on the reader's capability. All
+        BioTek readers are capable of performing filter-based reads, only the Synergy 4 also
+        offers monochromator-based reads, as well. When Fluorescence is the chosen detection
+        method, Gen5 presents the filters installed in the reader or defined in the Filter Wheels
+        Library. When you're running a Synergy 4, Synergy 2, or a Synergy HT or FLx800 with
+        Injectors, you can perform fluorescence analysis in Synchronized Mode.
+        Read Type options for fluorescence analysis (depending on the reader) are:
+
+           Endpoint (FI)
+           Area Scan
+           Time Resolved (TRF or TR-FRET)
+           Polarization (FP)
+           Spectrum
+
+Read Parameters
+           Read Speed is a Synergy 2 and Synergy 4 option: Click the 3-dot button to change
+        the default settings for Measurement Options
+          The Filter Set buttons (up to 6) determine the number of reads to perform. Only
+        two filter sets are permitted in a Kinetic loop.
+               Filter-based Fluorescence: Excitation and Emission filters can be selected
+                 using the drop-down list of filters available for the current reader. The list is
+                 defined from one or two sources: the Filter Wheels Library or the Reader
+                 Setup
+               Monochromator-based Fluorescence: Excitation and Emission wavelengths
+                 can be set to any value supported by the reader. Synergy 4's range is
+                 dependent on the light source for Excitation wavelengths: the Xenon Flash
+                 supports 250-700 nm, the Tungsten Lamp supports 340-700 nm; for
+                 Emission wavelengths the range is 300-800 nm.
+        Filter Switching is offered when only two filter sets are defined (described below). It
+        is similar to Synchronized Well Mode.
+        Optics Position can be set to Top or Bottom for each selected filter set, depending on
+        the reader's capability. Readers are equipped with one or two optical probes,
+        positioned above (Top) and/or below (Bottom) the assay plate. Synergy 2/4 offers
+        mirror selection for the Top probe.
+        Sensitivity of the PMT can be set by entering the desired value (valid settings range
+        between 25-255) or by letting Gen5 determine the optimal sensitivity setting using the
+        Filter Set Options (described below).
+
+
+---
+
+                                                                   Fluorescence Analysis | 151
+
+
+
+                Filter Set Options: Each filter set has a corresponding set of measurement
+      options which can be defined by clicking the Options button. See page 156.
+      Filter Switching: When two filter sets are selected Gen5 offers this option to read
+      every well with each filter set before moving onto read the next well. When this option
+      is not selected the reader reads the whole plate with one filter set, then reads it again
+      with the second filter set.
+      The advantage of this option is closely timed well measurements. The disadvantage is
+      a longer runtime. It is useful when working with two, possibly unstable, fluorescent
+      labels. Learn more in Gen5's Help.
+      Top Probe Vertical Offset: parameter is available when at least one of the filter sets
+      uses the "top" optics position. It allows you to define how far the top probe is
+      positioned from the top surface of the plate during the read. The valid range is
+      determined on a plate-by-plate basis. The calculation is based on the plate height and
+      the maximum travel of the top probe. Learn more in Gen5's Help.
+      Column Offset (for Monochromator-based reads only): Valid Range: 0.0 - 3.0
+      Due to the angled approach of the probe, lowering it may also require a small
+      adjustment to the plate position beneath it.
+
+Troubleshooting
+        If you're not getting expected results review these suggestions:
+        Troubleshooting Fluorescence/Luminescence Measurements on page 169.
+
+
+About Fluorescence Monochromator Reads
+   Synergy 4's monochromator has a quadruple-grating design for maximum spectral
+   control. Background noise is significantly reduced by the angled approach of the probe to
+   the well and the use of an order-sorting filter. And, the mono uses a red-shifted PMT that
+   can read up to 900 nm. Here are some essential facts to keep in mind when using the
+   monochromator for fluorescent measurements:
+         It requires a special configuration of the Excitation filter wheel. Two positions
+           are needed for the monochromator, one for the order-sorting filter called Mono
+           LP that is shipped with the reader, the other position is empty, defined as a
+           Hole. The reader tests for this configuration and will not perform a mono read
+           without it.
+         The Xenon Flash lamp is more sensitive and thus the best choice for most
+           assays. The Xenon also offers a choice of Lamp Energy, to give you more
+           control. However, the Tungsten lamp offers stronger output in the red range,
+           and a choice of Dynamic range: Extended or Standard, which may be better for
+           some assays.
+         Time Resolved Fluorescence (TRF) can be performed with the monochromator,
+           but it is much less sensitive than filter-based processing.
+
+
+---
+
+152 | Chapter 8: Fluorescence and Luminescence
+
+
+
+           Sufficient well volume is an important factor for this system. 384-well plates
+             show optimal performance. A minimum volume of 200 ul is required for
+             regular 96-well plates; half-area 96-well or 384-well plates should be used for
+             lower volumes. When well volumes cannot be increased, Gen5's Top Probe
+             Vertical Offset and Column Offset controls can be used to improve
+             performance.
+     Perform multiple read steps with slightly varied settings to determine the optimal
+     combination of settings for a mono read. Multiple experiments may be needed because all
+     read steps must use the same light source in one experiment.
+
+
+---
+
+                                                                      Luminescence Analysis | 153
+
+
+
+
+Luminescence Analysis
+   When Luminescence is the chosen detection method, the Read Step presents the emission
+   filters for the current reader or you can select Hole for no filtering. The excitation filters are
+   not available for selection, because the reader will automatically use a Plug in the
+   excitation filter wheel. Also see Luminescence Best Practices in Gen5's Help.
+   Read Type is limited to Endpoint , except with Synergy 4 which offers spectrum scans.
+   Integration Time is set as minutes:seconds.milliseconds (MM:SS.ss).
+          Synergy HT and FLx800: Gen5 reports the measurement results as RLU
+            (Relative Luminescence Units) per Second, except in Well Mode Kinetic
+            experiments, which are reported as RLU, and integration time is replaced with
+            the kinetic timelines. Gen5 collects data in each well for the duration of the
+            integration time, then sums the data points and displays the result as
+            RLU/second.
+          Synergy 2 and Synery 4: Gen5 reports the measurement results as RLU
+            (Relative Luminescence Units). The reader collects data in each well for the
+            duration of the integration time, then averages the data points and displays the
+            result as RLU.
+
+
+         You should know: in Luminescence Reading Mode there is a tight link between
+      CV's and integration time. This correlation is independent of the instrument (type,
+      brand) and of the reagents. If you increase your measurement time by a factor of 2, you
+      will decrease your CV's by the square root of 2. If you increase your measurement time
+      by a factor of X, you will decrease your CV's by the square root of X.
+
+
+Reading Parameters
+               The Filter Set buttons (up to 6) determine the number of reads to perform.
+              Only two filter sets are permitted in a Kinetic loop. Emission Filters can be
+              selected using the drop down list of filters available for the current reader.
+          The recommended Optics Position for Luminescence readings is Top.
+          Sensitivity of the PMT can be set by entering the desired value (valid settings
+            range between 25-255), or by letting Gen5 determine the optimal sensitivity
+            setting using the Measurement Options (learn more on page 158). BioTek
+            recommends a setting between 100-160 for Luminescence
+
+                      Filter Set Options - For each filter set you can use Gen5's tool to
+              automatically determine the optimal Sensitivity of the PMT. See page 156.
+          Top Probe Vertical Offset parameter is available when at least one of the
+            filter sets uses the "top" optics position. Generally, you do not have to change
+            the default value. For all Luminescence assays Gen5 sets the probe as close to
+            the well as possible.
+
+
+---
+
+154 | Chapter 8: Fluorescence and Luminescence
+
+
+
+
+Time-Resolved Fluorescence Analysis
+     Measuring fluorescence using a delay after the cessation of excitatory light is called time-
+     resolved fluorescence (TRF). Auto-fluorescence in a sample or microplate is a common
+     source of background fluorescence. Lanthanide ions, for example, have extremely long
+     fluorescent decay times, several hundred microseconds instead of several nanoseconds.
+     The rapid on/off nature of a xenon flash lamp allows for fluorescence analysis of the these
+     compounds with a delay after the excitation flash. The delay lets virtually all of the
+     background fluorescence diminish before measuring lanthanide's long-lived fluorescence,
+     resulting in superior detection limits. The TRF option is available if the selected detection
+     method is Fluorescence and the current reader supports it.
+
+
+
+
+          1.   For each Excitation filter set:
+                Synergy HTTR: enter a wavelength value between 200 and 999 nm. The
+                  bandpass is not variable; it is pre-defined to be 10 nm.
+                Synergy 2: select the filter, as usual. The light source is fixed to Xenon.
+                Synergy 4: opt to "Use Filter Wheels" or the monochromator (but filter-
+                  based is more sensitive). The light source is fixed to Xenon Flash (at High
+                  intensity). Spectrum and Area Scan read types, in addition to Endpoint, are
+                  available when other constraints are met, e.g. well size of the plate.
+          2.   For each Emission filter, use the drop-down lists to select the wavelengths.
+          3.   Sensitivity: BioTek recommends a setting between 150-200 for TRF.
+
+          4.               click the Options button when using the Synergy HTTR
+               or click the 3-dot button next to the Time Resolved checkbox when using the
+               Synergy 2/4: Specify the length of time to delay before data collection and the
+               data collection duration and define the other related measurement options.0.
+
+
+---
+
+                                                                  Fluorescence Polarization | 155
+
+
+
+
+Fluorescence Polarization
+        For each Fluorescence Polarization (FP) read step, Gen5 actually performs two reads. It
+        takes a measurement through a parallel polarizer, and then, through a perpendicular
+        polarizer. Two raw data sets are generated. Gen5 automatically transforms the data in
+        an FP-dedicated data reduction step.
+        When applicable, Gen5 also performs the other automated data reductions, blank
+        subtraction and kinetic well analysis on the FP data sets. Anisotropy is also offered as a
+        data reduction option for FP analysis. You can choose to transform the data to produce
+        Polarization results, Anisotropy results or both. Results are reported as mP (millipees),
+        with an expected range between 0 - 500 mP with precision of +/- 2 mP.
+        When the reader is equipped with the polarizers and mirrors required to excite the
+        sample and capture the polarized emission, the polarizing lenses reside in position 3 of
+        the mirror holder. Thus, when FP is the selected read type, the Optics Position choice
+        of mirrors is fixed to position 3.
+
+Top 5 Things to Know about Fluorescence Polarization
+            Mirror selection is fixed by Gen5 to use position 3. If you have a dichroic mirror
+              in position 3 (which is the default configuration), you must select filters that
+              correspond to its Min-Max range
+            When Gen5's Auto-Sensitivity adjustment is used to determine the optimal
+              PMT sensitivity, it is performed on the parallel read/measurement
+            Either light source can be used for FP: Tungsten or Xenon Flash
+            Read Speed can be set to sweep when the Xenon Flash is used
+            Synchronized Well and Plate Modes are available for time-sensitive FP assays
+
+BioTek's FP Process
+     For each sample in an FP experiment, the Excitation light travels from the light source
+     through the EX polarizer and then is reflected by the mirror to excite the sample. The
+     sample's emitted light travels through the mirror and parallel Emission (EM) polarizer
+     and then through the emission filter into the PMT. The mirror holder then shifts so that
+     the emitted light travels through the perpendicular EM polarizer, through the emission
+     filter, and into the PMT. Gen5 corrects for the optical variations between the parallel and
+     perpendicular emission paths during the FP data reduction step. Learn more in the Data
+     Reduction chapter, page 307.
+
+
+---
+
+156 | Chapter 8: Fluorescence and Luminescence
+
+
+
+
+Filter Set Options
+
+                   In Fluorescence and Luminescence assays, you can set the sensitivity level of
+        the PMT or let Gen5 determine the optimal setting. You may need to experiment with
+        the settings to find the combination of options that works best for your assay. In
+        Fluorescence analysis, you can also set the Measurement Options.
+
+Automatic Sensitivity Adjustment
+           Click in the checkbox to use this option to determine the optimum Sensitivity
+        setting for the plate:
+         1.   First, select one:
+               Scale to High Wells - to evaluate optimal sensitivity based on the strongest
+                 signal
+               Scale to Low Wells - to evaluate optimal sensitivity based on the weakest
+                 signal
+               Use First Filter Set Sensitivity:
+                   of This read step when there is more than one filter set;
+                   of First read step when there is more than one read step of the same
+                     detection method, i.e., Fluorescence or Luminescence.
+         2.   Then, define:0.
+               Scale Wells - a range of microplate wells with the highest or lowest
+                 expected signals, click in the field to select one or a range of adjacent wells,
+                 e.g., A1-B12
+               Scale Value - the highest or lowest expected value for the entire plate.
+        For input recommendations review the valid value ranges in the PMT Sensitivity
+        section on page 158.
+
+Luminescence
+      Synergy HT and FLx800: Gen5 performs the Automatic Sensitivity Adjustment based
+      on an integration time of 1 second (0:01:0) regardless of the Integration Time defined
+      for the Read step .
+        Synergy 2 and Synergy 4: Gen5 uses the read step's integration time to peform the
+        Automatic Sensitivity Adjustment. It may be unable to determine the optimal
+        sensitivity, especially when scaling to low wells, if the determination takes longer than
+        3 minutes, which generally translates into integration times > 1 second.
+
+
+---
+
+                                                                         Filter Set Options | 157
+
+
+
+Fluorescence Measurement Options
+     The values for each measurement option depend on whether the assay is defined as
+     Standard (Non-Synchronized Mode), Synchronized Plate Mode or Well Mode. This table
+     displays the recommended values and Allowable Range for these modes for each option.
+     Note: For Kinetic analysis in Well mode these options are unavailable, they are determined
+     by the kinetic interval.
+
+       Option                    Standard &         Plate           Well         Allowable
+                                 Time               Mode            Mode         Range
+                                 Resolved
+
+       Delay after plate         100 msec           250 msec        10 msec      10-2550
+       movement                                                                  msec
+
+       Measurements per          10                 10              1            1-255
+       well
+
+       Delay between             1 msec             24 msec         0            0-255 msec
+       measurements
+
+
+Time-Resolved Fluorescence Parameters
+      Delay before data collection: is time delay between the flash and the beginning of data
+      collection or the delay before integration. Valid values are 0 usec and 20 - 16000 usec.
+      The default value is 20 usec.
+             A delay of 0 usec is not the same as a fluorescence read with the time-resolved
+             option turned off. They differ in two ways: (1) the excitation wavelength is
+             generated by the monochromator; and (2) the user can specify the data collection
+             time, which is not an available parameter for normal fluorescence reads.
+        Data collection duration: is the amount of time for which readings are collected after
+        the delay before integration time has expired. The valid range is from 20 - 16000 usec.
+        The default value is 100 usec.
+
+
+---
+
+158 | Chapter 8: Fluorescence and Luminescence
+
+
+
+
+PMT Sensitivity
+     In fluorescence and luminescence assays, the signal can be very weak, very strong, or
+     anywhere in between. For each assay, the Sensitivity of the photomultiplier tube (PMT)
+     should be adjusted to ensure that the signals from all wells fall within the appropriate
+     dynamic range of 0 to 99998 relative fluorescence or luminescence units (RFU or RLU).
+
+          Automatic Sensitivity Adjustment
+          You can let Gen5 determine the optimal sensitivity setting: click Options and
+          provide some criteria on which a determination can be made.
+
+ Guidelines:
+           Typical fluorescent assays using 96- (or fewer) well plates require sensitivities
+             between 35 and 130. Assays using 384-well or other higher-density plates will
+             likely require higher sensitivities due to narrower optical probes. Luminescent
+             reactions may require sensitivities up to 200. BioTek recommends selecting a
+             PMT Sensitivity setting between these ranges:
+
+              Detection                           Type               Low      High
+
+              Fluorescence                        Filter wheel       35       120
+
+              Fluorescence                        Monochromator      50       150
+
+              Luminescence                        Filter wheel       100      255
+
+              Luminescence                        Monochromator      100      255
+
+              Time-Resolved FL                    Filter wheel       100      255
+
+              Time-Resolved FL: Synergy HT        Filter wheel       150      255
+
+              Time-Resolved FL                    Monochromator      100      255
+
+              Fluorescence Polarization           Filter wheel       35       120
+
+           As the sensitivity setting increases, so will the fluorescence values. If many
+             wells result in "OVRFLW," the sensitivity setting is probably too high:
+               OVRFLW indicates RFU or RLU values greater than 99998 in Standard
+                 Range (e.g. with Xenon Flash)
+               OVRFLW indicates RFU or RLU values greater than 5.8 million in Extended
+                 Range.
+           Recommendation: one way to determine the optimal Sensitivity setting is to set
+             up one Read Step to perform 6 filter-set reads each applying a different
+             Sensitivity. Review the results to determine the best setting.
+
+
+---
+
+                                                                           PMT Sensitivity | 159
+
+
+
+            When the wells contain more than one fluorophore, one of which might give
+              brighter or weaker results, assign each filter set its own sensitivity.
+            When the field shows 'Auto', the Automatic Sensitivity Adjustment feature is
+              enabled to determine optimum sensitivity. See Filter Set Options above.
+
+
+Automatic Sensitivity Adjustment for PMT
+       Gen5TM can determine the optimum PMT Sensitivity setting for the plate based on one
+       of three methods: Scale to High Wells, Scale to Low Wells, or when multiple filter sets
+       are used: Use First Filter Set Sensitivity. The best method depends on your
+       application (some experimentation may be necessary).
+
+  Scale to High Wells
+       High Wells are wells with the highest expected signal (measurement value) on the
+       plate, such as the highest standard wells.
+       Scale to High Wells searches for two consecutive gain values where the measured
+       values are lower and higher than the defined high well values.
+
+  Scale to Low Wells
+       Low Wells are wells with the lowest expected signal (measurement value) on the plate,
+       such as blank wells, negative controls, or the zero standard wells.
+       Scale to Low Wells searches for two consecutive gain values where the measured
+       values are lower and higher than the defined low value wells. Scale to Low Wells is
+       recommended for weakly luminescent reactions.
+       When you let Gen5 determine the optimal sensitivity setting for your assay, the valid
+       values for Scale to High or Low Wells is dependent on the reader, detection method,
+       and light source:
+
+Dynamic         Synergy HT/FLx800                Synergy 2/Synergy 4
+Range           FI              Lum              Xe               Tg              Lum
+
+Standard        0-99,999                         0-99,999         0-99,999        0-99,999
+                RFU                              RFU              RFU             RLU
+
+Extended                        0-                                0-              0-
+                                5,000,000                         5,800,000       5,800,000
+                                RLU/sec                           RFU             RLU
+
+       BioTek recommends retaining Gen5's default values when the expected measurements
+       are unknown.
+
+  Use First Filter Set Sensitivity of This or the First read step
+             This option is available when multiple filter sets and/or multiple read steps of the
+             same detection method have been defined. It applies the same sensitivity setting
+             to the current filter set read.
+
+
+---
+
+160 | Chapter 8: Fluorescence and Luminescence
+
+
+
+              Use first filter set from First read step: Notice that both the first filter set and first
+              read step are referenced: it applies either the manually input or automatically
+              determined Sensitivity setting of the first read step's first filter set. This only
+              applies to the same detection method. In a multi-mode Procedure, Gen5 selects
+              the first read step of the same detection method (e.g. FI or Lum).
+              Use first filter set from This read step is offered when there are multiple filter
+              sets in the current read step. It applies either the manually input or automatically
+              determined Sensitivity setting of the first filter set to the current read.
+
+          In Dispense protocols, if two filter sets are defined, the Sensitivity
+            field for the second filter set always shows Auto and it will use the first
+            filter set's sensitivity.
+
+          In multiple-plate experiments, when the Automatic Sensitivity
+            option is used, Gen5 applies the sensitivity setting determined for the
+            first plate, to all other plates processed in the experiment.
+
+   How to let Gen5 determine the Sensitivity setting:
+
+         1.              In the Fluorescence or Luminescence read step, click the Options
+              button for the Filter Set
+         2.     Turn on Automatic Sensitivity Adjustment: click the box to insert a
+              checkmark
+         3.   Select a button for one of the options described above:0.
+               Scale Wells: click in the field to select one or a range of adjacent wells that
+                 you expect to produce the highest or lowest measurements
+               Scale Value: Enter a value that represents the upper limit when scaling to
+                 High Wells and the lowest limit when scaling to Low Wells of the expected
+                 range of values for the entire microplate. The recommended high value is
+                 50,000 to 70,000 RFU/RLU. The recommended low value is 100 to 200
+                 RFU/RLU.
+
+
+Reviewing results
+     After using the AutoSensitivity feature in an experiment, you can view on-screen and
+     include in reports the applied Sensitivity value. When the read step is completed:
+           to Report the Sensitivity Value in reports (see below)
+           to Display the AutoSensitivity Value on-screen described on page 161
+
+          The sensitivity value applied during the experiment is retained in the
+            Experiment file, but not in the protocol (.prt) the experiment was
+            based on. Unless it is updated, the protocol will continue to be defined
+            as using the AutoSensitivity option.
+
+
+---
+
+                                                                              PMT Sensitivity | 161
+
+
+
+Report the Sensitivity Value
+   Fixed Value: use the pre-built Procedure Summary in the Report and Export Builders and
+   set it to Detailed report to include the defined Sensitivity value in a report.
+    AutoSensitivity: when you let Gen5 determine the optimal sensitivity, follow these
+    instructions to include the Sensitivity value in a report. You must use a field group. After
+    you have defined a fluorescence or luminescence Read Step using Gen5's AutoSensitivty
+    determination:
+         1.    Select Protocol> Data Views
+         2.    Locate the Field Group element at the bottom of the tree, highlight Field Group
+               and click New
+         3.    Name the new Field Group
+
+         4.       Click in the first cell in the first column to enable the 3-dot button, and click
+               the 3-dot button to open the Fields dialog
+
+         5.         Set the Category to Procedure
+         6.    Set the Field to Sensitivity # (there is one value for each read/filter set)
+         7.    Now, you can add this field group to Reports or Export files
+         8.    Save or Save As the Protocol to make sure this field group is available
+               whenever you run the experiment.0.
+
+
+Display the AutoSensitivity Value
+        When the Procedure is completed in an experiment:
+
+                  Highlight Procedure in the menu tree and right click, select
+               AutoSensitivity Results
+               or
+           Open the Procedure dialog (double click the menu tree item), the sensitivity
+             value applied during the first read step is displayed.
+
+
+---
+
+162 | Chapter 8: Fluorescence and Luminescence
+
+
+
+
+Measurement Options
+
+               Procedure> Read> Fluorescence> click Options
+
+         Synergy 2/4: Procedure> Read> click 3-dot button next to Read Speed
+
+          This section describes all the possible measurement options available
+            in Gen5. You will be offered more or fewer of them depending on your
+            reader and the context of the Read step.
+
+        You may need to experiment with various combinations of settings to determine the
+        optimal value for each. Generally it is a trade off between speed and precision. Increase
+        the number of measurements per well for better precision; decrease them to increase
+        speed.
+        Define the measurement parameters for read speed:
+           Delay after plate movement is the time between the end of the movement
+             of the plate carrier (plate is in the read position) and the beginning of the
+             acquisition of the data. The valid range is from 10 to 2550 milliseconds. The
+             recommended setting to ensure that the fluid has settled in a 96-well plate is
+             100 milliseconds. This parameter is especially important in absorbance mode,
+             where the vibration of the liquid's surface meniscus just after a plate movement
+             can lead to variations in OD measurements.
+           Measurements per data point are the number of measurements the reader
+             takes per well per read. The data point reported for each well represents the
+             average of its measurements. The valid range is from 1 to 255 measurements.
+             Usually, the more measurements per well the better the CVs, although selecting
+             a large number of measurements typically results in only marginal
+             improvement. Consider a setting that represents the optimal combination of
+             precision and speed. The recommended setting to achieve a balance between
+             speed and precision is 10 measurements per well. This is not adjustable in
+             Absorbance reads.
+
+          Note: The reader takes approximately 10 milliseconds to perform each
+            measurement.
+
+           Delay between measurements is the time delay between measurements
+             taken in each well. The valid range is from 0 to 255 milliseconds. The
+             recommended setting is 1 millisecond. Longer delays between samples may
+             result in better CVs between replicates.
+           Dynamic Range: offers two ways to express the measurements taken by the
+             reader:
+               Standard Range: reports measurements between 0 - 99,999, higher values
+                 are reported as "OVRFLW." This is the only setting available for Synergy
+
+
+---
+
+                                                   Measurement Options | 163
+
+
+
+   HT, FLx800. Synergy 4 and Synergy 2 are limited to this option when the
+   Xenon Flash is used, e.g. for TRF.
+ Extended Range: reports measurements between 0 - 5,800,000, higher
+   values are reported as "OVRFLW."
+   Some of the benefits of Extended Range, you can:
+    take measurements with a high Sensitivity setting without fear of over-
+      ranging the wells,
+    measure samples with very low and very high outputs in the same Read
+      step,
+    reduce the risk of over-ranging in kinetic mode (when the signal grows
+      over time).
+
+
+---
+
+164 | Chapter 8: Fluorescence and Luminescence
+
+
+
+
+Synchronized Modes
+     Synergy 2/4, Synergy HT/FLx800 with Injectors: Protocol> Procedure>
+     Synchronized Modes
+        Gen5 supports three modes of processing plates. All readers can process plates in the
+        standard mode, we'll call Non-Synchronized Plate Mode to distinguish it from the
+        other options. If you're running a Synergy 4, Synergy 2, or a Synergy HT or FLx800
+        with Injectors, you have two more processing mode options: Synchronized Plate
+        Mode and Well Mode. These options give you more control in time-sensitive
+        procedures.
+
+
+           Tip: When defining a Synchronized Plate Mode and Well Mode procedure, in the
+        Procedure dialog the first step is adding the Well or Plate mode block. Then, put the
+        Read and other steps inside the block.
+
+
+Non-Synchronized Plate Mode
+        Non-Synchronized Plate Mode is the standard mode for processing and is supported
+        by all BioTek readers. Each step in a Procedure is processed for the entire plate (or
+        partial plate) before the next step is processed. No attempt is made to maintain
+        consistent well-to-well timing from one step to the next.
+
+Multi-Detection Kinetics
+          For readers that support multiple detection methods (absorbance, fluorescence,
+          luminescence), the Non-Synchronized Plate Mode supports the ability to include
+          multiple read steps in a single kinetic block. This capability is called Multi-
+          Detection Kinetics.
+          With a Synergy HT, for example, in Non-Synchronized Plate Mode, you can
+          perform a four-wavelength absorbance read, followed by a kinetic loop that
+          includes a dual-wavelength fluorescence read.
+
+Synchronized Plate Mode
+        In Synchronized Plate Mode each step is processed for the entire plate (or partial plate)
+        before the next step is processed, but the time spent at each well is identical. Steps
+        within a Synchronized Plate Mode block maintain consistent well-to-well timing, such
+        that the time required to process two successive steps is the same for each well on the
+        plate. The Synergy HT and FLx800 readers can only perform Fluorescence in Plate
+        Mode; the Synergy 2 and Synergy 4 can perform all detection methods.
+        When timing is critical to your research, Synchronized Plate Mode gives you the ability
+        to perform a precisely timed sequence of steps on each well. For example, you can
+        define the timeline for a Dispense>Wait>Read block of steps that encompasses the time
+        to complete all three steps from beginning to end, so you know precisely when reagent
+        was dispensed to each well and when it was read.
+
+
+---
+
+                                                                  Synchronized Modes | 165
+
+
+
+Synchronized Well Mode
+      In Synchronized Well Mode, all steps within a block are performed on a single well,
+      before proceeding to the next well. Like Synchronized Plate Mode, the time spent at
+      each well is exactly the same. The Synergy HT and FLx800 readers can only perform
+      Luminescence and Fluorescence in Well Mode; the Synergy 2 and Synergy 4 can
+      perform all detection methods.
+
+How to choose which option to use?
+      You may want to test the different options to see which works best for your
+      experiments, but here are some general guidelines to help narrow the choice:
+         When you expect the well signal to vary over time, select Synchronized Plate
+           Mode or Well Mode (Synergy HT and FLx800 do not support a Shake step
+           following reagent dispensing in Well Mode)
+         Non-Synchronized Plate Mode is efficient when using a Stop solution and the
+           well signal is stable over time
+         In kinetic analysis, use Synchronized Plate Mode or Well Mode when it is
+           important to have the same exact timing for each well
+         In kinetic analysis, use Non-Synchronized Plate Mode when it is important to
+           obtain as many data points as possible
+         When conducting long-time-span kinetic reads (hours), Non-Synchronized
+           Plate Mode is sufficient
+         In Synchronized Mode you can define the duration of a Delay step to include
+           the time it takes to perform the previous step
+         Multi-Detection (multi-mode) Kinetic Reads can only be performed in Non-
+           Synchronized Plate Mode
+
+
+---
+
+166 | Chapter 8: Fluorescence and Luminescence
+
+
+
+Processing Modes Comparison
+         Here's a tabular breakdown of the differences between Non-Synchronized Plate
+         Mode, Synchronized Plate Mode, and Well Mode.
+
+Process             Detection       Supported       Kinetic     Read           Partial
+                                    Steps           Loop        Settings       Plate
+                                                    Steps                      Processing
+
+Non-                Absorbance      All             Shake       Can define     Can define
+Synchronized        Fluorescence    Procedure       Read        unique         unique
+Plate Mode          Luminescence    steps                       settings for   setting for
+                                    supported                   each read      each step
+                                    by Reader                   step
+
+Synchronized        Synergy 2/4:    Read            Shake       Defined in     Defined in
+Plate Mode          all methods     Dispense        Read        first step     first step for
+                    Synergy HT &    Shake                       for all        all
+                    FLx800:         Delay                       subsequent     subsequent
+                    Fluorescence    Kinetic                     steps          steps
+
+Well Mode           Synergy HT &    Read            Read        Defined in     Defined in
+                    FLx800:         Dispense        Synergy     first step     first step for
+                    Fluorescence    Delay           2/4:        for all        all
+                    Luminescence    Kinetic         Shake       subsequent     subsequent
+                    Synergy 2/4:    Synergy                     steps          steps
+                    all methods     2/4: Shake
+
+
+
+Synchronized Mode Performance Chart
+
+Reader          Max #       Max #           Max Kinetic                Time Increment
+                of          Kinetic         Interval (sec)
+                Steps       Reads
+
+Synergy HT      9           999             Plate = 9999              Plate = 1 sec
+                                            Well = 99.99              Well = 20 ms
+
+FLx800          3           300             Plate = 9999              Plate = 1 sec
+                                            Well = 12                 Well = 20 ms
+
+Synergy 2       20          999             Plate = 9999              Plate = 1 sec
+Synergy 4                                   Well = 99.99              Well = 20 ms
+
+
+---
+
+                                                                   Synchronized Modes | 167
+
+
+
+Synchronized Plate Mode Limitations
+      Here is a listing of the Plate Mode limitations:
+             Synergy 2/4 support all detection methods, but Synergy HT and FLx800
+               only support Fluorescence
+             All parameters set in the first read step of the block are automatically
+               applied to subsequent read steps, with the exception of Step Label and
+               Light Shuttering
+             Partial plate settings are automatically applied to all read and dispense
+               steps using the settings in the first step
+             The only available steps in a plate mode block are: Read, Dispense, Shake,
+               Delay, and Kinetic
+             When two filter sets are used in the read step, the second filter set
+               automatically uses the sensitivity of the first, except Synergy 2/4 allow
+               different sensitivity values for each step
+             A Shake step must immediately precede a Read step or a Kinetic Start step
+             The maximum duration of a plate-mode block is approximately 27 hours 47
+               minutes for Synergy HT an FLx800 and approximately 277 hours 47
+               minutes for the Synergy 2/4
+             The only available steps within a plate mode kinetic loop are Shake and
+               Read and the maximum runtime duration for a loop is 24 hours
+             A maximum of one read step and one shake step is supported in a plate
+               mode kinetic block
+             384- and 1536-well plates are not supported
+             In the FLx800, a plate mode block must contain at least one kinetic loop to
+               be valid. If two kinetic loops are present in the plate mode block, they must
+               have the same kinetic interval
+             In the FLx800, a plate mode block can contain only one dispense step, and a
+               dispense step cannot be the last step in the plate mode block
+             Light Shuttering is available
+
+
+---
+
+168 | Chapter 8: Fluorescence and Luminescence
+
+
+
+
+Synchronized Well Mode Limitations
+        Here is a listing of the limitations that apply to Well Mode blocks:
+               Synergy 2/4 support all detection methods, but Synergy HT and FLx800
+                 only support Fluorescence and Luminescence
+               All parameters set in the first read step of the block are automatically
+                 applied to subsequent read steps, with the exception of Step Label and
+                 Light Shuttering
+               Partial plate settings are automatically applied to all read and dispense
+                 steps using the settings in the first step
+               The only available steps in a well mode block are: Read, Dispense, Delay,
+                 and Kinetic, except Synergy 2/4 also support a Shake step before a Read or
+                 Kinetic loop
+               The maximum duration of a well-mode block is approximately 16 minutes
+                 40 seconds
+               The only available step within a well mode kinetic loop is a Read step,
+                 except Synergy 2/4 also support a Shake step
+               When two filter sets are used in the read step, the second filter set
+                 automatically uses the sensitivity of the first, except Synergy 2/4 allow
+                 different sensitivity values for each step
+               A maximum of one read step is supported within a well mode kinetic block
+               Luminescence read steps within a well mode kinetic loop do not support
+                 the entry of an Integration Time. It is replaced by the kinetic run time
+               384- and 1536-well plates are not supported
+               Light Shuttering is available
+               Important: FLx800 readers require adding a Delay step (beginning at the
+                 start of the previous step) to the Procedure to avoid potential loss of data.
+                 You must determine the correct duration of the delays
+
+
+---
+
+                                               Troubleshooting Fluorescence/Luminescence | 169
+
+
+
+
+Troubleshooting Fluorescence/Luminescence
+   Here's a list of potential problems, the possible cause and a remedy:
+
+Fluorescence / Luminescence Readings Too Low
+      Possible cause: The Sensitivity in the Read Step dialog is currently set too low
+         Raise the Sensitivity to an appropriate level. For fluorescence, the Sensitivity is
+         usually set between 45 and 130. For luminescence it is usually set between 100 and
+         200.
+         If using Automatic Sensitivity Adjustment, use the Scale to High Well option and
+         set the target value to be between 20,000 and 80,000 for standard range; or
+         1,000,000-3,500,000 for extended range.
+      Possible cause: The wrong filters are selected in the Read Step dialog
+         Examine the current filter settings and make any corrections. If the filter settings
+         appear to be correct, check the locations of the actual filters in the instrument.
+      Possible cause: Top probe is too high
+            Synergy HT: If a plate cover is not being used, lower the top probe to 1 mm
+               above the selected plate using the Top Probe Vertical Offset option in the
+               Read Step dialog
+            Synergy 2/4: Gen5 generally positions the top probe at the optimal height
+               for fluorescence reads: it focuses the beam above the well. Refer to Gen5's
+               Help and use the Top Probe Vertical Offset option in the Read Step dialog
+               to make adjustments
+            FLx800: Refer to the Operator's Manual for instructions to manually lower
+               the Top Optical Probe
+
+Fluorescence Background Too High
+      Possible cause: Using incorrect microplates
+         Solid black plates and top probe reading lower the background. Black plates with
+         clear bottoms lower the background if bottom reading is necessary. Corning 3615
+         or 3614 (for cell culture) are appropriate.
+      Possible cause: The wrong filters are selected in the Read Step dialog
+         Examine the current filter settings and make any corrections. If the filter settings
+         appear to be correct, check the locations of the actual filters in the instrument.
+      Possible cause: Phenol red is used in the media when exciting at 485 nm and
+         reading at 528-530 nm
+         Eliminate or replace the phenol red
+      Possible cause: Cells, media and other contents fluoresce
+
+
+---
+
+170 | Chapter 8: Fluorescence and Luminescence
+
+
+
+          Use deionized-water blank wells as a diagnostic tool. The blank-well reading will
+          help you determine the background value contributed by the instrument, labware
+          and media.
+        Possible cause: The top and/or bottom probe needs cleaning
+          Refer to the Operator's Manual for instructions to open and clean the reader's
+          internal components.
+        Possible cause: The instrument has fluorescing material spilled inside
+          Refer to the Operator's Manual for instructions to open and clean the reader's
+          internal components.
+        Possible cause: The Sensitivity in the Reading parameters dialog is currently set
+          too high
+          Lower the Sensitivity setting. The background should still read higher than zero.
+           200 is a recommended minimum and a value of 1000 takes advantage of the
+          system's 5-digit resolution.
+
+Reader Not Achieving Desired Fluorescence Detection Limit
+        Possible cause: The wrong filters are selected in the Read Step dialog
+          Examine the current filter settings and make any corrections. If the filter settings
+          appear to be correct, check the locations of the actual filters in the instrument.
+        Possible cause: Using incorrect microplates
+          Solid black plates and top probe reading lower the background. Black plates with
+          clear bottoms lower the background if bottom reading is necessary. Corning 3615
+          or 3614 (for cell culture) are appropriate.
+        Possible cause: The Sensitivity is currently set too low
+          Raise the Sensitivity setting until the background wells read at least 200 RFU, (1000
+          RFU is preferred) in the Read Step dialog
+        Possible cause: Readings are taken using the bottom probe
+          Switch to the top probe (Optics Position in the Read Step dialog)
+        Possible cause: The solution volume is 50 ul or less
+          Increase the solution volume to 150 - 200 ul, if possible.
+        Possible cause: Wrong pH
+          Fluorescence is very pH dependent. Use the appropriate pH.
+        Possible cause: Phenol red is used in the media when exciting at 485 nm and
+          reading at 528-530 nm
+          Eliminate or replace the phenol red.
+        Possible cause: Top probe is too high
+
+
+---
+
+                                             Troubleshooting Fluorescence/Luminescence | 171
+
+
+
+               Synergy HT: If a plate cover is not being used, lower the top probe to 1 mm
+                 above the selected plate using the Top Probe Vertical Offset option in the
+                 Read Step dialog
+             Synergy 2/4 filter-based reads: Gen5 generally positions the top probe
+               at the optimal height for fluorescence reads: it focuses the beam above the
+               well. Refer to Gen5's Help and use the Top Probe Vertical Offset option in
+               the Read Step dialog to make adjustments
+             Synergy 4 mono-based reads: Gen5 positions the top probe at 4 mm for
+               96-well plates and at 6 mm for 384-well plates because these settings were
+               determined to be the optimal height. You may be able to lower the probe,
+               but lowering it may require a small adjustment to the Column Offset, as
+               well.
+             FLx800: Refer to the Operator's Manual for instructions to manually lower
+               the Top Optical Probe
+      Possible cause: Transfection efficiency in gene expression is too low
+        Use more cells, or improve the transfection efficiency.
+      Possible cause: DNA is old or of poor quality
+        Use high quality, new DNA.
+      Possible cause: Not using nuclease-free buffer in DNA quantitation
+        Use nuclease-free buffer.
+      Possible cause: Poor dilution methods
+        Use appropriate dilution method in tubes.
+
+Reader Over-ranging in Fluorescence
+      Possible cause: The Sensitivity in the Read Step dialog is currently set too high
+        Lower the Sensitivity setting. Refer to the Sensitivity table on page 157 for valid
+        values.
+        If using Automatic Sensitivity Adjustment, try the Scale to High Well option and
+        set the High Value in the range of 50,000 to 70,000 for standard range.
+
+Bandwidth Verification Failed
+      Error or warning messages are issued when Gen5 detects overlapping
+        wavelengths or bandwidth
+        Select/enter Filter Set wavelengths that do not overlap. Learn more about Gen5's
+        bandwidth verification in Gen5's Help.
+
+Error during Auto-Sensitivity Determination
+      Reader cannot fulfill request to determine optimal Sensitivity
+        Gen5 displays an error message when the reader cannot determine the optimal
+        sensitivity based on the defined reading parameters.
+
+
+---
+
+172 | Chapter 8: Fluorescence and Luminescence
+
+
+
+        Luminescence integration time should be <= 1 sec and > 1 ms, especially when
+          scaling to low wells.
+        Manually enter a Sensitivity value or use an alternative method to determine the
+          optimal sensitivity, if the error persists. Learn more in Gen5's Help.
+
+
+---
+
+                                                                         Filters and Mirrors | 173
+
+
+
+
+Filters and Mirrors
+
+Changing Filter Wheels
+    Important! It is essential to conform to the specific BioTek instrument procedures for
+    altering the filter wheel configuration. The reader does not automatically detect which
+    filters are installed. Before the instrument is shipped from the factory, BioTek updates the
+    reader's internal software with the current filter wheel settings. When you make changes
+    to a filter wheel, it is your responsibility to ensure that Gen5's wavelength table exactly
+    matches the new contents of each filter wheel. For specific instructions on changing filters,
+    see the reader's operator's manual. In order to obtain accurate results and prevent damage
+    to the PMT, they must match exactly.
+
+          To exchange wavelength information between Gen5 and the
+            instrument, the two must be communicating: the reader must be
+            turned on and properly configured in Gen5.
+
+    In Gen5, there are two ways to update the reader with filter wheel configuration:
+           use the Fluorescence/Luminescence tab of the Reader Setup (System>Reader
+             Configuration>View/Modify>Setup) to ensure the wavelengths table matches
+             the filters installed in the attached reader
+           use the Filter Wheels Library (System>Optics Library>Filter Wheels) to select a
+             pre-defined wheel and send its values to the reader.
+
+
+Filter Wheels Library
+    System> Filter Wheels
+
+          Only for Fluorescence- and Luminescence-equipped readers
+
+          Refer to the reader's Operator's Manual for instructions for physically
+            changing the filter wheel
+
+About the Filter Wheels Library
+       Gen5 provides these controls to create a catalog of your Fluorescence and
+       Luminescence excitation and emission filter wheels. If you regularly change filter
+       wheels, this feature provides significant time savings: define the filters in each wheel
+       once, and with one click, update the reader's internal software to match the
+       configuration of the selected wheel.
+       When you add new filters to the catalog, Gen5 offers them for selection when you're
+       defining a Read step. This feature lets you create protocols, i.e. define reading
+       parameters, using filters that are not currently installed in the reader. The Read Plate
+       Prompt Option will ensure that users are alerted when they try to run a Procedure that
+       calls for filters not currently installed.
+
+
+---
+
+174 | Chapter 8: Fluorescence and Luminescence
+
+
+
+        Gen5 considers filter wheels to have distinct uses, they are either Excitation or
+        Emission wheels. BioTek ships wheels labeled either EX for excitation or EM for
+        emission. The Time-Resolved Fluorescence, TR cartridge for the Synergy HTTR is NOT
+        eligible for this catalog.
+        Some Read-step parameters, e.g. Light Shuttering, require a special filter-wheel
+        configuration. This feature provides a short-cut for setting up this type of experiment.
+        After creating a record for the special wheel in the library, you can simply exchange
+        the wheels and with one click, update the reader's settings.
+
+How to use the Filter Wheels Library
+     Select System>Filter Wheels to perform these functions:
+         1.   First, the library records (descriptions of your filter wheels), must be created
+              (page 175)
+
+         2.      When records have been added to the library, select the Type of wheel you
+              want to view or modify using the drop-down list. The list box shows all
+              previously defined wheels of that type.
+         3.   Highlight a record and click View/Modify to see or change the details of a
+              record or Delete, as needed.
+
+
+
+
+         4.   Select a Read Plate Prompt Option:
+               Select the Always prompt option to tell Gen5 to always open the Filter
+                 Wheel Selection dialog whenever the Procedure is Validated and when a
+                 plate is read
+               Select the Only prompt option to tell Gen5 to only open the dialog when
+                 the Read step calls for a filter that is not in a currently installed wheel
+
+         5.               After you have physically exchanged a filter wheel, when you
+              want to update the reader's internal software to match a selected wheel, click
+              Set Reader. This performs the same function as the Reader Setting's Setup
+              option.0.
+
+
+        Updating the reader with a filter-wheel configuration from the Filter Wheel Library
+     also updates the Reader Configuration> Reader Settings> Fluorescence/
+     Luminescence Filters table
+
+
+---
+
+                                                                        Filters and Mirrors | 175
+
+
+
+Creating and Modifying Filter Wheels
+    System> Optics Library> Filter Wheels> Add or View/Modify
+
+  Creating new filter wheel records
+   To add a new filter wheel to your library:
+        1.   Select System> Optics Library> Filter Wheels
+        2.   Click Add...
+        3.   Name the new filter wheel
+        4.     Select the Wheel Type: Excitation or Emission
+        5.   Select the filter Type using the drop-down list for each Filter position in the
+             Excitation and Emission filter wheels.
+        6.   When applicable for the filter Type, enter Wavelength and Bandwidth values
+             in the fields.
+
+         The Wavelength value and its accompanying Bandwidth, in
+           nanometers, are etched into the filters. For example, the
+           Wavelength/Bandwidth combination of 485/20 will transmit light from
+           475 to 495 nm (10 nm on either side of the center). See the reader's
+           operator's manual for details.
+
+        7.   When the filter wheel is fully defined, click OK. 0.
+
+  Special filter position requirements for the Synchronized Modes:
+   For Dispensing Protocols and certain other procedures, Gen5 offers an option: Close Light
+   Shutter, to block the light between measurements to inhibit photo bleaching:
+          Single filter-set protocols: When light blocking is enabled, a blocking filter
+            (Plug) must be placed in the excitation filter wheel in one of the two positions
+            next to the excitation filter that is specified in the protocol.
+          Dual filter-set protocols: When light blocking is enabled, two blocking filters
+            (Plugs) must be placed next to each other in the excitation filter wheel, except
+            for Synergy 2 and Synergy 4, which need only one plug anywhere in the filter
+            wheel.
+
+         Gen5 issues an error message when the configuration of the filter
+           wheel does not match the requirements of the Procedure/Read step.
+
+
+Filter Wheel Configurations
+   The valid combination of filters, plugs, and holes in a filter wheel depends on the reader
+   model.
+   Band Pass - standard interference filter with a defined central wavelength and bandwidth.
+
+
+---
+
+176 | Chapter 8: Fluorescence and Luminescence
+
+
+
+     Plug - light blocker or solid plug in the filter wheel. A plug in the Excitation filter wheel is
+     typical for luminescence assays, to prevent ambient light from entering the measurement
+     chamber.
+     Hole - empty space in the filter wheel to allow unfiltered light to pass through. An empty
+     location in the Emission filter wheel is typical for luminescence assays.
+
+Synergy 4 Readers Only support:
+     Long Pass - an "edge pass filter" with a cut-on Wavelength where the filter stops reflecting
+     and starts transmitting light. It can be used in the Emission filter wheel.
+     Short Pass - an "edge pass filter" with a cut-off Wavelength where the filter stops
+     transmitting and starts reflecting light. It can be used in the Emission filter wheel.
+     Mono LP - positioned in the Excitation wheel for use as an order-sorting filter by the dual
+     monochromator.
+
+           Important filter wheel requirement: to perform monochromator
+             reads, the reader's excitation filter wheel must contain a Hole and a
+             Mono LP filter. And, when light shuttering is required, there must be a
+             Plug between the Hole and the Mono LP filter.
+
+
+Mirrors and Mirror Holders
+     Before shipping the reader, BioTek configures the reader's internal basecode to match the
+     mirrors installed in the reader. Unless you are changing the current configuration do not
+     alter the settings.
+     Your reader's Operator's Manual provides detailed instructions for maintaining and
+     changing mirrors and mirror holders.
+
+
+About Mirrors
+        For all top-reading filter-based fluorescent reads, Fluorescence Intensity (FI),
+        Fluorescence Polarization (FP), and Time-Resolved Fluorescence (TRF), the Synergy 2
+        and Synergy 4 use mirrors to direct light to the sample and obtain measurements from
+        it. Up to three mirrors, either 50%, Dichroic, or custom, can be installed in the reader.
+
+
+
+
+        Mirrors reside in a mirror holder with three possible reading positions. Any mirror can
+        be used for any type of experiment, except FP (Fluorescence Polarization), which
+
+
+---
+
+                                                                       Filters and Mirrors | 177
+
+
+
+      requires using the mirror in position 3, because it holds the polarizing lenses. Keep in
+      mind when using dichroic mirrors that the filter sets must match the wavelength
+      range.
+      The mirror holder (pictured above) is a rectangular box located inside the reader.
+      (Additional mirror holders can be purchased as an accessory and kept track of in the
+      Mirror Holder Library.) The mirror holder and the mirrors are user-changeable. You
+      can replace the entire holder with a different one; this is the recommended option. Or,
+      alternatively, you can install different mirrors in the mirror holder. Contact BioTek for
+      more information on purchasing additional mirrors and holders. Refer to the reader's
+      Operator's Manual for replacement instructions.
+      The reader cannot detect which mirrors are installed in it. Whenever you change a
+      mirror holder or the mirrors in the holder, use Gen5 to update the reader's internal
+      basecode to match the new hardware.
+      Gen5 provides two ways to download information about your mirrors to the reader:
+             Update the Mirror Configuration table when you have only one mirror
+               holder
+             or use the Mirror Holder Library when you have multiple holders
+
+
+
+Dichroic Mirrors
+
+
+
+
+      Dichroic mirrors have to match the Excitation and Emission filters. If the excitation
+      filter and dichroic do not match, the excitation light goes through the mirror, instead of
+      reflected to the sample and the sample does not get excited. If the emission filter and
+      dichroic don't match, even when the excitation light is reflected to excite the sample,
+      the emission light is also reflected by the mirror and goes back to the light source
+      instead of the detector (PMT).
+      Mirrors and filters are defined under Reader Configuration and then, offered for
+      selection when the Procedure is being defined. Filters can also be defined in the Filter
+      Wheel Library.
+
+
+---
+
+178 | Chapter 8: Fluorescence and Luminescence
+
+
+
+        When defining and performing a Read step, the filter set must be compatible with the
+        mirror. 50% mirrors do not have wavelength requirements; they can be used with any
+        filter sets. But Dichroic mirrors require the filter's central wavelength to fall within the
+        mirror's EX and EM Min-Max range.
+
+                                            In the Read Step dialog, hover your mouse
+                                            over the Optics Position to see a tool-tip
+                                            that lists the Excitation and Emission range
+                                            for the selected dichroic mirror. Either select
+                                            filters that fall within the Ex and Em ranges
+                                            (respectively) or change the selected mirror.
+
+
+
+
+Mirrors Configuration
+     System> Reader Configuration> View/Modify button> Setup button
+     Normally, these controls are only needed when you are changing a mirror or mirror
+     holder
+
+To change the current settings and download them to the instrument:
+        When you exchange a mirror or mirror holder, follow these steps to update the reader:
+         1.   Select System> Reader Configuration
+         2.   Double-click the reader to be updated. This opens the Reader Settings dialog.
+
+         3.   Click
+         4.   Select the Mirrors tab
+         5.   For each Mirror position, 1, 2, 3, use the drop-down list to select the Type of
+              mirror. Gen5 assigns a Label based on your selection. For details about the
+              valid values see Define a Mirror Holder on page .
+         6.   For a Dichroic mirror, you must enter its wavelength range. Refer to the fact
+              sheet provided with the mirror to enter the values for the Excitation Minimum
+              and Maximum and the Emission Minimum and Maximum. Gen5 creates the
+              Label for the mirror based on your input.
+         7.     with Polarizers: if the mirror holder is equipped with polarizing lenses,
+              enable this option in Gen5.
+         8.   When the actual mirrors in the mirror holder are described correctly in the
+              table, click Send Values to download the data to the reader.0.
+
+
+---
+
+                                                                       Filters and Mirrors | 179
+
+
+
+Define a Mirror Holder
+   Gen5 provides two ways to manage information about your mirror holders:
+              Use the Mirror Holder Library when you have multiple holders
+              Otherwise, you can simply update the Mirrors table
+
+  To define the mirrors in a Mirror Holder:
+        1.   Either update the library or the mirror table:
+              Select System> Optics Library> Mirror Holders> Add or Modify
+              Select System> Reader Configuration> Reader Settings> Setup >
+                Select the Mirrors tab
+        2.   For each Mirror position, 1, 2, 3, use the drop-down list to select the Type of
+             mirror. Gen5 assigns a Label based on your selection:
+              50% = works with any wavelength. It is a glass slide with small, reflective
+                silver dots; 50% of the surface reflects light, 50% of the surface transmits
+                light. It's Label is Top 50%.
+              Dichroic = works with a specific wavelength range; they are transparent to
+                one part of the spectrum and block the other part. You must know the
+                mirror's specific excitation and emission wavelength range to properly
+                configure the reader.
+              Custom = select this option when your mirror is neither a 50% nor a
+                dichroic. Gen5 lets you select any combination of filters when defining a
+                Read step using a custom mirror. Assign it a Custom Name to distinguish it
+                from other mirrors. You can use up to 8 characters.
+              None = select this option when there is an empty position in the mirror
+                holder. It is not given a label and this position cannot be selected when
+                defining a Read step.
+        3.   For a Dichroic mirror, you must enter its wavelength range. Refer to the fact
+             sheet provided with the mirror to enter the values for the Excitation Minimum
+             and Maximum and the Emission Minimum and Maximum. Gen5 creates the
+             Label for the mirror based on your input. Learn more...
+        4.     with Polarizers: if the mirror holder is equipped with polarizing lenses,
+             enable this option in Gen5.0.
+
+  Mirror Labels
+   Gen5 assigns each mirror a Label as you define or modify them. Mirrors are only used
+   when top reading (rather than bottom reading) is performed on the plate, thus all labels
+   (except Custom) begin with Top:
+              50% mirrors are always labeled Top 50%.
+
+
+---
+
+180 | Chapter 8: Fluorescence and Luminescence
+
+
+
+                For dichroic mirrors Gen5 calculates the average of the Excitation Max and
+                  Emission Min and assigns this value as the label. For example, Top 400
+                  becomes the label when the EX Max = 390 and the EM Min = 410.
+                Labels for custom mirrors are the user-defined Custom Name.
+
+
+Mirror Holder Library
+System> Optics Library> Mirror Holders...
+
+           Refer to the reader's Operator's Manual for instructions for physically
+             changing the mirror holder
+
+About the Mirror Holder Library
+     Gen5 provides these controls to create a catalog of your Mirror Holders. If you regularly
+     change mirror holders, this feature provides significant time savings: define the mirrors in
+     each holder once, and with one click, update the reader's internal software to match the
+     configuration of the installed holder.
+     First you must create a library record for each mirror holder. Then, after you physically
+     change a mirror holder, you can select its record and instantly update the reader's internal
+     mirror table.
+     When you add new mirrors to the catalog, Gen5 offers them for selection when you're
+     defining a Read step. This feature lets you create protocols, i.e. define reading parameters,
+     using mirrors that are not currently installed in the reader. The Read Plate Prompt Option
+     will ensure that users are alerted when they try to run a Procedure that calls for mirrors
+     not currently installed.
+
+           Changing mirrors in a mirror holder: the library is intended to
+             keep track of multiple mirror holders. When you are limited to
+             changing individual mirrors in a single mirror holder, it is quicker and
+             easier to simply update the reader's internal mirror table using the
+             Reader Setup controls.
+
+  How to use the Mirror Holder Library
+     Select System>Optics Library>Mirror Holders to perform these functions:
+          1.   First, the library records (descriptions of your mirror holders) must be created.
+               See Define a Mirror Holder on page 179.
+               When records have been added to the library the list box displays them.
+          2.   Highlight a record and click View/Modify to review or change its details or to
+               Delete it, as needed.
+
+
+---
+
+                                                                      Filters and Mirrors | 181
+
+
+
+       3.   Select a Read Plate Prompt Option:
+             Select the Always prompt option to tell Gen5 to always open the Filter
+               Wheel Selection dialog whenever the Procedure is validated and when a
+               plate is read
+             Select the Only prompt option to tell Gen5 to only open the dialog when
+               the Read step calls for a filter that is not in a currently installed wheel
+
+       4.                 When you want to update the reader's internal software to match
+            a selected mirror holder, click Set Reader. This performs the same function
+            as the Reader Setting's Setup option.
+
+
+Select a Mirror Holder
+System> Optics Library> Mirror Holders...
+
+   These controls are presented during Procedure Validation and plate processing when Gen5
+   is instructed to "Always prompt before a procedure" or when the Read step calls for
+   mirrors that are not currently installed in the reader.
+
+  When validating a Procedure
+   Gen5 opens the Mirror Holder Selection dialog when validating a Procedure to offer any
+   mirror holder that meets the requirements of the read step:
+       1.   Highlight a holder in the Available Mirror Holders box
+       2.   Click Continue to validate the Procedure using the selected filter wheel.0.
+
+  When executing a Procedure
+   Gen5 displays an error message and, if a valid mirror holder is available, opens the Mirror
+   Holder Selection dialog when the Procedure calls for a mirror that is not currently
+   installed in the reader. Only holders that meet the requirements of the read step are
+   offered for selection in this scenario.
+       1.   Highlight a holder in the Available Mirror Holders box
+       2.   Click Update Reader to select the mirror holder you will install.
+       3.   Physically change the mirror holder in the reader. Follow instructions provided
+            in the Operator's Manual. After it is changed and the reader is turned on and
+            has completed its self test, return to Gen5 and click Send Values. The reader's
+            mirror table is not updated until this final step is completed.0.
+
+  When using the Mirror Holder Library
+
+                 From the Mirror Holder Library, click Set Reader... when you want to
+   update the reader's internal software to match the configuration of a selected holder
+
+
+---
+
+182 | Chapter 8: Fluorescence and Luminescence
+
+
+
+
+Multi-Detection/Multi-Mode Protocols
+
+
+
+
+                          SynergyTM HT and SynergyTM 2/4 Only
+
+Prerequisite
+
+  Currently only BioTek's multi-detection readers Synergy HT, Synergy 4 and
+    Synergy 2 are capable of running multi-mode protocols.
+
+        Gen5TM lets you perform multiple detection methods on a plate within one protocol.
+        Examples
+           Stand-Alone Multi-Detection Protocol - You can define independent read
+             steps, performing each read with a different detection method. Other
+             Procedure steps (e.g. Shake) can be included in the sequence, following the
+             rules for all types of protocols.
+           Kinetic Multi-Detection Protocol - You can perform a multi-detection kinetic
+             analysis, conducting the reads within a kinetic loop, reading each plate with a
+             different method in sequence. Reads must be done in Standard Plate Mode (not
+             in Synchronized Mode).
+
+
+           Read the permissions and restrictions for conducting multi-detection within a
+        kinetic loop on the next page and view examples on page 184.
+
+
+---
+
+                            Features and Restrictions of Kinetic Multi-Detection Protocols | 183
+
+
+
+
+Features and Restrictions of Kinetic Multi-Detection
+Protocols
+
+Supported features:
+            Up to 6 wavelengths for Absorbance reads
+            Up to 2 filter sets for Fluorescence and Luminescence reads
+            Time-Resolved Fluorescence (TRF)
+            Automatic Sensitivity Adjustment
+            All other valid combinations of Procedures can precede or follow the
+              kinetic loop
+
+Limitations:
+            Only Standard (non-synchronous) plate mode reads are supported
+            Up to 3 read steps can be performed in a multi-detection kinetic loop
+            A Shake step is the only reading-related activity that can be inside a multi-
+              detection kinetic loop
+            Synergy HT cannot perform a time-resolved fluorescence and standard
+              fluorescence read in the same kinetic loop (nor in the same protocol).
+              Synergy 2/4 can perform TRF and other types of fluorescence analysis (FI
+              and FP) within a kinetic loop when every read within the loop uses the
+              same light source. TRF requires use of the Xenon Flash, so you must select
+              this light source for any other fluorescence read within the kinetic loop
+            A continuous shake event must be the first step in the sequence
+            When more than one kinetic loop is defined you cannot "Append to
+              previous Kinetic data" as is possible in a mono-detection kinetic Procedure
+
+Features that are not supported:
+            Spectrum and Scanning read types
+            Pathlength correction
+            Dispense steps (Readers with Injectors)
+            (but you can work around this limitation, see Dispensing Reagent in a
+              Kinetic Analysis Protocol in Gen5's Help)
+
+
+---
+
+184 | Chapter 8: Fluorescence and Luminescence
+
+
+
+
+Examples of Kinetic and Stand-Alone Multi-Detection Procedures
+     In a Kinetic Multi-Detection Protocol readings are performed sequentially in a kinetic
+     loop
+
+
+
+
+        In a Stand-Alone Multi-Detection Protocol readings are performed independently
+
+
+---
+
+Chapter 9
+
+
+
+
+Kinetic Analysis
+
+     This chapter focuses on the tools and techniques available for
+     creating a kinetic analysis assay.
+
+
+ How to set up a Kinetic Analysis ................................................ 186
+ Kinetic timelines ...................................................................... 186
+ Kinetic Minimum Interval .......................................................... 188
+ Discontinuous (Long) Kinetic Procedure ...................................... 189
+ Well Zoom .............................................................................. 191
+ Well Analysis Calculation Types.................................................. 196
+
+
+---
+
+186 | Chapter 9: Kinetic Analysis
+
+
+
+
+How to set up a Kinetic Analysis
+     Begin with Protocol> Procedure
+         In the Procedure, for kinetic analysis, you set up the timelines and intervals to define
+         the number of reads per wavelength and any other required activities. If you're
+         performing time-sensitive studies review the Synchronized Mode options in the
+         Fluorescence and Luminescence chapter.
+
+To set up a kinetic analysis protocol or time course work:
+          1.   Open Procedures (Protocol> Procedure)
+          2.   Click Kinetic. Gen5 opens the Kinetic Step controls. Define the timelines (see
+               the next page for more information):
+                Use the spin buttons or click in the Run Time and Interval fields and enter
+                  the desired time settings. Alternatively, let your reader determine the
+                  Minimum Interval for the desired Run Time. Follow these instructions for
+                  applying the Minimum Interval on page 188.
+                Gen5 adds a kinetic loop to the Procedure.
+          3.   With the End Kinetic step of the kinetic loop highlighted, click Read to add at
+               least one read step to the loop. If desired, include a Shake step before the read.
+               (Scanning and Spectrum reads are not supported.)
+          4.   Add other steps, including other kinetic loops, to the Procedure, as needed.
+               Click Validate to make sure the current reader is capable of processing the
+               sequence.
+          5.   Next, go to Data Reduction. At least one Well Analysis calculation is
+               automatically created for you. Double-click the Well Analysis step to view or
+               modify it. Add more Well Analysis or other calculations, as needed. 0.
+
+
+Dispensing Reagent in a Kinetic Analysis
+      Select Help>Help Topics in Gen5 to review suggestions for including a dispense step
+      in your Kinetic Procedure.
+
+
+Kinetic timelines
+         Numerous factors affect the runtime parameters for a kinetic loop. The minimum
+         interval for readings can be increased or decreased by the defined reading parameters.
+         Here are some facts to consider and some limitations of the BioTek readers:
+
+
+---
+
+                                                       How to set up a Kinetic Analysis | 187
+
+
+
+Reading parameters that can affect kinetic timelines:
+      Plate size: a 96-well plate can have a shorter minimum interval and obtain more
+        reads than a 384-well plate in the same runtime duration. Similarly, reading a
+        partial plate generates more reads during the same time period.
+      Read Speed in Absorbance reads: more reads can be obtained in Rapid mode than
+        at Normal speed
+      Measurement Options in Fluorescent reads: you can control the read speed (and
+        affect the kinetic timelines) by adjusting the number of measurements per data
+        point, and the delay after plate movement
+      Integration Time in Luminescent reads: you can control the read speed (and affect
+        the kinetic timelines) by adjusting the read duration for each well
+      Number of steps in the kinetic loop: adding steps, a Shake and one or more Read
+        steps, to the kinetic loop effects the timelines
+      Duration of a Shake step in the kinetic loop is added to the Run Time
+
+Reader limitations:
+      All readers are limited to obtaining 9999 reads in Absorbance mode within the 168
+      hour timeline. The longest interval between reads is 2.5 hours. Fluorescence and
+      Luminescence kinetic reads and intervals are reader dependent:
+
+        Reader                              Total #         Max
+                                            Reads           Interval
+
+        Synergy HT: Standard mode           300             9999 sec
+
+        Synergy 2/4: Standard mode          9999            9999 sec
+
+        Synergy HT/Synergy 2/4:             999             9999 sec
+        Synchronized Plate
+
+        Synergy HT/Synergy 2/4:             999             99.99 sec
+        Synchronized Well
+
+        Flx800: Standard mode               300             9999 sec
+
+        FLx800: Synchronized Plate          300             9999 sec
+
+        FLx800: Synchronized Well           300             12.00 sec
+
+
+---
+
+188 | Chapter 9: Kinetic Analysis
+
+
+
+
+Kinetic Minimum Interval
+         Here are instructions for letting Gen5 determine the shortest valid kinetic interval:
+
+           Prerequisite: Your reader must be connected and turned on, i.e.
+             communicating with Gen5, to determine the minimum interval
+
+         Gen5 communicates with the reader to determine how quickly the Kinetic loop can be
+         processed. You must click the Validate button to trigger this communication. Follow
+         these steps:
+          1.   In the StepWise Procedure, click Kinetic to add a loop
+          2.   Define the Run Time for the Kinetic loop and select       Minimum Interval,
+               click OK
+          3.   Add a Shake step if desired and define one or more Read steps with the
+               required wavelengths/filter sets and other conditions. For an Absorbance read
+               you can increase the Read Speed, for faster processing. For a Fluorescence
+               analysis, you can modify the Filter Set Options to speed up processing.
+
+          4.             Click the Validate button. Gen5 will display a confirmation
+               message and the Interval will be defined.
+
+What you'll see
+         You'll notice that the description of the Start Kinetic step will change from "generate
+         minimum interval" before you hit the Validate button to a specific time setting for
+         Interval:
+
+
+
+
+           Important: Gen5 replaces the "minimum interval" setting with an
+             actual interval time. If you subsequently make changes to the
+             Procedure that have an effect on the kinetic interval, e.g. increase the
+             plate size or add another read step, the minimum interval must be
+             recalculated.
+
+
+---
+
+                                                          Discontinuous Kinetic Procedure | 189
+
+
+
+Discontinuous Kinetic Procedure
+   Procedure> Kinetic> Read
+
+About Discontinuous Kinetics
+      For cell growth assays and similar types of studies, Gen5 provides a way to take
+      readings over a long time period without tying up the reader, so it can be used in other
+      experiments during the rest or incubation periods. Gen5 calls this type of analysis:
+      Discontinuous Kinetic, because the measurements obtained from the multiple readings
+      are combined, resulting in a multi-read data set. There is virtually no time limit to this
+      type of procedure.
+      Limitations of Discontinuous Kinetics:
+         Endpoint and Kinetic reads are supported, but Area Scan, Linear Scan, and
+           Spectral Scans are prohibited
+         Synchronous Mode is not supported, i.e. you cannot perform readings in
+           Synchronized Plate or Well Mode
+         Stop/Resume steps are prohibited, i.e. you cannot include a Stop/Resume step
+           in the Procedure
+
+        Gen5's Data Reduction Well Analysis Options are available for this type
+          of experiment
+
+How to set up a Discontinuous Kinetic Experiment:
+       1.   Create a new Protocol in the usual way
+
+       2.                      When defining the Procedure, select Advanced Options,
+            and select the Discontinuous Kinetic Procedure option
+       3.   Enter "estimated" time points in Days:Hours:Minutes: for the Estimated total
+            time and Estimated interval
+            This is just an estimate, and will not interfere with actual experiment activity.
+            Gen5 uses your estimated time lines to set up the data views and formulas with
+            placeholders until the actual data is captured. When in doubt about the
+            required time period and intervals, it is best to over-estimate them. See the
+            example on the next page.
+       4.   Define the Read step(s) as usual, and save the Protocol
+       5.   Create an Experiment based on the Protocol, and conduct the first Read on the
+            plate
+       6.   Close and save the Experiment
+       7.   Remove the plate and process (e.g. add reagent) or store it (e.g. incubate), until
+            it is time for the next reading
+       8.   Open the Experiment, put the plate on the carrier, click the Read button, and
+            select Next Read
+
+
+---
+
+190 | Chapter 9: Kinetic Analysis
+
+
+
+          9.   Repeat steps 5-7 until all the required reads are completed0.
+         Gen5 compiles all the reads into a kinetic data set, and performs Data Reduction, e.g.
+         Well Analysis, as defined in the Protocol.
+
+   Example of Discontinuous Kinetic Estimated Time Points
+           If you expect to read the plate twice a day for 3 days, but an extended time period
+           may be needed, enter 5 days for the Estimated total time, and 12 hours for the
+           Estimated interval:
+
+
+---
+
+                                                                                   Well Zoom | 191
+
+
+
+
+Well Zoom
+      Performing a multiple-read Read Step generates the Well Zoom feature, which lets you
+      zero-in on each well of the microplate to view the reading results for individual wells.
+      Multiple wells can be selected for simultaneous viewing. Setting up Well Analysis as a
+      Data Reduction step enhances the view, displaying the calculation results for each
+      well.
+
+          Gen5 automatically creates one Well Analysis step when you define a
+            kinetic loop
+
+
+
+
+How to:
+
+          Tip: To use this feature to monitor kinetic readings in real time, perform these
+      steps before you start the reading. However...see the note below.
+
+          1.   After reading the plate, open the Plate View that represents the plate
+          2.   In the Matrix view, use the drop-down list of available Data sets to display the
+               set labeled Curves. (The raw data set upon which a Well Analysis data
+               reduction has been performed offers the most useful display, for example: When
+               you assign blanks to the plate, Gen5 first creates a blank-subtraction data set, and
+               then performs well analysis on that data set. Gen5 creates a Curves data set based on
+
+
+---
+
+192 | Chapter 9: Kinetic Analysis
+
+
+
+               this well analysis, e.g. Curves [Blank 450] where 450 is the wavelength of the reading.
+               Select this data set for the best well zoom.)
+          3.   Click any well in the matrix to see its Well Zoom view.0.
+
+           Do not display Gen5's "Curves" data in the Plate View while
+             performing a kinetic analysis. Wait until the read step is finished
+             before viewing the "Curves" data set. Displaying the Curves data set
+             during a Kinetic read can consume excessive resources resulting in
+             performance degradation. You can drill down to a Well Zoom to
+             monitor the progress of one well, then, leaving the Well Zoom open,
+             change the Matrix Data to a numeric view.
+
+Open the Well Zoom View
+
+
+
+
+     Set the Data set in the Matrix view to Curves, and click in a well for the Well Zoom
+
+
+           Hold the Ctrl key, while selecting up to 8 wells in the Curves data set of the Plate
+         View, to see all the well results simultaneously (except for Area Scans)
+
+
+                                   Use the View data/View chart toggle button to show the
+         data in either a table or graph. See examples beginning on page 198.
+
+View Multiple Wells Simultaneously
+
+            Click the 3-dot button next to the Wells field to select multiple wells to view in one
+         graph. This is dynamic, so you can select and de-select the wells you want to see. Up to
+         8 wells can be selected at one time.
+
+
+---
+
+                                                                               Well Zoom | 193
+
+
+
+Zoom Zoom
+
+
+
+
+      Within a well zoom you can further zoom in on selected data points:
+       1.   Click and drag your mouse over an area of the well zoom. The pointer changes
+            to a cross as Gen5 maps the selected area. Gen5 presents a pop-up menu when
+            you release the click
+       2.   Select an option from the menu:0.
+             Zoom In or Zoom Out
+             Mask or UnMask Points
+
+Well Zoom Plotting
+      When Gen5 plots the well zoom curves, the X axis represents the individual reads for
+      the well, and the Y axis represents the measurements:
+
+             Y Axis X Axis
+             ODs      Kinetic read times
+             RFUs     Spectrum wavelengths
+
+             RLUs     Linear horizontal positions
+
+
+
+Well Analysis Results Table
+      When a Well Analysis Data Reduction step is defined, Gen5 shows the calculation
+      results in a table beneath the curve. The "Curves" or "Scan" data set that leads to a well
+      zoom, must be the subject of a Well Analysis step; raw data well zoom views do not
+      include a Well Analysis Results table.
+
+
+---
+
+194 | Chapter 9: Kinetic Analysis
+
+
+
+Calculation Zone
+         The range of reads considered for analysis is determined by the Calculation Zone
+         setting of the Well Analysis. When the original range is reduced, Gen5 plots the
+         revised Calculation Zone with brackets: [ ]
+
+Viewing Appended Kinetic Results
+         When one or more kinetic reads are appended, Gen5 combines them into one data set.
+         When a Dispense step occurs between the kinetic loops, Gen5 represents the event as a
+         blue diamond on the X-Axis timeline.
+
+           FLx800 with Injectors may show the "Dispensing" event occurring
+             in the same interval as a Read. This is a limitation of the reader's
+             basecode or on-board software.
+
+
+Customizing the Well Zoom View
+         After launching the Well Zoom dialog, you can:
+            Select a different Curve to display (if available)
+                       At the Curve field, click the   drop-down list to select another data set
+                       for the selected well
+            Mask or exclude a data point and Recalculate
+                  1.   Click on a data point to temporarily exclude or mask it from the
+                       calculation, then click Recalculate
+                  2.   Click on the data point again to restore it 0
+
+           Important: modifying data may adversely effect or possibly invalidate
+             results!
+
+            Overlay up to 8 other kinetic curves on top of the current one
+
+                       Click the     3-dot button next to the Wells field to select curves from
+                       other wells to overlay onto the current one.
+            Modify or Create a new table (to select the data displayed beneath
+               the graph)
+
+                        Click the      3-dot button next to the Results field to modify the
+                           table.
+                        Click the      drop-down list and select Create a New Table
+                        Learn more at  Customizing Data Views, Reports, and Exports in the
+                           Reporting Results chapter
+
+
+---
+
+                                                                         Well Zoom | 195
+
+
+
+ Display or hide a legend for the graph
+
+        Click    next to the Curve field. On the Layout tab, click in the checkbox
+        to Show the Legend or remove the checkmark to hide it.
+ Modify the text and line formatting of the graph
+
+        Click    next to the Curve field.
+ Create a new graph (curve)
+
+        Click    at the Curve field and select Create New Graph. You can combine
+        multiple curves, if available, with this option, to simultaneously view the well
+        results of each curve.
+
+
+---
+
+196 | Chapter 9: Kinetic Analysis
+
+
+
+
+Well Analysis Calculation Types
+
+           Also see the Data Reduction chapter for useful information
+
+     Protocol> Data Reduction> Well Analysis
+         Gen5TM offers the following calculation types when a multiple-index read step is
+         defined. Each option has its own specific parameters, which you define by selecting the
+         Calculation Options button.
+
+
+
+
+            Mean V is the calculated value of the mean slope. It is calculated by a linear
+              regression on points in the Calculation Zone. Define the Calculation Zone with
+              the Calculation Options button. For Mean V, the zone is typically adjusted to
+              ignore misleading data points generated at the beginning of a kinetic assay due
+              to "noise."
+            Max V is the calculated value of the maximum slope:
+              1. Starting at the first point in the calculation zone, Gen5 evaluates n points
+              and calculates the slope among these n points.
+              2. Gen5 repeats the operation, starting at the second point in the calculation
+              zone, and repeats it again, starting at the third point, and so on.
+              3. Finally, Gen5 compares all calculated slopes to determine the maximum
+              slope.
+              Gen5 registers the Delta t time in the middle of the point where the Vmax is
+              calculated. By default, the calculation zone starts at 2 points and at time zero.
+
+
+---
+
+                                                  Well Analysis Calculation Types | 197
+
+
+
+   Select the Calculation Options button to modify the calculation zone.
+   Gen5 also calculates the kinetic Lag Time, which is the time interval between
+   the line of maximum slope of the propagation phase and the absorbance
+   baseline at time = 0. Also calculated: Y Intercept, R and R2, delta time at Max
+   V, and Max V minus minimum and maximum time.
+ Mean Min/Max Mean Min is the mean minimum OD* based on n points. Mean
+   Max OD is the mean maximum OD based on n points. Gen5 calculates the
+   Mean Min and Mean Max ODs as follows:
+   1. Starting at the first point in the calculation zone, Gen5 evaluates n points
+   and calculates the mean among these n points.
+   2. Gen5 repeats the operation, starting at the second point in the calculation
+   zone, and repeats it again, starting at the third point, and so on.
+   3. Finally, Gen5 compares all of the calculated means to determine the
+   minimum and maximum of these values.
+   Gen5 registers the Delta t time at Min/Max OD. Select the Calculation Options
+   button to modify the calculation zone.
+   *: For fluorescence and luminescence reads, Gen5 performs calculations based
+   on fluorescence units (RFU) and luminescence units (RLU), respectively.
+ Mean, Std, CV This option calculates and reports the Mean, Standard Deviation,
+   and Coefficient of Variation for all points in the calculation zone. By default,
+   the calculation zone includes all of the Reading Points defined in the protocol.
+   To change the calculation zone, click the Calculation Options button.
+ Onset OD Gen5TM reports:
+   Onset Time: the time it takes to reach Onset OD*
+   Onset OD: the user-specified value. It can be defined as an absolute value or a
+   relative value based on the Basis OD
+   Basis OD: is an optional value used to adjust all wells to a baseline. It is defined
+   under Calculation Options as a fixed value or the "Mean of first n points"
+   Basis Time: the time it takes to reach Basis OD,when defined
+   *: For fluorescence and luminescence reads, Gen5 performs calculations based
+   on fluorescence units (RFU) and luminescence units (RLU/sec), respectively.
+ Integral calculates the area under the curve according to the trapezoidal
+   method, shown here:
+
+
+
+
+   Where y = measurement value and x = read point value.
+   The area under the curve is displayed in the Well Zoom when this option is
+   selected.
+   By default, the calculation zone spans the full Run Time and includes all of the
+   reading points defined in the protocol. Click Calculation Options to change
+   the calculation zone.
+
+
+---
+
+198 | Chapter 9: Kinetic Analysis
+
+
+
+            Formula allows you to calculate a value using data from individual reading
+              points. Reading points are designated Rn, where n is the reading number. Use
+              Wn for spectrum reads.
+              The Formula is calculated for each well and results in one new data set named
+              "Formula Result [nm]", where nm is the wavelength or filter set defined in the
+              read step. When a Label is defined it precedes the naming convention: "Label:
+              Formula Result [nm]".
+              For example: (R1+R2)/2 + R10 is read point 1 + read point 2 divided by 2 plus
+              read point 10.
+
+   Well Zoom: View Chart/View Data
+
+
+
+
+         Gen5 lets you toggle the Well Zoom view between a chart and a table. Click the View
+         Data button to see the table, click the View Chart button to view the kinetic curve.
+
+
+---
+
+Chapter 10
+
+
+
+
+Scanning Analysis Options
+
+     Gen5, depending on the capabilities of the current reader, makes it
+     easy to conduct an area or linear scan of wells in a plate, or a
+     multi-wavelength spectrum scan. Selecting one of these methods
+     also enables Well Analysis data reduction features. This chapter
+     provides details about these capabilities.
+
+
+ Area Scan ............................................................................... 200
+ Linear Scan ............................................................................. 202
+ Spectrum Scan ........................................................................ 203
+
+
+---
+
+200 | Chapter 10: Scanning Analysis Options
+
+
+
+
+Area Scan
+        When the reader is capable of performing an area scan, Gen5 provides three ways to
+        control the output of the captured measurements:
+            Scan Options, defined in the Read Step of the Procedures, determine the Read
+              Matrix Size. The potential Read Matrix Size is a function of the well size of the
+              current plate.
+            Calculation Zone, defined in the Well Analysis Data Reduction step, lets you
+              limit the values reported, ignoring the lowest OD/RFU measurements for
+              example, for meaningful results
+            Display Options provide more control over the appearance of the results,
+              letting you limit the results displayed based on their measurement values and
+              changing the color scale applied to the values for a better presentation of the
+              results.
+
+           The Synergy 2's and Synergy 4's probe size limits its ability to perform
+             Fluorescence area scan in plates with a small well diameter. Generally,
+             this means you must use a plate with fewer than 96 wells.
+
+           While you can control the temperature (and incubate the plate) for
+             these types of reads, due to a reader limitation, area and spectral
+             scans do not report the temperature on-screen or in reports or export
+             files.
+
+Calculation Types
+                Gen5 calculates and reports the Mean OD/RFU, Standard Deviation and
+                  Coefficient of Variation of samples
+
+Viewing and Reporting Results
+      When a Well Analysis data reduction step has been defined, Gen5 displays a graphical
+      representation of the measurements taken across the well:
+          1.   In the Matrix tab of the Plate workspace, use the drop-down list of available
+               Data sets to display the set labeled Scans
+          2.   Click in a cell to show its Well Zoom
+
+           As described in Display Options above, Gen5 offers extra controls for
+             adjusting the view of Area Scans. Perform the next step, Step 3, to
+             access the controls, which are especially useful for customizing reports
+             of the scan results.
+
+
+          3.      Click the 3-dot button next to the Curve field to open the controls for
+               adjusting the view.0.
+
+
+---
+
+                                                                 Area Scan | 201
+
+
+
+In Gen5's Help you can find detailed instructions to:
+      Assign a different Title for the graph displayed
+      Hide or show the Color Scale legend
+      Change the online view to Gray Scale to match the output from non-color
+        printers
+      Change the Data Range and Color Range applied to the results
+
+
+---
+
+202 | Chapter 10: Scanning Analysis Options
+
+
+
+
+Linear Scan
+        When the reader is capable of performing a linear scan, Gen5 plots a curve for each
+        well using the reading points in the scan.
+            Scan Options: You define the number of reading points in the Read Step of the
+              Procedure
+
+           PowerWave-series readers require updating the Filter Table with the
+             wavelength you want to scan before reading the plate. Enter the
+             desired wavelength in the table and click Send Wavelengths, then
+             define the Read step.
+
+Calculation Types
+        Gen5TM offers the following types of well analysis for linear scan:
+                Mean, Std Dev, CV: Gen5 calculates and reports the Mean OD, Standard Deviation
+                  and Coefficient of Variation of samples when this calculation type is selected.
+
+                  You can define the Calculation Zone, which is based on the number of Horizontal
+                  Reading Points, which you define as Scan Options in the Read Step of the
+                  Procedures
+
+
+
+
+                Mean Min/Max
+               Integral
+        For each of these calculation types, you can adjust the Calculation Zone as desired.
+        Click on the type to review your options and Gen5's default settings.
+
+Viewing Results
+          1.   After reading the plate, in the Plate workspace use the drop-down list for Data
+               to select the data set labeled Curves
+          2.   Click in a well to see the Well Zoom. When a Well Analysis data reduction step
+               has been defined, a table beneath the curve shows the results. 0.
+
+
+---
+
+                                                                         Spectrum Scan | 203
+
+
+
+
+Spectrum Scan
+
+Absorbance Spectral Scan
+   During a Spectrum Read, multiple readings are taken across a wavelength range. The
+   objective is to plot a graph with absorbance/RFU/RLU versus wavelength. Gen5
+   automatically generates the spectrum data views:
+           one multi-index raw data set: measurements taken at each wavelength
+             one "Curves" data set (Well Zoom): plot of OD/RFU/RLU per wavelength for
+              each well
+    Readers that support Absorbance spectrum reads are uQuant, all models of the
+    PowerWave and Synergy HT, Synergy 2, and Synergy 4. Only the Synergy 4 supports
+    spectral scans for Fluorescence and Luminescence detection.
+
+Fluorescence Spectral Scan
+    Fluorescence spectrum analysis can be performed on either the Excitation or Emission
+    wavelength, with the opposite wavelength set to a fixed value. And the range of
+    wavelengths scanned can either be lower or higher than the fixed wavelength (with no
+    overlap).
+    Since it is recommended that each individual spectrum read limits the range of
+    wavelengths to above or below the fixed wavelength, you can define multiple read steps in
+    one procedure that straddle the fixed wavelength and/or alternate between EX and EM
+    scans.
+    For example, to determine the peak response at both an EX and EM wavelengths you
+    could define a procedure like this:
+
+
+
+
+    After reading the plate and reviewing the results, you may want to modify the fixed
+    wavelengths to match the peak responses.
+
+          Gaps in a spectral curve: over-range or immeasurable values, in
+            combination with Gen5's automatic spectral raw data correction, can
+            cause unexpected gaps in a curve. Lower the Sensitivity setting and
+            reread the plate to obtain reliable data.
+
+
+---
+
+204 | Chapter 10: Scanning Analysis Options
+
+
+
+Calculation Types
+                Min/Max is the Well Analysis option Gen5 offers for spectrum scans. It
+                  generates the data sets: Mean Minimum OD and Wavelength at Mean
+                  Minimum OD, Mean Maximum OD and Wavelength at Mean Maximum
+                  OD
+
+
+Define the Calculation Zone:
+                 You can refine the results output of the well analysis:
+                Reduce the range of wavelengths upon which to perform the calculations.
+                  The default zone corresponds to the Start (beginning) wavelength and the
+                  Stop (ending) wavelength defined in the Procedures.
+                Reduce the number of spectrum reads upon which to perform the
+                  calculations. The default zone is the total number of wavelengths to be read
+                  based on the Procedure settings: from read 1 to the total number of reads
+                  calculated from the Start, Stop and Step values. Limiting the number of
+                  reads is another way to effectively reduce the wavelength range (nm)
+                  considered in the calculation.
+                Set the number of points on which to average/calculate the minimum and
+                  maximum values. The default number of points is 1 (each read stands alone
+                  to determine the min and max). The valid entry range is from 1 to the total
+                  number of reads calculated from the Start, Stop and Step values.
+
+                  When you increase the number of points, Gen5 first identifies the mean
+                  value for the specified number of consecutive reads, and then determines
+                  which of them is the min and max. For example, if you define 2 as the
+                  number of points, Gen5 determines the mean of the first two reads, the
+                  second two reads, the third two reads, etc., to perform the calculation. This
+                  option is most useful when there are numerous reads to work with.
+
+Viewing the Spectrum Scan
+          1.   After reading the plate, in the Plate workspace use the drop-down list for Data
+               to select the data set labeled Spectrum Curves
+          2.   Click in a well to see the Well Zoom. When a Well Analysis data reduction step
+               has been defined, a table beneath the curve shows the Well Analysis Results
+               and you can use the View Data and View Chart toggle button to see the basis
+               for the curve.
+
+          3.       Click the 3-dot button next to the Curve field to change the appearance of
+               the well zoom. 0.
+
+
+          You can display multiple well zooms simultaneously by holding down the Ctrl key
+        while selecting (up to 8) wells.
+
+
+---
+
+Chapter 11
+
+
+
+
+Multi-Plate Protocols
+
+     An overview and specific instructions for creating multi-plate
+     protocols is provided in this chapter.
+
+
+ Designing a Multi-Plate Protocol ................................................. 206
+ About Multi-Plate Protocols........................................................ 207
+ Running a Multi-Plate Protocol ................................................... 209
+ Calibrator-Plate Protocols .......................................................... 212
+ Multi-Plate Assay Protocols........................................................ 215
+
+
+---
+
+206 | Chapter 11: Multi-Plate Protocols
+
+
+
+Designing a Multi-Plate Protocol
+         There are numerous applications for multi-plate protocols, not to be confused with
+         multiple-plate experiments described on page 208.
+         Select the option that best meets your needs:
+            Calibration Plate Protocols: Define a calibration or standards plate to
+              determine concentrations of test samples on other plates
+            Multi-Plate Assay Protocol: Use multiple plates to accommodate one assay.
+              During processing and data reduction, Gen5 treats the multiple plates as if all
+              samples and controls were on one plate
+            Batch Processing: Process a batch of samples, using a limited number of
+              standards, and incrementing continuous sample numbers across multiple
+              plates.
+
+           Important: All multi-plate protocols begin the same way, by first
+             defining the number of plates required: Select File>New Protocol
+             and set the Protocol Type as the first step.
+
+
+---
+
+                                                             About Multi-Plate Protocols | 207
+
+
+
+About Multi-Plate Protocols
+      For the numerous applications requiring multiple-plate processing, Gen5TM helps you
+      conduct multi-plate assays or to process multiple plates in an experiment. The method
+      you choose depends on the requirements of your protocol. This information is
+      intended to help you select the most efficient method.
+      The considerations include Plate Layout, Read Type, and data and kinetic analysis
+      requirements:
+         Do you need more than one plate layout to distribute samples,
+           standards, controls, and blanks? If yes, then a multi-plate protocol is
+           required. Otherwise, you can process multiple plates in any experiment, each
+           containing unique Sample IDs to distinguish and track samples, but with the
+           same plate layout (Well IDs).
+         Do you need to perform calculations on the data across multiple
+           plates that have the same plate layout? Multiple plates with the same
+           layout can be processed in any experiment, but the results of each plate stand
+           alone. Results are viewed, reported, exported and transformed individually per
+           plate. If your assay requires determining means, ratios, or other factors across
+           the multiple plates being processed, then you need a Multi-Plate Assay
+           Protocol.
+
+        Note: By default, Gen5 averages replicates when performing
+          calculations. Blanks, controls, and any other identical Well ID that
+          occurs across the multiple plates will be averaged in automatically-
+          generated data sets. You can override this feature by creating your
+          own transformations for individual plates.
+
+         Can you set up a standards or calibration plate that can be used to
+           determine the concentration of samples that will be processed on a
+           different plate? If yes, the best option is the Calibration Plate Protocol, which
+           lets you define (at least) two plate layouts, one for the calibration plate and one
+           for all the other plates to be processed. The other plates can contain test
+           samples, blanks, controls, etc. and like regular experiments, the results of each
+           plate are viewed, reported, exported and transformed separately. Up to 10
+           calibrator plates are supported.
+         Does your assay require kinetic (or time course) analysis of the plate?
+           If so, your options are more limited. Gen5 does not support kinetic reads for
+           Multi-Plate Assay Protocols
+
+Step-by-Step Instructions:
+            Setting up a Calibration Plate Protocol on page 212
+            Setting up a Multi-Plate Assay on page 215
+
+
+---
+
+208 | Chapter 11: Multi-Plate Protocols
+
+
+
+Multi-Plate Protocol vs. Experiment
+
+           For this explanation you should already know the difference between
+             an Experiment and a Protocol in Gen5TM. If you haven't already done
+             so, read Experiment vs. Protocol in the Essential Concepts chapter.
+
+
+            Important: This feature is limited by the level of Gen5 you're running:
+            Gen5 Reader Control cannot run multi-plate protocols, but can process up to
+              1000 plates in an experiment. However, since Reader Control does not support
+              Plate Layout or Sample IDs, the following explanation of Gen5's potential may
+              not be applicable
+            Gen5 and Gen5 Secure are full-featured software levels supporting both types
+              of multi-plate protocols and up to 1000 plates in an experiment
+            In an Experiment you can process a huge number of plates (up to 1000 plates) <<
+              use the Add a Plate feature >>. Naturally, an experiment that processes more
+              than one plate can be called "multiple plate." Regardless of the number of
+              plates, running this kind of experiment means applying the protocol to each
+              plate in the same manner, and transforming, reporting, and exporting data
+              individually, on a per plate basis. Generally, every plate in a multiple-plate
+              experiment has the same plate layout. But, you can distinguish one plate from
+              another by assigning unique Sample IDs to each plate.
+            A Multi-Plate Protocol allows the definition of up to 10 plates as distinct
+              entities. Each plate in a multi-plate protocol may serve a different function,
+              and/or have a different plate layout. It can be as simple as incrementing
+              continuous sample numbers across multiple plates, or much more complex.
+              Here are examples:
+                Multiple plates are required to run one assay - for quality control or other
+                  purposes it is necessary to distribute test samples, standards, and controls
+                  across a series of plates
+                Calibrator plates containing only the standards, not the test samples, are
+                  used to determine the concentration of samples on other plates. This allows
+                  for a one-time setup and processing of the calibrator plate(s), followed by
+                  the processing of up to 1000 test-sample plates in an Experiment
+                Processing a batch of samples spread over 10 plates, with incremented or
+                  user-defined sample numbers or IDs
+
+
+---
+
+                                                            Running a Multi-Plate Protocol | 209
+
+
+
+
+Running a Multi-Plate Protocol
+       When you run a multi-plate protocol in an experiment (File>New Experiment), the
+       menu tree, data views and reports are slightly different than a standard experiment.
+
+Calibrator-Plate Protocols:
+          Calibrator-Plate experiments add an additional set of Protocol elements to the
+            menu tree for each calibrator plate and one set for all the Other Plates. In an
+            Experiment, Gen5 sets up the standard Plate View for every plate, one for each
+            calibrator and test/sample plate (Other Plates).
+            When you Add a Plate to the experiment, it takes on the attributes of the Other
+            Plates.
+
+
+                 Reporting is the same as any multiple-plate experiment. After building the
+            report, highlight a          in the menu tree and click Print/Print Preview.
+            You can select multiple plates by holding the Ctrl key while highlighting them.
+
+Multi-Plate Assay Protocols:
+          Multi-Plate Assay experiments have one set of Protocol elements and a unique
+            Data View called InterPlates to display the Statistics, Graphs, Cutoff Values
+            and Validation tabs (if applicable). The Matrix for each plate is still displayed in
+            the standard Plate View for viewing results in this format.
+            Unlike other types of protocols, Gen5 does not let you "Add Plates" to this type
+            of experiment. The total number of plates required to set up the assay must be
+            defined in the first step of creating the protocol.
+
+
+---
+
+210 | Chapter 11: Multi-Plate Protocols
+
+
+
+         InterPlates
+
+
+
+
+                  Reporting results for a multi-plate assay is different from standard
+                experiments in a couple of ways. When you wan to include the Matrix view in
+                a report or export, each Plate must be added to the Content individually. And,
+                unlike other multiple-plate experiments, all the plates are reported together in
+                one output (instead of a separate report for each plate). Just as the InterPlates
+                view (described above) displays the Statistics, curves, and other data for all the
+                plates in one view, this data is reported/exported simultaneously for all the
+                plates.
+
+
+Plate Layout for Multi-Plate Protocols
+         Defining the layout of test specimens for a multi-plate protocol is identical to single-
+         plate protocol layouts, only more so, i.e., there are more plates to define.
+            Calibration plate protocols have a unique set of protocol elements for each
+              calibrator plate and one set of protocol elements for the test plates, called Other
+              Plates in Gen5. So, there are additional Plate Layout options in the menu tree:
+              one for each calibrator plate, and one for all the Other Plates
+            Multi-Plate Assay protocols retain one Plate Layout option but provide a grid
+              or matrix for each plate within the dialog:
+
+
+---
+
+                                                             Running a Multi-Plate Protocol | 211
+
+
+
+
+      Select each Plate # tab individually to define its layout.
+
+
+Data Reduction for Multi-Plate Protocols
+      Special formula syntax is available for performing Transformations across multiple
+      plates:
+
+   <well>.<plate>         When referencing a well              B3.3 = well B3 on Plate 3
+                          coordinate in a multi-plate          DS1.H6.2 = well H6 of data
+                          experiment, identify the             set 1 on Plate 2
+                          specific well and plate using a
+                          period
+      Review the Formula Syntax tables in the Data Reduction Options chapter for more
+      information.
+
+
+---
+
+212 | Chapter 11: Multi-Plate Protocols
+
+
+
+
+Calibrator-Plate Protocols
+
+Creating a Calibration-Plate Protocol
+         This procedure defines a multi-plate protocol using a calibrator or standards plate to
+         generate a standard curve that is used to determine the concentration of samples
+         processed on other microplates.
+Create the Protocol:
+          1.   Begin by creating a new protocol: File>New Protocol
+          2.   Select Protocol> Protocol Options
+          3.   Highlight Protocol Type and select the Calibration Protocol button. Enter the
+               number of Calibrator plates, maximum 10. Enter the expected number of
+               Other Plates: the number of plates with samples to be processed, maximum
+               1000. Click OK to save and close the dialog
+
+
+
+
+               The menu tree changes to correspond to your input. Each calibrator plate is
+               identified as "Plate #", the samples plates are identified as Other Plates. In this
+               example (click the binoculars), Plate 1, the calibrator plate, is moved to the top
+               of the tree with its own Procedure and other protocol elements. The Other
+               Plates represent the test-sample plates and have their own Procedure, Plate
+               Layout and so on. Generally for calibrator-plate protocols, only the Procedure
+               for reading the plates are the same. The Plate Layout and Data Reduction steps
+               are different. When multiple calibration plates are defined, each calibration
+               plate has its own protocol elements.
+          4.   Define the Plate Layout for Plate 1 and the Other Plates in the normal manner:
+               assigning Standards with their respective concentrations to the calibrator plate
+               (Plate 1) and assigning unknown samples with the required number of
+               replicates to the Other Plates
+
+
+---
+
+                                                                Calibrator-Plate Protocols | 213
+
+
+
+       5.   Set up Data Reduction for Plate 1 and the Other Plates: define a Standard
+            Curve for Plate 1 in the normal way. Then, for the Other Plates define Curve
+            Analysis using the option to Use Curve from Calibrator Plate
+       6.   Define the Report output individually for Plate 1 and the Other Plates. This
+            can be a real time saver when running the protocol in an experiment
+
+
+             Like single-plate protocols, Calibration Protocols allow additional
+          plates to be added for processing when you run the experiment. Each
+          plate is processed and its results reported separately. In Calibration
+          Protocols, newly added plates are always Other Plates, rather than
+          calibrator plates.
+
+       7.   Save the protocol with a unique name.0.
+
+
+Run the Calibration Protocol in an Experiment
+      When the protocol has been created, it is ready to run in an Experiment.
+       1.   Select File>New Experiment.
+       2.   Select the calibration protocol.
+
+                   Plate 1, in the menu tree, is always the first calibration plate
+          in this type of protocol. After Plate 1, Gen5 adds one plate icon in the
+          experiment for each calibration plate, and, one plate icon for (all) the
+          Other Plates.
+
+       3.   Highlight one of the plates, click Read and follow the online prompts.
+            Continue this pattern, until all the plates are read.0.
+
+
+        Each plate generates its own report (based on the user-defined report parameters).
+      To simultaneously generate a report of all the plates, highlight the first plate in the
+      menu tree, hold the Shift key and highlight the last plate, then click Print
+
+
+---
+
+214 | Chapter 11: Multi-Plate Protocols
+
+
+
+Using Curve from Calibrator Plate
+         For Calibration Protocols, Gen5 makes available a standard curve generated from a
+         calibration plate, to plot the concentrations of test samples on the current plate.
+
+           Prerequisite: You must first define the Procedure, Plate Layout, and
+             Curve Analysis for the Calibrator or standards plate. Secondly, define
+             the Procedures and Plate Layout for the sample plate (Other Plates).
+
+
+
+
+          1.   Select Data Reduction>Curve Analysis
+          2.   Enter a unique Curve Name
+          3.   On the Data In tab, select Use Curve from Calibrator Plate and select the
+               previously defined calibration-plate curve
+          4.   On the Data Out tab, select the Y Data. You can also apply Interpolations, if
+               applicable
+          5.   Also on the Data Out tab, enter a unique name for the Concentration data set.
+               If applicable, select the Concentration x Dilutions calculation and give this
+               resulting data set a unique name.0.
+
+           Options on the Curve Fit tab are disabled (grayed out) because they
+             are owned by the "Curve from the Other Plate."
+
+
+---
+
+                                                                 Multi-Plate Assay Protocols | 215
+
+
+
+Multi-Plate Assay Protocols
+
+Creating a Multi-Plate Assay Protocol
+       This procedure creates a multi-plate protocol for an assay that requires the samples,
+       standards and controls to be distributed to multiple plates. This method does not
+       support kinetic analysis.
+Create the Protocol:
+        1.   Begin by creating a new protocol: File> New Protocol
+        2.   Select Protocol> Protocol Options, highlight Protocol Type (at the top of
+             the tree) for the multiple-plate options.
+        3.      Select Multi-Plate Assay Protocol, and enter the number of plates required
+             to layout the assay in the Number of Plates field (up to 10).
+        4.   Accept or alter the default setting for identical plate layout. Selecting All plates
+             have identical layout provides only one Plate Layout grid. Leaving it
+             unselected provides one grid for each plate.
+        5.   Define the Plate Layout as you would for any protocol, using the plate-
+             numbered tabs to bring each grid into focus. Learn more on page 210.
+
+
+           Keep in mind Gen5's default behavior is to determine and use the mean of like-
+       named samples in data reductions. This applies to multi-plate protocols that distribute
+       like-named items across the plates.
+
+
+        6.   Define the Procedure: Read Steps and any other necessary activities.
+        7.   Define the Data Reduction steps: the calculations will be performed for all the
+             plates at once. Gen5 will automatically create data sets for Blank subtractions if
+             the Plate Layout and Procedures suggest them.
+        8.   Now you're ready to define your Report and/or Export requirements.
+
+         Note: In this type of multi-plate assay, Gen5 treats the samples from
+           all the plates as if they were on one plate, and reports the results from
+           all the plates together in one report. To report results in the Matrix
+           format in reports and exports, you must add one Matrix item for each
+           plate to the Report/Export Content. See Designing multi-plate
+           reports
+
+        9.   Save the protocol. And, you're ready to run it in an experiment: File> New
+             Experiment. 0.
+
+
+---
+
+216 | Chapter 11: Multi-Plate Protocols
+
+
+
+Running a Multi-Plate Assay Experiment
+
+
+
+
+         If you've already created a multi-plate single-assay protocol, here are a few tips for
+         running it in an experiment.
+
+                  Read each plate individually, as you would in any other experiment:
+                highlight the plate in the menu tree and click Read
+
+                   Inter-plates is a special view provided only for this type of protocol.
+                Since data reductions are performed across the plates, the inter-plate view
+                combines the statistics from all the plates into one table and shows any curves
+                plotted from all the data points.
+
+                   Designing the Reports and Export parameters for these kinds of assays
+                requires extra attention: when adding Matrix items to the output content you
+                must designate which plate it represents. Gen5 opens the Edit dialog to
+                facilitate the process:
+                1.   Add a Matrix item in the Available Data Views to add it to the Content box.
+
+
+
+
+                2.   Now, double-click the matrix in the Content box to open its Edit dialog.
+                     Change the Plate number in the Selection tab to identify the Plate.
+
+
+---
+
+                                                       Multi-Plate Assay Protocols | 217
+
+
+
+    3.   Repeat Steps 1 and 2 until there is one Matrix item in the Content for each
+         plate.0.
+
+
+  You can fine tune the protocol while running it in an experiment, but if you like the
+changes, be sure to select File>Save Protocol As to save the changes to the original
+protocol for future use in another experiment.
+
+
+---
+
+218 | Chapter 11: Multi-Plate Protocols
+
+
+
+
+Processing a Batch of Samples
+         Gen5TM offers several ways to process a large batch of samples. The method you
+         choose depends on the requirements of your protocol.
+         The procedure described here use's Gen5's Multi-Plate Assay feature to define a
+         protocol to process a batch of samples with one method. Gen5TM lets you assign up to
+         10 plates to an experiment. Plates can have the same or different layouts, but all other
+         Protocol elements are the same.
+
+           Note: This is one of several options for achieving the same goal. You
+             may want to try other methods to determine which approach best
+             meets your needs. Check out Gen5's Help to learn more.
+
+How to:
+          1.   Begin by creating a new protocol: File>New Protocol
+
+          2.       In the menu tree, open the Protocol Options and highlight Protocol Type
+          3.   Select the button next to Multi-Plate Assay Protocol. Enter the number of
+               plates required in the field, maximum 10. In this example, each plate has a
+               different layout to distribute standards to some plates, and to continue sample
+               numbering across several plates.
+          4.   Define the Plate Layout for each plate. (See Plate Layout for Multi-Plate
+               Protocols on page 210.)
+          5.   Define the Procedures for reading the plates.
+          6.   Define the Data Reduction steps.
+          7.   Define the Report requirements.0.
+When these steps have been completed the protocol is ready to run in an Experiment.
+
+
+---
+
+Chapter 12
+
+
+
+
+Preparing Plates
+
+     This chapter describes Gen5's tools for defining the Plate Layout,
+     including assigning concentration values to samples, standards, and
+     controls, and how to customize their Well IDs. It also covers
+     assigning Sample IDs or names to associate test samples with
+     specific test subjects.
+
+
+ Defining the Plate Layout .......................................................... 221
+ Assign Standards, Controls, and Blanks ...................................... 223
+ Customize Well IDs .................................................................. 223
+ Assign Concentrations/Dilutions ................................................. 226
+ Custome Plate Layout............................................................... 229
+ Plate Information ..................................................................... 230
+ Runtime Prompts ..................................................................... 231
+ Assign Sample IDs ................................................................... 231
+
+
+---
+
+220 | Chapter 12: Preparing Plates
+
+
+
+
+Overview
+        Gen5TM needs to know the layout of samples, standards, controls, and blank wells on
+        the actual microplate(s) of your experiment to perform data reduction, curve analysis,
+        and other calculations. It is not necessary to define a plate layout to simply read the
+        plate and report the measurements. But to take advantage of Gen5's full array of data
+        reduction features, define the plate layout, including any concentrations or dilutions of
+        samples, controls or standards, before defining the data reduction calculations.
+
+           Plate Type for a protocol or experiment is defined in the Procedure.
+             Plate Type is selected from the Plate Types Database (covered in a
+             System Management chapter)
+
+        Gen5 supports 6-, 12-, 24-, 48-, 72-, 96-, 384- and 1536-well microplates. However, your
+        reader may not support all of these configurations. Select the Plate Type when defining
+        the Procedure and then open the Plate Layout to see how Gen5 formats the plate map:
+        all columns are numbered and all rows are designated with a letter(s). Well A1 is
+        always in the top left corner of the grid, for example:
+            96-well plates are mapped as 8 rows A-H and 12 columns 1-12
+            1536-well plates are mapped as 32 rows A-Z, AA, AB, AC, AD, AE, AF and 1-48
+              columns
+
+  Adding a new plate to an Experiment
+
+           Click the     button to add another plate to an experiment. The plate takes on the
+           currently-defined plate attributes. Right-click on the plate and select Custom
+           Layout to create a unique plate map.
+
+
+---
+
+                                                                 Defining the Plate Layout | 221
+
+
+
+
+Defining the Plate Layout
+   Protocol> Plate Layout
+   It's easy to define the plate layout with Gen5's tools for identifying samples, standards,
+   controls and blanks. Follow these steps:
+
+        1.        In the Well Settings box in the top-left corner, select the Type of specimen
+
+        2.        Customize the ID or Well Identifiers, if necessary:
+
+        3.        Define the Concentration or Dilution, if applicable:
+        4.   Assign the well IDs to their corresponding locations in the plate grid by
+             clicking in the wells in the matrix. 0.
+
+                           When you select a corresponding starting # the ID changes
+                  accordingly for assignment to the plate.
+              Use the Auto Select and Replicates options to speed up your work: set the
+                options and click and drag to fill multiple wells at once. Click a column or
+                row header to fill it.
+
+         The type of plate, e.g., 96-well, is defined in the Procedure and
+           displayed in a representative matrix or grid format in the Layout and
+           Transformation screens
+
+
+ Helpful Hints:
+          Set up your preferred default Well IDs in the Default Protocol. For example,
+            you can define PC (for Positive Control) instead of CTRL1 for Assay Controls.
+            Well IDs defined in the Default Protocol are available when defining the Plate
+            Layout for all newly-created protocols/experiments
+          Use the Undo button at the bottom of the screen to undo the last action. Up to
+            10 previous actions can be undone
+          To clear the grid and start over, right click and select Empty Layout, or to
+            clear selected cells, set the Type of Well Settings to Empty and select the cells
+            you want to clear.
+          You can Print the plate layout. 384-well plates print out in two sections,
+            columns 1-12 and 13-24. 1536-well plates print in eight sections to fit all 48
+            columns and rows from A to AF.
+          To copy the contents of the grid to Windows' virtual clipboard to paste into a
+            text/external file, right click and select Copy Layout. Open the receiving file,
+            e.g. Word(R) or Excel(R) and right click and select Paste. Generally, plates larger
+            than 96-wells do not fit completely in a standard-sized Word or text file, a
+            spreadsheet is required.
+
+
+---
+
+222 | Chapter 12: Preparing Plates
+
+
+
+            For Samples - unknown test specimen - Gen5 lets you assign and track data
+              points in addition to the Sample ID. You can create "Additional Identification
+              Fields."
+            To copy the contents of the grid to Windows' virtual clipboard to paste into a
+              text/external file, right-click and select Copy Layout. Open the receiving file,
+              e.g. Word(R) or Excel(R) and right-click to select Paste. Generally, plates larger than
+              96-wells do not fit completely in a standard-sized Word or text file, a
+              spreadsheet is required.
+            Each instance of a Sample and Sample Control Well ID, and each Assay Control
+              group can have a unique concentration/dilution value. Gen5 assigns a dilution
+              index to the Well ID to keep track each instance.
+            Use the Dilutions Only/Concentrations Only button to apply only dilution
+              or concentration values (that you have previously defined) to selected wells
+              without altering the well's identifier. See Assign Concentrations or Dilutions to
+              Samples, Standards, Controls on page 226.
+            Use the shortcut for filling the entire plate with the selected Well Settings: click
+              in the top-left (unlabeled) corner of the matrix, i.e. between A and 1.
+            When assigning concentrations/dilutions, well selection must be compatible
+              with the Replicate, Auto Select, and Filling option settings
+            You can resize the plate view in the standard Windows(R) way: click and drag
+              the outer borders of the view, or click the maximize button in the top-right
+              corner. You can resize the rows and columns: hover your mouse over a grid
+              line between two numbered columns or alpha-labeled rows until the cursor
+              changes to a separator, then, click and drag.
+
+
+---
+
+                                                                      Assigning Well IDs | 223
+
+
+
+
+Assigning Well IDs
+   Protocol> Plate Layout
+      Gen5TM recognizes the significance of commonly-used elements in an experiment:
+           Standards or calibrators for generating a standard/calibrator curve
+           Blanks for blank wells subtraction
+           Controls for multiple purposes: Assay Control generally used as controls, cut-
+             offs, or for validating the assay, and Sample Control generally used in
+             association with a specific sample, e.g., spiked or known-concentration
+             samples.
+           Samples represent the test specimen or unknowns to be processed.
+      When defining the Plate Layout, you can customize the Well ID and on-screen
+      appearance, and you can assign concentration or dilution values to Standards, Controls
+      and Samples.
+
+
+
+
+      Use the drop-down lists and 3-dot buttons in the upper-left corner of the Plate Layout
+      dialog to select, customize and assign standards, controls and blanks to the plate. For
+      details see:
+           Customize Well IDs (below)
+           Customize Sample IDs or assign them additional ID fields on page 224
+           Assign Concentrations or Dilutions to Samples, Standards, Controls on page
+             226
+
+
+Customize Well IDs
+      To save the customized IDs for use in all newly-created protocols/experiments,
+      perform these steps in the Default Protocol at System> Preferences> Default
+      Protocol
+
+1. Type
+         Use the drop-down list to select the Type of specimen,
+      (except for the Empty option, which is used to clear a previously assigned well).
+
+
+---
+
+224 | Chapter 12: Preparing Plates
+
+
+
+2. ID
+
+        Gen5 displays the default label or name for the selected Type. Click      (3-dot button)
+        to customize the name and color code. Click in the fields to replace the text and select
+        the color.
+        Depending on the Type, one of three dialogs opens, here are two examples:
+
+
+
+
+            ID for Standards, Assay Controls and Blanks can be up to 10 characters, the ID
+              Prefix for Samples and Sample Controls can be up to 6 letters, numbers and
+              underscores, without any blank spaces. It cannot end in a number, nor be
+              identical to a formula operand, e.g., X, MIN, MAX, and so on, and cannot be
+              identical to a well coordinate, e.g., A1, H12. Click in the field, and enter text to
+              edit it. The ID can be used in data reduction formulas.
+            Name can be up to 20 alphanumeric characters and can be used in reports
+            The selected Color or Color Sequence will be applied to the matrix view of the
+              plate. Click in the field to activate the drop-down list of color choices
+
+
+Customizing Sample Wells
+           With Sample selected, click the 3-dot button next to the ID field to access these
+        controls.
+        Sample wells are the unknown samples to be processed. To save customized IDs for
+        use in all newly-created protocols/experiments, perform these steps in the Default
+        Protocol at System> Preferences> Default Protocol
+
+About Sample Identification Fields
+      Identification Fields provide a way to assign and track additional data points related to
+      an unknown sample. For example, in a clinical trial you may have a patient number,
+
+
+---
+
+                                                                        Assigning Well IDs | 225
+
+
+
+      age, gender, and other information to be analyzed for trends. This data must be kept
+      with the measurement results. There are numerous scenarios for assigning additional
+      data to a sample. Use an Identification Field to create a category or class for this data.
+      Then, collect the data in the experiment.
+      In the Gen5 Experiment, data, like Name, Age, etc., can be assigned to each sample on
+      the plate. When you create Identification Fields in this dialog, they become data fields
+      in the Plate's Sample ID table. You can also display the data in custom data views for
+      online viewing and reports.
+      Gen5's system-generated views: the Layout matrix, Statistics and Well IDs tables
+      automatically include all Identification Fields marked as "Show." This facilitates the
+      Matrix data-entry option.
+
+How to customize Sample wells:
+
+       1.      In the Plate Layout, set Well Type to Sample, click the 3-dot button next to
+            the ID field.
+       2.   On the Display tab, click in the field to overwrite the default Samples ID
+            prefix: SPL.
+            The ID can contain letters, numbers, and underscores, up to 6 characters. IDs
+            cannot end in a number and cannot contain spaces. IDs cannot conflict with
+            well coordinates, A1, H12, etc.
+       3.   Click in a Color Sequence field to enable the drop-down options, click on the
+            desired color to select it. The first color selected is applied to SPL1, the second
+            color is applied to SPL2, and so on. Gen5 reapplies the colors, starting with the
+            first one, when the entire list has been used.
+
+
+
+
+       4.   Click the Identification Fields tab to create or modify these data categories.
+
+
+---
+
+226 | Chapter 12: Preparing Plates
+
+
+
+          5.   For each "Add. Field#" or additional identification field, enter a Title or name
+               for this data category.
+          6.      Mark the field to Show in Gen5's system-generated data views. This enables
+               the Matrix data-entry option referenced below.
+
+To populate the Identification Fields
+      The Title of the Identification Field becomes a category for data input. For every
+      Sample assigned in the Plate Layout, you can collect the data for each category when
+      you run an experiment. There are two ways to input the data:
+                Fill in the Samples ID Table on page 236
+                Edit the Matrix to Input Data on page 237
+                Use the Batch IDs creator to "Apply to Fields," see page 239
+
+
+
+Assign Concentrations or Dilutions to Standards, Samples, Controls
+        In the Plate Layout screen, under Well Settings, the label changes to either Conc. or
+        Dil. (for Concentration or Dilution) depending on the Type selected and your input.
+
+                                                                      This is a must-do
+                                                                      for plotting a
+                                                                      Standard Curve:
+                                                                      assign the
+                                                                      expected
+                                                                      concentrations of
+                                                                      the Standards
+
+
+        First, define the concentrations or dilutions, then, assign them to the plate.
+
+Define the Concentrations or Dilutions
+
+            After selecting the Type and the ID, click the 3-dot button next to Concentrations
+        or Dilutions. When Standards are the selected Type, the cells in this table are labeled
+        accordingly, e.g. STD1 (or STDB1 when multiple standard curves are created [see the
+        Data Reduction Options chapter]). Gen5 applies an indexing notation for all other
+        Types of Well ID, e.g. CTL1:1
+          1.   In ascending or descending order, enter the values in the consecutively-
+               numbered fields. For a shortcut, select one of the two Auto entry tools:
+                Increment when the dilutions are based on a fixed number to increment
+                  your starting entry by. For example, starting at 10, increment by 10 to define
+                  concentrations as 20, 30, 40.
+                Factor when the dilutions are based on a fixed number to multiply your
+                  starting entry by. For example, starting at 1, factor by 10 to define them as
+                  10, 100, 1000 and so on.
+
+
+---
+
+                                                              Assigning Well IDs | 227
+
+
+
+         In the first field, enter the starting number
+         Click in (or use the down arrow key to move to) each successive field to
+           apply the incremented or factored value
+2.   When the well type is other than Standards, select Concentrations or Dilutions
+     with the buttons underneath Conc./Dil. Type.
+3.   If applicable, enter an abbreviation for the measurement Units.
+4.   Assign the location of concentrations or dilutions to the plate, in the same
+     manner as assigning Samples. Set the Well Settings and click the well to assign
+     that ID and Conc/Dil value to. Or, use the Replicates and Auto Select options
+     and select a row, column, or click and drag over the area of the plate to assign
+     the IDs.0.
+
+
+---
+
+228 | Chapter 12: Preparing Plates
+
+
+
+
+ Helpful Information:
+            Important: You can assign unique concentration/dilution values to individual
+              Sample, Sample Control Well IDs, and Assay Control groups. For example,
+              SPL1 can be defined as dilutions of 5, 15, and 45, while, SPL2 is defined as
+              dilutions of 10, 25, and 50. Change the ID and click the 3-dot button for
+              Conc/Dil to define a unique concentration/dilution-values table for each
+              individual ID. The values table is not saved for that Well ID until they have
+              been assigned to the plate
+            You can define multiple standard curves: described in the Data Reduction
+              Options chapter
+            In the Plate Layout dialog, you can use the Dilutions Only/Concentrations
+              Only button to apply only dilution or concentration values to selected wells
+              without altering the well's identifier
+            When assigning concentrations/dilutions, the well selection must be
+              compatible with the Replicate, Auto Select, and Filling option settings
+            Set up your preferred default IDs and define regularly used
+              concentration/dilution values for Samples, Standards and/or Controls in the
+              Default Protocol
+
+
+---
+
+                                                                    Custom Plate Layout | 229
+
+
+
+
+Custom Plate Layout
+      Gen5 let's you create individual custom layouts for experiments with multiple plates >>
+      not to be confused with Multi-Plate Protocols. Exercise judgement when using this
+      option, keep in mind any Data Reduction formulas that reference Well IDs. You cannot
+      set up Data Reduction steps that reference the custom layout only.
+
+How to create a custom layout:
+
+       1.    After adding plates, select the          in the menu tree, and right click
+       2.    Select Custom Plate Layout from the pop-up menu.
+             A new Custom Layout icon is added to the menu tree for that plate.
+       3.    Double click the plate's Custom Layout icon to open the Plate Layout screen,
+             for that plate only!0.
+
+
+ Helpful Info:
+                         In the menu tree, Gen5 highlights plates with an asterisk to
+             indicate the plate varies from the protocol in some way
+         Keep in mind the differences between the Protocol's plate layout in Data
+           Reduction steps, Data Views and Report Builder. For seamless integration of a
+           custom layout, make sure any Well IDs referenced by a Data Reduction step are
+           included in the custom plate
+
+
+---
+
+230 | Chapter 12: Preparing Plates
+
+
+
+
+Plate Information
+     Plate> Information
+
+
+
+
+About the Plate Information
+        Every plate added to an experiment comes with an Information component. The
+        Information is collected when the plate is read. Runtime Prompts (described on the
+        next page), set up for the Protocol, define the information requested when the plate is
+        read.
+
+Reviewing the Plate Information
+        Double click the Information element under the Plate in the menu tree to review or
+        modify the information collected when the plate was read.
+
+Printing the Plate Information
+        You can include the Plate Information in a report or export file using Field Groups
+
+
+---
+
+                                                                         Runtime Prompts | 231
+
+
+
+
+Runtime Prompts
+    Protocol> Runtime Prompts
+        Use these controls to set up the Runtime Prompts presented to users when they Read
+        a plate in an Experiment based on this Protocol. The Prompts you define become the
+        labels for input fields in the "Plate Reading" screen Gen5 presents when a plate is read.
+        The Plate Reading data is retained in the experiment as Plate Information.
+
+
+
+
+        The Runtime Prompts become input fields in the Plate Reading dialog. Example:
+        When the Prompt Name is "Name" for prompt 1, users are prompted to enter their
+        name when they read a plate.
+           Clear the default text from any unused prompts for the best appearance at run
+             time.
+
+How to:
+      Find descriptions of these prompt attributes:
+           Prompt Name on page 232
+           Prompt Type on page 232
+           Data Reduction Variable Names on page 233
+           Remember Recent Values on page 233
+           Skip runtime prompts on page 234
+
+
+---
+
+232 | Chapter 12: Preparing Plates
+
+
+
+Reviewing the Plate Information
+
+
+
+
+                            You can review (and modify) the Information entered when the
+        plate was read in the Information component of the Plate in the menu tree
+
+Printing the Plate Information
+        You can include the Information in a report or export file using Field Groups
+
+
+           Bar-Code Scanning the Plate ID: If you have a compatible bar-code scanner, you
+        can use it to input the plate's barcode and any other prompts. Replace the keyboard
+        with the scanner and use it to capture the information just before reading the plate.
+
+
+
+Creating a Runtime Prompt:
+
+Prompt Name
+      When defining Runtime Prompts the Prompt Name becomes the data-input field name
+      in the Plate Reading dialog. Up to 6 prompts can be defined. Prompt Names must be
+      unique or empty, independent of case. LOT and Lot are not acceptable variations, for
+      example.
+        Field names are limited to 32 characters. Their corresponding data-entry fields support
+        up to 255 characters.
+        When a prompt is defined as "required" its Prompt Name is marked with an asterisk in
+        the Plate Reading dialog.
+
+
+
+           Delete unused "Prompt #'s" for the best appearance in the Plate Reading dialog.
+        The fields will appear blank instead of displaying the prompt number.
+
+
+Prompt Type
+      When defining Runtime Prompts use the drop-down list to select the Prompt Type:
+               Optional: gives the user an opportunity to enter data, but the field can be
+                 skipped. When all prompts are optional, the Plate Reading dialog can be
+                 turned off, blocked from appearing before a plate read.
+               Required: requires the user to enter data in the field before reading the
+                 plate. Required "Prompt Names" are marked with an asterisk in the Plate
+                 Reading dialog. Required fields disable the ability to "Skip the Plate
+                 Reading dialog."
+
+
+---
+
+                                                                          Runtime Prompts | 233
+
+
+
+               Data Reduction Variable: requires the user to enter a numeric value for use
+                 in data reduction formulas. The entered value replaces the Variable Name,
+                 which is used as a placeholder when writing the formulas. Numeric values
+                 can be decimal or scientific notation in accord with the computer's Regional
+                 Settings. Data Reduction Variables, also called "runtime variables" can be
+                 used in these data reduction steps:
+                   Transformation
+                   Curve Interpolation
+                   Cutoff
+                   Validation
+                   Well Analysis Formula
+
+Data Reduction Variable Names
+      When defining Runtime Prompts for Data Reduction Variable Prompt Types, the
+      Variable Name is used when writing formulas. The Variable Name is a placeholder for
+      the numeric value Gen5 users are prompted to enter before reading the plate.
+      Although, the value can be modified in the Plate Information dialog at a later time.
+        At the Plate Reading dialog, Gen5 verifies the user has entered a valid numeric value
+        for the variable. They can be integers, decimals or scientific notation in accord with the
+        computer's "Regional Settings."
+        Gen5 gives you a headstart when defining a variable name. It repeats the Prompt
+        Name text preceded by an exclamation point (!), because this is the required syntax.
+        Syntax for Variable Name:
+               Must start with "!"
+               Other characters must be alphanumeric (a-z; A-Z; 0-9); they are character
+                 case dependent
+               Up to 32 characters can be used
+               Must be unique (to the protocol)
+
+           Data Reduction Variable prompts are "required" entry fields.
+
+
+Remember Recent Values
+     When defining Runtime Prompts this option lets you give users a shortcut for data
+     entry. It remembers the last 5 values entered for the prompt and provides them in a
+     drop-down list for easy selection. Gen5 retains the values with the Protocol, so the list
+     is available in any experiment based on that protocol.
+
+           Recent Values are managed with the Database Maintenance tools.
+
+
+---
+
+234 | Chapter 12: Preparing Plates
+
+
+
+Skip Runtime Prompts
+       You can speed up plate reading by skipping the "Plate Reading" dialog when:
+               it is not necessary to collect miscellaneous data about each plate
+               none of the Prompts are "Required" entry fields
+              none of the Prompts are Data Reduction Variables
+        Open the Runtime Prompts screen, empty the table is necessary and select
+           Skip Plate Reading dialog during plate read
+
+
+---
+
+                                                                   Assigning Sample IDs | 235
+
+
+
+
+Assigning Sample IDs
+   Plate> Sample IDs
+     Gen5 provides tools for pairing labeled patient/test samples with their reading and
+     data reduction results. This feature reflects the customization and definition of
+     unknown "Sample" wells in the Plate Layout, e.g. SPL1. For each Sample well assigned
+     in the Plate Layout you can attach an ID or Name, and when you have defined
+     "Additional Fields" you can input related data for each Sample well.
+     The Samples IDs (Names) and other Identification Fields are unique to each test plate.
+     They provide the ability to explicitly relate a test sample to a test subject. Learn more
+     about the Identification Fields that are created in the Plate Layout.
+
+       You must be in an Experiment, not a Protocol, to assign Sample IDs.
+         And, the Plate Layout must be defined before Sample IDs can be
+         defined and applied to the plate.
+
+     You can:
+        Import Sample IDs from a Text File (page 242)
+        Manually Enter Sample IDs (page 235)
+        Batch Sample IDs (page 239)
+        Create a replicate of a previously defined plate (page 242)
+        Use a BarCode Scanner to enter Sample IDs (page 237)
+        Export Sample IDs to a text file (page 243)
+        Print the Sample IDs after entering them, in list or matrix format. Matrix
+          depicts the plate layout. To include them in a report or export file, add the Well
+          IDs table to the Report Content or Export Content in the respective Report or
+          File Export Builder, or using the Power Export toolbar.
+        Clear/Remove Sample IDs from a plate after they've been assigned: Select
+          Plate>Sample IDs and click Clear All
+        Delete a column of data: highlight column in the Samples ID table and press
+           Delete
+
+
+Manually Enter Sample IDs
+     Gen5 provides three ways to manually enter Sample IDs and data for "Additional
+     Identification Fields:
+            Fill in the Sample IDs table (described below), or
+            Edit the Plate View Matrix (described on page 237), or
+            Barcode Scan Sample IDs to enter data (described on page 237)
+
+
+---
+
+236 | Chapter 12: Preparing Plates
+
+
+
+
+ Helpful Hints:
+            Use the Batch Sample IDs feature for more advanced sample naming described
+              next
+            When Sample well identifiers are not consecutively numbered in the Plate
+              Layout, Gen5 does not skip them in the Sample IDs table, but indicates their
+              absence by graying out and putting an asterisk at their label. When automated
+              methods are used to ID samples, Gen5 skips the missing SPL identifiers.
+
+Fill in the Sample IDs Table
+
+           This data-entry method is an alternative to editing the Matrix.
+
+
+
+
+             1.                        Locate Sample IDs under the Plate in the menu tree
+                   and double-click to open it.
+             2.    Gen5TM lists the consecutively numbered Sample well identifiers (SPL) from
+                   the Plate Layout. Enter their corresponding IDs or names or other data:0.
+
+                                    Select Auto Numbering to automatically increment a
+                   numeric suffix or a standalone number. For example, enter ABC10 in the
+                   first cell of the table and using your down-arrow key or a mouse click,
+                   select the next downward cell to assign the next samples ABC11, ABC12,
+                   and so on.
+               Use the buttons to print the Sample IDs in a List or Matrix format
+               Select the contents of a cell and use Ctrl+C to Copy and Ctrl+V to Paste
+               Use the Clear All button to empty the table: contents of all columns and
+                 rows will be deleted. Click Cancel to recover data.
+
+
+                   To delete rows, columns or blocks of contiguous cells, select them and click
+              Delete. To select a row or column click on its header. Click and drag over a
+              block of contiguous cells to select them.
+
+
+               Copy Sample IDs from Another Plate: Instead of manually entering or
+                 importing IDs, when you have multiple plates in an experiment, use the
+                 spin buttons or enter the number of the plate you want to copy IDs from
+                 and click Copy.
+
+
+---
+
+                                                                      Assigning Sample IDs | 237
+
+
+
+
+Edit the Matrix to Input Sample Data
+       Gen5 lets you enter Sample Identification Fields data in the Matrix:
+
+  Prerequisite:
+        There are two ways to display the Sample Identification Fields in a Matrix view so they
+        can be input/edited:
+               they must be defined to Show in the Identification Fields dialog, this makes
+                 them automatically appear in the Layout view
+               or, they have been included in a custom Data View
+
+  How to:
+             1.   With the experiment open and the desired plate selected in a multi-plate
+                  experiment, open the Plate View.
+             2.   Select the Matrix tab and from the Data drop-down list select Layout or a
+                  custom data view that contains Name or Additional Identification fields.
+
+             3.        Click the Edit button.
+             4.   Click in a well to reveal placeholders for the fields (if data has not yet been
+                  entered). Replace the placeholders or previously entered data with your
+                  desired input. Multiple wells can be changed in a session.
+
+             5.       To apply the changes, click the OK (green check mark) button.
+                      Click the cancel button to ignore your entries, and restore the original
+                  values.0.
+
+          Use the right-click options to copy and print the matrix.
+
+          This data-entry method is an alternative to filling in the table.
+
+
+Barcode Scanning Samples IDs
+
+  Prerequisite
+        You must have a wedge-type bar-code scanner that replaces or mimics keyboard input.
+        Follow the manufacturer's instructions for installing and setting up the scanner for
+        carriage return line feed.
+
+          Added Bonus: If you do have a compatible bar-code scanner you can
+            also use it to input a Plate ID and other Plate Information collected
+            by Gen5 when the plate is read.
+
+
+---
+
+238 | Chapter 12: Preparing Plates
+
+
+
+  How to
+
+
+
+          1.                       Open the experiment and locate Sample IDs under the
+               Plate in the menu tree, and double click to open it.
+          2.   Gen5TM lists the consecutively numbered Sample well identifiers (SPL) from the
+               Plate Layout. Use your mouse to select the starting point, e.g. SPL1, and make
+               sure Auto Numbering is de-selected, i.e. unchecked.
+          3.   Operate the scanner according to the manufacturer's instructions to enter the
+               corresponding IDs or names.0.
+
+
+---
+
+                                                                 Assigning Sample IDs | 239
+
+
+
+
+Assign Sample IDs for Multiple Plates (Batch)
+   Plate> Batch Sample IDs
+      Use the Batch Sample IDs screen to assign sample IDs or names to multiple plates
+      simultaneously. Samples IDs or names are specific to each test plate, and are intended
+      to relate a test sample processed by Gen5 to a test subject. The batch process offers
+      more advanced auto-numbering methods than the single-plate Sample IDs tool.
+
+
+
+
+        The Plate Layout must be defined before Sample IDs can be applied to
+          the plates.
+
+Auto Number
+      Select Auto Number to manually create a naming/numbering convention for samples
+      for one or more plates:
+
+
+---
+
+240 | Chapter 12: Preparing Plates
+
+
+
+
+                                      When you have created additional Sample ID Fields
+        during the Plate Layout, you can use this Batch ID feature to populate these fields. Use
+        the Apply to Field drop-down list to select the ID field you want to auto-number.
+
+
+          1.   In the Base Name text field, enter text that Gen5 will append with a numeric
+               suffix, if desired. Leave the field blank to consecutively number samples
+               without additional text.
+          2.   Enter the Initial Suffix - the number to apply to the first sample (of the first
+               plate)
+          3.   Set the Increment for sample IDs. Gen5 will leave the defined number of
+               numbers unassigned between each sample. For example:
+          4.   If desired, set the Minimum Suffix Width to enforce a uniform appearance to
+               the numbering convention
+          5.   Optionally, set the Start next plate at the next multiple of number. Gen5 will
+               increase the next plate's Initial Suffix by the defined "next multiple," as long as
+               that number has not already been used in a plate.
+               For example: For a 96-well plate, if samples are numbered consecutively with
+               an increment of 1, and the next multiple is 100, the second plate's samples will
+               be numbered 101, 102, 103, ..., and the third plate's samples will be numbered
+               201, 202, 203, and so on.
+               For a 384-well plate, in the same scenario, the next plate's samples will be
+               numbered 401, 402, and the third plate must begin with 801,
+               More on Next Multiples: Applying the Next Multiple prefix is determined by
+               the number of samples on the plate and the Increment factor. When sample
+               numbering for the plate exceeds 100, and the "next multiple" is set to 100, Gen5
+               applies the next unused multiple to start numbering the next plate. Thus, for
+               384-well plates the default next multiple is 1000, which produces the best
+               results for large numbers of samples.
+
+
+                  Watch the effect of your choices in the Example space of the screen.
+
+
+          6.   In the Plates section, define which plates to apply the naming convention to:0.
+                All currently defined plates. This feature will not automatically apply the
+                  naming convention to plates added to the experiment after it has been
+                  executed. You must execute the feature again when more plates are added
+                  to the experiment.
+
+
+---
+
+                                                                       Assigning Sample IDs | 241
+
+
+
+               Selection is filled by Gen5 when you select plates in the menu tree before
+                 initiating this feature: hold the Ctrl key while clicking multiple plates, they
+                 will be highlighted. Then, select Plate>Batch Sample IDs to see this option
+                 selected.
+               Range to define a contiguous selection of plates
+
+          All plates selected for sample naming will be affected, even if Sample
+            IDs have already been defined for them, i.e. the batch process will
+            overwrite existing IDs.
+
+
+Use Same IDs for each plate
+        This option assigns the same Sample IDs or names to all selected plates:
+         1.   Click the Edit Sample IDs button and enter IDs
+         2.   Define the plates to apply sample IDs to in the Plates section (see step 6 above
+              for details).0.
+
+Import From File
+      Gen5 lets you import a text file of Sample IDs. The file can contain the IDs or names of
+      samples, each one separated by a hard return, and any "Additional" sample
+      identification fields you've defined. When the additional ID fields are included in the
+      text file they must be separated from the Name or Sample ID by the symbol defined in
+      the Read From File Settings.
+        The text file format requires data for each sample to be in a separate row: Name; ID
+        field; ID field, when the "read from file" separator is a semi-colon (;), for example. Use a
+        hard return or "carriage return" to separate each sample's data..
+
+         1.   File Name        Enter the full path and filename or click the 3-dot button to
+              locate the text file containing the Sample IDs for this plate and click Open.
+         2.   Define the plates to apply sample IDs to in the Plates section (see step 5 above
+              for details).0.
+        Beginning with the first text item, Gen5 fills the Samples ID table of the first plate with
+        the corresponding number of IDs. Additional plates are subsequently processed. Extra
+        text is ignored, and insufficient text to fill all the sample cells results in blank name
+        spaces.
+
+Clear Sample IDs from Multiple Plates
+        You can use the Batch Sample IDs feature to clear or erase the sample names applied to
+        multiple plates:
+         1.   In a multiple-plate experiment, highlight the plates in the menu tree (hold the
+              Ctrl key while selecting the plates with Sample IDs you want to remove)
+         2.   Select Plate> Batch Sample IDs, under Sample Names, select Use Same
+              IDs for each plate
+
+
+---
+
+242 | Chapter 12: Preparing Plates
+
+
+
+          3.   Click the Edit Sample IDs button, Gen5 opens the Samples dialog.
+          4.   Click Clear All and click OK. Gen5 returns to the Batch Samples ID screen.
+         5. Click OK. Click Yes at the warning message that all IDs will be cleared.0.
+        erase sample names clear sample IDs for multiple plates
+
+
+Create a replicate of a previously defined plate
+        Gen5 automatically creates a replicate of a plate, when you add a plate to the
+        experiment. The currently-defined Plate Layout is applied to the new plate. Gen5 also
+        provides tools for copying Sample IDs from another plate.
+        Choose your preference:
+                Adding (a replicate) plate to an Experiment (see below)
+                Copy Sample IDs from one plate to another on page
+
+
+               Perform both steps to create an identical copy of the plate!
+
+
+
+Import Sample IDs from a Text File
+        Gen5 lets you import a text file of Sample IDs and "Additional" sample identification
+        fields.
+
+           These instructions are for a single plate, for more than one plate see:
+             Batch IDs
+
+        The file can contain the IDs or names of samples, each one separated by a hard return,
+        and any "Additional" sample identification fields you've defined. When the additional
+        ID fields are included in the text file they must be separated from the Name/Sample
+        ID by the symbol defined in the Read From File Settings.
+
+
+
+          1.                        Locate Sample IDs under the Plate in the menu tree and
+               double click to open it.
+          2.   Click Import. Gen5 opens the standard Windows(R) open file screen.
+          3.   Locate the text file containing the Sample IDs or names for this plate and click
+               Open.0.
+        Gen5 assigns the first text item to the first sample well, and fills the Samples ID table
+        with the exact number of IDs. Extra text (i.e. for undefined SPL wells) creates
+        additional cells in the table to hold the extra data. Similarly, when the samples were
+        not consecutively numbered in the Plate Layout, Gen5 does not skip them in the
+
+
+---
+
+                                                                     Assigning Sample IDs | 243
+
+
+
+      Sample IDs table, it assigns them an ID. Both extra text and "missing" samples are
+      indicated in the table as grayed out fields.
+
+        Gen5 offers to delete the extra or "invalid" data/IDs when you modify
+          or review the Samples ID table. Answer No to the question: Do you
+          want to keep this data? to delete it.
+
+ Import File Format
+      The import file format requires data for each sample to be on a separate line: Name; ID
+      field; ID field, when the "read from file" separator is a semi-colon (;), for example. Use a
+      hard return or "carriage return" to separate each sample's data. Leave the row/line
+      blank to skip the sample identifier.
+      When the "Read from File Setting" is a Tab and one additional ID field is defined the
+      text file for the first 5 samples should look like this, without the title row:
+
+            Well Identifier      Sample ID       Additional ID
+
+            SPL1                 S4532           F
+
+            SPL2                 S8765           F
+
+            SPL3                 S2310           M
+
+            SPL4                 G5876           M
+
+            SPL5                 T4326           F
+
+       The title row is only shown for illustration purposes. It should be omitted from the
+      import file.
+
+
+Export Sample IDs
+      Gen5 lets you export a text file of Sample IDs. The file will contain only the IDs or
+      names of samples, each one separated by a hard return.
+
+
+
+       1.                        Locate Sample IDs under the Plate in the menu tree and
+            double click to open it.
+       2.   Click Export. Gen5 opens the standard Windows(R) save file screen.
+       3.   Locate the directory where you want to save the text file containing the Sample
+            IDs for this plate and click Save.0.
+
+
+---
+
+244 | Chapter 12: Preparing Plates
+
+
+---
+
+Chapter 13
+
+
+
+
+Data Reduction Options
+
+     Gen5's robust and flexible Data Reduction options are described in
+     this chapter.
+
+
+ Setting up Data Reduction ........................................................ 246
+ How to use a Runtime Variable in a Formula................................ 248
+ Define Transformations............................................................. 249
+ Plotting a Curve ....................................................................... 261
+    Multiple Curves ................................................................... 282
+ Kinetic Analysis ....................................................................... 288
+    Well Analysis ...................................................................... 290
+ Define Cutofs .......................................................................... 296
+ Validation Criteria .................................................................... 301
+
+
+---
+
+246 | Chapter 13: Data Reduction Options
+
+
+
+
+Setting up Data Reduction
+     Protocol> Data Reduction
+        There are several options available for interpreting the results of your experiment.
+        Gen5TM automatically creates the most commonly applied data reduction steps (based
+        on previously defined Protocol parameters). You can design your own or modify the
+        calculations.
+
+Top 6 Things to Know about Data Reduction
+         1.   Reductions are StepWiseTM, they can be built one upon another, based on their
+              sequence in the Data Reduction dialog: a data set created in a previous step can
+              be used in a later transformation, curve, cutoff, validation or well analysis, if
+              applicable.
+         2.   Gen5 creates four types of data reduction steps automatically:
+               When blanks (BLK) are assigned to the plate, Gen5 automatically creates a
+                 Blank Subtraction data set. Gen5 subtracts the mean of the blanks from all
+                 other wells on the plate.
+               A Well Analysis step is created when a multi-read index Read step is
+                 defined: Kinetic, Spectrum, Area or Linear Scan. If applicable, blank-
+                 subtraction results are used to perform the well analysis.
+               A Pathlength-Corrected data set is created when this option is selected in
+                 an Absorbance read step.
+               The Fluorescence Polarization (FP) transformation is performed
+                 automatically when this reading mode is selected in the Read step. If
+                 applicable, blank-subtraction results are used to perform the FP reduction.
+                 In kinetic experiments, well analysis is based on the FP transformation
+                 results.
+         3.   Important! Once the Data Reduction dialog is opened and saved, (i.e. OK is
+              selected to close it) Gen5-created reductions are no longer added, deleted, or
+              changed. Keep this in mind when modifying a protocol or experiment.
+         4.   Plate-specific Data Reduction Variables can be collected from users when they
+              read the plate so Gen5 can use them in data reduction calculations. First, you
+              define the variable in the Runtime Prompts, then, write a formula using the
+              variable name as a placeholder. At runtime, when the measurements and
+              variables are obtained, Gen5 performs the calculation using the input value.
+         5.   Raw data sets used in Data Reduction steps are named according to Gen5's
+              Data Set Naming Convention, which is based on the number of Read steps
+              defined in the Procedure. When the number of read steps is changed, any
+              previously defined Data Reduction steps are voided, because the data set name
+              is also changed. When you add or remove a Read step, you must update the
+              effected Data Reduction steps.
+
+
+---
+
+                                                              Setting up Data Reduction | 247
+
+
+
+       6.    In the Data Reduction dialog, you can:0.
+              Drag and drop Data Reduction steps to change their sequence order,
+              Select a step and right-click to delete it,
+              Double click an event to open it for modification or deeper review (or right-
+                click and select Edit).
+
+
+Data Reduction Options
+
+                Transformation
+
+                Curve Analysis
+
+                Well Analysis
+
+                Cutoffs
+
+                Validation
+
+               Fluorescence Polarization
+
+
+           Gen5 shows an invalid data reduction step by blocking out its icon.
+          Changing the Procedure, e.g. reading parameters or sequence of
+          events, renaming a Read step or data set, or other changes can
+          invalidate a data reduction step. Generally, it is easiest to delete the
+          invalid step and recreate it, selecting valid options.
+
+
+---
+
+248 | Chapter 13: Data Reduction Options
+
+
+
+How to use a Runtime Variable in a Formula
+      You can acquire a plate- or assay-specific variable for use in data reduction formulas
+      using the Runtime Prompts. When the plate is read, users will be prompted to enter
+      a value that will be used in the calculations.
+        Follow these steps to write a formula using a Data Reduction Variable:
+         1.   Create the Data Reduction Variable in the Runtime Prompts:
+                 1.   Select Protocol>Runtime Prompts
+                 2.   Enter a Prompt Name for the variable: this is the name of the field users
+                      will see in the Plate Reading dialog when they read a plate
+                 3.   Set the Prompt Type to Data Reduction Variable
+                 4.   Assign it a Variable Name0
+         2.   Write the formula: create the applicable Data Reduction Step and include the
+              Variable Name in the formula
+         3.   Save the protocol and create a new experiment based on it.
+
+         4.       Read the plate. Enter the value for this runtime variable in the Plate
+              Reading screen that opens just before the plate is read. Gen5 will calculate the
+              formula using the entered value.0.
+
+          In Calibrator-Plate Protocols, Data Reduction Variables created for
+            and populated by the calibrator plate(s) can be used in data reduction
+            steps defined for the Other Plates. The converse is not true: variables
+            created for the Other Plates cannot be applied to a calibrator plate.
+            Any variable defined for a calibrator plate can be used to create
+            formulas applied to the Other Plates. Variable names must be unique
+            in a protocol, they cannot be reused from plate to plate.
+
+          In Multi-Plate Assay Protocols, Gen5 only recognizes the
+            variable(s) collected for the first plate (Plate 1). Users will be
+            prompted to enter the data reduction variable(s) for every plate, but
+            only the data entered for Plate 1 will be used in the calculation(s).
+
+
+---
+
+                                                                  Define Transformations | 249
+
+
+
+Define Transformations
+   Protocol> Data Reductions> Transformations
+
+About Transformations
+           In Gen5TM, the Transformation dialog is the workspace to define plate- and well-
+           level calculations. If you are familiar with spreadsheets, like Excel, you can write
+           formulas in a similar way.
+
+      You can perform calculations using:
+            any previously-defined raw data, e.g. measurements obtained from the
+              reader
+            already-transformed data sets,
+            concentrations determined from standard curves,
+            well-analysis results
+            up to 4 valid data sets
+
+      Gen5's StepWise Data Reduction lets you perform a Transformation on the results of
+      any previous data reduction step.
+      The sequence of data reduction steps determines the availability of the data sets:
+      previous steps provide input for subsequent steps. So you can build a series of
+      calculations, defining new calculations to be performed on the results of a previous
+      one.
+      Well IDs, like blanks (BLK) and standards (STD), etc., must be defined in the plate
+      layout before they can be used in a formula. The matrix in the Transformation dialog
+      reflects the current Plate Layout
+
+        ????? - This symbol in Transformation results indicates a value could
+          not be determined, or an out-of-range or biased value was used in the
+          calculation. Check the Protocol Options>Calculation Options
+          settings.
+
+
+---
+
+250 | Chapter 13: Data Reduction Options
+
+
+
+Basic Steps
+
+
+
+
+        In the top left corner of the Transformation dialog:
+          1.     Select Data In
+          2.     Enter a name for the resulting data set in New Data Set Name
+          3.     Enter the formula in the Plate Formula field to apply it to the whole plate (all
+                 wells) or
+                 de-select Use single formula for all wells and define the Current Formula
+                 field for individually selected wells: click in the matrix cell to apply the formula
+                 to that well of the plate0.
+
+           Note: When formulas are applied to individual wells you can right
+             click and Copy the formula, then Paste it into the Current Formula
+             field to see it, reuse it, or modify it. You can also resize the columns to
+             view formulas.
+
+For more details about setting up data transformations:
+            Selecting Multiple Data Sets on page 251
+            Formula Syntax and Examples on page 252
+            Apply calculation to entire plate on page 256
+            Apply calculation to individual wells on page 256
+
+
+               Don't forget to update your Report to include your transformations.
+
+
+---
+
+                                                                   Define Transformations | 251
+
+
+
+Multiple Data Sets
+        In the Transformation dialog, click the Select multiple data sets... button:
+
+
+
+
+      Use these controls to select the data sets for the Transformation. Click the radio button
+      to enable selection of a data set, and use the drop-down lists to select the content of the
+      data set.
+         Plate: When multiple plates have been defined for a protocol, you can create a
+           data set using other than the default value of Current Plate
+         Data In: The drop-down list offers any raw data, or results of previously-
+           defined calculations or curves
+         Read(s): Kinetic and scanning raw data offers All or the results of a specific
+           reading or sampling number to define the data set. Selection is limited in two
+           ways:
+             If you want to use a combination of All and individual reads, set DS1 to
+               All, and the subsequent data sets to the individual reads, otherwise,
+               individual read points can be selected for all four data sets
+             When more than one kinetic or other multiple-index data set is available
+               you can only select All for more than one data set when their read counts
+               (indexes) exactly match. Otherwise, individual readings from different data
+               sets can be selected.
+
+
+       When selecting multiple data sets with read indexes, the first data set selected: DS1,
+    determines the read index count of the resulting data out: New Data Set produced by the
+    transformation.
+
+
+---
+
+252 | Chapter 13: Data Reduction Options
+
+
+
+ Transformation Formula Syntax and Examples
+        Here are the Symbols and Functions that can be used in Transformations, in formulas
+        applied to the whole plate or individual wells.
+
+    Symbol                     Description                         Example
+
+    x or X                     Represents the current well
+                               value
+
+    Well Coordinates           Represent the value of a            A2 or H12
+                               particular well
+
+    Multiple Data Sets         When referencing multiple           DS1.H6 = well H6 of
+    (DS#)                      data sets use the DS#. To           data set 1
+    <data set>.<well>          identify a specific well within a   DS1.X or DS1 = current
+                               data set, use a period to           well of DS1
+                               separate the data set and the
+                               well coordinate
+
+    <well>.<plate>             When referencing a well             B3.3 = well B3 on Plate
+                               coordinate in a multi-plate         3
+                               experiment, identify the specific   DS1.H6.2 = well H6 of
+                               well and plate using a period       data set 1 on Plate 2
+
+    Well Identifiers           The value of a specific well. The   SPL3
+    wellID_ALL                 ID assigned to a specific well,     SPL_ALL
+                               including a Conc/Dil index
+                               value, if applicable:               SPLC_ALL:3 = the mean
+                               <ID><index>:<Conc/Dil               of SPLC at the 3rd conc
+                               Index> The last number is the       value
+                               Conc/Dil index, not the             STD3.3 = STD3 on Plate
+                               concentration/dilution value.       3
+                               The well index can be replaced
+                               by _ALL for Samples and
+                               Sample Controls, which returns
+                               the mean of all indexes of the
+                               well type. Does not apply to
+                               STD, BLK or Assay Controls
+
+    <wellID>:<conc             Use : as a separator to identify    CTL2:3 = the average
+    index>                     individual well IDs of a specific   value for all CTL2 at the
+                               concentration/dilution level.       third concentration or
+                                                                   dilution level
+
+    Data reduction             Represents a value collected        !KitFactor
+    variable                   with the Runtime Prompts
+
+    Function Operators         Add +, subtract -, divide /,        CTL3+H5, STD3-25,
+                               multiply *, combine ( )             DS1/DS2, SPL_ALL*2,
+                                                                   (STD1/STD6)*100
+
+
+---
+
+                                                           Define Transformations | 253
+
+
+
+Figures/Scientific       Any numeral, including those        2.45E-08
+notation                 expressed with scientific
+                         notation
+
+
+
+Function             Description                           Example
+
+Mean(<ID>)           Represents the mean of the            Mean(SPL1;SPL2;SPL3)
+Mean(x;y;z;...)      specified well identifier or           Note: Gen5 automatically
+                     variables; the mean of any set of     uses the mean of all like-
+                     variables can be expressed            named wells on the plate
+
+SD(<ID>)             Represents the standard               SD(SPL10)
+SD(x;y;z;...)        deviation of the specified well ID    SD(23;75;45)
+                     or variables
+
+CV(<ID>)             Represents the coefficient of         CV(CTL2)
+CV(x;y;z;...)        variation for the specified well ID   CV(1;2;3)
+                     or variables, expressed as a
+                     percent
+
+DIL(<ID>) or         Returns the defined dilution or       Dil(CTL3)
+Dil(X); CONC(X)      concentration of the specified well   CONC(STD2)
+or Conc(<ID>)        ID or current well
+                                                           Conc(X)
+
+Round(x;y)           Rounds x to the y number of           Round(X;2)
+                     significant digits. x can be any      (X represents the value of
+                     valid symbol or expression.           the current well)
+
+Truncate(x;y)        Truncates x to the y number of        Truncate(CTL3;3)
+                     significant digits. x can be any
+                     valid symbol or expression.
+
+Log(x)               Represents the Log10 function         Log(SPL_ALL)
+
+POW(x;y)             Represents the value of x raised      POW(STD1;2)
+                     to the power of y
+
+POW(10;x)            Calculates the Anti-Log of the        POW(10;x)
+                     current well
+
+SQRT(x)              Represents the square root of x       SQRT(A1*B1)
+
+MIN(x;y;z;...)       Returns the minimum of the            Min(CV(SPL1);CV(SPL2))
+                     defined variables.
+
+MAX(x;y;z;...)       Returns the maximum of the            MAX(A1;B1;C1)
+                     defined variables.
+
+
+---
+
+254 | Chapter 13: Data Reduction Options
+
+
+
+    Functions allow a      (x;y) Any expression that represents a single value, including
+    combination of         well identifiers, locations, numerals, a function that results in a
+    expressions            single value, can be included in the formula, if it's a valid
+                           expression. Functions described with the ellipsis (x;y;z;...) allow
+                           up to 10 expressions.
+
+
+
+
+          Well IDs are case sensitive, i.e. they must be entered exactly as they
+            are defined in the plate layout. Other symbols and the functions are
+            case insensitive.
+
+Formula Examples
+
+     Formula                      Description
+
+     X+(A5+A6)/2                  The result of this formula is the sum of the current well
+                                  value and the mean of the A5 and A6 wells.
+
+     DS1/DS2                      This is the ratio calculation of data set 1 and data set 2.
+
+     Log(X/PC)                    The result of this formula will log the ratio of the current
+                                  well over the mean of PC (user-defined identifier).
+
+     MAX(A1;A2;A3)-               This formula calculates the difference between the
+     MIN(B1;B2;B3)                maximum value of A1, A2, A3 and minimum value of B1,
+                                  B2, B3.
+
+     CTRL1-3*SD(CTRL1)            The result of this formula is the mean of the wells
+                                  containing the identifier CTRL1 minus three Standard
+                                  Deviations of these wells. It is the equivalent of
+                                  MEAN(CTRL1)-3*SD(CTRL1)
+
+     X*Dil(X)                     The result of this formula is the current well value times
+                                  its dilution factor
+
+     ((SPL4-BLK)/(SPLC4-          This formula can be used for toxicology assays, in this
+     BLK))*100                    example to calculate the toxicity percentage of SPL4.
+
+
+
+More on Min/Max
+      The MIN/MAX calculations are limited to 10 arguments, but by combining them you
+      can apply up to 100 arguments:
+               1 level: MIN(A1;B2;C3;D4;E5;F6;H7;A8;B9;C10) works for 2 to 10 arguments
+               2 levels:
+                 MIN(MIN(A1;B2;C3;D4;E5;F6;H7;A8;B9;C10);MIN(F1;G2;H3;A4;B5;C6;D7;E
+                 8;F9;H10);...) works for up to 100 arguments if you use 10 MIN statements
+                 inside a higher level one.
+
+
+---
+
+                                                                    Define Transformations | 255
+
+
+
+          Note: you cannot use Min/Max for one Well identifier, like Min(STD1)
+            or Max(NC). You must use the well locations to determine the min and
+            max of a well ID's replicates.
+            For example: If you use "MIN(NC;POS)", this translates as
+            "MIN(MEAN(NC);MEAN(POS))" and does not return the value that
+            corresponds to the minimum value of all wells where you either put NC
+            or POS. It returns either MEAN(NC) or MEAN(POS), whichever is lower.
+
+Round or Truncate to control results
+      While Gen5 provides a way to control the number of significant digits or decimal
+      places to display in reports and on-screen, when performing data reduction operations,
+      Gen5 uses all the digits (up to 15) regardless of the numeric format applied for display.
+      Use the Round(x;y) and Truncate(x;y) functions to control the number of digits used in
+      and/or generated by a calculation.
+
+
+Adding and Selecting Data Sets
+     Protocol> Data Reduction> Transformation
+        Gen5TM provides enormous flexibility in designing data reductions by letting you build
+        up a series of data sets. The variables or data sets for your calculations can be raw data
+        or the results of a previously-defined Data Reduction step.
+
+
+
+
+              When one or no data sets selected
+
+
+
+
+              Multiple data sets already selected
+
+        The Transformation dialog changes when multiple Data In data sets have been
+        selected, as demonstrated above. Initially, the dialog offers the Select multiple data
+        sets button. Use the drop-down list to select one data set. Click the button to select
+        multiple data sets.
+        When multiple data sets have been selected, the selected data sets (DS1, DS2, up to 4)
+        are displayed with a three-dot button.
+
+
+---
+
+256 | Chapter 13: Data Reduction Options
+
+
+
+           Both buttons lead to the Multiple Data Sets dialog, where you can select from raw
+        data or results data from previously defined transformations, well analysis formulas
+        and curves.
+
+Apply calculation to entire plate
+       Select Protocol> Data Reduction> Transformation and retain the default settings
+       to apply a formula to all the wells of the plate:
+
+
+
+
+        In the Formula section of the Transformation dialog, affirm with a check mark "Use
+        single formula for all wells."
+     In the Plate Formula field, enter the calculation formula to apply to all wells.
+
+Apply calculation to individual wells
+       Select Protocol> Data Reduction> Transformation and de-select "Use single
+       formula for all wells." This changes the input-field label from Plate Formula to
+       Current Formula.
+          1.   First, de-select Use single formula for all wells by clicking the checkbox to
+               remove the check mark.
+               The formula field label changes to Current Formula and additional auto-entry
+               options are enabled:
+                Current Formula, selected by default, refers to the formula entered in the
+                  field
+                Difference Between Columns
+                Difference Between Rows
+          2.   In the Current Formula field, enter a formula to apply and then select (click
+               in) one or more wells to apply that formula to them.0.
+
+
+ Helpful Hints:
+            Right click a well or field for tools: Copy, Paste, Cut, Undo
+            Use the Undo button (which retains 10 past actions) to reverse an action
+            Resize the window and/or the grid's columns to see the formula written to a
+              well; (the formula is truncated when it is too long to display):
+                Hover the mouse between two columns to engage             (the resize tool), click
+                  and drag to the desired column width
+                Resize the window using standard Windows(R) tools: click and drag the two-
+                  headed arrow icon at the window's corners or edges
+
+
+---
+
+                                                                     Define Transformations | 257
+
+
+
+            Reference specific wells in a formula: often, after creating a data set based on
+              individual-well formulas, it is necessary to reference the specific well or wells
+              in a subsequent transformation using that data set.
+
+
+Correcting a formula
+       Use the right-click pop-up menu if you need to make small corrections to a previously-
+       applied formula:
+          1.   Right click as you're highlighting or selecting the well to be fixed
+          2.   From the pop-up menu select Copy
+          3.   Paste the formula in the Current Formula field, with a right click or Ctrl+V
+          4.   Make the needed changes to the formula
+          5.   Apply the revised formula to the desired cell with a regular left click.0.
+
+Individual-Well Formula Example 1
+        Here's an example of the need to reference a specific well in a transformation formula.
+        An assay kit requires subtracting the average of the "non-specific binding" wells (NSB)
+        from the "maximum binding" wells (MB) to determine the corrected maximum
+        binding, which is used in a subsequent transformation.
+        The wells to be referenced are assigned to the first column of the plate layout:
+
+                      1
+
+          A           BLK
+
+          B           BLK
+
+          C           NSB
+
+          D           NSB
+
+          E           MB
+
+          F           MB
+
+          G           MB
+
+          H           SPL1
+
+     Transformation 1: MB - NSB = DS1 (data set 1). This formula can be applied to the whole
+     plate, even though only the specifically referenced wells will be affected by it. Viewing the
+     output data set shows the results, the corrected maximum binding, are assigned only to
+     the applicable wells: C1, D1, E1, F1, G1.
+     Transformation 2: X-NSB/DS1.C1*100 can be applied to the whole plate or individually to
+     the sample wells. Notice the reference to well C1 of the data set (DS1), this could have been
+     any of the relevant wells, i.e. referencing F1 would also work.
+
+
+---
+
+258 | Chapter 13: Data Reduction Options
+
+
+
+How to perform Dual-Wavelength Subtraction
+        A common way to improve the accuracy of your results is to read the plate at two
+        wavelengths and perform a dual-wavelength subtraction data reduction. Here are
+        step-by-step instructions for endpoint and kinetic (multi-index) reads:
+
+Endpoint Analysis
+        First define the Read step with two wavelengths:
+         1.   Select Protocol>Procedure and add steps as needed, e.g. Set Temperature
+         2.   Click Read and select 2 wavelengths
+         3.   Define the Plate Layout of samples, blanks, standards, etc.
+
+         4.       Select Protocol>Data Reduction and click Transformation
+
+         5.                         Gen5 opens the Multiple Data Set dialog
+         6.      Select the button for DS2
+
+         7.      Use the drop-down list to select Data In for DS1 and DS2, the first read
+              measurement for DS1 and the second read data set for DS2. Click OK when
+              you're done.
+         8.   In the Transformation dialog, enter a name for the New Data Set Name in
+              the text field, e.g. Delta OD
+         9.   Define the dual wavelength subtraction formula in the Plate Formula text
+              field, e.g. DS1-DS20.
+        Now you can use the results of this calculation, Delta OD, in subsequent data
+        reduction steps, if desired.
+
+Kinetic Analysis
+
+
+
+
+        First define the Read step with a kinetic loop and two wavelengths:
+
+
+---
+
+                                                                Define Transformations | 259
+
+
+
+        1.   Select Protocol>Procedure and add a Kinetic loop and other steps as
+             needed, e.g. Set Temperature
+        2.   Click Read and select 2 wavelengths
+        3.   Define the Plate Layout of samples, blanks, standards, etc.
+
+        4.      Select Protocol>Data Reduction. Gen5 opens the StepWiseTM Data
+             Reductions dialog
+        5.   Highlight the first Well Analysis step and click Transformation.
+             StepWise Data Reductions let us use the results from all previous calculations
+             in subsequent steps. By making the dual-wavelength subtraction the first step
+             we can use the results in all other steps. (Later, we can modify the Gen5-
+             generated Well Analysis steps to use the dual-wavelength results.)
+
+        6.                        Gen5 opens the Multiple Data Set dialog
+        7.     Select the button for DS2
+
+        8.     Use the drop-down list to select Data In for DS1 and DS2, the first read
+             measurement for DS1 and the second read data set for DS2.
+
+        9.      Set the Read(s) for both DS1 and DS2 to All. Click OK when you're
+             done.
+       10. In the Transformation dialog, enter a name for the New Data Set Name in
+           the text field, e.g. Delta OD
+       11. Define the dual wavelength subtraction formula in the Plate Formula text
+           field, e.g. DS1-DS20.
+       Now you can use the results of this calculation, Delta OD, in the Well Analysis data
+       reduction steps, if desired. In the StepWise Data Reductions dialog, to modify the
+       Gen5 generated steps, double click a step to open it in edit mode, and change the
+       Data In to Delta OD. Or, create a new well analysis step.
+
+
+Subtracting Blank Wells
+       When there is one or more Blank defined in the Plate Layout, Gen5TM automatically
+       creates a Transformation or "blanked" data set.
+
+         Gen5 uses the "blank" (blank-subtracted) data sets in any subsequent
+           system-generated data reduction steps, like Pathlength Correction and
+           Well Analysis calculations in kinetic experiments.
+
+  For single- and multi-wavelength reads:
+       For each raw data set, Gen5:
+        1.   Calculates the mean of the raw measurement values in wells identified as blank
+        2.   Subtracts the mean from the raw measurement value in each well on the plate
+             to generate a "Blank" data set containing each well's measurement result after
+             blank well subtraction
+
+
+---
+
+260 | Chapter 13: Data Reduction Options
+
+
+
+         3.   Displays the Blank well Mean in the Statistics data view.0.
+
+  For Specific Read Types:
+        Within any protocol, if one or more wells are defined as 'Blank' in the Plate Layout,
+        Gen5 automatically generates Blank-Wells Subtraction data sets for each wavelength:
+           Endpoint read: For each wavelength defined in the protocol, the average of the
+             blank well(s) is subtracted from every well on the plate
+           Kinetic analysis: For each wavelength defined in the protocol, within each
+             kinetic read, the average of the blank wells is subtracted from every well on the
+             plate
+           Spectrum scan: A blank average is calculated for each wavelength in the
+             spectrum reading range. The blank average for each wavelength is then
+             subtracted from the absorbance read at the corresponding wavelength in each
+             well
+           Linear and Area scan: For each wavelength defined in the protocol, within each
+             read index, the average of the blank wells is subtracted from every well on the
+             plate
+
+
+---
+
+                                                                          Plotting a Curve | 261
+
+
+
+
+Plotting a Curve
+  Data Reduction> Curve Analysis
+      Select Curve Analysis in the Data Reduction dialog to create a standard or titer curve
+      for your experiment. Other than kinetic curves, there are two scenarios for using a
+      curve to determine the concentration of samples:
+      Gen5TM provides two general ways to use its curve plotting feature:
+         Standards, Controls, and/or Samples, for which concentrations or dilutions
+           have been defined, are read on one or more microplates, along with the
+           test/unknown samples.
+         A Multi-Plate Calibration Protocol defines one plate as the calibrator
+           (containing the Standards or Controls), and plots a curve against the calibrator
+           plate to determine the concentration of test/unknown samples on one or more
+           other plates. Refer to the Multi-Plate Protocols chapter for details.
+
+
+            Gen5 lets you generate multiple standard curves (up to 6) from one plate
+
+
+ Prerequisites for generating a Curve:
+       1.    Define Standards (STDn), Controls (Assay or Sample), and/or Sample
+             Dilutions (SPL) in the Plate Layout with corresponding concentrations or
+             dilutions (Learn about Multiple Standards on page 282)
+       2.    Define the minimum number of standards/dilutions for the desired Curve Fit
+             (Minimum STDs on page 269)
+       3.    Create at least one read step in the Procedure. 0.
+
+ To View a Curve:
+        After you've defined the Curve Analysis, and acquired the data, e.g. read the plate,
+        open the Plate View, and select the Graph tab.
+              Curve Fitting Results: The default table displays the parameters used to
+                plot the curve including the Curve Formula, its elements and the R2
+                coefficient (for all curve fits except point-to-point).
+              Curve Fitting Details: Select the Details table to view best-fit results for
+                each parameter, including standard error (SE) and 95% confidence
+                intervals.
+              Curve Interpolations: When one has been defined for the curve, Gen5
+                builds a table listing the interpolation formula and the X and Y values for
+                that point on the curve.
+
+
+---
+
+262 | Chapter 13: Data Reduction Options
+
+
+
+  To Output a Curve:
+          Gen5 provides several ways to print a curve:
+
+                     Click Quick Export to instantly send the current curve to Excel
+               Add it to the Content in Report Builder
+               Right-click to copy or save it as an image for use in a word-processor
+                 application
+               Export it to Excel(R) using Power Export
+
+
+How to Create a Standard Curve
+        Gen5 lets you create one or more standard or calibration curves for determining the
+        concentration of samples:
+         1.   Select File> New Protocol
+         2.   Select Procedure and define the Read step (and any other required steps)
+         3.   Select Plate Layout:
+               Define the concentrations of the Standards (see below)
+               Assign the location of the standards, samples, and controls and blanks (if
+                 any) on the plate
+         4.   Select Data Reduction> Curve Analysis
+               Gen5 may have generated a "corrected" data set: if you assigned blanks to
+                 the plate or selected Pathlength Correction in the Read step, you'll want to
+                 select these data sets for Data In for the Y-Axis Data when plotting the
+                 curve
+               For Kinetic reads, Gen5 creates a Well Analysis step. The default kinetic
+                 well analysis is "Mean V," which can be easily changed to any of the wells
+                 analysis options. The output of the well analysis step is typically used as the
+                 Data In for the Y-Axis in quantitative assays.
+
+         5.        On the Data In tab, use the drop-down to select the Y-Axis Data
+         6.   On the Curve Fit tab, choose a curve fit method
+         7.   Other options and requirements when defining multiple curves:
+               Curve Name: replace the default "Curve" with a more meaningful or unique
+                 name
+               On the Data Out tab, replace the default "Conc" for the Data Set Name with
+                 a more meaningful or unique name
+               On the Data Out tab, define interpolations to plot on the curve
+         8.   Define the reporting or export requirements and Save the protocol. Now,
+              you're ready to run an experiment: File> New Experiment to read the plate
+              and generate the curve.0.
+
+
+---
+
+                                                                         Plotting a Curve | 263
+
+
+
+Define Standards
+
+      In the Plate Layout dialog:
+       1.    Set the Type to Standard
+       2.    Gen5 sets the ID to STD:
+              You can change the abbreviation using the 3-dot button
+              Use the drop-down list to define multiple standards.
+       3.    Click the 3-dot button at the Conc. field to enter the expected concentrations for
+             the Standards:
+              In ascending or descending order, enter the values in the consecutively-
+                numbered fields: STD1, STD2... For a shortcut, select one of the two Auto
+                entry tools
+
+
+            Be sure to assign the Minimum Number of Standards: see page 269
+
+
+       4.    Assign the location of the Standards on the plate, in the same manner as
+             assigning unknown Samples.0.
+
+
+---
+
+264 | Chapter 13: Data Reduction Options
+
+
+
+Curve Fit
+     Data Reduction> Curve Analysis> Curve Fit tab
+
+
+
+
+         Curve Name: assign each curve a unique alpha-numeric name that does not include
+         spaces or symbols used as mathematical operators (+, *, -, /). Characters must be
+         alphabetic, numeric, or the underscore.
+     Select the Curve Fit Method that will best model the data for your experiment. The
+     parameters selected for Curve Fit can be modified at any time without invalidating the
+     data. You may want to experiment with the options to assess the best method for your
+     experiment.
+
+           If the options on the Curve Fit tab are disabled (grayed out), Data In
+             is set to "Use Curve from Calibrator Plate," which is only applicable to
+             Calibration Plate Protocols.
+
+         Gen5 offers several curve fit methods and lots of flexibility in defining or influencing
+         the best-fit calculation. All the options are intended to fit data to a model that defines Y
+         as a function of X, i.e. X values must be known. Gen5's StepWiseTM Data Reduction
+         feature lets you transform the data prior to fitting the curve, if necessary. And, you can
+         apply constraints to the parameters or weighting to the sum-of-squares after viewing
+         the curve, as well as before it is plotted.
+
+Linear Regression
+       Linear Regression is a simple, best-fit, straight line. See page 265.
+         Polynomial Regression is an extension of the Linear Regression equation. See page 268
+
+
+---
+
+                                                                                    Curve Fit | 265
+
+
+
+Non-Linear Regression
+      4 Parameter is characterized by a symmetrical sigmoidal plot that eventually becomes
+      asymptotic to the upper and lower standard values. See page 266.
+         5 Parameter is similar to 4P but it is better able to model data that is asymmetrical at
+         the upper and lower asymptotes. See page 267.
+         Logit-Log is a restricted form of 4P that has been offered in BioTek readers' onboard
+         data reduction (PDR) software and KCjuniorTM. See page 268.
+
+Other
+         Point-to-Point follows each standard point with no averaging of the values to smooth
+         the curve. Minimally two standards are required.
+         Spline with Smoothing is a curve defined piecewise by polynomials, joining a set of
+         data points by a series of straight lines, which is then smoothed by the Smoothing
+         Factor.
+         The curve will appear smoother as the Smoothing Factor is increased. The zero factor
+         will force the curve fit through all data points.
+         This curve is most useful when you have a very large data set. Minimally 4 standards
+         are required to plot a Spline curve.
+
+
+Linear Regression
+         Linear regression: y = ax + b (or Y = intercept + slope x X).
+           y represents unknown response
+           x represents theoretical concentration (in this context should we be using the word
+           expected?)
+           a represents the slope of the linear regression
+           b represents the intercept to the y axis
+         The linear regression fit uses the least squares technique. The better the quality of
+           the fit the more the absolute value of R tends to 1. This type of curve fitting
+           technique can be used when you think the data will fall in a predictable linear
+           pattern. It may be necessary to transform the x and/or y components using
+           Logarithmic axes.
+         You can enable or disable Use average of replicates in the curve calculation. By
+           default, the mean of replicates is used. This is recommended when the replicates
+           are not independent. Contrarily, when the source of experimental errors is the
+           same for all replicates, you should consider plotting each point separately.
+         You can apply Parameter Constraints, but generally, linear regression determines
+           the best-fit curve without constraints.
+
+
+---
+
+266 | Chapter 13: Data Reduction Options
+
+
+
+Nonlinear Regressions are Iterative
+        Nonlinear regression is performed in a series of steps, each adjusting the parameters to
+        improve the goodness-of-fit.
+        Here are the steps that every nonlinear regression program follows:
+         1.   Start with an initial estimated value for each variable in the equation.
+         2.   Generate the curve defined by the initial values. Calculate the sum-of-squares
+              (the sum of the squares of the vertical distances of the points from the curve).
+         3.   Adjust the variables to make the curve come closer to the data points. There are
+              several algorithms for adjusting the variables. Gen5 uses the Newton-Rapshon
+              method.
+
+
+         4.   Adjust the variables again so that the curve comes even closer to the points.
+         5.   Keep adjusting the variables until the adjustments make virtually no difference
+              in the sum-of-squares.
+         6.   Report the best-fit results. The precise values you obtain will depend in part on
+              the initial values chosen in step 1 and the stopping criteria of step 5. This means
+              that repeat analyses of the same data will not always give exactly the same
+              results.
+
+
+4 Parameter Curve
+        The four parameters are left asymptote, right asymptote, slope, and the value at the
+        inflection point. Gen5 performs an iterative series of calculations (using the Newton-
+        Raphson algorithm) to determine the best curve fit - the least squares method to
+        minimize the residual error. The iterations stop when no further improvement to ERR
+        is detected. You can refine the calculation using Parameter Constraints and/or
+        Weighting.
+          4 Parameter logistic fit:
+
+
+
+
+          a = (theoretical) response at concentration = 0
+          b = measure of slope of curve at its inflection point
+          c = value of x at inflection point
+          d = (theoretical) response at infinite concentration
+          x = concentration
+          y = response (OD)
+        The minimum number of standards is 4.
+
+          IC50/EC50: typically, the c parameter is equal to the IC50 or EC50 value
+
+
+---
+
+                                                                               Curve Fit | 267
+
+
+
+     It is recommended that:
+        at least one standard is not far from each asymptote
+        at least 2 standards fall within the linear area of the curve, one either side of the
+          inflection point
+
+
+      You can plot the IC50/EC50 value on the 4P curve by updating Gen5's Curve
+    Analysis step before reporting the results.
+
+
+
+5 Parameter Curve
+     As you would expect, the five parameter curve is nearly identical to the 4 Parameter
+     except for an additional parameter e (which is equal to 1 in a 4P curve and makes the
+     curve symmetrical). With e, the 5P curve fit is better able to model asymmetric
+     experiment results. You can refine the calculation using Parameter Constraints and/or
+     Weighting. Gen5 ends the iterative calculations when no further improvement to ERR
+     is detected.
+
+       This five-parameter logistic is also called the Richards equation.
+
+
+
+
+       a = minimal curve asymptote; (theoretical) response at concentration = 0
+       b = measure of slope of curve at its inflection point
+       c = value of x at inflection point
+       d = maximal curve asymptote; (theoretical) response at infinite concentration
+       e = quantifies the asymmetry
+       x = concentration
+       y = response (OD)
+       The minimum number of standards is 5.
+     It is recommended that:
+        at least one standard is not far from each asymptote
+        at least 3 standards fall within the linear area of the curve, one at the inflection
+          point and one on either side of it.
+
+
+       You can calculate and plot the IC50/EC50 value on the 5P curve by manually
+    performing the calculation and then updating Gen5's Curve Analysis step before
+    reporting the results.
+
+
+---
+
+268 | Chapter 13: Data Reduction Options
+
+
+
+Polynomial Regression Curve Fit
+        The calculation of the Polynomial fit parameters is based on a least squares method
+        that results in a series of equations. Then, a Gaussian Elimination algorithm is applied
+        to the augmented matrix of the series to calculate the parameters.
+
+
+
+
+        n represents the Degree of the polynomial regression.
+           The Degree must be less than or equal to the number of standards minus 1. If
+             this condition is not met, Gen5 automatically reduces the degree of the
+             polynomial to the number of defined standards having different X values
+             minus one.
+           The unknown concentrations are calculated by using an approximate
+             calculation method, linear interpolation between 1000 points evenly spaced on
+             the X axis.
+           When a Y Axis Intercept value is defined it determines the coefficient a of the
+             polynomial equation:
+             y = g*x6 + f*x5 + e*x4 + d*x3 + c*x2 + b*x + a
+             This is equivalent to defining an advanced parameter constraint with a fixed.
+
+
+Logit-Log Curve
+        Gen5's Logit-Log curve is identical to the 4 Parameter Curve except it is does not
+        perform an iterative series of calculations to minimize residual error. Instead, the
+        asymptotes of the curve (parameters a and d) are determined from experimental data
+        (y values). And, the inner portion of the curve (b and c) is solved using a logit-log
+        linear regression. This prohibits the application of Parameter Constraints and
+        Weighting.
+
+          Gen5's logit-log algorithm is derived from BioTek readers' onboard
+            data reduction (PDR) software and KCjuniorTM.
+
+
+---
+
+                                                                               Curve Fit | 269
+
+
+
+
+Curve Fit: Minimum Number of Standards
+      Here are the minimum number of standards that must be defined for each Curve Fit
+      Method:
+
+            Curve Fit Method         Minimum STDs
+
+            Linear Regression        2
+
+            4-Parameter              4
+
+            5-Parameter              5
+
+            Logit-Log                4
+
+            Point-to-Point           2
+
+            Spline with Smoothing 4
+
+            Polynomial Regression Degree +1
+
+            Degree: 2                3
+
+            Degree: 3                4
+
+            Degree: 4                5
+
+            Degree: 5                6
+
+            Degree: 6                7
+
+
+
+More Curve Fit Controls:
+
+Axis Transformation:
+      In the bottom left corner of the Curve Fit tab, you can alter the default Transformation
+      for the X and Y axes used to calculate the curve.
+         None - the default value, retains the Formula displayed at the bottom of the
+           dialog to calculate the curve (no transformation is applied to the selected data,
+           X or Y.)
+         Log (logarithmic) - alters the formula used to calculate the curve by applying
+           log10 (10x) to the selected data, X or Y. Any change is reflected in the Formula
+           displayed at the bottom of the screen. Log transformations fail when the data
+           includes a negative or null value. And, they are not applicable to the Nonlinear
+           Regression curves.
+
+Y Axis Data:
+        Use average of replicates
+      This check box offers a Yes or No option to calculate and apply the average of
+      replicates when plotting the curve or to calculate each data point individually. The
+
+
+---
+
+270 | Chapter 13: Data Reduction Options
+
+
+
+        default setting is yes, to average the replicates, but some types of assays consider
+        results to be more accurate when each sample is plotted separately. This option is
+        disabled for Point-to-Point and Spline curves.
+
+           Weighting: Use the drop-down list to apply a weighting factor to the curve fit
+        formula. (See below for more info.)
+
+              Extrapolation Factor: The extrapolation factor range must be between 1 and 3.
+        (See below for more info.)
+
+Parameter Constraints:
+           None (Estimate All)
+           Y Axis Intercept is limited to Linear and Polynomial Regression fit methods.
+             This option forces the curve to intercept the Y axis at the value you input. See
+             page Error! Bookmark not defined..
+
+           Advanced        : Click the 3-dot button to define constraints for the curve. See
+             page 272.
+
+
+Weighting in a Curve Fit
+        Gen5 offers three options for weighting the curve fit to normalize or minimize-the-
+        effect of an uneven distribution of data points from the curve. Select the most
+        appropriate option for your experimental data:
+        1/Y - Poisson Weighting
+        This weighting option is available to refine data that follows a Poisson distribution.
+        Where the standard deviation among the replicates is almost equal to the square root
+        of their mean.
+
+
+
+
+        1/Y2 - Relative Weighting
+        When you expect (or discover) the average distance of the points from the curve to
+        increase as Y increases, you can use this weighting option to minimize the sum-of-the-
+        square of the relative distances. Relative weighting can ensure that all points have an
+        equal influence on goodness-of-fit.
+
+
+
+
+        1/Std Dev Y2 - Reciprocal-Variance Weighting
+
+
+---
+
+                                                                                Curve Fit | 271
+
+
+
+      When you have a large range of data values, variable error in the data or a relatively
+      large error in the data you have good reason to consider applying a weight to each
+      data point. This method of "weighting by observed variability" assumes that the mean
+      of replicates with a large standard deviation (std dev) is less accurate than the mean of
+      replicates with a small std dev. This is not always true.
+      This method is only reliable when you have a large number of replicates.
+
+
+
+
+        The setting: Protocol> Protocol Options> Calculation Options>
+          Standard Deviation Weighting N-1 or N is used to determine SD
+          prior to its use in this weighting scheme.
+
+        At times Gen5 may not be able to calculate one or more weights.
+          Calculation Warning messages will alert you to the situation and
+          describe the remedy Gen5 implemented, e.g. the highest valid weight
+          was used
+
+
+Extrapolation Factor in Curve Fitting
+      For all curves except Spline and Point-to-Point, you must define an Extrapolation
+      Factor in the Curve Fit tab or use the default setting: 1.1. The Extrapolation Factor must
+      be between 1-3.
+      Using a factor of 1 eliminates the extrapolation, using the upper and lower Standards
+      as the limits for concentration/dilution interpretation. An Extrapolation Factor >1 lets
+      you extend the upper and lower limits of the calculation.
+         Example: Assuming a linear X axis, we wish to extend the upper and lower
+           limit by 20%. The lower limit denoted by the first standard is 50 units. The
+           upper limit denoted by the last standard is 150 units. The dynamic range
+           therefore is 150-50 = 100 units. Imposing the 20% extension means that the new
+           range will be: 100 x 1.2 = 120 units. This represents an increase in the dynamic
+           range of 10 units at the lower limit and 10 units at the upper limit. Therefore
+           the new lower limit will be 50-10 = 40 units. The new upper limit will be 150 +
+           10 = 160 units.
+
+        Important: Exercise caution when using extrapolation (Factor >1), as
+          the implied assumption is that the relationship of the x and y variables
+          is valid outside the range defined by the standards. This type of
+          extrapolation should only be applied when prior knowledge of the
+          relationship is known. Typically this feature is used in assays where
+          linear relationships are known. Inappropriate use of the
+          Extrapolation Factor may invalidate results generated from
+          data falling into the extrapolation zone.
+
+
+---
+
+272 | Chapter 13: Data Reduction Options
+
+
+
+          FYI: Gen5 calculates the values that fall into the new limits. Those
+            that fall outside these limits will be assigned > than or < than,
+            respectively. Negative concentrations shall not be reported for any (y)
+            value through extrapolation. If a value intersects the curve below 0 on
+            the x-axis, Gen5 shall report a concentration of <0 for the well.
+
+
+Advanced Parameter Constraints
+           Gen5 lets you apply one of two types of constraint on your curve parameters to
+        produce a more informative curve. (Detailed information about parameters is provided
+        below.)
+
+Select a constraint for a parameter:
+         1.   Click in the Mode field of a parameter to enable a drop-down list to select:
+               Start from: is offered for the nonlinear regressions that use an iterative
+                 calculation process to determine the best fit. For 4P and 5P curve fits you
+                 can tell Gen5 to start the iteration process with a given value.
+               Fixed: lets you assign a fixed parameter value for Gen5 to use in the
+                 calculation. When you fix certain parameter values Gen5 will use them to
+                 determine the best-fit values for the other parameters.
+               Estimate: does not apply a constraint. It lets the curve fit determine the
+                 parameter value.
+         2.   Enter a Start From or Fixed value in the Value field when applicable. 0.
+
+ Helpful Information
+           Constraints can be useful when you have not collected sufficient data to map
+             all the parameters in your model and you know or expect a parameter to equal
+             a certain value.
+           4P and 5P regressions require that B, C, and E parameters are positive (non-
+             negative) integers. Gen5 prevents input of a negative or null value for these
+             parameters with an error message.
+           For Linear and Polynomial Regressions, fixing the B or A parameters
+             (respectively) to 0 is similar to setting the Y Axis Intercept to 0
+           Constraints can be added or modified at any time, before or after the data has
+             been collected. When the regression calculation using initial, non-constrained
+             values generates a curve that is far from the data, you may be able to generate a
+             better fit using a Start From or Fixed constraint.
+
+
+---
+
+                                                                                  Curve Fit | 273
+
+
+
+About Curve Parameters and Values
+
+
+
+
+         Depending on the curve fit method, Gen5 calculates and reports the values for these
+         parameters. They can also be used in a Validation formula to test the results of your
+         experiment.
+
+Fitting Parameters
+        The coefficients used in the equation to calculate the curve are the fitting parameters,
+        potentially: A, B, C, D, E, F, G. These values can be constrained or determined by the
+        curve fit. Gen5 reports SE and 95% CI for each parameter, except when Parameter
+        Constraints have given them fixed values.
+         For example, A, B, C, D are the 4 parameters in the 4P curve formula:
+
+
+
+
+Goodness of Fit
+         R2 - Coefficient of Determination
+         The value R2 quantifies goodness of fit. The coefficient of determination of the
+         regression ranges from 0.0 -1.0. It is computed by comparing the sum-of-the-squares
+         distances from the best-fit curve and from a model defined by the null hypothesis, e.g.
+         horizontal line through the origin.
+                When R2 = 0.0 the curve does not come close to the data. Knowing X does
+                  not help you predict Y.
+                When R2 = 1.0 all points lie exactly on the curve with no scatter. If you know
+                  X you can calculate Y exactly.
+
+
+---
+
+274 | Chapter 13: Data Reduction Options
+
+
+
+        R2 is one criterion for determining if your curve fit is reasonable. Review the other
+        Curve Data, like confidence intervals, to confirm the value of a high R2.
+
+
+        Standard Error (SE)
+        Gen5 constructs a "Hessian Matrix", evaluates the WSS and DoF to calculate the
+        asymptotic Standard Error of Estimate of each parameter. A low Standard Error
+        indicates one or more of these conditions:
+               the curve fit models the data well
+               lots of data points
+               less scattered data
+               narrow confidence intervals
+
+          SE is not reported for fixed parameters.
+
+        95% Confidence Interval: Min and Max
+        Review the 95% CI range for each parameter to evaluate the curve's goodness-of-fit. A
+        narrow range assures you of a true best fit, but a wide range signals a weakness in the
+        experiment or in the model selected to fit the data.
+        If you plotted the minimum and maximum CI values that Gen5 reports for each
+        parameter it would produce a confidence band on equal sides of the curve. This
+        standard statistics calculation tells you, with 95% certainty, the best-fit curve falls
+        within the confidence band.
+        See Calculating the Confidence Interval using t-distribution on page 276.
+
+          SE and 95% CI are not reported for fixed parameters.
+
+General Metrics
+        R - Correlation Coefficient
+        Gen5 calculates R by taking the square root of the coefficient of determination: R2.
+        The correlation coefficient ranges from -1 to 1. A value of 1 shows that a linear
+        equation describes the relationship perfectly and positively, with all data points lying
+        on the same line and with Y increasing with X. A score of -1 shows that all data points
+        lie on a single line but that Y increases as X decreases. A value of 0 shows that a linear
+        model is inappropriate - that there is no linear relationship between the variables.
+
+
+        Err - Error
+        ERR, also known as the "root mean squared error" (RMSE), is the difference between
+        the actual measurements and the values predicted by the model. It can be used to
+        determine whether the model fits the data or not.
+
+
+---
+
+                                                                                 Curve Fit | 275
+
+
+
+      SS - Sum of Squares
+      The sum of the squares of the vertical distances of the points from the curve. It is useful
+      when comparing curve fits. The less scattered the data the smaller the SS and Std Err.
+      When weighting is applied to minimize the relative distance squared, the WSS is used
+      to assess goodness-of-fit.
+
+
+
+Covariance Metrics
+      Degrees of freedom (DF)
+
+        DF = p - n
+        where p is the number of data points
+        and n is the number of parameters
+
+
+      t-Distribution (T)
+        t-distribution is a statistic whose values are given by:
+        t = [ x - `i> ] / [ s / sqrt( n ) ]
+        where x is the sample mean, `i is the population mean, s is the standard deviation
+        of the sample, n is the sample size, and t is the t score.
+        See Calculating the Confidence Interval using t-distribution on page 276.
+
+
+      Weighted Sum of Squares (WSS)
+        When you apply a weighting factor to the curve, Gen5 calculates the weighted sum
+        of squares (WSS), then uses it to determine the SE for a parameter ak:
+
+
+
+
+        where wi is the weight of (xi,yi)
+        and p is the number of data points
+        and n is the number of parameters
+
+Interpolations
+        Gen5 reports the user-defined interpolations Y Formula and the values it produces
+        for X and Y.
+
+
+---
+
+276 | Chapter 13: Data Reduction Options
+
+
+
+Calculating the 95% Confidence Interval using t-Distribution
+        The 95% Confidence interval for a parameter ak is calculated with the following
+        formula:
+
+
+
+        Where t0.025,df is the 97.5th percentile of the Student t distribution, given in the following
+        Upper Tail Probability table:
+
+        Degrees of           Pr(T > t)              Degrees of           Pr(T > t)
+        Freedom                                     Freedom
+         1                  12.706                31                     2.040
+         2                  4.303                 32                     2.037
+         3                  3.182                 33                     2.035
+         4                  2.776                 34                     2.032
+         5                  2.571                 35                     2.030
+         6                  2.447                 36                     2.028
+         7                  2.365                 37                     2.026
+         8                  2.306                 38                     2.024
+         9                  2.262                 39                     2.023
+         10                 2.228                 40                     2.021
+         11                 2.201                 41                     2.020
+         12                 2.179                 42                     2.018
+         13                 2.160                 43                     2.017
+         14                 2.145                 44                     2.015
+         15                 2.131                 45                     2.014
+         16                 2.120                 46                     2.013
+         17                 2.110                 47                     2.012
+         18                 2.101                 48                     2.011
+         19                 2.093                 49                     2.010
+         20                 2.086                 50 to 59               2.009
+         21                 2.080                 60 to 69               2.000
+         22                 2.074                 70 to 79               1.994
+         23                 2.069                 80 to 89               1.990
+         24                 2.064                 90 to 99               1.987
+         25                 2.060                 100 to 119             1.984
+
+
+---
+
+                                                                                    Curve Fit | 277
+
+
+
+      Degrees of          Pr(T > t)             Degrees of              Pr(T > t)
+      Freedom                                   Freedom
+      26                  2.056                120 to 139               1.980
+      27                  2.052                140 to 179               1.977
+      28                  2.048                180 to 199               1.973
+      29                  2.045                200 to 499               1.972
+      30                  2.042                500 to 999               1.965
+                                                1000 and greater        1.962
+
+
+
+Data In for Curve Analysis
+   Data Reduction> Curve Analysis> Data In tab
+
+
+
+
+Generate Curve from Current Plate
+      A prerequisite for this option is defining in the Plate Layout:
+         Standards, Controls, or Dilution Samples
+           and
+         Concentrations or Dilutions for the standards, controls or samples
+
+
+---
+
+278 | Chapter 13: Data Reduction Options
+
+
+
+        In each of the three fields, use the drop-down options to select the parameters for the
+        curve:
+           Well ID is the Standards, Controls or Dilution Samples to plot on the X axis
+           for SPL (samples) and SPLC (sample controls), select All or one ID (see page
+             283)
+           X Data is the source for the values to plot on the X-axis, by default it is set to
+             use the map of the selected Well IDs <Plate Layout>
+           Y Data is the source for the values to plot on the Y-axis
+
+Use Curve from Calibrator Plate
+        This option only applies to Other Plates in a Calibrator Plate Protocol described in the
+        Multi-Plate Protocol chapter
+
+
+Data Out for Curve Analysis
+     Data Reduction> Curve Analysis> Data Out tab
+        The data sets created here will be available for viewing, reporting, and exporting. You
+        may also be able to use them to perform additional data reductions.
+
+
+
+
+  Options Grayed Out?
+          Data Out options are only available when the curve is plotted for standards,
+          controls or samples with Concentration values (not Dilution values).
+
+
+---
+
+                                                                               Curve Fit | 279
+
+
+
+  For Calibrator-Plate Protocols Only
+
+            Y-Data: Select the data set to use for plotting the curve, based on the standard
+         curve from the Calibrator Plate.
+
+  Concentrations
+         Gen5TM lets you define multiple curves for an experiment or protocol, the only
+         requirement is defining a unique name for each one in the Data Set Name and
+         Curve Name fields.
+
+  Calculate Concentration x Dilution
+         If sample dilutions have been defined for this protocol in the Plate Layout, you can
+         use this feature to perform the common Titer Curve requirement of calculating the
+         actual concentration of diluted samples. You must define a unique name, Data Set
+         Name, for each data output generated based on a different curve.
+
+  Interpolations
+         In the Interpolations table, you can enter up to 20 Y-Axis values or formulas to
+         view and report the results. Well IDs (that have been previously) defined in the
+         Plate Layout can be used. Review the Formula Syntax for Interpolations. Gen5
+         plots the interpolations in the generated curve if possible, Example.
+
+
+Interpolation Formula Syntax
+
+   Symbol/Function Definition                                 Example
+            -            Subtraction or negation              BLK-0.010
+            /            Division                             CTL1/CTL2
+            *            Multiplication                       STD1*0.10
+           ()            Represents inclusion                 (CTL1/CTL2)*100
+     Numeric value       Represents y value                   0.500, 54000
+   Well coordinates      The location of a specific well      A1/B1
+        Well ID          The value of a specific well. The    STD3
+        Well_All         ID assigned to a specific well,      CTL1:2
+                         including a Conc/Dil index value,    SPL_ALL
+                         if applicable:
+                                                              SPLC_ALL:3
+                         <ID><index>:<Conc/Dil
+                         Index> The last number is the
+                         Conc/Dil index, not the
+                         concentration/dilution value. The
+                         well index can be replaced by
+                         _ALL for samples and sample
+                         controls, which returns the mean
+                         of all indexes of the well type.
+
+
+---
+
+280 | Chapter 13: Data Reduction Options
+
+
+
+       MEAN(<ID>)         The mean of the specified well        MEAN(POS1)
+      Mean(x;y;z;...)     identifier, well coordinates or       MEAN(A1;A2)
+                          variables
+        SD(<ID>)          The standard deviation of the         SD(BLK)
+       SD(x;y;z;...)      specified well identifier or          SD(22;33;44)
+                          variables
+        CV(<ID>)          The coefficient of variation of the   CV(STD1)
+       CV(x;y;z;...)      specified well identifier or          CV(A1;SPL3;50)
+                          variables
+        Round(x;y)        Rounds x to the y number of           Round(SPL3;4)
+                          significant digits
+      Truncate(x;y)       Truncates x to the y number of        Truncate(STD2;5)
+                          significant digits
+       Dil(<ID>) or       Returns the defined dilution or       DIL(SPL1)
+       Conc(<ID>)         concentration of the specified        Conc(CTL2)
+                          well ID
+          LOG(x)          Represents the LOG10 function         LOG(SPL10)
+         POW(x;y)         The value of x raised to the          POW(STD1;3)
+                          power of y
+
+         SQRT(x)          The square root of <x>                SQRT(A1*B1)
+       MIN(x;y;z;...)       The minimum of the defined            MIN(CV(CTL1);CV(CTL2))
+                          variables
+       MAX(x;y;z;...)       The maximum of the defined            MAX(A1;B1;C1)
+                          variables
+      Data reduction      Represents a value collected with     !Lot#
+         variable         the Runtime Prompts
+     Functions allow a     (x;y) Any expression that represents a single value,
+      combination of       including well identifiers, locations, numerals, a function
+       expressions         that results in a single value, can be included in the
+                           formula, if it's a valid expression. Functions described with
+                           the ellipsis (x;y;z;...) allow up to 10 expressions.
+
+
+---
+
+                                                                              Curve Fit | 281
+
+
+
+Interpolation Example
+
+
+
+
+Interpolate the IC50 or EC50
+      When using the 4 Parameter or 5 Parameter curve fit methods, you can show the IC50 or
+      EC50 value in the curve results using Gen5's Interpolate function.
+       1.   First, define the Gen5 protocol and run the experiment as you normally would
+            to capture the measurement results.
+       2.   After Gen5 has calculated the best fit curve, locate and make note of the Curve
+            Parameters:
+             4P: C
+             5P: A and D. Then, calculate the IC50/EC50 value using this formula: ((A-
+               D)/2)+D
+       3.   Return to and edit the Data Reduction>Curve Analysis step: select the Data
+            Out tab and enter the value determined in the previous step in the
+            Interpolations table under Formula.
+      In the Plate View select the Graphs tab to see the interpolated IC50 or EC50 value. You
+      will also see the value plotted when you include the curve in a report or PowerExport.
+
+
+---
+
+282 | Chapter 13: Data Reduction Options
+
+
+
+
+Multiple Curves
+
+ Gen5's Multiple Curves Options
+        Gen5 offers several methods for generating multiple curves in an experiment. Follow
+        the link for the method that best fits your needs:
+           Generating Multiple Standard Curves: you have two or more standards and
+             want to plot a standard curve for each
+           Generating Curves based on Sample Dilutions: you have samples with
+             multiple dilutions and want to plot curves based on the expected dilution
+             values
+           Plotting Sample Dilutions on a Standard Curve: you have unknown samples
+             of various dilutions and want to determine their concentration from a standard
+             curve
+           Kinetic curve for each well: you are conducting a kinetic or time-course
+             analysis and want to plot kinetic curves to determine Max V, Integral, etc.
+
+
+
+Generating Multiple Standard Curves
+        Gen5 lets you create up to six standard curves in an experiment. The standards can
+        have the same or different concentration values.
+
+  How to:
+        Generating multiple standard curves requires applying multiple standards to the plate:
+         1.   Create a new Protocol and define its Procedure in the usual way. When
+              defining the Plate Layout, assign the first set Standards to the plate as usual
+
+
+
+                                             You can change the default IDs for
+                                             the Standards, learn how in the
+                                             Preparing Plates chapter
+
+
+
+
+         2.   Use the ID Prefix drop-down list to select the next standard, e.g. STDB, to
+              assign to the plate
+         3.   Optionally, click the 3-dot button for Conc. to define different concentration
+              values for the next standard. Overwrite the first set of concentration values,
+
+
+---
+
+                                                                       Multiple Curves | 283
+
+
+
+           with those for the current standard. Skip this step to use the same
+           concentrations
+      4.   Assign the location of the additional standards on the plate
+      5.   Assign the location of the test samples and any controls to the plate
+      6.   Go to Data Reduction> Curve Analysis to set up the curves. Create a Curve
+           Analysis step, in the usual way, for each set of standards defined (one curve for
+           each standard group).0.
+
+ To View Multiple Standard Curves:
+           As with a single standard curve, after you've acquired the data, e.g. read the
+       plate, open the Plate workspace, and select the Graph tab. Use the drop-down list
+       in the Curve field to select the curve to view.
+       Curve Fitting Results: In addition to displaying the curve, Gen5 displays, in a
+       table beneath the curve, the data points used to calculate all the standard curves.
+       Combine the Curves in One View: Gen5 lets you create a new curve to overlay
+       multiple curves in one graph.
+
+ To Report Multiple Curves:
+       Gen5 lets you report/print the curves separately or combined:
+            Create a New Graph to overlay curves and add the new curve to the
+              Content in Report Builder/Power Export Builder or add each curve
+              independently to report them separately
+            For any curve, display it in the Graph tab of the Plate workspace and Right-
+              Click to copy or save it as an image for use in a word-processor application
+            Export it to Excel(R)
+
+
+Samples and Sample Controls Curves
+   Data Reduction> Curve Analysis> Data In
+     Gen5 will plot a curve for each sample ID or sample control ID, using the expected
+     dilutions/concentrations for the X-Axis and the user-selected measurement values for
+     the Y-Axis. Titer assays, for example, use this feature to plot a titer curve.
+
+
+
+
+ Well ID
+     After setting the Well ID to SPL or SPLC (assuming the default IDs were retained), tell
+     Gen5 to generate one curve for All (each of) the IDs for which a concentration or
+     dilution has been defined, or for only one particular ID:
+
+
+---
+
+284 | Chapter 13: Data Reduction Options
+
+
+
+               Keep the check mark for All IDs to generate one curve for each ID
+               Or, de-select All and enter the number of the Sample ID or Sample Control
+                 ID group for which you want only one curve plotted.
+
+  Viewing
+        Just like standard curves, after you've read the plate, open the Plate View and select the
+        Graph tab. Use the Curve drop-down list to select the curve to display. Gen5 appends
+        the Well ID (e.g. SPL1) group name to the curve name: Curve_SPL1 for example, to
+        name the curves.
+
+  Reporting
+        You can report/print the curves just like standard curves, repeating the procedure for
+        each curve generated, as needed.
+
+          If the Samples or Sample Controls used to plot the curves are
+            assigned Concentrations, rather than Dilutions, you can elect to
+            Calculate Concentrations and Concentrations x Dilutions. When
+            the Well ID to plot the curves is set to All IDs, the results will only be
+            calculated for the samples used in generating each single curve. For
+            example, concentrations for SPL1 will be calculated using the SPL1
+            curve, concentrations for SPL2 will be calculated using the SPL2 curve,
+            and so on.
+
+
+How to generate Sample-Dilution Curves
+        When you have multiple dilutions of your samples, Gen5 makes it easy to plot a curve
+        for each sample based on the known dilution values. The critical factor is assigning the
+        dilution values to the Samples in the Plate Layout. Gen5 recognizes sample dilutions
+        as valid X-axis values.
+
+  How to:
+         1.   Select File>New Protocol
+         2.   Select Protocol>Procedure and define the Read step (and any other required
+              steps)
+         3.   Select Protocol>Plate Layout:
+               Define the Sample Dilutions
+               Assign the location of the sample dilutions, and blanks (if any) on the plate
+
+
+---
+
+                                                                   Multiple Curves | 285
+
+
+
+For example:
+
+
+
+
+This example shows three samples with the same dilution values. Gen5 will create
+three curves, one for each sample. Gen5 assigns a dilution index to keep track of the
+multiple instances of a sample, e.g. SMP2:3 is the third dilution index of Sample 2.
+ 4.   Select Protocol>Data Reduction
+       When Blanks (BLK) are assigned in the Plate Layout, Gen5 automatically
+         creates the Blank-Subtraction transformation
+       Depending on your assay requirements you may need to define another
+         transformation or data reduction to normalize the data used in the curves,
+         as in this Toxicity/Cytotoxicity assay
+ 5.   Click Curve Analysis0.
+       On the Data In tab, set the Well ID to SPL (or the customized Well ID) for
+         sample dilutions
+       Select the Curve Fit tab to select the best curve fit method
+
+
+---
+
+286 | Chapter 13: Data Reduction Options
+
+
+
+Viewing and Reporting Sample Dilution Curves
+        You can overlay multiple sample dilution curves in one graph for viewing and
+        reporting. After defining the Procedure, Plate Layout, and Data Reduction steps,
+        Create a New Graph in Data Views. The data views become Available Data Views in:
+               Report Builder to generate a print out
+               Power Export Builder for transfer to Excel(R)
+
+                    To view the new curve online, select the Graph tab and use the Curve:
+                   drop-down list to select it
+
+
+---
+
+                                                                         Multiple Curves | 287
+
+
+
+
+Plotting Sample Dilutions on a Standard Curve
+      When you have unknown samples and want to determine their concentration, it may
+      be most efficient to test them in various dilutions/concentrations against a standard. In
+      Gen5, you can take advantage of multiple features to accomplish this task.
+
+  How to:
+       1.   Select File>New Protocol
+       2.   Select Protocol>Procedure and define the Read step (and any other required
+            steps)
+       3.   Select Protocol>Plate Layout:
+             Define the Sample Dilutions
+             Define the Standards and their expected concentrations
+             Assign the location of the sample dilutions, standards and blanks (if any) on
+               the plate
+       4.   Select Data Reduction> Curve Analysis to create the standard curve
+             Gen5 may have generated a "corrected" data set: if you assigned blanks to
+               the plate or selected Pathlength Correction in the Read step, you'll want to
+               select these data sets for Data In for the Y-Axis Data when plotting the
+               curve
+
+       5.      On the Data In tab, set the Well ID to STD and use the drop-down to select
+            the Y-Axis Data
+       6.   On the Curve Fit tab, choose a curve fit method
+       7.   On the Data Out tab, define Interpolations to plot select Sample dilutions on
+            the curve. For example, in the Interpolations Formula table enter SPL1:1,
+            SPL1:5, SPL2:1, etc. to easily identify them in the graph0.
+
+
+         Viewing results: Select the Graphs tab, after reading the plate, to view the curve.
+      Use the drop-down for the Results field (at the top, right corner) to select the
+      Interpolations table to enhance the view
+
+
+---
+
+288 | Chapter 13: Data Reduction Options
+
+
+
+
+Troubleshooting Curve Fits
+        Gen5 gives you a lot of flexibility in curve fitting, some of them can be used to improve
+        a curve fit:
+               Collect more data: the most certain way to improve a curve fit is to collect
+                 more data: widen the range of X values, for example.
+               Simplify the model: Linear regression and 4P fits are easier to calculate and
+                 have fewer unknowns than a 5P fit, your data may better fit a simpler
+                 model. (You can also use constraints to simplify the model, i.e. reduce the
+                 number of unknowns.)
+               Apply constraints when the curve is far from the data: by constraining the
+                 initial values (Start From) or assigning a Fixed value you may be able to
+                 generate a better fit.
+               Constraints can also be useful when you have not collected sufficient data
+                 to map all the parameters in your model and you know or expect a
+                 parameter to equal a certain value.
+
+
+            Gen5 lets you modify the settings used to plot the curve, as suggested above, so
+        you can experiment with the different options. Alternatively, you can create multiple
+        curves using the same data but with variant settings (add more Curve Analysis steps
+        to the Data Reduction), so it is easier to compare the various results. Then, you can
+        overlay the curves in one view, if that is helpful: see Create a New Graph.
+
+
+---
+
+                                                                Kinetic Analysis Options | 289
+
+
+
+
+Kinetic Analysis Options
+
+        Learn more about the Well Zoom in the Kinetic Analysis chapter.
+
+      Gen5 offers a full complement of options for analyzing your Kinetic Reading raw data
+      results.
+
+ Data Reduction Options
+      In the Data Reduction> Well Analysis dialog, you can set up multiple steps, taking
+      advantage of some or all the available options:
+            Mean V
+            Max V (Gen5 creates this Data Reduction step automatically. It also
+              calculates the Y Intercept, R & R2, time at Max V, and Lag time)
+            Mean Min/Max OD/RFU/RLU
+            Onset OD/RFU/RLU
+            Onset OD%/RFU%/RLU%
+            Integral
+
+ Combine Data Sets
+      Gen5 lets you combine the measurements collected from multiple kinetic readings
+      performed in one experiment. When multiple kinetic loops are defined in the
+      Procedure, Gen5 offers the Append to previous Kinetic data option in the second and
+      subsequent kinetic read steps.
+
+
+
+      The read steps in the kinetic loops must be identical, and Gen5 enforces this rule when
+      the Append option is selected. In a Synchronized Mode block, this feature is
+      mandatory and Gen5 automatically applies it to the second and higher kinetic read
+      steps.
+      Append to previous Kinetic data results in one data set containing all the
+      measurement values acquired from the reader during the all the kinetic loops. Do not
+      use this option if you want separate data sets for data reduction purposes.
+
+ Dispensing Reagent in a Kinetic Analysis
+      Gen5 lets you include dispensing in a kinetic analysis: learn about Dispensing Reagent
+      in a Kinetic Analysis Protocol in Gen5's Help.
+
+
+---
+
+290 | Chapter 13: Data Reduction Options
+
+
+
+Perform Well Analysis
+     Data Reduction > Well Analysis
+
+  About Gen5's Well Analysis
+           Well Analysis is available as a Data Reduction option when a Kinetic analysis
+             has been set up in the Procedure
+           Well Analysis is also available when Spectrum, Area Scan, or Linear Scan is
+             defined as the Read Type
+           Well Analysis produces a special data view that lets you zero-in on each
+             individual well to see the measurement values and analysis results: Well Zoom
+           Well Analysis also produces a special table of results for viewing, reporting and
+             exporting the calculation results of each well
+           In the StepWise Data Reduction dialog, you can create multiple Well Analysis
+             events to obtain multiple types of results. Assign a unique Label/name to each
+             well analysis step.
+
+  How to:
+         1.   Label - Identifies the results for data views, report building, etc. Enter a unique
+              name/ID to be used in the resulting data set name. Data Set Name Rules. You
+              must enter a unique Label when a data set is used in more than one Data
+              Reduction step.
+         2.   Data In - Click the down arrow to select a data set, e.g. raw data or results of
+              previously-defined Transformation (based on All Reads)
+         3.     Calculation Type - Use the buttons to select the type of computation to
+              conduct. Each option displays the results it will produce in the Generated Data
+              box on the right side of the screen (see below)0.
+               Calculation Options correspond to the Calculation Type selected. Click the
+                 Calculation Options button to alter the default settings for the selected
+                 Calculation Type.
+               Formula Syntax for Well Analysis: describes the symbols and functions
+                 supported to perform a calculation using the individual read points of each
+                 well (on page 292).
+
+
+---
+
+                                                                Kinetic Analysis Options | 291
+
+
+
+
+Kinetic and Scanning Data Reduction Outputs Listing
+     Set up the Well Analysis option that generates the desired data output
+
+   Read Type           Calculation Type           New Data Sets
+   Kinetic            Mean V                      Mean V
+                                                  R (correlation coefficient)
+                                                  R2 (coefficient of
+                                                  determination)
+                                                  Y Intercept
+                      Max V                       Max V
+                                                  R (correlation coefficient)
+                                                  R2 (coefficient of
+                                                  determination)
+                                                  t[1] at Max V
+                                                  Lagtime
+                                                  Max V Calc - t min
+                                                  Max V Calc - t max
+                                                  Y Intercept
+                      Mean Min/Max OD             Mean Min OD[2]
+                                                  t at Mean Min OD
+                                                  Mean Max OD
+                                                  t at Mean Max OD
+                      Mean, Std, CV               Mean OD
+                                                  Std Dev OD
+                                                  CV OD
+                      Onset OD                    Onset Time
+                                                  Onset OD
+                                                  Basis Time
+                                                  Basis OD
+                      Integral                    Integral
+
+
+   Spectrum           Min / Max OD                Mean Min OD
+                                                  W[3] at Mean Min OD
+                                                  Mean Max OD
+                                                  W at Mean Max OD
+
+
+---
+
+292 | Chapter 13: Data Reduction Options
+
+
+
+       Read Type          Calculation Type          New Data Sets
+       Linear Scan       Mean, Std, CV              Mean OD
+                                                    Std Dev OD
+                                                    CV OD
+                         Mean Min/Max               Mean Min OD
+                                                    Read Pos[4] at Mean Min OD
+                                                    Mean Max OD
+                                                    Read Pos at Mean Max OD
+                         Integral                   Integral
+       Area Scan          Mean, Std, CV             Mean OD
+                                                    Std Dev OD
+                                                    CV OD
+        OD assumes absorbance reads. Substitute RFU or RLU/sec as appropriate.
+        [3] W = Wavelength
+        [4] Pos = Horizontal Reading Position
+
+
+ Formula Syntax for Well Analysis
+        The Well Analysis Formula lets you perform calculations using the individual read
+        points or indexes in "multi-index" readings: kinetic and spectral scan. Formulas can be
+        written similar to Transformations, using the symbols and functions listed below. Also
+        see some Examples on page 295.
+
+          Symbols and functions are not case sensitive.
+
+
+---
+
+                                                          Kinetic Analysis Options | 293
+
+
+
+
+Symbol/Function Description                          Example
+
+       R#          Read point or index of a          R1
+                   kinetic read
+
+       W#          Read point or index of spectral W2
+                   read
+
+   Function        Add +, subtract -, divide /,      R2+R4, R6-R10,
+   Operators       multiply *, combine ( )           W3/W8, R1*R15,
+                                                     (R4/R1)*100
+
+ Numeric value     Any numeral, including those      2.45E-08
+                   expressed with scientific
+                   notation
+
+Mean(R#/W#;...) The mean of a set of read            Mean(R2;R4;R8)
+                   points or variables               Mean(1;2;3)
+ Mean(x;y;z;...)
+
+ SD(R#/W#;...)     The standard deviation of         SD(R12;R22)
+                   specified read points or a set    SD(23;75;45)
+  SD(x;y;z;...)    of numerals
+
+ CV(R#/W#;...)     The coefficient of variation of   CV(W5;W6;W7)
+                   specified read points or any      CV(1;2;3)
+  CV(x;y;z;...)    set of numerals, expressed as
+                   a percent
+
+   Round(x;y)      Rounds x to the y number of       Round(W2;5)
+                   significant digits.
+
+ Truncate(x;y)     Truncates x to the y number of Truncate(R3;3)
+                   significant digits.
+
+     Log(x)        Represents the Log10 function Log(R3)
+
+   POW(x;y)        Represents the value of x         POW(W10;2)
+                   raised to the power of y
+
+   POW(10;x)       Calculates the Anti-Log of the    POW(10;R4)
+                   current well
+
+    SQRT(x)        Represents the square root of     SQRT(R1*R5)
+                   x
+
+  MIN(x;y;z;...)   Returns the minimum of the        Min(R5;R6;R7;R8)
+                   defined variables.
+
+ MAX(x;y;z;...)    Returns the maximum of the        MAX(W1;W2;W3)
+                   defined variables
+
+
+---
+
+294 | Chapter 13: Data Reduction Options
+
+
+
+
+     Symbol/Function Description                               Example
+
+        Functions allow a    (x;y) Any expression that represents a single value,
+         combination of      including well identifiers, locations, numerals, a function
+          expressions        that results in a single value, can be included in the
+                             formula, if it's a valid expression. Functions described
+                             with the ellipsis (x;y;z;...) allow up to 10 expressions.
+
+
+
+Using individual Kinetic read points in a Formula
+        In addition to Gen5's Transformation option, you can perform calculations using the
+        individual reading points of a well in a Kinetic or Spectral analysis with the Well
+        Analysis Formula function. The formula will generate a single value for each well.
+        Gen5 names the resulting data set "Formula Result [nm]", where nm is the wavelength
+        or filter set defined in the read step. When a Label is defined it precedes the naming
+        convention: "Label: Formula Result [nm]"
+        After setting up the Kinetic loop or spectrum read step in the Procedure:
+         1.   Select Data Reduction>Well Analysis
+         2.   Select the multi-index data set to use for Data In
+         3.      Select the Formula button and write the calculation in the text field0.
+
+
+---
+
+                                                                Kinetic Analysis Options | 295
+
+
+
+
+  Examples:
+      1. For an ORAC Antioxidant Test:
+      0.5+(R2/R1)+(R3/R1)+(R4/R1)+(R5/R1)....+(Rn/R1)
+      Where R1 is the reading at initiation of the reaction and Rn is the last measurement. A
+      step-by-step description for using this formula in an experiment is described in the
+      Kinetic Fluorescence Assay Example in the Assay Examples chapter.
+      2. To determine the mean of certain read points: (r1xr2xr3xr4)/4
+
+  Viewing/Reporting Results
+      Gen5 automatically generates a Matrix view and two tables when a Well Analysis
+      Formula is created. In Data Views, and the Report Builder and export options, you'll
+      find:
+             Matrix: Formula Result [nm]
+               Statistics: Formula Result [nm]
+               Well Analysis Results: Formula Result [nm]
+
+
+
+Well Zoom during a Kinetic Read
+      Learn more about the Well Zoom in the Kinetic Analysis chapter.
+       1.     Select the Curves data set from the Data drop-down list before Reading the
+              plate.
+       2.     Zoom into a specific well: click on the desired well to display the Well Zoom
+              screen. It will display the results as they're measured.0.
+
+         Tip: If necessary, drag the progress dialog out of the way for an unobstructed view:
+      click and drag the title bar of the dialog to move it out of the way.
+
+         Caution: In some cases, displaying the Curves data set during a Kinetic read can
+      consume excessive resources resulting in computer-performance degradation. Learn
+      more in the Troubleshooting chapter. You can follow the steps above to monitor the
+      progress of one well, then, leaving the Well Zoom open, change the Matrix Data to a
+      numeric view
+
+
+---
+
+296 | Chapter 13: Data Reduction Options
+
+
+
+
+Define Cutoffs
+     Protocol> Data Reduction> Cutoffs
+
+About Cutoffs
+        Gen5TM lets you define cutoffs as fixed or variable margins against which results are
+        compared. Gen5 creates a Symbols data set based on your definition of cutoffs that
+        shows how each well fits into the defined categories. Gen5 also adds another tab to the
+        Plate View to show the Cutoff Values, the results of cutoff formulas. Up to 40 formulas
+        (of increasing value) can be defined for each data set and multiple Cutoff steps, one
+        Cutoff step per data set, can be defined in the StepWise Data Reduction.
+        In the Cutoffs dialog, notice that the number of Symbols fields exceeds the number of
+        cutoff formula fields by one. During data reduction, if the value of a well is less than
+        the first cutoff, the first symbol is applied to it. If the value of a well is greater than or
+        equal to the first cutoff but less than the second cutoff, the second symbol is assigned
+        to the well, and so on.
+        Out-of-Range Symbols are applied to concentration values (calculated from a
+        standard curve) when the concentrations are outside the extrapolation range of the
+        curve: below the minimum or above the maximum. You can change the OUT+ and
+        OUT- labels applied to these values by clicking in the text fields and replacing the
+        content.
+        Data In data sets presented for selection are determined by the current protocol
+        excluding multi-index data sets. Cutoffs cannot be determined in multiple-read
+        measurements like kinetic analysis and scanning results. For these types of analysis a
+        transformed or processed data set must be used.
+        ????? - This symbol in Cutoff results, i.e. the Symbols data set, indicates an out-of-
+        range or biased value was used in the calculation. Check the Protocol
+        Options>Calculation Options settings.
+
+          See an example and explanation of cutoffs on page 298
+
+
+How to set up cutoffs:
+         1.       Begin by selecting the Data In data set on which to apply the cutoffs.
+
+          Hint: The Data In drop-down list offers the data sets resulting from all
+            previously defined reads (raw data) and calculations, except for multi-index
+            readings, e.g. kinetic. Cutoffs cannot be evaluated against multiple-index reads.
+
+         2.   Define the cutoffs, beginning with the lowest value, by entering a formula or
+              data point in the Cutoff Formula 1 field. In the Symbols fields that straddle the
+              cutoff formula field, in the top field, enter a symbol (or call) to apply to wells
+              with values less than the formula. In the next Symbol field, enter the symbol to
+
+
+---
+
+                                                                                Define Cutoffs | 297
+
+
+
+            apply to values greater than or equal to the Formula. (See the Formula Syntax
+            table on page 298.)
+
+       Important: Cutoffs must be defined in increasing order, from the
+         lowest value to the highest. Gen5 will issue a Calculation Warning and
+         will be unable to assign Symbols to wells if the reading results do not
+         affirm the increasing values of the cutoff formula
+
+
+       3.       Customize the appearance of the symbols, change the font and color, by
+            clicking the 3-dot button next to the Symbol field.
+       4.   Continue defining cutoffs and symbols in the same manner, always defining a
+            higher value cutoff formula.0.
+
+
+How to view the cutoffs:
+       1.   After reading the plate (or otherwise acquiring data), open the Plate View and
+            select the Matrix tab
+       2.   At the Data field, use the drop-down list to select the Symbols data set
+       3.   Select the Cutoff Values tab to view the values (formula results) upon which
+            the Symbols data set was based0.
+
+
+ Important Information:
+        When cutoffs, or calls, are defined, Gen5 adds a tab to the Plate View to
+          display the values or results of the cutoff formulas
+
+             Up to 40 cutoff formulas can be defined for one data set. Use the scroll controls at
+            the top of the dialog to display additional cutoff formula and symbol fields.
+        Multiple Cutoffs can be defined (in the Data Reduction dialog) for a protocol: one set of
+            cutoffs per data set, i.e. you can only reference a data set one time for cutoffs
+        Gen5's rounding function in Data Views may cause unexpected results in the
+          Cutoffs' reporting. Gen5 does not round the values before applying the cutoff
+          formula, so it's possible to see conflicting outputs. More:
+
+
+---
+
+298 | Chapter 13: Data Reduction Options
+
+
+
+Cutoffs Example
+
+
+
+
+        For this example, we customized the Assay Control well type in Plate Layout to put
+        Positive (PC) and Negative (NC) controls on the plate. Then, setting up the cutoffs as
+        shown in this image, Gen5 will apply NEG to any well with a value less than the NC.
+        It will apply the EQV symbol to any wells that are greater than or equal to the NC but
+        less than the PC. It will assign POS to any wells equal to or greater than the PC. Any
+        wells with values considered out-of-range will be assigned OUT- if the concentration is
+        below the minimum, and OUT+ if the concentration is higher than the maximum.
+        To view the cutoffs, after reading the plate, in the Plate workspace, select Symbols
+        from the Data field drop-down list.
+
+
+  Formula Syntax for Cutoffs
+
+    Symbol/Function Description                                 Example
+
+        +-*/                Mathematical operators               CTL1+0.100
+
+        ()                  Represents inclusion                 (CTL1/CTL2)*100
+        Numeric value       Any numeral, including those       0.500, 54000, 1e10
+                            expressed with scientific notation
+
+
+---
+
+                                                                    Define Cutoffs | 299
+
+
+
+
+Symbol/Function Description                               Example
+     Well ID        The value of a specific well. The     A1
+ Well coordinates   ID assigned to a specific well,       STD3
+   wellID_ALL       including a Conc/Dil index value,     CTL1:2
+                    if applicable:
+                    <ID><index>:<Conc/Dil
+                    Index> The last number is the         SPL_ALL
+                    Conc/Dil index, not the               SPLC_ALL:3
+                    concentration/dilution value.
+                    The well index can be replaced
+                    by _ALL for Samples and
+                    Sample Controls, which returns
+                    the mean of all indexes of the
+                    well type. Does not apply to
+                    STD, BLK or Assay Controls.
+   MEAN(<ID>)       The mean of the specified well        MEAN(SPL1)
+  Mean(x;y;z;...)   identifier or variables               Mean(A1;22;SPL2)
+    SD(<ID>)        The standard deviation of the         SD(BLK)
+   SD(x;y;z;...)    specified well identifier or          SD(4;H12;CTL2)
+                    variables
+    CV(<ID>)        The coefficient of variation of the   CV(STD1)
+   CV(x;y;z;...)    specified well identifier or          CV(SPL10;33;B2)
+                    variables, expressed as percent
+   DIL(<ID>);       Returns the defined dilution or       Dil(CTL3)
+   Conc(<ID>)       concentration of the specified        CONC(STD2)
+                    well ID
+   Round(x;y)       Rounds x to the y number of           Round(SPL1;4)
+                    significant digits. x can be any
+                    valid symbol or expression.
+                    (Learn more below)
+  Truncate(x;y)     Truncates x to the y number of        Truncate(CTL3;3)
+                    significant digits. x can be any
+                    valid symbol or expression
+     LOG(x)         Represents the LOG10 function         LOG(SPL10)
+    POW(x;y)        The value of x raised to the          Pow(STD1;3)
+                    power of y
+     SQRT(x)        The square root of x                  SQRT(A1*B1)
+  MIN(x;y;z;...)      The minimum of the defined            Min(CV(CTL1);
+                    values                                 CV(CTL2); 45)
+
+ MAX(x;y;z;...)       The maximum of the defined            MAX(A1;B1;C1)
+                    values
+
+Data reduction      Represents a value collected with
+                                                      !KitFactor
+variable            the Runtime Prompts
+
+
+---
+
+300 | Chapter 13: Data Reduction Options
+
+
+
+
+    Symbol/Function Description                                    Example
+      Functions allow a (x;y) Any expression that represents a single value, including
+       combination of   well identifiers, locations, numerals, a function that results in a
+        expressions     single value, can be included in the formula, if it's a valid
+                        expression. Functions described with the ellipsis (x;y;z;...)
+                        allow up to 10 expressions.
+
+
+
+Rounding Issue with Cutoffs
+        It's possible to see apparent discrepancies in the cutoff results:
+          For Example: a value of .9998 will be rounded to 1 when the numeric format for the
+          view is set to 3 Decimal places (the default setting). In the Matrix view you'll see 1
+          for the well, but if Cutoffs are set to identify values less than 1, it will be reported
+          as <1 in the Symbols view/report.
+          Two ways to avoid this inconsistency:
+               Create a Transformation that rounds the data set, and apply the cutoffs to
+                 the new data set. Transformation formula: Round(X;3) for example. The
+                 resulting reports and views of the data set and cutoffs will be consistent.
+               Revise the numeric Format, i.e., the number of decimal places or significant
+                 digits, of the Data View to more precisely view and report the values. Find
+                 instructions at Numeric Format. In the above example, increasing the
+                 number of decimal places to 4 would eliminate the inconsistency. This
+                 option may or may not be appropriate for your results.
+
+
+---
+
+                                                                                  Validation | 301
+
+
+
+
+Validation
+    Data Reduction> Validation
+       Many assay kits define conditions which must be met to validate the results of an
+       experiment. The Validation dialog lets you set up these conditions to compare to
+       selected results (data sets). The Validation Formulas can be fixed thresholds or
+       algebraic formulas.
+
+Top 5 Things to Know about Validation Criteria:
+        1.   Multiple Validation steps can be defined in the StepWise Data Reduction, but
+             only one set of criteria for each data set is permitted
+        2.   Up to 50 conditions or formulas can be defined in a Validation step
+        3.   When data points that cause a Validation failure are masked or changed, the
+             Validation can change from fail to pass
+        4.   Validation results can be included in reports and/or export content
+        5.   Most often, validation formulas combine well IDs with a less than, greater than,
+             or equal sign, e.g. STD1>=1.5:0.
+               <          less than
+               <=         less than or equal to
+               >          greater than
+               >=         greater than or equal to
+
+
+
+Setting up Validation Criteria
+        1.   Select Data Reduction>Validation
+        2.   Use the drop-down list to select a Data In data set against which the criteria
+             are evaluated
+        3.   In the Formula fields, enter conditions (up to 20) that must be met for the
+             experiment's results to be considered valid.
+
+
+
+
+        4.   Optionally, in the text fields on the right-side of the screen, e.g. Valid Text, click
+             inside the field and overwrite the default text to change it for the results output
+             and reports.0.
+
+
+---
+
+302 | Chapter 13: Data Reduction Options
+
+
+
+Formula Syntax for Validation
+        In conjunction with a conditional operator: <, <=, =, >, >=, you can use the following
+        elements to define a formula as a validation or quality control condition:
+
+    Symbol/Function             Description                      Example
+
+        +                        Addition                        CTL1+0.100<3.5
+
+        -                        Subtraction or negation         BLK-0.010
+
+        /                        Division                        CTL1/CTL2
+        *                        Multiplication                  STD1*0.10
+        ()                       Represents inclusion            (CTL1/CTL2)*100
+    Numeric value                Any numeral, including          0.500, 54000, 2.45E-08
+                                 those expressed with
+                                 scientific notation
+    Well ID                      The value of a specific         A1
+    Well coordinates             well. The ID and index          STD3
+    wellID_ALL                   assigned to a specific well.
+                                 The well index can be
+                                 replaced by _ALL for
+                                                                 SPL_ALL
+                                 samples and sample
+                                 controls, which returns the     SPLC_ALL:3
+                                 mean of all indexes of the
+                                 well type.
+    WellID#                      To evaluate all of the          STD# performs the
+    WellID:#                     specified wells individually,   evaluation on each STD
+    WellID#:#                    returns the mean value of       group, e.g. STD, STDB,
+                                 each separate well index.       STDC, etc.
+                                 The Conc/Dil index can          SPLC2:# performs the
+                                 also be represented with        evaluation on each SPLC2
+                                 #.                              dilution
+                                 SPL#:# performs the             STD:# performs the
+                                 evaluation on each dilution     evaluation on each
+                                 of each sample group.           concentration of the STD
+                                                                 group, e.g. STD1, STD2
+    wellID:conc index           Use : as a separator to          CTL2:3 the average value for
+                                identify individual well IDs     all CTL2 at the third
+                                of a specific concentration      concentration value
+                                or dilution, if applicable:
+                                <ID><index>:<Conc/Dil
+                                Index> The last number is
+                                the Conc/Dil index, not the
+                                concentration or dilution
+                                value.
+
+
+---
+
+                                                                             Validation | 303
+
+
+
+
+Symbol/Function              Description                      Example
+The difference between the two "all" identifiers extends to their results output: using
+_ALL produces a one line result for all wells: valid or invalid (if one well is invalid, the
+report is invalid); the # produces individual invalid results: if one or more wells are
+invalid, each well result is reported; if all wells are valid a one line report is given.
+_All does not apply to STD, BLK or Assay Controls
+SD(<ID>)                   The standard deviation of the      SD(BLK)
+SD(x;y;z...)               specified well identifier or       SD(A1;STD3;45)
+                           expression
+CV(<ID>)                   The coefficient of variation of    CV(STD1)
+CV(x;y;z...)               the specified well identifier or   CV(SPL12;33;B2)
+                           expression
+ROUND(x;y)                 Rounds x to the y number of        Round(SPL1;4)
+                           significant digits
+Truncate(x;y)              Truncates x to the y number        TRUNCATE(STD1;5)
+                           of significant digits
+Conc(<ID>)                 Returns the defined                CONC(CTL4)
+                           concentration of the specified
+                           well ID
+DIL(<ID>)                  Returns the defined dilution       Dil(SPL3)
+                           of the specified well ID
+SQRT(x)                    The square root of x               SQRT(A1*B1)
+LOG(x)                     Represents the LOG10               LOG(SPL10)
+                           function
+POW(x;y)                   The value of x raised to the       POW(STD1;3)
+                           power of y
+MIN(x;y;z;...)            The minimum of the defined          MIN(CV(CTL1);CV(CTL2))
+                          variables
+MAX(x;y;z;...)              The maximum of the defined          MAX(A1;B1;C1)
+                          variables
+
+Curve(<x>;<y>)            Returns the value of the            Curve(CurveA;R2)>8.8
+                          selected curve result
+
+Curve(<x>;<y>;<z>) Returns the value of the curve Curve(CurveB;C;SE)<=1
+                   result for the selected
+                   parameter. See explanation
+                   below.
+
+Data reduction            Represents a value collected
+                                                              !KitFactor
+variable                  with the Runtime Prompts
+
+
+---
+
+304 | Chapter 13: Data Reduction Options
+
+
+
+
+    Symbol/Function               Description                  Example
+    Functions allow a         (x;y) Any expression that represents a single value,
+    combination of            including well identifiers, locations, numerals, a function that
+    expressions               results in a single value, can be included in the formula, if
+                              it's a valid expression. Functions described with the ellipsis
+                              (x;y;z;...) allow up to 10 expressions.
+
+
+Defining curve results and parameters
+    When you have generated a standard curve, Gen5 lets you define validation criteria using
+    the Parameters and Values calculated by the curve as the variables in the validation
+    formula. For example, you can define a validation condition specifying the value of R2:
+     0 < Curve(CurveC;R2) < 1.0
+     Two types of curve formula are possible:
+           Curve(Curve_name;y) to express a whole curve variable, such as R2, DF, or SS
+           Curve(Curve_name;y;z) to identify a parameter and parameter-specific
+             variable, like SE or 95% CI
+
+          Note: you can select any data set in the experiment for this curve
+            formula application; but, keep in mind Gen5's limitation of one
+            Validation step per data set.
+
+          Find more details in Gen5's Help. Look for Validation: Curve Formula
+
+
+Validation Examples
+         1.   From an assay kit: "The absorbance of the Negative Control (NC) must be less
+              than 70% of the cutoff (CO) value. The mean absorbance of the cutoff should be
+              greater than 1. The ratio Positive Control (PC)/CO should be greater than or
+              equal to 1.3."
+
+
+
+
+         2.   Another assay kit says: "Individual negative control (NC) absorbance values
+              must be less than or equal to 0.150 and greater than or equal to -0.005.
+              Individual positive control (PC) absorbance values must be greater than or
+
+
+---
+
+                                                                              Validation | 305
+
+
+
+              equal to 0.600. Individual positive control values must be within the range of
+              0.5 to 1.5 times the mean of the positive control."
+
+
+
+
+         3.   In a kinetic analysis, during the first of several readings, the mean value of
+              STD1 must fall between 0.200 and 0.300 OD. The mean value of STD2 must fall
+              between 0.900 and 1.300 OD.
+
+
+
+
+              And, the Mean OD of every sample replicate group must be greater than 0.
+
+
+
+
+Viewing the Validation Results
+      Gen5 applies a status to each formula defined in the Validation step:
+           Valid if the condition was met
+           Not Valid if the condition was not met (i.e. failed).
+           Unable to Evaluate, if:
+
+
+---
+
+306 | Chapter 13: Data Reduction Options
+
+
+
+               The selected data set was not available,
+               A well ID in the formula was not found in the Plate Layout,
+               A value could not be determined for a cited Well ID (e.g., all wells with that
+                 ID are masked, or over-ranged).
+
+          You can change the status labels, replacing them with terms that have
+            more meaning for your organization.
+
+          Gen5 issues a Calculation Warning when out-of-range or biased values
+            are used in a validation formula, see Calculation Options
+
+               Gen5 adds a tab to the Plate View to display Validation results
+
+
+
+
+               Failed validations or when Gen5 was "Unable to Evaluate" a criteria are
+                 reported immediately after a plate is read in the Calculation Warning pop-
+                 up. You can reopen the message anytime by selecting Calculation Log
+                 under the respective Plate in the menu tree. If the condition is Verified,
+                 Gen5 does not present a message.
+
+Reporting Validation Results
+
+                    Add the Validation table to Report Content in the Report Builder.
+                   Similarly, you can export the results.
+
+
+---
+
+                                                               Fluorescence Polarization | 307
+
+
+
+
+Fluorescence Polarization
+    Data Reduction> Polarization
+
+About Fluorescence Polarization Data Reduction
+      Gen5 automatically performs data reduction when Fluorescence Polarization (FP) is
+      the selected read type. You can retain, modify, or delete the auto-generated data
+      reduction step.
+      When Blanks are assigned to the Plate Layout, Gen5 performs a blank-subtraction
+      before calculating polarization. When FP is performed in a kinetic loop, Gen5 uses the
+      polarization results to automatically perform a Max V Well Analysis determination.
+      Blank subtraction is performed before the Well Analysis, if applicable.
+
+Polarization and Anisotropy
+      The basic polarization formulas use:
+            Parallel Intensity (raw or blanked data from parallel measurement
+            Perpendicular Intensity (raw/ blanked data from perpendicular
+              measurement x G Factor
+            G Factor: a coefficient used to calculate the polarization value. It corrects for
+              the optical variations between the parallel and perpendicular emission
+              paths unique to each reader. Gen5's default value is 0.87.
+
+      Gen5 automatically performs the Polarization calculation option. You can modify the
+      automatically-generated FP data reduction step to change the output to Anisotropy, or
+      to select both options.
+      The raw and transformed data sets created by FP are available for selection/use in all
+      other applicable data reduction options, e.g. Transformations, Curve Analysis.
+
+
+---
+
+308 | Chapter 13: Data Reduction Options
+
+
+
+FP Formulas
+
+
+
+
+           Parallel Intensityraw data from parallel measurement
+           Perpendicular Intensityraw data from perpendicular measurement X G
+             Factor
+           G Factor: coefficient used to correct for the optical variations between the
+             parallel and perpendicular emission paths. Gen5's default value is 0.87
+           spl = test sample; blk = blank
+
+
+
+
+        The G Factor is used in the FP calculation to normalize the polarization value obtained
+        on fluorescein to 20 mP (known reference value of unbound fluorescein). Gen5 ships
+        with a "G Factor Determining Protocol" that you can run to determine your reader's
+        specific G Factor for fluoroscein.
+
+
+---
+
+Chapter 14
+
+
+
+
+Viewing Results
+
+     Learn Gen5's naming conventions and the meaning of symbols and
+     notations in this chapter. Instructions and suggestions for
+     customizing online views and report outputs are provided also.
+
+
+ Plate View ............................................................................... 313
+ Data Views.............................................................................. 315
+ Gen5's Tables.......................................................................... 320
+ Data Set Naming Conventions ................................................... 316
+ Symbols and Notations ............................................................. 317
+ Modify/Customize Views/Data ................................................... 323
+ Change the Time Format........................................................... 326
+
+
+---
+
+310 | Chapter 14: Viewing Results
+
+
+
+
+Viewing Results
+        You can instantly view the results of an experiment in Gen5's main workspace using
+        the Plate View:
+
+
+
+
+            After reading the plate (or otherwise acquiring data), in the Plate View use the
+              drop-down list for Data to display the raw data and any data reduction results
+
+                  Click the Quick Export button to instantly open the current view in Excel(R).
+                Learn more about Gen5's Export Options
+
+                 Click the 3-dot button next to a data set to customize the view's appearance.
+                This feature is also available in the Data Views dialog.
+            ** Asterisks are used to signal a change: in Gen5's title bar an asterisk indicates
+              the current file has been changed but not-yet saved. When a data set is enclosed
+              by asterisks it has been become invalid. Generally this is because a Read step or
+              Data Reduction step has been altered. Edit custom-made data views to select
+              valid data sets
+
+                  384- and 1536-well plates require resizing to effectively see the data. Gen5
+                adds a button to the Plate View to zoom in on the top-left quadrant of the plate
+                and zoom out to view the entire plate. After zooming in, use the scroll bars to
+                bring the other quadrants into focus. Find more on resizing the views below.
+
+
+
+            Multi-index readings offer another viewing option. Kinetic and scanning reads
+              generate views based on the number of read intervals, wavelengths, or
+              positions defined. Use the spin buttons or enter the desired read index and
+              click Show to display it. Gen5 displays the time, wavelength, or position of the
+              selected read number.
+
+
+---
+
+                                                                            Viewing Results | 311
+
+
+
+                Kinetic and Scanning protocols can generate Well Analysis data sets
+              labeled Curves, in the Matrix tab, open the Curves data set and click on a well
+              for a Well Zoom. (Note: 384- and 1536-well plates show a magnifying glass in
+              the well instead of a curve.)
+
+
+            Starting at the Curves data set, you can display multiple well zooms
+         simultaneously by holding down the Ctrl key while selecting (up to 8) wells
+
+
+          You can also select Create new Matrix to define a new view
+          Select the Statistics tab to view a table of data reduction results
+          Select the Graphs tab (when available) to view any Curves, except kinetic
+            analysis curves, which Gen5 calls Well Analysis and is described above
+          Select the Cutoffs tab (when available) to view the values or results of the
+            cutoff formulas
+          Select the Validation tab (when available) to view the values and results of the
+
+
+ Important Notes:
+            validation formulas
+
+
+
+               Gen5 may not display some data points by default; to see them you must
+                 create your own Data Views. If you expected to see certain results that are
+                 not currently displayed, try creating your own views.
+               All data views are also available for Reporting and/or Exporting
+               Modify a data view to change the way results are reported, including the
+                 number of decimal places and significant digits (page 323)
+               Gen5 always uses your computer's Regional Settings to display and input
+                 data
+               Learn the meaning of the Symbols and Notations displayed on page 317.
+
+
+Opening the Plate View/Workspace
+   In an Experiment, if it is not already open in the main view of Gen5TM:
+
+          from the menu tree: Double-click the desired               item
+          Or, select Plate> View
+
+
+---
+
+312 | Chapter 14: Viewing Results
+
+
+
+Resizing the Plate View
+
+
+
+
+        Use the standard Windows(R) Maximize and Minimize buttons to resize the Plate View
+
+             For more precise control, hover your mouse at the corner of the window, and with
+        the two-headed arrow click and drag it to the desired size
+
+            You can also resize the columns and rows: hover your mouse on a border and
+        drag the two-arrowed pointer to the desired column/row size
+
+           Changing the window, column & row size typically enables the
+             standard Windows(R) scroll bars, which you'll need to use to see all of
+             the wells
+
+
+---
+
+                                                                        Viewing Results | 313
+
+
+
+
+Resize columns
+
+
+
+
+           Hover your cursor over the division between columns until the cursor turns into a
+      two-arrow I-beam. Then click and drag the column to the desired size. Just like Excel(R)
+      and other programs! In some Gen5 views this option works for rows, as well.
+
+
+Plate View (Workspace)
+   Plate> View
+      Use the Plate View or Plate Workspace to instantly view the results of an experiment
+      and, if needed, to mask or alter the results.
+
+About the Plate View
+      Gen5 always provides the Matrix and Statistics tabs, and when applicable, adds a
+      Graphs, Cutoff Values and Validation tab
+
+What you can do:
+
+
+
+              After reading the plate (or otherwise acquiring data), in the Plate View use
+             the drop-down list for Data to select the data set (raw data or data reduction
+             results) to display
+
+              Click the 3-dot button next to a data set to customize the view's appearance.
+             This feature is also available in the Data Views dialog.
+
+               Click the Quick Export button to instantly open the current view in Excel(R).
+             Learn more about Gen5's Export Options, including the right-click options:
+             Copy to Clipboard and Save As
+
+
+---
+
+314 | Chapter 14: Viewing Results
+
+
+
+                  In the Matrix and Curve tabs, use the Edit and Mask buttons to change or
+                mask selected data
+
+                  In the upper-right corner, below the minimize, maximize, and close
+                buttons, click the duplicate view button to open another instance of the Plate
+                View. Use this feature to view the raw data results of a reading in one window
+                and simultaneously display a curve plotted from the results in another
+                window, for example
+
+                                 Use the read index spin buttons to consecutively advance the
+                view of a Kinetic or Spectrum read, or enter a read/wavelength index in the
+                field and click the Show button
+
+How to set the default view
+     To determine the first data set or data view to open for each tab of the Plate View:
+
+          1.        Select Data Views from the menu tree
+          2.    For each category, Matrix, Table, Graph, ..., highlight the data set you want to
+                be shown first, i.e. during and immediately after reading the plate, when its
+                corresponding tab is selected in the Plate View
+          3.    Click Set as default0.
+        The Set as default button only appears when an eligible data set is highlighted. The
+        button appears grayed-out when the current default is selected, and it disappears
+        when a non-eligible data set or another item in the Data Views is selected.
+
+
+---
+
+                                                                            Data Views | 315
+
+
+
+
+Data Views
+  Protocol> Data Views
+    Gen5TM offers this menu-tree control box for selecting and modifying the way data is
+    presented on-screen and in reports and export files. The selections and modifications
+    made for on-screen viewing (Data Views) become the settings for the Report Builder,
+    Power Export Builder, and File Export Builder.
+
+
+      Create your own Data Views for the most precise control of content and
+    appearance.
+
+
+    Gen5 lists all the data sets available for viewing under a display category:
+           Matrix = a grid that represents the microplate
+           Table = a columnar presentation of the data
+           Graph = a standard curve or well zoom generated from a Curve or Well
+             Analysis
+           Field Groups = user-selected or defined data points to include in reports
+
+      Protocol Summary is another category offered for reports and
+        exports only. You'll find it in the Report Builder, File Export Builder,
+        and Power Export Builder.
+
+
+
+    The function buttons: New, Edit, and Hide/Show are enabled or disabled in sync
+    with your selections in the menu tree.
+       Highlight an item in the tree and click Edit to modify its appearance.
+         Depending on the type of item, you can change its:
+           Numeric Format and Font, e.g. number of decimal places,
+           Range of data/wells to include in views and reports,
+           Sort order, layout and other characteristics.
+       Highlight a display category to enable the New button. Modifying the system-
+         provided views is limited, but you can create your own views to display
+         exactly the data elements of interest, in the most pleasing format.
+
+                The Set as default button only appears when an eligible data set is
+    highlighted. The button appears grayed-out when the current default is selected, and it
+    disappears when a non-eligible data set or another item in the Data Views is selected.
+    Use the button to determine the first data set to open in the Matrix tab of the Plate
+    View. Gen5 displays the first raw data set (measurements obtained from the reader),
+    unless another data set has been set as the default.
+
+
+---
+
+316 | Chapter 14: Viewing Results
+
+
+
+
+Data Set Naming Convention
+        Gen5TM names the data sets it creates this way:
+
+    Name                  Meaning                              Example
+
+    wavelength            Absorbance wavelength                450
+
+    wavelength[#]         When 2 or more identical read        450[2]
+                          steps are defined in the same
+                          Procedure, the wavelengths are
+                          numbered
+
+    ex/bw & em/bw         Fluorescence filter sets:            360/40, 580/40
+    ex, em                excitation/bandwidth and             485,528
+                          emission/bandwidth or excitation
+                          and emission wavelengths for
+                          mono reads
+
+    em/bw                 Luminescence emission                460/40
+                          wavelength/bandwidth
+
+    Lum                   Luminescence using Hole/empty        Read 3:Lum
+                          position in the filter wheel
+
+    Spectrum              Absorbance Spectrum scan             Read 1:Spectrum
+    EX Spectrum           Fluorescence Monochromator-          Read 1: EX Spectrum
+    EM Spectrum           based spectrum scans                 Read 2: EM Spectrum
+
+    Curves [nm]           Kinetic curves are automatically     Curves [490]
+    Curves                generated during kinetic analysis;   Curves [360/40, 460/40]
+    [ex/bw,em/bw]         they lead to Well Zooms
+                                                               Curves [EM Spectrum]
+    [Spectrum]            Spectrum scans also plot curves
+                          for each well: OD*/wavelength;       *OD also represents
+                          they lead to Well Zooms              RFU/RLU
+
+    Read #:nm             When more than one read step is      Read 2:410
+                          defined, the Read number names
+                          the data set
+
+    Blank nm              Blank well subtraction data set      Blank Read 2:360/40
+                          (created automatically by Gen5)
+
+    Corrected [nm]        Pathlength corrected data set        Corrected [405]
+                          (Absorbance read option)
+
+    Polarization          Data transformed per                 Polarization
+                          fluorescence polarization formula
+
+
+---
+
+                                                            Symbols and Special Notations | 317
+
+
+
+  Parallel Intensity      Raw/ blanked data from parallel         Parallel Intensity
+                          measurement
+
+  Perpendicular           Raw/ blanked data from                  Perpendicular Intensity
+  Intensity               perpendicular measurement x G
+                          Factor
+
+  ex/bw,em/bw             Raw data from parallel or               485/20, 590/35 [Parallel]
+  [Parallel] or           perpendicular measurement               485/20, 590/35
+  [Perpendicular]                                                 [Perpendicular]
+
+  Anisotropy              Data transformed per anisotropy         Anisotropy
+                          formula
+
+  Data Reduction steps produce data sets named with the type of calculation and the
+  raw data set name. For example, Well Analysis steps could generate: Mean V [340/40,
+  520/40] and Onset [Blank Read 2:490]
+
+
+
+  When a Step Label is entered for the Read or Data Reduction Step, the label is
+  included in the name of the data set. For example: a Step Label in an Absorbance read
+  step of Test1 would result in a raw data set of "Test1:450" and an automatically-
+  generated blank-subtraction data set would be "Blank Test1:450".
+
+
+
+
+Symbols and Special Notations
+        Depending on the current view, report, or exported text you may see any of the
+        various symbols and notations that Gen5 applies to call your attention to special
+        conditions:
+
+Symbol               Description
+
+>(highest conc.)     After fitting a standard curve and calculating the concentrations,
+<(lowest conc.)      Gen5 denotes wells falling outside the abscissa range with >(upper
+                     limit concentration) or <(lower limit concentration); <0.00 is
+                     displayed rather than negative concentrations, unless it's called in
+                     an interpolation
+
+?????                ????? appears in a well in certain Matrix and Statistics views when
+                     data for that well has not been obtained; cannot be calculated; is
+                     based on out-of-range values; or has been failed by the reader
+
+####                 #### appears in a well when the size of the grid is not large
+                     enough to show the value in the well. Resize the view to see the
+                     contents. Or, change the Font used to display the value, choosing a
+                     different "clipping" method
+
+[ ]                  In Well Zoom views when the original read range is reduced, Gen5
+
+
+---
+
+318 | Chapter 14: Viewing Results
+
+
+
+                      plots the revised Calculation Zone with brackets: [ ]
+
+ *1234*               Gen5 displays Masked values in data views and reports between
+                      asterisks
+
+ !1234!               When Gen5 uses an out-of-range value in statistics calculations, it is
+                      considered a biased result and will be reported between exclamation
+                      points
+
+ *                    Asterisks are displayed next to plate icons and in the title bar of an
+                      experiment when a change is made or an action is taken but the file
+                      has not yet been saved
+
+ **dataset**          Asterisks identify invalid data sets. This is generally caused by
+                      changing the source Read step or Data Reduction step after the
+                      data set was initially created
+
+ #N/A                 Indicates an invalid data reduction item
+
+ INJECT               Synchronized Mode Procedures with multiple, appended kinetic
+                      loops and one or more dispense steps, use this symbol to identify
+                      when dispensing occurred
+
+ OVRFLW               Measurements are not being collected, most likely due to
+                      inappropriate read parameters for the test specimen (overflow)
+
+ MISSED               The reader did not capture a value for every Xenon flash
+                      measurement taken for this well. The reader missed a measurement
+                      and cannot report a reliable value.
+
+
+           Note: Biased values may appear in a Statistics table when
+             Calculation Options are set to include out-of-range values. If, for
+             example, the concentration for one of three standard replicates is
+             reported as >40, the Standard Deviation and CV% values are
+             considered suspect. Gen5 surrounds the values with exclamation
+             points to indicate that it is the user's responsibility to determine
+             whether or not the results are valid.
+
+Well Analysis Results Table
+        When a Well Analysis Data Reduction step is defined, Gen5 shows the calculation
+        results in a table beneath the curve. The "Curves" or "Scan" data set that leads to a well
+        zoom, must be the subject of a Well Analysis step; raw data well zoom views do not
+        include a Well Analysis Results table.
+
+Calculation Zone
+        The range of reads considered for analysis is determined by the Calculation Zone
+        setting of the Well Analysis. When the original range is reduced, Gen5 plots the
+        revised Calculation Zone with brackets: [ ]
+
+
+---
+
+                                                                 Data Points Reference | 319
+
+
+
+Viewing Appended Kinetic Results
+      When one or more kinetic reads are appended, Gen5 combines them into one data set.
+      When a Dispense step occurs between the kinetic loops, Gen5 represents the event as a
+      blue diamond on the X-Axis timeline.
+
+        FLx800 with Injectors may show the "Dispensing" event occurring
+          in the same interval as a Read. This is a limitation of the reader's
+          basecode or on-board software.
+
+
+
+Data Points Reference
+      When customizing or creating a new view in Gen5, the following data points may be
+      available depending on the Procedure (reading parameters) and Data Reduction steps:
+
+       Data                            Description
+
+       Well ID,                         Plate Layout well assignments
+
+       Conc/Dil, Conc/Dil type          Concentration or dilution values and setting
+                                        in Plate Layout
+
+       Unit                             User-defined in Plate Layout
+
+       Name                             Sample IDs
+
+       Bitmap [nnn]                     Kinetic/Spectrum Curves or Area/Linear
+                                        Scan image
+
+       Formula [nnn]                    Transformation formula
+
+       Label: nnn [nnn]                 User-defined labels for read and data
+                                        reduction steps
+
+
+---
+
+320 | Chapter 14: Viewing Results
+
+
+
+
+Gen5's Tables
+
+About Gen5's Tables
+      Based on the type of plate reading and the data reduction steps defined, Gen5
+      automatically creates tables to display, report, and export the data. You can make
+      slight modifications to the system-generated tables, like changing the font and numeric
+      format of an item. And, you can create your own -custom-made- tables.
+        You can view the tables in the Plate View:
+               Statistics tables can be viewed using the Statistics tab,
+               Curve Fitting results are shown below the curve in the Graphs tab,
+               Well Data and Well Results tables can be viewed in the Well Zoom.
+        Some tables, like Validation results, can only be printed (or Print Previewed) and
+        exported.
+
+Curve Results Table
+
+
+---
+
+                                                                            Gen5's Tables | 321
+
+
+
+Potential Tables
+        Depending on the protocol, specifically the type of read and data reduction steps,
+        and the level of Gen5 software, the following tables may be available for viewing,
+        reporting and exporting data.
+         Statistics - show the results of a data reduction step. The system-generated
+           tables display the Well (well coordinate), Well ID, and
+           Concentration/Dilution assigned in the Plate Layout; the Sample IDs or Name
+           assigned to the Well ID; the Count or number of replicates; and the Mean,
+           Standard Deviation and Coefficient of Variation percentage (%), if available.
+         Curve Results - Gen5 generates three tables to show the curve fitting
+           Parameters and Values of a curve. The "Curve Fitting Results" table includes
+           the curve name, formula, parameters, and R2. The "Curve Interpolations" table
+           shows the interpolation data. And, the "Curve Fitting Details" table lists the
+           parameters and their calculated value, standard error and 95% confidence
+           interval. You can display these tables underneath a curve in the Graphs tab of
+           the Plate workspace when viewing them online. You should review the details
+           to assess the goodness-of-fit of your curve. Depending on the Curve Fit
+           Method, numerous other parameters and values can be displayed/reported in
+           a custom-made table.
+         Well Data - show the well-specific details for multiple-reading Read Steps
+           like kinetic analysis, spectrum, and linear scans. Well Data 2D is the Area Scan
+           rendition. They are used in Well Zooms to toggle the display between View
+           Data and View Chart. When adding this kind of table to a report or export file,
+           it is necessary to select the specific wells, by their well coordinate, e.g. A1, that
+           you want reported.
+         Well Analysis Results - show the generated data of a Well Analysis Data
+           Reduction step. They are viewed in a related Well Zoom, beneath the curve.
+           Note: The "Curves" or "Scan" data set that leads to a well zoom, must be the
+           subject of a Well Analysis step; raw data well zoom views do not include a Well
+           Analysis Results table. When adding this kind of table to a report or export file,
+           it is necessary to select the specific wells, by their well coordinate, e.g. B2, that
+           you want reported.
+         Cutoff Results - show the cutoff formula as defined and the value of the
+           formula. While the results of the cutoff criteria can be viewed online, using the
+           Symbols data set, the Cutoff Results table can only be reported and exported.
+           You can use the Print Preview feature to view this report component online.
+         Validation Results - show the validation Formula as defined and the Value
+           result of the formula. The Validation Results table can only be reported and
+           exported. You can use the Print Preview feature to view this report component
+           online.
+         Audit Trail - shows the entries, i.e. change history, logged in the Audit Trail.
+           Depending on your level of Gen5, one or more types of audit trails are
+           maintained and can be reported: Data, Protocol, and Calculation Warning. This
+
+
+---
+
+322 | Chapter 14: Viewing Results
+
+
+
+              table is only used for reporting and exporting, as Gen5 offers the Audit Trail
+              viewer in the menu tree for online viewing. The audit trails tables list date,
+              user, event and user's comment logged at the time of the event.
+            Signatures - shows the date, time, reason and signatory of each signing event.
+              Also included is a "Document modified" record whenever the protocol or
+              experiment is changed after a signing event. Refer to the audit trail to
+              determine how the file was changed.
+            Procedure Summary - lists the steps, in sequence, defined in the StepWise
+              Procedure for reports and export files
+
+
+           When building reports, using the Report Builder, group together related items, like
+        the Curve and its Curve Results table, and a Well Zoom and its Well Data, for the best
+        results.
+
+
+
+Print Preview to see Tables
+
+
+
+
+        This is a sample report of the Cutoffs, Validation, and Audit Trail tables, using Print
+        Preview.
+
+
+---
+
+                                                            Modify/Customize Views/Data | 323
+
+
+
+Modify/Customize Views/Data
+
+Numeric Format for Results
+      Gen5 provides controls for changing the numeric format for results. You can choose
+      between Scientific notation, Decimal and Best Fit formats. Then you can define the
+      number of significant digits or decimal places to display/report. Scientific notation is
+      also known as Standard index notation.
+
+  How to change the numeric format:
+      The numeric format is set individually for each applicable data set.
+
+      After defining the protocol, open Data Views (select Protocol>Data Views):
+       1.   Highlight the data set you want to format in the tree and click Edit
+       2.   Select the Data tab
+       3.   In the Format column, click inside the applicable table cell (row) to enable a 3-
+            dot button that leads to the Numeric Format control for that data point
+       4.   Click the 3-dot button and use the controls to define the format. Select a
+            Format and define the level of Precision. The Samples section of the control
+            shows the affect of your selections on sample data.0.
+
+        Data views/data sets can also be Edited in the Plate View and after
+          they have been added to report and export content. Click the 3-dot
+          button next to the Data field of the Plate View. Double click an item
+          added to the Report/Export Content in the respective builder.
+
+  Gen5's Numeric Formats explained:
+      Gen5 provides these display options for numeric results in reports and on-screen.
+      "Display options" being the operative description. When performing data reduction
+      operations, Gen5 uses all the digits (up to 15) regardless of the numeric format applied
+      for display. Use the Round(x;y) and Truncate(x;y) functions to control the number of
+      digits used in/generated by a calculation.
+
+        Format options:
+
+        Decimal                   Standard, unmodified numeral
+
+        Scientific                A way to write very small or large numbers. Numbers
+        Notation                  are separated into two parts, a real number with an
+                                  absolute value between 1 and 10 and an order of
+                                  magnitude value written as a power of 10. The '10' is
+                                  omitted and replaced by the letter E or e, which is
+                                  short for exponent.
+
+        Best Fit                  Gen5 determines, based on the size of the display
+                                  area, the format, Decimal or Scientific
+
+
+---
+
+324 | Chapter 14: Viewing Results
+
+
+
+        After selecting the format, define the level of precision for the display of numeric
+        results. Select and set the number of Decimal places or Significant digits:
+
+           Example            Decimal places = 3           Significant digits = 3
+
+           0.000123456        0.000                        0.000123
+
+           12.34567           12.345                       12.4
+
+           123456             123456.000                   123456
+
+
+
+Modify Data Files
+     After data has been retrieved from the reader (or entered manually, or imported from a
+     file), Gen5TM permits authorized users to edit or mask measurement values. Gen5
+     automatically logs an event in the experiment's Data Audit Trail any time data is changed
+     or masked.
+
+           Important! Changing or masking wells may significantly alter or even
+             invalidate results.
+
+                Only raw measurement values can be changed. Data sets generated from
+                  Data Reduction calculations cannot be changed, only masked.
+                When a well is masked, Gen5 excludes its value from further calculations.
+                In most views and reports, masked values appear sandwiched between
+                  asterisks, e.g. *6879* and edited values are shown in parenthesis, e.g. (6879)
+
+
+Change a Measurement Value
+        After data has been retrieved from the reader, Gen5TM permits authorized users to edit
+        or mask measurement values. Gen5 automatically logs an event to the file's Data Audit
+        Trail any time values are changed.
+          1.   With the experiment open, and the desired plate selected in a multi-plate
+               experiment, open the Plate workspace
+          2.   In the Plate workspace, select the Matrix view and from the Data drop-down
+               list, select the desired data set (it must contain raw measurement values); or in
+               Well Zoom view, click the View Data button
+
+          3.        Click the Edit button
+
+           The System Administrator can protect the use of this function. If the
+             button is grayed out, you may not be authorized to use it.
+
+          4.   Click on and change the value of one well at time in the grid. Multiple wells
+               can be changed in a session.
+
+
+---
+
+                                                            Modify/Customize Views/Data | 325
+
+
+
+       5.        To apply the changes, click the OK (green check mark) button. Gen5 will
+            recalculate results.
+                Click the cancel button to ignore your entries, and restore the original
+            values.0.
+
+
+
+Mask (Exclude) a Data Point
+   Most data views let you mask or ignore one or more data points:
+       1.   With the experiment open, and the desired plate selected, open the Plate
+            workspace
+       2.   In the Plate workspace, select the desired view, Matrix or Graph. Depending on
+            the view, click the Data or Curve drop-down list to select a data set. Or go to
+            the Well Zoom view, where you can either View Data or View Chart
+
+       3.        In the Matrix/View Data view, click the Mask button. (This is not
+            necessary in Curve/Chart view.)
+
+        The System Administrator can restrict the use of the Mask function. If
+          the options are grayed out, you may not be authorized to use it.
+
+       4.   Click a well in the matrix or a point in a curve to mask it. (Click again to
+            unmask.) Multiple data points can be masked in a session.
+
+       5.        To apply the changes, click the Apply (green check mark) button to
+            recalculate results.
+                Click the Cancel button to ignore your entries, and restore the original
+            values.0.
+
+
+         In curve views, right click or click & drag for more masking options: you can mask and
+      unmask multiple points simultaneously
+
+
+
+             Mask and Edit functions are done in a "session." If you change
+          the view, e.g. change the Read Index in a kinetic analysis, or close the
+          plate view, experiment, or Gen5, without first applying the changes,
+          Gen5 prompts you to Apply or Cancel the modifications you've made,
+          before it can close the session.
+
+
+---
+
+326 | Chapter 14: Viewing Results
+
+
+
+
+Change the Time Format
+        For viewing and reporting Kinetic or Well analysis results, you can change the time
+        format using Gen5's Edit tool for data views.
+        In the Report and Export Builders:
+
+
+
+
+        (Not shown: In Data Views, highlight the item and click Edit.)
+        On the Data tab, in the Format column for the data point,
+
+
+
+
+        After defining a Procedure and Data Reduction steps based on a time format:
+          1.   Open the Data View, Report Builder, or Export file builder, and locate the
+               Matrix, Table or Curve that contains the data you want to modify and click
+               Edit or double-click to open the item. (In Report & Export Builders, first
+               Add the view to the selected Content box.)
+          2.   In the Edit dialog:
+                for a Matrix or Table select the Data tab and locate the time format you
+                   want to change in the Format column, then, click inside the cell to enable a
+                   3-dot button
+                for a Curve select the X-Axis tab, locate the Format field under Labels
+
+          3.      Click the 3-dot button in the Format column/field to open the Time Span
+               Format selector.
+          4.     Fill the checkboxes to select the desired time-format options. 0.
+
+
+---
+
+                                                          Modify/Customize Views/Data | 327
+
+
+
+Modify protocol parameters in an experiment:
+      After a plate is read, the Procedure cannot be changed. Other changes to the
+      experiment are permitted:
+       1.   With the experiment open, select an option from the Protocol menu tree, other
+            than Procedure. Double-click the element you want to modify, such as Plate
+            Layout, Data Reduction, Report, and so on.
+
+        Warning: Making changes to the Protocol elements may have an
+          unintended effect that ripples through your protocol. For example,
+          deleting or altering a Data Reduction step whose results are used in a
+          subsequent step, could invalidate the subsequent step.
+
+       2.   Within the appropriate protocol dialog, make the desired change and click OK
+            to recalculate results.0.
+
+        The System Administrator can protect some or all protocol parameters
+          from being modified. If you are trying without success to modify these
+          parameters, you may not be authorized to do so.
+
+            Gen5 Secure automatically updates the Audit Trail to reflect any changes made.
+
+
+---
+
+328 | Chapter 14: Viewing Results
+
+
+
+
+Modify the Matrix View
+   You can change the number of decimal places or significant digits expressed and customize
+   the font used, among other options.
+     There are two ways to access this feature:
+
+                                                      
+   Select Protocol> Data Views, highlight
+                                                      In the Matrix tab of the Plate View,
+   the desired data set under Matrix in the
+   menu tree and click Edit                       select the Data to modify and click the
+                                                  3-dot button
+
+
+
+
+             Report and Export Builders offer the same options. Generally, it is more efficient to
+         modify the matrix using these approaches, so you see the changes both on-screen and
+         in the Report and Export outputs.
+
+
+  Edit
+         Except for custom-made matrix views (Create New Matrix), modification options are
+         limited to Format, Font, and Selection
+
+  Format
+
+                                                   Click inside a cell in the Format column
+                                                   to enable a 3-dot button, and click on
+                                                   the 3-dot button to open the Numeric
+                                                   Format dialog.
+                                                   You can select the desired Format
+                                                   using the drop-down list and set the
+                                                   number of Significant digits or
+                                                   Decimal places
+                                                   Use the Samples window to judge the
+                                                   effect of your selections on the
+                                                   appearance of the data
+
+
+---
+
+                                                              Modify/Customize Views/Data | 329
+
+
+
+Font
+        To change the font used to display and report values: click inside a cell in the Font
+        column to enable a 3-dot button that leads to the Font dialog. Use this standard
+        Windows(R) Font option to make selections.
+
+Title
+        Customize the Title of the data set by clicking in the field and typing over the Auto or
+        default text. The title appears as a Tool Tip when the mouse is hovered on a data point
+        in the Matrix view.
+
+Selection
+        Modifying a matrix via Data Views and the Report/Export Builders offers the
+        Selections tab. It is most useful in multiple-read experiments, e.g. kinetic, that produce
+        multiple results sets. Use the Selections tab to define a range of results sets to include
+        in reports and export files.
+
+
+---
+
+330 | Chapter 14: Viewing Results
+
+
+
+
+Modify a Graph
+     Gen5TM provides tools to change the appearance of a graph. You can display or hide the
+     legend and change the title, labels, font, and colors.
+     There are two ways to access this feature:
+
+                                                     
+  Select Protocol> Data Views, highlight
+                                                      In the Graphs tab of the Plate view,
+  the desired curve (under Graph in the
+  menu tree) and click Edit                       select the curve to modify and click the
+                                                  3-dot button
+
+
+           The Report Builder offers the same options. Generally, it is more efficient to modify
+        the graph using these approaches, so you see the changes both on-screen and in print.
+
+
+  Layout
+     Select the Layout tab to:
+             Define a Title for the curve; position the title on the page/screen; and select the
+               font
+             Display or hide the Legend; and select the font for the legend
+
+  X Axis/Y Axis
+     On the X Axis and Y Axis tabs, you can:
+             Define a Title or label for the axis; select the font; Show (or hide) Gridlines for
+               the axis;
+             Change the Scale of the display using Linear (1, 2, 3) or Log (10, 20, 30)
+               numbers; Auto applies the method selected when the curve was created in the
+               Curve Analysis step of Data Reduction
+             Change the numeric Format and Font of the Labels, i.e. the numbers/data
+               displayed on each axis. Try out the various options to determine which
+               combination works best for your reporting and viewing requirements.
+
+
+               Click the 3-dot button for Format to change the scientific notation, decimal
+            places or significant digits displayed in the view/report/export
+
+
+  Plots/Curves
+        Select the Plots tab to further modify the appearance of the graph. You customize the
+        appearance of the error bars and fitting line, for example. (The Curves tab is displayed
+        for user-created curves, select a curve and click Edit after to enable these functions):
+
+
+---
+
+                                                     Modify/Customize Views/Data | 331
+
+
+
+      Click in a cell in the table to enable a 3-dot button that leads to formatting
+     options for the selected item (line, marker, text, or pattern):
+      Automatic is the default setting. It is most useful in Well Zooms, when
+        more than one well is selected for simultaneous viewing. Gen5 displays a
+        different color scheme for each well selected.
+      Select Hide (or None) to remove the item from the view.
+      Select Custom to modify it. Use the drop-down options to apply different
+        colors, symbols, styles and/or line weight.
+
+
+
+
+    Select the Plot tab to turn-off the Text that may be obscuring the details in a
+Well Zoom curve: select the table cell containing the offending text, click the
+activated 3-dot button. At the Text tab, select Hide
+
+
+---
+
+332 | Chapter 14: Viewing Results
+
+
+---
+
+Chapter 15
+
+
+
+
+Reporting Results
+
+     This chapter describes Gen5's Report Builder for generating print-
+     ready data output for your experiments. Instructions for creating
+     Field Groups to report inherent data points, how to change the
+     Font, and other useful tips are provided.
+
+
+ Building Reports ...................................................................... 334
+ How to create and customize a report ........................................ 336
+ Customizing Reports ................................................................ 338
+ Reporting Well Analysis Results ................................................. 340
+ Change the Font ...................................................................... 344
+ Edit Report Items..................................................................... 344
+ Fields and Field Groups............................................................. 346
+ Create a Header and Footer ...................................................... 349
+
+
+---
+
+334 | Chapter 15: Reporting Results
+
+
+
+
+Building Reports
+     Protocol> Report Builder
+
+About the Report Builder
+       Gen5TM provides this tool to define exactly:
+                what to include in the report
+                how to format an item in the report
+                where to place the item in the report.
+
+
+           Define the Data Views and Default Protocol to speed up this step! Create Headers
+        and Footers and add the Protocol Summary report sections in the Default Protocol so
+        they appear in all newly-created protocols.
+
+
+Report elements should be defined for each Protocol:
+          1.   In the menu tree, under Protocol, select Report Builder
+          2.   Highlight Available Data Views and Add them to the Report Content box
+                You can also Drag and Drop items into the Report Content box
+                Drag and drop to change the sequence order of items in the Report Content
+                  box
+                Edit an item in the Report Content box with a double click or use the right-
+                  click menu
+                Highlight an item in the Report Content box and click Remove to de-select
+                  it (or use the Delete key)
+                To clear the slate and start over, click Remove All to de-select all items.
+                In multiple-read (multi-index read) protocols, like kinetic analysis, it is
+                  necessary to select a range of reads or a range of wells to include in an
+                  export item. Certain data elements, like Well Data, Well Results, and Well
+                  Zoom, require manual selection of the specific wells to include. Except for
+                  area scan results, you can select multiple wells for simultaneous reporting
+                  in the resulting table or graph. For details see Reporting Well Analysis
+                  Results on page 340.
+
+
+          Gen5 opens report items in Edit mode when a selection is required. For example,
+        when you select a Matrix item to report a multi-index/kinetic read, you must select a
+        Range of read numbers. One matrix or grid will be reported for each read number.
+
+
+---
+
+                                                                         Building Reports | 335
+
+
+
+        3.     Highlight an item in the Report Content box and click Page Break to add a
+               page break to the report. Gen5 inserts it just above the highlighted item. You
+               can drag and drop the Page Break to move its sequence order. (This step often
+               works best after you've read the plate and can use Print Preview to assess the
+               layout of the report.)
+        4.     Set up Headers and Footers, if desired. (page 349)
+
+        5.        When the report is defined, in an experiment, click the Print button to
+               generate the report.0.
+
+         ** Items marked with asterisks indicate 1 of 3 conditions:
+           1. You must select specific data points from a very large (multi-read)
+           data set or
+           2. The experiment did not generate the expected results, an error
+           occurred or
+           3. The Procedure and/or Data Reduction steps that generated the item
+           have been changed making it invalid **
+
+
+
+             Click Print Preview to assess the report layout!
+
+
+Using the Default Protocol
+       Using the controls in the Default Protocol, you can input text and select protocol and
+       experiment data to be included in all your reports. Your selections can be modified,
+       removed, or replaced in individual protocols without affecting other experiments.
+    System> Preferences> Default Protocol > Report Builder
+
+         Content options in the Default Protocol may be limited by the lack of a
+           defined Procedure.
+
+         Important: Default Protocol Settings are applied "going forward,"
+           they do not affect existing protocols. They are applied only to newly-
+           created protocols.
+
+
+---
+
+336 | Chapter 15: Reporting Results
+
+
+
+How to create and customize a report
+        These step-by-step instructions are intended to introduce you to Gen5's tools and
+        method for outputting results. While this example uses the Report Builder, the options
+        and process is the same when building export files.
+
+  Important first step
+        You must define the Procedure (read parameters) and the Plate Layout before you can
+        define Data Reduction steps. Likewise, you must define these and other elements of
+        the Protocol (to generate the content of reports and export files) before you can create
+        and customize the report.
+        After you've defined the Procedure, Plate Layout, Data Reduction, and Runtime
+        Prompts, you're ready to build the report.
+
+  Create a Field Group to report details
+        Field Groups can be used to report all of the details affecting your experiment:
+
+          1.       Open Data Views from the menu tree
+          2.   Highlight the Field Group label at the bottom of the tree and click New
+          3.   Enter a Name for the field group at the top of the Edit dialog. For this exercise,
+               we'll name it Read Step.
+          4.   Click in the first cell of the table to enable a 3-dot button, and click the 3-dot
+               button. The Fields dialog opens.
+
+          5.      Use the drop-down list to set the Category to Procedure for this exercise.
+          6.   At Field: use the drop-down list to select a data point. Select Measurement 1 for
+               this exercise.
+          7.   At Label: click in the text field, and overwrite the default label with a more
+               fitting label for this data point. For this exercise, we'll call it Wavelength 1
+               because we have multiple wavelengths.
+          8.   Click OK to close the Field dialog.
+          9.   Repeat steps 4-8 for the other cells in the table, adding Rows and Columns as
+               needed. Explore the fields offered in the other Categories, like Plate
+               Information, to find all the details you want to include. When you've added all
+               the desired fields, click OK to save and close the Field Group.
+         10. At Data Views, click Close.0.
+
+
+---
+
+                                                   How to create and customize a report | 337
+
+
+
+     Here's an example of the Field Group:
+
+
+
+
+Build the Report
+
+      1.       Open the Report Builder from the menu tree
+      2.   Locate the Field Group category at the bottom of the tree and highlight the
+           just-made field group (Read Step for this exercise). User-defined field groups
+           appear in bold text. Click Add to include it in the Report Content.
+      3.   Scroll up the tree of Available Data Views, selecting and adding the desired
+           items to the Report Content. The order of the items listed in Report Content is
+           their order in the printed report. Drag and drop items to change their position.
+      4.   After adding an item to the Report Content, double-click it to open it in Edit
+           mode. Now you can customize the output. For example, on the Data tab, in the
+           Format column, click in the cell to enable a 3-dot button that lets you change
+           the number of decimal places or time format; on Selection or Well tabs define
+           the range of data to report. Editing Curves lets you define the X- and Y-Axis
+           titles. You can even combine multiple curves in one graph, if applicable.
+
+
+          In Edit mode, change the Name at the top of the screen to customize the section
+       heading in the report
+
+
+      5.   Click OK to save your work and close the Report Builder.
+
+      6.       If you're performing these steps in an experiment, click Print Preview to
+           assess the report layout. If you're performing these steps in a protocol, save the
+           protocol and create a new experiment based on it. Then use Print Preview to
+           judge the output. Return to Report Builder to make any changes to the selected
+           content.0.
+
+
+---
+
+338 | Chapter 15: Reporting Results
+
+
+
+
+Customizing Reports
+        Gen5TM offers extraordinary flexibility in customizing reports and export files. Almost
+        everything you can view in Gen5 can also be reported. And, once you learn a few basic
+        steps, you'll be able to define exactly what to include and exclude from reports and on-
+        screen views.
+
+Basic Rules:
+               Data elements that are created or modified in Data Views become available
+                 for selection when defining the Report and Export parameters. This
+                 includes hiding a data set, which removes it from selection. Setting up the
+                 views in the Default Protocol (if possible) makes them available in all
+                 newly-created protocols.
+               Create your own Data View for the most precise control over content and
+                 appearance. You can create a matrix, table or graph that displays and
+                 reports the information you've selected. You can include multiple data sets
+                 in one view, for example. And, exclude default data points that do not
+                 apply to your experiment.
+               Include the Protocol Summary options: Procedure and Data Reduction
+                 Summary to report protocol elements used to obtain the measurements
+                 being reported. They are a good candidate for the Default Protocol.
+               Create Field Groups to include miscellaneous information and data
+                 points in your reports/export files. Gen5 captures numerous details like
+                 temperature and shake duration, Plate ID and other run-time entries, and
+                 print date and page count. Virtually all of the details affecting your
+                 experiment can be reported.
+               In multiple-read protocols, like kinetic analysis, it is necessary to select a
+                 range of reads, or a range of wells to include in a report item. Certain data
+                 elements, like Well Data, Well Analysis Results, and Well Zoom, require
+                 manual selection of the specific wells to include in the report. You can
+                 select multiple wells for simultaneous reporting in a table or graph.
+               Select the Font option when editing content to define the "clipping"
+                 method to apply to data points that are too long to fit completely in a report
+                 column. Several choices are available to hide, truncate, or display as much
+                 as possible of an extra-long data point.
+               Select the Format option when editing content to define the number of
+                 decimal places or significant digits to report or to change the time format of
+                 a report item.
+               Attributes applied to data elements in Data Views and the Report and
+                 Export Builders take effect going forward. They do not replace, update, or
+                 overwrite an item that has been previously assigned to a Report/Export.
+                 You must refresh the selected contents after making any changes to a data
+
+
+---
+
+                                                                  Customizing Reports | 339
+
+
+
+               element. And, any previously-saved Experiment will not reflect the content
+               or formatting changes.
+             When you Edit data elements in the Report Builder, your changes only
+               apply to the Report. They will not be reflected in the Data Views or Export
+               options. And, unless you use the File>Save Protocol As option, your
+               changes will not be applied to any future experiments based on this
+               protocol.
+             384- and 1536-well plate matrixes are reported in segments that best fit the
+               data to the page. Generally, the first 12 columns are reported in one matrix,
+               the next 12 columns in another and so on, unless the page orientation is
+               changed to landscape or the font size is reduced. Unless otherwise directed,
+               Gen5 reports the entire matrix on as many pages as needed to display all
+               the data.
+
+Best Practices:
+             Create your own Data Views for the most freedom-of-choice in reporting
+               and online viewing.
+             Print Preview your reports to make sure you're happy with the layout
+               before printing them.
+             Curve Results tables work best just below or above the curve they describe.
+               Drag and drop the Curve or the Curve Results in the Report Content to
+               arrange them this way.
+             Limit the number of wells in a Well Zoom graph to 8 for best results.
+             Changing the page orientation from "portrait" to "landscape" may be the
+               best use of the space and improve the appearance and readability of the
+               report, especially when reporting 384-well and larger plates.
+
+ To change the page orientation:
+       1.   Select File>Print Setup...
+       2.   Select the desired Orientation 0.
+
+        You must be have the experiment file open to change the Print Setup
+
+
+---
+
+340 | Chapter 15: Reporting Results
+
+
+
+Reporting Well Analysis Results
+     Protocol> Report/Export Builder> for the selected Content
+        By its nature, the individual well results of Well Analysis make reporting them a bit
+        tricky. Well Analysis results, like Well Zoom graphs and Well Data tables, require an
+        extra step when defining reports and exports. See Report Examples on page 342.
+        In the Report Builder and for applicable export routines, in the Export Builders, when
+        you select any of the following:
+                Well Data table
+                Well Data 2D table (for area scans)
+                Well Analysis Results table
+                Well Zoom graphs
+                Area Scan Zoom graphs
+          Be sure to open (Edit) the item to select one or more wells as the content to
+        report/export.
+
+In the Report or Export Builder:
+          1.   Add a well analysis item from Available Views to Report/Export Content
+          2.   If the item doesn't open in Edit mode, double click it
+          3.   Select the Wells tab or the Curves tab (depending on the type of report item)
+          4.   Select one well at a time to report on: enter a well location in the Well field;
+               Gen5 displays the Well ID and concentration or dilution assigned to the
+               location, or
+               Select multiple, adjacent wells using a hyphen to define the range, A1-H12,
+               for example, would include all wells in a 96-well plate
+               Important: Some report items require limiting the number of wells that can be
+               successfully included in an instance of it. You may need to add multiple
+               instances of the item to report all the desired wells. Use Print Preview to
+               determine how many wells can fit on the page.
+          5.   Click Add to move the well into the Selected box. Except for Area Scan results,
+               you can select multiple wells for each report item. (See Tip for Area Scan
+               below.)
+
+
+---
+
+                                                            Reporting Well Analysis Results | 341
+
+
+
+     Tables and Curves respond differently to this treatment. Curves: Well
+       Zoom graphs, overlay the results for each well in one curve. (Limit the
+       number of wells to 8 for the best results.) Well Data tables present
+       the data for each well in a column or row, adding another column/row
+       to the table for each well. To best fit the data in a report it is often
+       necessary to add multiple instances of an item. And, for each
+       instance select the maximum number of individual data points that fit
+       cleanly. Likewise, to report well zoom graphs individually, rather than
+       overlaying them, you must add multiple instances of the Well Zoom
+       graph. Use Print Preview (after the plate is read) to determine the
+       best fit for your data. It's a "trial and error" process, selecting and
+       revising the Report Content, and assessing the layout with Print
+       Preview, until the report is satisfactory.
+
+     Exporting the data does not require the same level of precision when
+       selecting content. Gen5's File Export Builder delimits data points
+       without restriction (and does not support curves) and Power Export
+       exploits Excel's spreadsheet capabilities to handle limitless data
+       transfer.
+
+    6.   (Optional when available) Highlight a well in the Selected box and click the
+         Edit button to modify its formatting.0.
+
+
+
+                    You can remove multiple wells from the Selected box
+         simultaneously: hold the Ctrl key while selecting non-contiguous wells or hold
+         the Shift key while selecting adjacent wells, then click Remove
+
+Tip for Area Scans
+         You must add multiple instances of the Area Scan Well Zoom and Well Data 2D table
+         to the Content to report /export multiple area scan wells. For best results, identify the
+         selected well in the Name field when adding each well, one well at a time, to the report
+         content. The Name becomes a sub-heading in the report output, so you can easily
+         distinguish between reported wells, e.g. Scan: B3.
+
+
+---
+
+342 | Chapter 15: Reporting Results
+
+
+
+Report Examples
+Here are some sample report outputs of well analysis results:
+        Using Gen5's Report Builder to output well analysis results involves some trial and
+        error to determine the maximum number of wells that can fit neatly on the page. Here
+        are some examples of the offerings:
+
+Well Zoom Graph
+
+
+
+
+        Limit the number of wells to 8 when reporting a well zoom graph for the best results
+
+Well Data Table
+
+
+
+
+Well data tables report each well in a column. The number of wells that can be successfully
+included depends on the number of digits in the results and the paper orientation (portrait or
+landscape).
+
+
+---
+
+                                                                Reporting Well Analysis Results | 343
+
+
+
+Well Analysis Results Table
+
+
+
+
+Well Analysis results tables are generally easy to include, i.e. all wells can be safely selected,
+because each well is reported in a row.
+
+
+---
+
+344 | Chapter 15: Reporting Results
+
+
+
+
+Edit Report Items
+     Protocol> Report Builder
+   In the Report Builder, double click an item in the Report Content window to edit its format,
+   font and other attributes specific to the selected item. The editing options available are
+   context sensitive, depending on the attributes of the selected item: matrix, table, or graph.
+
+
+Change the Font
+
+       Clicking the 3-dot button in the Font column of a Data View or Report Builder Edit
+   screen leads to a standard Windows(R) Font selector (watch the Report Builder Tutorial for a
+   demonstration):
+            In Data Views, highlight the item and click Edit
+            In Report Builder, add the item to the Report Content, then double click to
+              open it in Edit mode
+        Selecting the Font, Style, Size, and Effects is the same as any Windows program. The
+        fonts available for selection are set by your PC's operating system.
+
+
+
+
+Select method for displaying extra-long text items:
+           In the lower-right corner of the Font screen, use the drop-down lists:
+            Clipping to select the way to format data points that have too many characters
+              to fit completely in a report or table column and in the cells of a Matrix:
+               None fits as much text as possible, using the selected Alignment method
+
+
+---
+
+                                                               Edit Report Items | 345
+
+
+
+    text... fits as much text as possible and truncates it using the ellipsis
+    ### replaces all the content with the pound sign or hash mark
+    c:\...\file.ext only applies to path and filename content, it fits as much text
+      as possible beginning with the filename and extension and progressively
+      truncates the directory's path
+ Alignment to define the text alignment: left, center, right
+
+Font settings are not retained by the File Export Builder because
+  they are not supported in the resulting text file
+
+
+---
+
+346 | Chapter 15: Reporting Results
+
+
+
+Fields and Field Groups
+        For reporting and exporting data, Gen5TM automatically provides data fields and field
+        groups based on inherent information. You can create your own field groups, as well.
+            Learn About Field Groups (below)
+            Create New Field Groups on page 347
+            Assign Fields to Reports on page 350
+
+
+About Fields and Field Groups
+      For reporting and exporting purposes, Gen5TM provides data fields based on inherent
+      information. You can create your own Text field, as well, to add custom information to
+      a report header or to create a report title, for example.
+        The responses to Runtime Prompts, the steps in the Procedure, and the Reading Date
+        and Time (logged by Gen5 your computer's calendar and clock) are examples of the
+        numerous data points Gen5 turns into Fields that can be added to a Field Group for
+        reporting or inserted in a report header or footer. One field group is installed with
+        Gen5: an empty Field Group is available in the Data Views, and the report and export
+        builders. You can modify this Field Group and/or create your own in Data Views.
+
+Basic Rules
+            Field Groups are a collection and arrangement of fields
+            Creating and modifying Field Groups is done in Data Views; however, field
+              groups can be modified for individual instances after they are included in
+              Report or Export content
+            Field Groups can be included in Reports and Export files and Fields can be
+              added to report Headers and Footers in the Report Builder
+            Once Field Groups are added to reports and export content their properties are
+              fixed. Changes made to field groups only take effect going forward, i.e. when
+              you edit a field group in Data Views, the changes are NOT applied to those
+              field groups that are already included in Report and Export Content. You must
+              Remove the original and Add the updated field group in the Report Builder,
+              Power Export Builder and File Export Builder to capture the changes.
+            Field Categories include Text for user-created information/text and Blank for
+              use when editing a field group, header or footer to remove a field.
+            A Field Categories reference table is provided on page 348
+                how to clear remove a field from a field group
+
+
+---
+
+                                                                   Fields and Field Groups | 347
+
+
+
+
+Creating and Modifying Field Groups
+      To create a new field group:
+
+      1.        Open Data Views (Protocol>Data Views)
+      2.    Highlight the Field Group label at the bottom of the tree and click New
+      3.    Enter a Name for the field group in the Edit dialog. Follow the instructions
+            below to define the content of the group.0.
+      To modify a field group:
+      1.    Open Data Views
+      2.    Highlight the Field Group you want to modify and click Edit. Follow the
+            instructions below to define the content of the group.0.
+
+       You can also Edit a field group in the Report Builder, but your
+         changes will only apply to the Report for the current experiment. They
+         will not be reflected in the Data Views, will not be available for Export,
+         and will not be applied to any future experiments based on this
+         protocol. Keep this in mind when you're formatting a field group - in
+         most cases it is more efficient to work in Data Views than in Report
+         Builder.
+
+      To define the content of a field group:
+      1.    Use the Add Row or Add Column buttons as needed to set up the desired
+            number of rows and columns.
+      2.    Click in a cell in the table to enable a 3-dot button that leads to the Fields dialog
+            to select and format the content of the field. Click the 3-dot button, and select
+            the Category and Field you want to add to the group.
+
+
+
+
+      3.    You can insert, delete, and merge rows, and insert and delete columns using a
+            right-click: select the row or column by clicking its number, then right-click for
+            a menu.0.
+           Another shortcut: you can drag and drop rows and columns to change
+           their position. Click in the column/row you want to move until the pointer
+           changes to drag and drop mode, drag it into place, watching for the red
+           location indicator, and release to drop it into the desired position.
+
+
+---
+
+348 | Chapter 15: Reporting Results
+
+
+
+Field Categories Reference
+
+       Category              Field                   Hint
+
+       Text                  User-defined Text       Use this option to define your own
+                                                     report titles
+
+       Experiment            Experiment File Name    .xpt file must be saved to have a file
+       Information                                   and path name
+                             Experiment Path Name    -Plates per Assay is only applicable to
+                                                     multi-plate protocols.
+                             Plates per Assay
+
+       Procedure             Read step and related   These fields are created by the steps
+                             data, examples:         you define in the StepWise Procedure.
+                                                     If there is more than one Read step
+                             Plate Type              the fields will be numbered
+                                                     accordingly, i.e. every read-related
+                             Reading Zone            field will be numbered to correspond
+                                                     with its read step. When multiple
+                             Kinetic Interval
+                                                     Kinetic loops are defined, they are
+                                                     similarly numbered.
+                             Measurement #
+                                                     Plate size reports the number of
+                             Sensitivity             columns x rows
+
+                             Temperature
+
+                             Step 1 Description
+
+       Protocol Options      Protocol Type
+
+                             Std Dev Weighting
+
+       Plate Information     Experiment-specific     Reports user inputs at read time
+                             details, examples:
+
+                             Reading Date and
+                             Time
+
+                             Plate ID
+
+                             Runtime Prompts
+
+                             Barcode
+
+                             Reader Serial Number
+
+                             Reader Basecode
+
+                             Plate Comment
+
+       Printing Options      Print Date/Time         Especially useful for Headers or
+                                                     Footers
+                             Page Number
+
+
+---
+
+                                                                   Fields and Field Groups | 349
+
+
+
+     System                 User Name                  User information is only useful for
+     Information                                       Gen5 Secure users
+                            User Group                 Software version reports Gen5's
+                                                       version number
+                            Software version
+
+     Blank                  Empty                      Use to delete a previously-added field
+
+
+
+Creating a Header and Footer
+      You can set up a default header and footer that will be applied to all reports, and/or
+      you can create a header and footer for each protocol individually. (Modify the
+      header/footer for individual experiments to override the Default Protocol settings.)
+              To assign headers and footers to the Default Protocol (for all newly-created
+                protocols/experiments), select System> Preferences> Default Protocol
+                Setup
+              To create headers and footers in a Protocol/Experiment (only for the
+                current protocol/experiment): in the menu tree, select Protocol> Report
+                Builder
+
+To create a header or footer:
+       1.    In the Report Builder, select the appropriate tab: Header or Footer
+       2.    Use the Add Row or Add Column buttons as needed to set up the desired
+             layout
+       3.    Click in a cell in the table to enable a 3-dot button that leads to the Fields
+             dialog to select and format the content of the field
+       4.    You can insert, delete, and merge rows, and insert and delete columns using a
+             right-click: select the row or column by clicking its number, then right click for
+             a menu
+       5.    As needed, select the option to "use custom header/footer on first page" to add
+             another tab to this dialog. If unselected, all pages of the report will have the
+             same header and footer. 0.
+         Another shortcut: you can drag and drop rows and columns to change their
+         position. Click in the number of the column/row you want to move until the
+         pointer changes to drag and drop mode, drag it to the new place, watching for
+         the red location indicator, and release to drop it into the desired position. Note:
+         when a row has been merged, columns cannot be moved.
+
+
+---
+
+350 | Chapter 15: Reporting Results
+
+
+
+Assigning Fields to Reports
+
+  Fields can be used in two ways:
+            Used in a header or footer when defining reports, see Creating Headers and
+              Footers (described above)
+            Used to define a Field Group to include in a report or export file
+        In Report or Export Builder:
+
+          1.      In any of the Header or Footer tabs or after adding a Field Group to the
+               Report or Export Content and opening it to Edit, click in a cell in the table to
+               enable a 3-dot button, and click it.
+          2.   In the Category field, use the drop-down list to select either Text or a category.
+          3.   In the Field field, use the drop-down list to select a field, unless you selected
+               Text.
+          4.   In the Label field, enter the text you want included in the report. You can
+               customize the label by typing over the default text or remove the label by
+               deleting the text.
+          5.   Use the 3-dot buttons at the Font and Format fields (if applicable) to modify the
+               default settings. You can replace the default content for the field Value the
+               same way:
+                Use the Font dialog to define the Alignment of the content in the field: left,
+                  center, right. And, if there's a chance the text will overrun the length of the
+                  field, choose a Clipping format to replace the missing text. Your choices are
+                  not displayed in the header or footer table, use Print Preview to assess the
+                  effects.
+          6.   Click OK to save and apply your choices.0.
+
+
+---
+
+Chapter 16
+
+
+
+
+Exporting Results
+
+     Learn about Gen5's numerous data-exporting options in this
+     chapter. You must have Microsoft Excel 2000 or higher installed
+     on your computer to run the Quick Export and Power Export
+     features. If you do not have Excel your options are limited to the
+     File Export or Right-Click options.
+
+
+ Exporting Results ..................................................................... 352
+ Quick Export ........................................................................... 354
+ Right-Click Options................................................................... 356
+ Export to File........................................................................... 358
+ Power Export........................................................................... 362
+
+
+---
+
+352 | Chapter 16: Exporting Results
+
+
+
+
+Exporting Results
+     Gen5 provides these exporting tools:
+
+                 Quick Export: to instantly export the current view to a Microsoft(R) Excel
+                worksheet
+            Power Export: to export selected data to Microsoft Excel
+            File Export: to export selected data, excluding curves, to a text file (for use in
+              another software application)
+            Right-Click Menu Options - Copy to Clipboard and Save As: to copy or save
+              the current selection for use in another software application
+
+Prerequisites
+           For the Quick Export and Power Export features, you must have Microsoft Excel
+           2000 or higher installed on your PC. Use the File Export or Right-Click options if
+           you do not have Excel.
+
+  About the Export Tools:
+            The Power Export and File Export methods require selecting the content you
+              want included in the output file before executing the export for a designated
+              plate
+            You can save your export selections with the Protocol, to reuse them every time
+              you run an experiment based on that protocol
+            Exporting data is like generating a report, it is done individually for each
+              plate*. While you can select the export content in a protocol, you must run (or
+              execute) the export in an Experiment (after selecting a plate or multiple plates)
+            In an experiment, to run the export, you can select a plate in the menu tree and
+              right click for a menu that offers the Power Export and File Export options
+                [* except in multi-plate assays: refer to the Multi-Plate Protocol chapter]
+
+
+           To preview the export-file output on-screen before generating an export file, use the
+        Report Builder and Print Preview: add the same elements to a report as you do to
+        the export, then click Print Preview to view the results online.
+
+
+---
+
+                                                                       Exporting Results | 353
+
+
+
+Export Multiple Plates to One File
+       When you run multiple plates in an experiment you can export all the data to one text
+       file:
+         1.   In the menu tree, select/highlight multiple plates (by holding down the Ctrl
+              key)
+         2.   Right-click and select File Export0.
+
+          Make sure the File Export Settings are defined to automatically
+            append the data
+
+
+---
+
+354 | Chapter 16: Exporting Results
+
+
+
+Quick Export
+
+            Click the Quick Export button to instantly create a copy of the current screen in
+        Excel(R).
+
+   Where it works:
+        Wherever you see the Quick Export button, you can export the view. And almost
+        every Data View has a Quick Export button. For example, the Matrix, Statistics, Cutoff
+        and Validation tabs offer it and the Graph tab has two, one for the curve and another
+        for the Curve Results Table.
+
+   If you don't have MS Excel:
+        Use one of these options to select content and export it for use in another software
+        application:
+            File Export Builder: to export selected data to a text file (see page 356)
+            Right-Click Menu Options - Copy to Clipboard and Save As: to copy or save
+              the current selection for use in another software application (see page 356)
+
+
+
+    Quick Export Settings
+     Protocol> Protocol Options> Export Options> Quick Export Settings
+     System> Preferences> Default Protocol> Protocol Options> Export Options>
+     Quick Export Settings
+
+        You can define default settings for Quick Export, which can be overridden in
+        individual protocols. Use the controls in the Default Protocol to base all new Protocols
+        on them. Override the default settings in individual protocols using the Protocol
+        Options.
+
+           Important: Default Protocol settings are applied "going forward,"
+             they do not override existing protocol settings. They effect only newly
+             created protocols.
+
+   Export Row and Column Headers
+ Select this option to include the Matrix and Statistic table row and column headers with the
+ data exported to ExcelTM
+
+Text Options
+            Formatted Text: exports text as defined in Gen5, retaining the selected font and
+              any customizations
+            Text Only: exports text as characters only, without an associated font or any
+              customization performed in Gen5
+
+
+---
+
+                                                                           Quick Export | 355
+
+
+
+Excel Target
+      Select a method for positioning the exported content in Excel:
+         New Workbook and Target Cell: opens a new workbook and aligns the
+           content starting at the target cell
+         New Worksheet and Target Cell: creates a new worksheet (within a workbook)
+           and aligns the content starting at the target cell
+         Current Worksheet: adds content to the current worksheet
+            Gen5 will launch Excel with a new worksheet if necessary. When multiple Excel
+            sessions are open, Gen5 will prompt you to select a worksheet before
+            performing the Quick Export.
+            Target Cell: aligns content beginning at the target cell, fill the Target Cell
+              field when you select this option
+            Current Selection: places content beginning at the currently selected cell
+            Append to Bottom: places content beginning at the next available row
+
+          Ask me when I export: This option lets you determine the Excel Target every time
+      you use Quick Export. Gen5 will prompt you for a placement option prior to executing
+      the Quick Export.
+
+
+---
+
+356 | Chapter 16: Exporting Results
+
+
+
+
+Right-Click Menu Options
+         In addition to the Quick Export option available in most views, Gen5 offers three other
+         features for "exporting" the current view for use in other software applications.
+
+
+              Simply right-click to select the entire current view for a quick output. Or, to limit
+         the output: click and drag to select contiguous cells or hold down the Ctrl key and click
+         to select noncontiguous cells, then right-click for an option.
+
+
+Copy to Clipboard
+
+
+
+
+          1.   Right-click in almost any view and select the Copy to Clipboard feature
+          2.   Open another software application, e.g. Microsoft(R) Word, WordPad, Paint,
+               Outlook and similar products offered by other manufacturers, where you want
+               to use the Gen5 content
+          3.   Paste the selected content. Try:
+                  Ctrl-V
+                Right-click and select Paste
+                From the menu, select Edit> Paste 
+
+Quick Print
+       After selecting specific content or a current view, right-click and select the QuickPrint
+       feature.
+         It is similar to printing from the Report Builder, you can select a local printer. The
+         current view or selected content is printed in formatted text with row and column
+         headers.
+
+Save As
+
+
+
+
+         In any graph, i.e. Curve or Well Zoom, you can:
+          1.   Right-click and select the Save As feature
+
+
+---
+
+                                                      Right-Click Menu Options | 357
+
+
+
+2.   Gen5 opens the standard Save As dialog so you can browse to any
+     file/directory available to your computer to choose the Save In location
+
+
+
+3.   Use the drop-down list to select the Save as type: 0.
+      Portable Network Graphic (.png)
+      24-bit Bitmap (.bmp)
+      CompuServe Graphics Interchange Format (.gif)
+      JPEG Format (.jpg)
+      Windows Enhanced Meta File (.emf)
+
+
+---
+
+358 | Chapter 16: Exporting Results
+
+
+
+
+Export to File (File Export Builder)
+       This option creates a text (.txt) file of the selected content for use in another software
+       appliation.
+
+     Protocol> File Export Builder
+
+ Using the File Export Builder
+
+   Select the Content to Export
+        Highlight items in the Available Data Views and Add them to the Export Content
+        box:
+                You can Drag and Drop items into the Export Content box
+                Drag and drop to change the sequence order of export items in the output
+                  file
+                Change the format and data sets associated with an item in the Export
+                  Content box: Highlight an item and double click, or right click and select
+                  Edit
+                Highlight an item and click Remove, to remove it from selection
+                In multiple-read (multi-index read) protocols, like kinetic analysis, it is
+                  necessary to select a range of reads or a range of wells to include in an
+                  export item. Certain data elements, like Well Data, Well Results, and Well
+                  Zoom, require manual selection of the specific wells to include. Except for
+                  area scan results, you can select multiple wells for simultaneous reporting
+                  in the resulting table or graph. For details see Reporting Well Analysis
+                  Results in the (previous) Reporting Results chapter
+
+
+          Gen5 opens report items in Edit mode when a selection is required. For example,
+        when you select a Matrix item to report a multi-index/kinetic read, you must select a
+        Range of read numbers. One matrix or grid will be reported for each read number.
+
+
+           Limitation: "Curves" and "Scan" data sets, created from kinetic
+             analysis and area scans, cannot be exported with this feature. If you
+             have Excel(R), use the Quick or Power Export options.
+
+  Export Multiple Plates to One File
+        When you run multiple plates in an experiment you can export all the data to one text
+        file. After defining the export content, (and making sure the File Export Settings do not
+        prevent it):
+          1.   In the menu tree, select/highlight multiple plates (by holding down the Ctrl
+               key)
+
+
+---
+
+                                                        Export to File (File Export Builder) | 359
+
+
+
+        2.   Right-click and select File Export0.
+       You can also use the File Export Settings to do this automatically:
+              make sure the plates do not result in unique filenames,
+              set the "prompt before saving" option to Never and Append
+
+         ** Items marked with asterisks indicate 1 of 3 conditions:
+           1. You must select specific data points from a very large (multi-read)
+           data set or
+           2. The experiment did not generate the expected results, an error
+           occurred or
+           3. The Procedure and/or Data Reduction steps that generated the item
+           have been changed making it invalid **
+
+  Using the Default Protocol
+       You can define default settings for File Export, which can be overridden in individual
+       protocols:
+          Use the controls in the Default Protocol to base all new Protocols on them.
+          Override and refine the default settings in individual protocols using the File
+            Export Builder
+
+         Content options in the Default Protocol may be limited by the lack of a
+           defined Procedure.
+
+         Important: Default Protocol Settings are applied "going forward,"
+           they do not affect existing protocols. They are applied only to newly-
+           created protocols.
+
+
+File Export Settings
+   Protocol> Protocol Options> Export Options> File Export Settings
+   System>Preferences>Default Protocol>Protocol Options>Export Options>
+   File Export Settings
+       You can define default settings for File Export, which can be overridden in individual
+       protocols:
+          Use the controls in the Default Protocol to base all new Protocols on them
+          Override the default settings in individual protocols
+
+  File Naming Convention
+       Set up a naming convention to apply to the export file:
+          File Name: use the text field to build a naming convention. You can put any
+            combination of text and Gen5-provided data points in the field to become the
+            name applied to consecutively-saved files:
+
+
+---
+
+360 | Chapter 16: Exporting Results
+
+
+
+                    Click the options arrow at the end of the field to select from the Gen5-
+                   provided data points.
+               Add or replace default text with your own text
+               Notice the underscores Gen5 places between data points, they can be
+                 retained or removed according to your preferences. Generally, it is good
+                 practice to use filenames without spaces.
+               Example: Gen5 displays an example of the file name you create
+
+           The filename must comply with Microsoft(R) filename conventions, e.g. it
+             must not contain so-called offending characters: \ / : # ? " < > |
+
+  Separator
+           Export files contain "delimited" data, i.e. data separated by a user-defined symbol
+           or character. Select or enter the desired Separator using the buttons for Tab, semi-
+           colon, comma or Other. If Other, enter the symbol or character in the text field.
+
+  File Location
+        Specify the location for Saved files:
+            Last folder used: puts the Excel file in the folder last used by Gen5's File Export
+              engine
+            Folder: select an existing folder or define a name to apply to a newly-created
+              folder
+
+                    Use the 3-dot button to browse to the desired location for file storage
+
+                    Use the options arrow to name a newly-created folder using the Gen5-
+                   provided data points.
+               You can add text for naming a newly-created folder, if desired
+               Example: Gen5 displays an example of the folder name you create
+
+  When Exporting, prompt before saving file:
+               Always prompt users by opening the Save As screen whenever they export
+                 a plate file, allowing users to alter the file name and location on-the-fly
+               Only if the file already exists: open the Save As screen for saving export
+                 files only if Gen5 generates a filename that already exists
+               Never, if it the file already exists: never open the Save As screen
+               Append: add this plate's data to the bottom of the existing file
+               Overwrite: replace the existing data with this plate's data
+
+  Include:
+        Use the checkboxes to include any of the items offered:
+
+
+---
+
+                                           Export to File (File Export Builder) | 361
+
+
+
+ Headings: includes the Name of selected data elements as a section heading
+   in the export file (just like the section headings in a Gen5 report)
+ Matrix ...: includes the well location column and row labels, e.g. A-H and 1-
+   12
+ Statistics ...: includes column headers of the tables, e.g. Well ID, Name,
+   Well, Conc/Dil.
+
+
+---
+
+362 | Chapter 16: Exporting Results
+
+
+
+
+Power Export
+
+  Prerequisite
+           You must have Microsoft(R) Excel 2000 or higher installed on your PC to use Power
+           Export.
+
+  Power Export Explained
+        Gen5 joins forces with Microsoft Excel to give you high-powered results reporting.
+        Gen5 compiles all the data and customizations made in an experiment and exports it to
+        Excel, along with a Gen5 toolbar.
+        In Excel, you design the report using the Gen5 toolbar to select the desired experiment
+        content. Then you can use Excel's native tools to perform complex calculations and
+        customize the report's appearance.
+        Using Power Export is a two step process: first, ideally when setting up a protocol, you
+        select the content for export. Second, after running an experiment, you execute the
+        Power Export for each plate.
+        Whenever you select a Power Export option, Gen5 launches Excel. Initially, to select
+        the content of the export, which inserts placeholders in the worksheet for the data to be
+        generated in the experiment. Later, when you execute Power Export in the experiment,
+        the selected data fills the placeholders.
+
+  With Power Export you can:
+               Take full advantage of Excel's document customization features to generate
+                 publication-quality reports
+               Include pictures, drawings, and company logos in reports
+               Create custom formulas in Excel to perform additional calculations on the
+                 Gen5 experiment data
+               Take advantage of Excel's charting capabilities to create bar graphs, pie
+                 charts, etc.
+
+
+           Before defining the Power Export, customize the Data View elements in Gen5 that
+        you'll include in the Excel report. While, you can make changes to Gen5's data
+        elements when using Power Export in Excel, it is faster and easier to make the bulk of
+        your choices first in Gen5.
+
+
+           Watch the Tutorial for a demonstration on how to use Power Export
+
+
+---
+
+                                                                            Power Export | 363
+
+
+
+About the Power Export Toolbar
+       Gen5's Power Export Builder launches Excel(R) with a custom toolbar:
+
+
+
+
+        The selection buttons of the toolbar mirror the categories in Data Views (except
+        Protocol Summary, which is only offered in the reporting tools). Use the buttons to
+        select the content you want included in the Power Export. When you make a selection,
+        Gen5 puts a "Results Object" or placeholder for the information in the Excel worksheet.
+        The placeholder is filled in with results data (after the plate is read) during Power
+        Export execution.
+
+          In Office 2007 the Power Export Toolbar is placed in the Add-Ins
+            tab/ribbon, which is added to the default ribbons when Excel is
+            launched by the Power Export Builder.
+
+              Protocol Summary = two pre-defined listings of the Procedure and Data
+                Reduction steps defined in the protocol
+              Matrix = a grid that represents the microplate
+              Table = a columnar presentation of the data
+              Graph = a standard curve or well zoom generated from a Curve or Well
+                Analysis
+              Field Groups = user-selected or defined data points useful for reports
+
+   Power Export Execution
+        When you execute the Power Export in an experiment (i.e. highlight a plate in the
+        menu tree, right click and select Power Export) , Gen5 launches Excel with the data
+        from the experiment filling in the placeholders selected with the Builder. You can run
+        Excel as you normally do. he connection between Gen5 and Excel is severed. To
+        modify a report element use the Power Export Builder.
+
+
+            BioTek recommends customizing the Data View elements in Gen5 before
+        selecting them for the Excel report. You can make changes to Gen5's data elements
+        using the Power Export toolbar in Excel, but it is faster and easier to make the bulk
+        of your choices in Gen5 first.
+
+
+---
+
+364 | Chapter 16: Exporting Results
+
+
+
+How to use Power Export
+          1.   When setting up the protocol, after customizing the Data Views, select Power
+               Export Builder from the Protocol menu tree. This launches Excel with Gen5's
+               Power Export Toolbar.
+
+           In Office 2007 the Power Export Toolbar is placed in the Add-Ins
+             tab/ribbon, which is added to the default ribbons when Excel is
+             launched by the Power Export Builder.
+
+          2.   In Excel, use the Power Export toolbar to select the content you want to import
+               from each plate (described below).
+          3.   Define the Power Export Settings (page 365).
+          4.   When you run an experiment based on the protocol, highlight a plate in the
+               menu tree, right click and select Power Export.0.
+        Whenever you select Power Export, Gen5 launches Excel. Initially, to select the export
+        content, inserting placeholders for the data in the Excel worksheet. When you run
+        Power Export in the experiment, the selected data fills the placeholders. Then, you can
+        use Excel's native toolset to prepare the report for publication.
+
+           To modify a report element you must use Power Export Builder.
+
+
+
+           Do NOT "protect" the worksheet in Excel when building the report with Power
+        Export Builder; that is do not engage Excel's Tools>Protection settings.
+
+
+Using the Power Export Toolbar in Excel
+
+
+
+        Gen5's Power Export Builder launches Excel(R) with a custom toolbar for selecting
+        content for the export.
+
+How to select content:
+          1.   Select the starting cell in the Excel worksheet where you want the Gen5 content
+               to begin.
+          2.     Click the down arrow of a selection button: Protocol Summary, Field group,
+               Matrix, Table, or Graph on the Power Export toolbar and select an item. Gen5
+               presents a Selection/Data/Format dialog specific to the selected item.
+          3.   Make selections and/or modifications to the data format, as required for the
+               item. Just like Customizing Gen5 Data Views and Reports. You can limit the
+               Range of data points or change the Format/Font, as needed.
+
+
+---
+
+                                                                             Power Export | 365
+
+
+
+          Certain data elements, like Well Data, Well Results, and Well Zoom,
+            require manual selection of the specific wells to include in the
+            export. Except for Area Scans, you can select multiple wells for
+            simultaneous reporting in the resulting table or graph.
+
+         4.   Repeat steps 1-3 to select all the specific data items you want included in the
+              Power Export, filling the worksheet with the required placeholders.
+
+         5.   Click        to return to the Gen5 workspace. 0.
+              Now you're ready to execute Power Export in an experiment: highlight a plate
+              in the menu tree, right click and select Power Export.
+
+How to modify selected content:
+      When you select content for the Power Export, Gen5 puts a button above each data
+      view in the Excel spreadsheet, right next to the starting cell for the content.
+
+
+
+
+        Click the button to modify the selected content, i.e. open it in Edit mode
+
+Running Power Export
+    Highlight the plate in the menu tree> right click> Power Export
+           After you've selected the content to export using the Power Export Builder
+           And read the plates in an experiment
+
+            Highlight the plate in the menu tree and click the Power Export button on the
+        toolbar or right click and select Power Export. Gen5 launches Excel(R) with the selected
+        content. You can then use Excel as normal.
+
+
+Power Export Settings
+    Protocol> Protocol Options> Export Options> Power Export Settings
+    System>Preferences>Default Protocol>Protocol Options>Export Options>
+    Power Export Settings
+
+
+---
+
+366 | Chapter 16: Exporting Results
+
+
+
+        You can define default settings for Power Export, which can be overridden in
+        individual protocols. Use the controls in the Default Protocol to base all new Protocols
+        on them. Override the default setting in individual protocols using the Protocol
+        Options.
+
+Select method:
+           Save after Export: select this option to enable Gen5's file naming and saving routine,
+        then define your preferences below. They will be executed when the Excel file is saved.
+        When this option is not selected, Power Export performs as expected but does not save
+        or name the resulting file.
+           Close after Export: select this option to run Power Export in the background. This
+        feature creates, saves, and closes the Excel file using the defined settings after
+        obtaining the content selected with the Power Export Builder. If you do not select this
+        option, Gen5 will keep Excel open until you close it.
+
+File Naming Convention
+        Set up a naming convention to apply to the Excel files created with Power Export:
+            File Name: use the text field to build a naming convention. You can put any
+              combination of text and Gen5-provided data points in the field to become the
+              name applied to consecutively-saved Excel files:
+
+                    Click the options arrow at the end of the field to select from the Gen5-
+                   provided data points
+               Add or replace default text with your own text
+               Notice the underscores Gen5 places between data points, they can be
+                 retained or removed according to your preferences. Generally, it is good
+                 practice to use filenames without spaces.
+               Example: Gen5 displays an example of the file name you create
+
+           The filename must comply with Microsoft(R) filename conventions, e.g. it
+             must not contain so-called offending characters: \ / : # ? " < > |
+
+File Location
+        Specify the location for Saved files:
+            Last folder used: puts the Excel file in the folder last used by the Power Export
+              engine
+            Folder: select an existing folder or define a name to apply to a newly-created
+              folder
+
+                    Use the 3-dot button to browse to the desired location for file storage
+
+                    Use the options arrow to name a newly-created folder using the Gen5-
+                   provided data points
+
+
+---
+
+                                                                         Power Export | 367
+
+
+
+            You can add text for naming a newly-created folder, if desired
+            Example: Gen5 displays an example of the path and folder name based on
+              your input
+
+When Exporting,
+      Prompt the user to confirm the path and filename by showing Excel's Save dialog:
+            Always: whenever the save occurs
+            Only if the file already exists: when the same name is applied to an
+              existing file
+            Never (overwrite the file if it already exists): do not show the Save dialog,
+              replace the existing file with the current one when a file with the same
+              name exists
+
+  Export Row and Column Headers
+        Select this option to include the Matrix and Statistic table row and column headers
+        with the data exported to ExcelTM
+
+Text Options
+         Formatted Text: exports text as defined in Gen5, retaining the selected font and
+           any customizations
+         Text Only: exports text as characters only, without an associated font or any
+           customization performed in Gen5
+
+        Important: Default Protocol settings are applied "going forward,"
+          they do not override existing protocol settings. They effect only newly
+          created protocols.
+
+
+---
+
+368 | Chapter 16: Exporting Results
+
+
+---
+
+Chapter 17
+
+
+
+
+Managing Files
+
+     This chapter offers instructions and suggestions for managing your
+     Gen5 experiment and protocol files, with a focus on Gen5's
+     database. Methods for recovering from Database Errors are
+     provided.
+
+
+ Managing Files......................................................................... 370
+ File Storage............................................................................. 371
+ Database Management ............................................................. 372
+ Database Errors....................................................................... 379
+
+
+---
+
+370 | Chapter 17: Managing Files
+
+
+
+
+Managing Files
+     Gen5 offers two methods for storing its protocol (.prt) and experiment (.xpt) files. You can
+     use a secure database called SharedDB (and its companion LocalDB) provided by Gen5 or
+     you can use the Windows(R) File System. Both options let you set up Gen5 files to be shared
+     by multiple users. Conversely, you can prohibit file sharing by only installing Gen5 locally,
+     on an individual's PC.
+     The SharedDB ships with Gen5, and for all software levels, it contains security information
+     and the Plate Types Database. Except for Gen5 Secure, the File Storage option must be
+     changed to use the database for storing .prt and .xpt files.
+     Gen5 Secure is intended to be used with the SharedDB, it is a major component of making
+     it "secure." In Gen5 Secure the SharedDB contains user accounts and a System audit trail,
+     in addition to the security information and the Plate Type database, and it is set up by
+     default to store .xpt and .prt files and their associated audit trails.
+
+How to manage files
+     Gen5 provides Database Management tools when its Shared database (SharedDB) is used
+     for file storage. The SharedDB can be moved to a shared, network directory, where all
+     required users can access it. When the Windows file system is used for file storage, you
+     manage files using Windows Explorer. In addition to storing the files online, files can be
+     stored on CD or diskette.
+
+
+---
+
+                                                                             File Storage | 371
+
+
+
+
+File Storage
+   System> Preferences> File Storage Mode
+      Use this control to select a method for storing protocol and experiment files.
+
+         Attention Gen5 Secure users: To ensure 21 CFR Part 11 compliance
+           retain the setting to use the Gen5 Database
+
+About File Storage
+      Gen5 provides two methods for storing protocol and experiment files. You can use the
+      secure, shared-access database provided with Gen5, which is required for compliance
+      with the FDA's 21 CFR Part 11 regulation on electronic records submission.
+      Alternatively, you can use the file system provided with the Windows(R) operating
+      system on a local computer or network (LAN). If your organization is unconcerned
+      with FDA regulations, the choice is a matter of preference. However, one advantage to
+      using the Gen5 Database is its ability to recover from a system crash. New and
+      modified files are saved as Temporary Files in the database and can be used to recover
+      information that wasn't saved before a system failure.
+
+         ClarityTM Luminometer protocol files, with a .bpf extension, cannot be
+           stored in Gen5's shared database. They are typically stored in the
+           C:\Program Files\BioTek\Clarity\protocols folder.
+
+How to
+         Select an option for storing Experiment and Protocol files:
+          Gen5 Database: all actions related to managing and maintaining files, like
+            File>Open, File>Save, Browse..., and so on, will occur in Gen5's SharedDB.
+          Windows File System: Gen5 will not control the management of files. Actions
+            related to managing and manipulating files will be determined by the
+            Windows operating system, e.g. you can use Windows(R) Explorer. Generally
+            during file management activities like File>Open, Windows begins at the last
+            directory and folder used.
+
+         AutoSave Feature: Gen5 offers this feature to give you additional
+           control over the storage of saved files.
+
+
+---
+
+372 | Chapter 17: Managing Files
+
+
+
+
+Database Management
+
+ Organize Your Database Files
+
+           During regular installation, Gen5 Secure installs and enables the
+             shared database to store experiment and protocol files. All other
+             levels of Gen5 must elect to use the database at System>
+             Preferences> File Storage
+
+        All of your file management requirements can be fulfilled using Gen5's secure
+        databases. You'll be most satisfied with the final structure if you spend some time
+        planning it up-front. In a multiple-user environment, you can set up Gen5's database
+        on a shared-network drive (LAN) so multiple users can access the same protocol and
+        experiment files, including the Default Protocol.
+        Multiple Databases: You can create multiple copies of the clean, installed SharedDB,
+        renaming them with meaningful titles for use by various projects or teams or
+        researchers. Within each database you can set up a consistent file structure, e.g. specific
+        folders for specific types of Protocols and Experiments, or a different folder for each
+        user. The possibilities are endless.
+        Backups: Performing backups on a regular schedule is highly recommended to
+        preserve your data. And, Gen5 provides a tool to schedule backups to occur
+        periodically. See below.
+
+ File Management Recommendations
+            Put a copy of the SharedDB on a shared-network drive where all your Gen5
+              users can access it. Be sure to set each user's Database Configuration to point to
+              the correct location.
+            Before moving the SharedDB to a network location, make a copy of it to use as
+              a template for future use:
+         1.   In the default SharedDB folder, highlight the original, right-click and select Copy
+         2.   De-select the original (click elsewhere in the dialog), right-click and select Paste
+         3.   Highlight the copy, right-click and select Rename
+         4.   Give the copy a unique name, like SharedDB_original.mdb0.
+
+
+
+
+            Consider setting up shared databases for different projects or teams within
+              your organization. You can follow the steps defined above to create multiple
+              databases in the same folder (or directory), or you can move the unique
+              databases to a different network location/folder. Use Database Configuration
+              to point user's Gen5 sessions to the correct database.
+
+
+---
+
+                                                              Database Management | 373
+
+
+
+       Regularly archive and backup the database to preserve your records. There are
+         numerous ways to do this, so BioTek recommends following your
+         organization's existing policy for securing data. For example, if you put the
+         shared database on the network and your network is backed up every night,
+         this may be sufficient. You can use Gen5's Optimize and Backup Settings to
+         facilitate your data-protection policy.
+       Consider using Gen5's automatic Save feature to create a new, date-stamped
+         folder for storing experiment records. This is an especially good practice for
+         large labs with multiple users who run hundreds of plates per day. Gen5 will
+         keep all that data organized by date. Define this kind of file management
+         setting in the Default Protocol so it will apply to all newly-created protocols
+         (System>Preferences>Default Protocol>Protocol Options>Save).
+       Gen5 handles multiple, simultaneous users performing database management
+         tasks by giving precedence to the user with the greater administrative rights.
+
+
+About Gen5 Databases
+    All levels of Gen5 install two databases during regular installation: SharedDB and
+    LocalDB. Only Gen5 Secure is initially set up to use the Gen5 Database for experiment
+    and protocol file storage. All other levels of Gen5 must elect to use the database to
+    store experiment and protocol files at System> Preferences> File Storage
+       SharedDB can be set up on a network for sharing information amongst
+         multiple users. It contains all protocol and experiment data files and their
+         associated audit trails, the plate types, and reader-diagnostic history data. In
+         Gen5 Secure, SharedDB also contains security settings, user accounts, and a
+         system audit trail for shared events. This database can be moved, renamed, and
+         copied. So, if desired, you can create a unique database for individual projects,
+         teams, or other classification.
+       LocalDB contains the local setup information, including the Reader
+         Configuration. For Gen5 Secure, this database also contains an audit trail for
+         local events. LocalDB is stored on the computer's hard drive, and it cannot be
+         moved or renamed.
+       Default database location: During normal installation, Gen5 installs its
+         databases:
+              Windows XP and 2000 systems: C:\Documents and Settings\All
+                Users\Application Data\BioTek Instruments\Gen5 (software
+                edition)\(version #)\SharedDB or LocalDB
+              Windows Vista: Windows XP and 2000 operating systems: C:\Program
+                Data\BioTek \Gen5 (software edition)\(version #)\SharedDB or LocalDB
+
+      You may need to change your operating system settings to view the
+        Application Data folder. In Windows(R) Explorer, select Tools>Folder
+        Options>View and make sure it is set to "Show hidden files and
+        folders."
+
+
+---
+
+374 | Chapter 17: Managing Files
+
+
+
+            Max Size: the maximum size of the database files is 2 gigabytes (Gb). At
+              startup, Gen5 checks the remaining size of the database. Warning messages are
+              displayed when the database size exceeds 1536Mb. Use Gen5's maintenance
+              and backup features to archive your database records.
+            Gen5 has built-in error recovery modes, when your connection to the database
+              is lost for any reason, Gen5 saves any unsaved files as Temporary Files. After a
+              system failure, the next time you open an affected protocol or experiment file,
+              Gen5 offers to replace the unsaved files with the Temporary Files. Say Yes to
+              recover any changes made to the files before the system failure, say No to open
+              the files as they were last saved, before the unsaved changes were made.
+              Newly-created files are saved as Temporary Files, also. Following a system
+              failure, you can rename these temporary files with the proper filename
+              extension (.xpt or .prt) using Gen5's Maintain Files controls.
+            File locking: When a file is opened in Gen5 it is "locked" to protect it from
+              being modified (saved or renamed) by a different user. When a second user
+              attempts to open the file, they will receive a message stating: "File <filename>
+              is already in use. Do you want to open it in read-only mode?"
+            Gen5 offers automatic backup: you can define settings for regularly and
+              automatically backing up and optimizing databases with Gen5's Auto-
+              Optimize feature.
+
+
+ Database Configuration
+     System> Database Configuration
+
+  Prerequisite
+        Some features of this dialog require System Administrator privileges. Contact your
+        System Administrator if you are unable to perform actions as expected.
+
+
+        When Gen5 is installed, there are two primary databases, a shared and a local
+        database. They are named SharedDB.mdb and LocalDB.mdb respectively. The
+        LocalDB cannot be moved or renamed. The SharedDB can be moved and renamed. All
+        operations affecting them take place using their respective tabs, except the upgrade
+        utility.
+
+  Troubleshooting
+        When launched, Gen5 attempts to connect to the Gen5 databases. Review this
+        information if errors occur: Database Errors (page 379)
+
+                         Gen5 presents the Reset Connection button only when it detects an
+        error that can be repaired by its functionality. Click it, several times if needed, until it is
+        grayed-out. Review the Database Errors information if the button doesn't fix the error.
+
+
+---
+
+                                                                     Database Management | 375
+
+
+
+Source
+
+           Gen5 displays the current location of the database.
+           LocalDB: You cannot move or rename the LocalDB database, thus the 3-dot
+             button is disabled. If necessary to see the full pathname of its location, you can
+             click inside the text field and scroll to the right.
+           SharedDB: Click the 3-dot button to view the current location of the database.
+             You can move, rename or copy the SharedDB database. Learn how in the
+             Getting Started Guide shipped with the product CD.
+
+Test
+
+                        Use the Test button to check the connection to the Gen5 database.
+           Potential error messages are referenced in the Troubleshooting section above.
+
+Stats
+
+                        Use the Stats button to assess the number of files and amount of
+        space used in the Gen5 database.
+           Generally, the most important information is Size: reported as used/available.
+             If the used value is nearing the available value, it's time to move some files. Use
+             the DB maintenance tools to archive files not currently being used.
+           Occasionally using the Optimize option (described below) helps keep the DB in
+             good shape.
+
+Optimize
+
+                     Click the Optimize button to engage Gen5's corruption-repair and size-
+        compacting functions. Learn more in Gen5's Help.
+           Periodically Optimize and Backup: to direct Gen5 to automatically backup and
+        optimize the database on a regular basis. Select the option and define its settings. Use
+        the 3-dot button to modify the settings. (See page 377)
+
+Upgrade
+
+                        There are two uses for the Database Upgrade Utility:
+               install an updated version of the software
+               install a higher level of software, e.g. upgrade Gen5 to Gen5 Secure
+
+
+---
+
+376 | Chapter 17: Managing Files
+
+
+
+Maintaining Files
+     System> Maintain Files
+         Use this dialog as you would Windows(R) Explorer to manage your Protocol (.prt) and
+         Experiment (.xpt) files. Gen5 Secure tracks activities, like creating, moving, and
+         deleting files, in its System Audit Trail.
+
+
+
+
+                                    Important: the DB (database) this dialog opens is
+         controlled by Database Configuration. It is the SharedDB defined as Source.
+
+Tools:
+
+                       Toggle the view between Details and Icons of the files and folders. In
+                Details view, click on a column header to set the sort order. For example, click
+                Type to organize the files by file type, or click Modified (once or twice) to sort
+                them in the desired ascending or descending date order.
+
+                  Create a new folder to save certain files separately
+
+                  Refresh or update the view to show files or folders added by another user
+
+                  Move up one folder/directory level with this button
+
+
+
+
+                                  Right-click menu: highlight one or more items (folders or
+                files) and right click for a pop-up menu. Notice the Hidden option: system
+                administrators can hide/reveal selected files to prevent other system users
+                from accessing them. Warning for Windows XP users...
+            Ctrl+C to copy, Ctrl+V to paste, and the Delete key are also supported
+
+                  Highlight a file or folder and Delete it with this button. You must delete
+                sub-folders (i.e. folders within a folder) before you can delete their parent or
+                higher-level folder
+
+
+                                               Column Headers can be used to sort the files:
+                click on a header to sort the files in ascending/descending order by that
+                category. For example, click Modified to sort the files by "last modified" date.
+                Click the same column header to reverse the order.
+
+
+---
+
+                                                                     Database Management | 377
+
+
+
+Tasks:
+         Find step-by-step instructions for performing these tasks in Gen5's Help:
+            Organize your files
+            Copy to CD, diskette or other portable media
+            Export a file
+            Import a file
+            Reduce the database size
+
+
+Optimize and Backup Database
+   System> Database Configuration
+
+
+Optimize Now
+
+                      Click the Optimize button to run Gen5's database compacting and
+         backup program.
+
+
+            Before "optimizing" the database, close all protocol or experiment files.
+
+
+  When to do it:
+            After restoring database connections following an error
+            After exporting and deleting records to reduce the database size (Maintaining
+              Files)
+            After system audit trail events are exported or deleted
+
+           Gen5 creates a backup copy of the database (in its present location
+             unless a different storage location was selected in the Optimize
+             Periodically settings) before beginning optimization. It is named:
+             <original filename>_yymmdd_hhmmss.mdb (year, month, day_hour,
+             minute, second). .mdb is the filename extension. Backup files can be
+             used to repair Gen5 when the current database file is corrupt, for
+             example.
+
+
+---
+
+378 | Chapter 17: Managing Files
+
+
+
+Periodic Optimization
+
+
+                                           Use this option to schedule Gen5 to conduct
+        Optimization on a regular basis. BioTek suggests once per week.
+
+        Use these controls to define the rules for regular, automatic database optimization.
+
+           Important: Only use this automatic method for backing up files when
+             you're saving them to a network or external drive. Do not use it to
+             save a backup to the same (local) hard drive used to store the original
+             database. Manually backup your database if you are limited to one
+             hard drive/PC, unconnected to a network.
+
+How it works:
+        Whenever Gen5 is launched it checks the contents of the backup location to determine
+        if optimization is due. When it is, Gen5:
+         1.   Renames and moves a copy of the current database to the Backup location. The
+              naming convention is:
+              Auto_Backup_<original filename>_yymmdd_hhmmss.mdb.
+         2.   Executes the repair and compact operations on the current database
+         3.   As needed, it deletes the oldest archived (or previously backed-up) database
+              file to correspond to the current settings
+         4.   Gen5 displays a status gauge on screen to tell users the operation is underway
+              0.
+
+How to define the settings:
+         1.   Set the number of days to run the optimization in the Optimize every _ days
+              field
+
+         2.      Backup: you can retain Gen5's default location for storing a backup copy of
+              the database, or click the 3-dot button and select an alternative location.
+         3.   Define the number of previously backed-up or archived database files to keep
+              in the backup location in the Keep _ last archived databases field0.
+
+
+---
+
+                                                                           Database Errors | 379
+
+
+
+
+Database Errors
+          Certain conditions can cause database-related errors:
+             The database file is not available. Potential causes: the shared database is on a
+               network and the cable is unplugged, or the file is locked by another user
+             The database file is corrupt. Potential cause: an incomplete write operation
+               occurred because Gen5 was closed unexpectedly due to a power outage or
+               hardware problem
+             Verification of the database capacity failed. Potential cause: the maximum
+               size of the database (2 gigabytes) has been exceeded
+             File importation failure. Potential causes: the filename extension is wrong, a
+               protocol file was misnamed with an .xpt filename extension instead of .prt
+
+Fixing the errors
+           1.    First, make sure non-Gen5-system issues are resolved, for example:
+                  network cables are plugged in and the network is up and running;
+                  another Gen5 user is not currently performing database maintenance
+                    routines;
+                  the Database Configuration for both the SharedDB and LocalDB databases
+                    point to the expected locations;
+           2.    Then, follow these instructions for fixing the errors:
+                  Fixing a Database Connection Error (page 379)
+                  Fixing a Corrupted File Error (page 380)
+                  Fixing a Database Capacity Error (page 381)
+                  Fixing a File Importation Error (page 381)
+           3.    If the above solutions do not work, try Restoring an archived database (page
+                 382). 0.
+
+
+Fixing a Database Connection Error
+                Connection to SharedDB failed.
+            This type of error is most commonly caused by a network timeout or
+            disconnection, or corruption to the SharedDB file residing on a network.
+
+To fix:
+           1.    Make sure you are properly connected to your network, if applicable, i.e.
+                 cables/wires installed and the network server is live.
+
+
+---
+
+380 | Chapter 17: Managing Files
+
+
+
+         2.     Click Reset Connection at the Database Configuration screen.
+                Gen5 immediately opens the Database Configuration screen after displaying
+                the error message. Otherwise, select System> Database Configuration
+
+           Important: Click the Reset button several times, if needed, until it is
+             grayed out.
+
+           Quit: If Gen5 cannot restore the network connection, usually because
+             of external factors, e.g. the network is down, when you click Quit at a
+             secondary error message, Gen5 will save any currently opened and
+             modified files to the Windows Temp directory. When the database is
+             restored you can import the files from the Temp folder to the
+             database.
+
+         3.     When the database connection has been repaired, click Optimize.
+
+If Reset button fails:
+        If your network is performing as expected, and you've checked the cabling from your
+        PC to the network, and the Reset button fails to re-establish a connection with the
+        shared database:
+         1.     Reboot your PC
+        If the same message is displayed:
+         2.     Restore a previous version of the database or contact your System
+                Administrator to inspect and repair your system connection.
+
+
+Fixing a Corrupted File Error
+              Database file is corrupt
+           There are two potential ways to fix a corruption error:
+            Reboot your PC to try to clear the error by restarting the system.
+            Install an archived version of the LocalDB.mdb: use Windows(R) Explorer to
+              locate and restore a backup of the database.
+
+           Windows(R) Explorer provides an option to hide certain folders from
+             view, if you cannot find the Application Data folder (C:\Documents
+             and Settings\All Users\Application Data) it is probably hidden. In
+             Explorer, select Tools>Folder Options>View and enable Show hidden
+             files and folders
+
+                If these options fail to repair Gen5's behavior, contact BioTek TAC.
+
+
+---
+
+                                                                        Database Errors | 381
+
+
+
+Fixing a Database Capacity Error
+      When the cumulative size of the files in your database nears or exceeds its capacity (2
+      gigabytes) Gen5 displays an error message or warning. You must reduce the size of the
+      database. There are numerous ways to accomplish this, the least invasive method, to
+      remove files, is described here.
+
+Prerequisite
+      This function is only available to the System Administrator. You must login,
+      System>Administrator Login, as the Administrator to access these controls.
+
+        Optimize the database before proceeding to see if Gen5 can compact
+          the database sufficiently to comply with its size limits. Select
+          System>Database Configuration>Optimize. When the process is
+          finished click the Stats... button to check the current size.
+
+To reduce the size of your database:
+       1.     Select System> Maintain Files
+       2.     Highlight multiple database records: hold down the Ctrl key while selecting
+              records
+       3.     Right click and select Export to Disk from the pop-up menu
+       4.     Select a folder (using the standard Windows dialog) where you want to save or
+              archive the Gen5 records
+
+       5.        Back in the Maintain Files dialog, highlight the same records, and click the
+              Delete button (or right click and select Delete)
+       6.     Finally, Optimize the database to ensure it's running in top form.
+
+
+Fixing a File Importation Error
+            File importation failure
+
+            The requested file may be a Protocol file
+
+            The requested file may be an Experiment file
+      Gen5 tests the file's format when you perform certain operations like importing a file
+      and File>Open. One of these error messages may be displayed when an
+      incompatibility is found.
+
+Change the filename extension to fix these errors
+       1.     Locate the offending file: depending on the current File Storage mode:
+               using the Gen5 Database, select System> Maintain Files
+               using the Windows File System, use Windows(R) Explorer
+
+
+---
+
+382 | Chapter 17: Managing Files
+
+
+
+         2.   Highlight the file, right click and select Rename:
+               change the filename extension for a misnamed Protocol file from .xpt to .prt
+               change the filename extension for a misnamed Experiment file from .prt to
+                 .xpt
+         3.   Retry the desired action, e.g. open the file, import the file
+
+
+Restore an archived database
+     When Gen5's error recovery processes cannot resolve database errors, a final-resort
+     solution is to replace the current database file with an archived or backup copy of it.
+     Ideally, you or your System Administrator has regularly (or at least recently) backed up or
+     archived the database. Gen5's Optimize tools can perform backups regularly, for instance.
+
+
+         Check the Auto-Optimize Settings, if they were defined, to determine the location of
+     the last-saved backup file.
+
+
+How to
+         1.   Using Windows(R) Explorer, locate the last-saved archived or backed-up
+              database file.
+         2.   Copy and Paste it to the desired location. Rename the database file, too. (All of
+              these commands are available from the right-click menu.)
+         3.   In Gen5, select System> Database Configuration
+         4.   Select the SharedDB tab
+
+         5.      Next to the Source field, click the 3-dot button and browse to the location
+              selected in Step 2.
+         6.   Click OK. 0.
+
+
 ---
+
+Chapter 18
+
+
+
+
+Security
+
+     Primarily for Gen5 Secure users, this chapter describes Gen5's tools
+     for managing security issues, including audit trails, electronic
+     signatures and user accounts.
+
+
+ Changing your password........................................................... 385
+ Login/Password Controls ........................................................... 386
+ FDA's 21 CFR Part 11 ............................................................... 388
+ Signing Protocols ..................................................................... 389
+ Audit Trail ............................................................................... 391
+ User Accounts ......................................................................... 398
+
+
+---
+
+384 | Chapter 18: Security
+
+
+
+
+Security
+           To meet the FDA's electronic records requirements, Gen5 Secure offers several
+           tools to enable a secure software environment. In addition to the content provided
+           here, you can find detailed information about these features in the Gen5 Help:
+            Audit Trail on page 391
+            Electronic Signatures on page 389
+            System Administrator's "To Do List" on page 8
+            Manage User Accounts:
+               Setting Up New Users on page 398
+               Changing a User's Passwords on page 385
+               Changing a User's Privileges on page 401
+            About 21 CFR Part 11 on page 388
+
+
+---
+
+                                                               Changing Your Password | 385
+
+
+
+
+Changing Your Password
+
+        For Gen5TM Secure Only
+
+   System> Security> Users
+      Users other than the System Administrator are limited to changing their own login
+      password.
+
+How to change your password:
+       1.   Select System> Security> Users
+       2.   Identify and open your user account: highlight and click Edit (or double click)
+       3.   Enter your current password in the Current Password field
+       4.   Enter your new password in both the New and Confirm password fields
+       5.   Click OK.0.
+      The password will take effect the next time you log into Gen5.
+
+        Contact your System Administrator if you've forgotten your password.
+          He/she can change your password without knowing the current one.
+
+
+---
+
+386 | Chapter 18: Security
+
+
+
+
+Login/Password Controls
+
+           For Gen5TM Secure Only
+
+     System> Security> Login
+
+Prerequisite
+        Only the System Administrator can access these controls. You must login:
+        System>Login/Logout, as the Administrator to change the settings.
+
+           Important: The default settings shipped with Gen5 Secure, and
+             shown in the screenshot below, comply with the FDA's 21 CFR Part 11
+             requirements (page 388) on controls for identification passwords.
+
+
+
+
+Login
+            Lock user account after: Specify the number of successive failed login
+              attempts a user may make before being locked out of Gen5. This feature does
+              not apply to System Administrator accounts and only a System Administrator
+              can reinstate a locked out account. Valid entry range: 2-10. When this feature is
+              unchecked, users login attempts are unlimited. Compliance with 21 CFR Part
+              11 requires setting a limit for failed login attempts.
+            Lock session after: Specify the number of minutes that a Gen5 session can be
+              idle before it is locked and requires successful user login to reactivate. A
+
+
+---
+
+                                                              Login/Password Controls | 387
+
+
+
+           session is considered idle when there is no keyboard or mouse activity and
+           Gen5 is not controlling a reader activity. Valid entry range: 1-1440 minutes.
+           Compliance with 21 CFR Part 11 requires setting an idle-time limit.
+       Force user to type ID: apply this control if your security rules require users
+         to enter their ID at login and to apply their Signature. When this feature is
+         unchecked, the last user's ID is displayed in the login and signature screens and
+         users can select an ID from a drop-down list of users. This is not a requirement
+         for compliance with 21 CFR Part 11.
+
+Password
+       Minimum password length: Specify the minimum number of alphanumeric
+         characters required for a valid password. Valid entry range: 2-10 characters.
+       Password expiration: Specify the number of days a password can be used
+         before users are required to change it. When users let their password expire
+         without changing it, their accounts are locked out and only a System
+         Administrator can reinstate a locked out account. Valid entry range: 1-10000
+         days. If this feature is unchecked passwords do not expire. Compliance with 21
+         CFR Part 11 requires an expiration period.
+
+      Lock out: when a user's password has expired, the system
+        administrator has two choices:
+        = manually remove the Locked out flag: this resets the password
+        expiration period allowing the user to login using his/her current
+        password.
+        = enter a new password for the user (which unlocks the account) and
+        tell the user to login with the password you have assigned him/her.
+        Advise the user to change the password after logging in.
+
+       Advise user: If password expiration is set, specify the number of days before
+         their password expires to alert users to change their password. Valid entry
+         range: 1-30 days, but cannot exceed the number of days to Password
+         Expiration.
+       Password reuse: Specify the number of passwords Gen5 will remember for
+         each user's account to prevent a recently used password from being reused.
+          Valid entry range: 2-20.
+
+
+---
+
+388 | Chapter 18: Security
+
+
+
+
+FDA's 21 CFR Part 11
+     This is a description of the FDA's electronic-records submission requirements
+     and how they are satisfied by Gen5TM Secure.
+     A significant component of this secure software environment is the ability to create
+     individual user accounts to ensure that only authorized users can gain access to the system
+     and to any restricted functions. A site-designated System Administrator creates and
+     maintains the user accounts.
+
+  Gen5 Secure complies with FDA's Electronic Signatures rule, 21 CFR Part 11:
+            System Administrator - The System Administrator creates and maintains user
+              accounts and user groups to specify which Gen5 functions shall be protected
+              from use by limited-access users, e.g. masking data. The System Administrator
+              sets special password and login characteristics including minimum password
+              length, password aging, and idle session time-out. The System Administrator is
+              also responsible for managing the database of Gen5 files and audit trails.
+            Support for Multiple Users - Each user is identified by a unique combination
+              of User ID and encrypted password. Users must log in to Gen5 Secure with
+              these identifiers to gain access.
+            Time-stamped Audit Trails - Activities such as user login/logout, protocol
+              and experiment creation and modification, and plate reading are permanently
+              logged in a secure database.
+            Embedded Signatures - Authorized users can electronically sign protocol and
+              experiment files. Electronic signatures are permanent and remain a part of the
+              overall data record for the life of that file.
+            Secure Record Storage - Gen5 proprietary files (.prt and .xpt) are stored in a
+              secure shared-access database. Activities performed on files within this
+              database (such as rename, move, copy, overwrite, and delete) are performed
+              within the Gen5 environment, and every change is tracked in an audit trail. In
+              addition, the System Administrator can configure the system so that these
+              activities may only be performed by Power Users or high-level users.
+            Protected Functions - The System Administrator can protect a variety of
+              functions from use by limited-access users, e.g. Standard Users. These functions
+              include the deletion, renaming, modification, and overwriting of various record
+              types.
+
+
+---
+
+                                                                         Signing Protocols | 389
+
+
+
+
+Signing Protocols
+
+         For Gen5TM Secure Only
+
+    System> Security> Signature Reasons
+       Gen5 Secure provides users the ability to sign (i.e. sign off on) a protocol or
+       experiment file. Your System Administrator can define the Signature Reasons to give
+       meaning to each signature recorded. Gen5 ships with three reasons: Authorship,
+       Review, and Approval. These terms can be kept, modified, or added to.
+       When users create, review, or perform any other activity on a Protocol or Experiment
+       for which a signature or sign-off is required, they use the Sign option, select a Reason,
+       and enter their password to confirm the action.
+       Representatives can sign off on files for another user. Gen5 provides an option for two
+       users to digitally sign records as representatives of a third user.
+
+
+
+
+What do you want to do:
+          Create/Modify Signature Reasons (below)
+          Sign a Protocol or Experiment (page 390)
+          Include Signatures in the Experiment Report:
+                  To include Signatures in a report or export file:
+                     1   Open the preferred reporting tool: Report Builder, File Export
+                         Builder or Power Export Builder
+                     2   In the Available Data Views or Excel report objects, find Table, and
+                         add Signatures to the report content.
+                  Gen5 reports the Signatory, Reason, and Date
+
+
+Signature Reasons
+
+         For Gen5TM Secure Only
+
+    System> Security> Signature Reasons
+
+  Prerequisite:
+       This function is only available to the System Administrator. You must login:
+       System>Login/Logout as the Administrator to access this control
+
+
+---
+
+390 | Chapter 18: Security
+
+
+
+  How to create/modify Signature Reasons:
+        Simply, click in the text fields of the Signature Reasons table to add new or replace
+        existing reasons for signing protocols and experiments.
+
+
+
+
+    Sign
+     Protocol> Sign
+     Plate> Sign
+        To sign off on a Protocol, select Sign from the Protocol menu or click the Sign button
+            To sign off on an Experiment, highlight a plate in the menu tree, select Sign
+              from the Plate menu (or right click and select Sign, or click the Sign button)
+
+Sign Off on a file:
+          1.   Use the appropriate option (described above) to open the signature screen
+
+          2.     Reason: Use the drop-down list to select the reason for signing the file.
+               Your System Administrator creates and maintains the Reasons selection list .
+          3.   User: Gen5 sets this to match the user who is currently logged in. Use the
+               drop-down list to change it, if necessary.
+          4.   Password: Enter your password.
+
+          5.   Click            0.
+               If the file hasn't already been saved, Gen5 opens the Save dialog.
+
+Sign as a Representative:
+        Two users are required to sign as a Representative of another user. Follow steps 1 and
+        2 above, then:
+          1.      Select the checkbox for Representative of and use the drop-down list to
+               identify the user being represented.
+               Gen5 adds 2 tabs to the dialog, one for each representative.
+          2.   Each representative must select their user ID and enter their password.
+
+          3.   Click            0.
+               If the file hasn't already been saved, Gen5 opens the Save dialog.
+
+
+---
+
+                                                                               Audit Trail | 391
+
+
+
+
+Audit Trail
+
+  About Audit Trails
+       Depending on the level of Gen5 you're running, one or more Audit Trails keep track of
+       certain activities and build a "change history" log of events. The protocol and data
+       audit trails cannot be edited or deleted. They are part of the permanent record of the
+       protocol or experiment file.
+       When the Audit Trail Notification feature is deployed in Gen5 Secure, users are
+       prompted to enter comments into the record each time a logging event takes place. You
+       can view and report the audit trail and calculation warning logs, as needed.
+
+Audit Trail Types:
+          Data Audit Trail - All levels of Gen5 - logs values-masking and -editing
+            events, plate addition and deletions, and other related events. Data audit trails
+            occur at the Experiment level to log the experiment-related events, like which
+            protocol it was based on, and at the Plate level for plate-related events, like the
+            read's status/progress
+          Protocol Audit Trail - Gen5 Secure Only - logs all events related to the
+            creation and modification of protocol files, like changes to plate layout and data
+            reduction steps
+          System Audit Trail - Gen5 Secure Only - logs system-level events, like user
+            login/logout and reader-setting modifications, maintenance and updates to
+            database folders and files, and so on. System events can be archived and
+            deleted from the database.
+         All the audit trails include an Event description, a time and date stamp, Gen5
+         Secure logs the ID of the user logged in at the time of the event, and any user-
+         entered comments
+
+
+Audit Trail Notification Options
+
+         For Gen5TM Secure Only
+
+    System> Security> Audit Trail
+
+  Prerequisite
+       Only the System Administrator can access these controls. You must login:
+       System>Login/Logout, as the Administrator to change the settings.
+
+  About Audit Trail Notification
+       These controls turn on or off notification to users when an audit-trail-logging event
+       occurs. When Notification occurs, users are provided an opportunity to add a
+       Comment to the record. If the system-generated text does not provide as much detail
+
+
+---
+
+392 | Chapter 18: Security
+
+
+
+        about the event as you'd like, you can use the Comments feature to encourage users to
+        enter more useful information. For example, when the plate layout of a protocol is
+        changed, Gen5 simply logs the event as "Plate Layout changed", while the user can add
+        details to the record like, "Added blanks: H11, H12."
+        Notification and comment control for each type of audit trail can be selected
+        individually using the checkboxes and drop-down lists.
+
+  How to
+          1.      Turn on Notification: for each type of audit trail using the checkbox to turn
+               on or off (remove the checkmark) notification of an event. Notification
+               identifies the event with a brief description and provides a text area for users'
+               Comments
+
+          2.      Prompt user for a comment: if Notification for an audit trail is turned on,
+               select a comment-required setting:0.
+                Accept an empty comment: user is not required to enter text in the
+                  Comment area
+                Invite user to type a comment: if user does not enter a comment during
+                  notification of an event, the Message inviting the user to enter a comment:
+                  defined in the text box below, will be presented to them. You can replace
+                  the default text with your own wording
+                Comment required: if user does not enter a comment during notification of
+                  an event, the Message requiring the user to enter a comment: defined in
+                  the second text box below, will be presented to them. You can replace the
+                  default text with your own wording. Users will not be permitted to
+                  quit/exit the audit trail notification without entering some text in the
+                  Comment area
+
+
+
+ Exporting Audit Trail Events
+
+           For Gen5TM Secure Only
+
+     System> Audit Trail> Export button
+        Use this feature to export System Audit Trail events for archiving and to generate a
+        report of the events. Exported records can be deleted from the system during the
+        export process to maintain the size of the database, and to remove unnecessary
+        records.
+
+           Important: Gen5 does not retain control over the exported text files.
+             It is your organization's responsibility to ensue the security of the
+             exported audit trail records.
+
+
+---
+
+                                                                              Audit Trail | 393
+
+
+
+To export audit trail events:
+      1.   Select System> Audit Trail
+      2.   Click the Shared or Local tab to select the source database of the records you
+           want to export
+      3.   Click Export
+      4.   Enter a date range of the events you want included in the export file
+      5.   Check or ignore the Delete events after exportation option
+      6.   Set the Save in field to the location you want to send the text file to. Use the
+           standard Windows(R) browse tools to select the location
+      7.   Click Save to export the events0.
+
+After export, compact the database:
+     If the Delete events after exportation option was used, the System Administrator
+     should:
+      1.   Make sure there are no users are currently logged into to the shared database
+      2.   Select System> Database Configuration
+      3.   In the Shared or Local database, as appropriate, click Optimize0.
+
+
+        After exporting the file, you can open it with Notepad(R) or a word processor, to
+     review or print it.
+
+
+---
+
+394 | Chapter 18: Security
+
+
+
+Data Audit Trail
+        Each plate and each experiment has a Data Audit Trail, a change history or log of
+        automatically-recorded events. An event is an action like:
+               Plate read started
+               Plate successfully read
+               Plate read failed with message "Reader error: 0IE0"
+               Modify Value - Well A2 - 390 - Old: 2.180 - New: 2.080
+
+           When values are masked or edited, Gen5 logs the event as Mask or
+             Modify Value <Well>-<Data set name><read index for
+             kinetic/scan><position for scan>; old and new values are provided
+             when the value is changed.
+
+   What events are logged:
+        The level of software determines the types of events logged by the data audit trail:
+            Gen5: All Gen5 levels log data changing/masking and plate addition and
+              deletion events, and plate-read status and warnings
+            Gen5 Secure also logs digital signature events
+            All audit trails contain a description of the Event, a time and date stamp. Gen5
+              Secure also contains the ID of the user logged in at the time and any user-
+              entered comments (if Audit Trail Notification is turned on)
+
+   Viewing Audit Trails:
+                                                       In the menu tree, each Plate
+                                                       has a Data Audit Trail, and
+                                                       so does the Experiment
+                                                       You can also open them from
+                                                       a menu:
+                                                       Plate>Audit Trail
+                                                       File>Audit Trail (for the
+                                                       Experiment)
+
+
+
+
+   Reporting/Printing Audit Trails:
+        You can include the Data Audit Trail in reports and export files, and copy and paste
+        items to an external file:
+
+
+---
+
+                                                                                 Audit Trail | 395
+
+
+
+          In the Report Builder and Export Builder, look for Audit Trail under Table in
+            the Available Data Views tree, to add an item to the Report or Export Content
+          Copy and Paste: In the audit trail screen, highlight event details and use Ctrl+C
+            to copy. Open Notepad or a word processor, and paste it with Ctrl+V
+
+  Security:
+       Data audit trails cannot be edited or deleted. They remain a permanent part of the
+       Experiment file for the life of that file.
+
+
+Protocol Audit Trail
+
+         For Gen5TM Secure Only
+
+       Each protocol has an audit trail that automatically logs all events related to its creation
+       and modification. For example:
+               Copy of protocol X (the full path and filename)
+               Plate Layout modified
+               Data Reduction modified
+
+  What events are logged:
+               Procedure
+               Data Reduction steps
+               Plate Layout
+               Report and Export definitions
+               Miscellaneous protocol options
+               A description of the Event, a time and date stamp, the ID of the user logged
+                 in at the time (if applicable) and any user-entered comments (if Audit Trail
+                 Notification is turned on)
+
+  Viewing the Audit Trail:
+               In the menu tree, expand the Protocol branch to locate its Audit Trail
+               In a multi-plate calibrator or single-assay protocol, the Protocol Audit Trail
+                 is split into a main log and separate Method Audit Trails for each
+                 Calibration Plate and Other Plates.
+
+  Reporting/Printing the Audit Trail:
+               In the Report Builder and Export Builder, look for Audit Trail under Table
+                 in the Available Data Views tree, to add an item to the Report or Export
+                 Content
+
+
+---
+
+396 | Chapter 18: Security
+
+
+
+                In the audit trail screen, highlight event details and use Ctrl+C to copy.
+                  Open Notepad(R) or a word processor, and paste it with Ctrl+V
+
+   Security:
+        Protocol audit trails cannot be edited or deleted. They remain a permanent part of the
+        Protocol and/or Experiment file for the life of that file.
+
+
+
+
+System Audit Trail
+
+           For Gen5TM Secure Only
+
+     System> Audit Trail
+        System-level events, like user login/logout and reader-setting modifications, are
+        automatically recorded in the System Audit Trail. For example:
+                Logout (computer and user ID)
+                File "database + filename" created
+                File "database + filename" pasted from clipboard
+
+  What events are logged:
+                User login and logout
+                System security updates (user accounts, login and password parameters,
+                  protected functions, audit trail notifications, and file location and format)
+                Plate Type Database modifications
+                System Test and Test Plate runs, and adding and modifying Test Plates
+                Reader settings changes (reader type, probe selection, communication
+                  parameters, and filters/wavelengths)
+                System setup changes (protocol defaults, format settings, start-up options,
+                  and database settings)
+                User-customizable application settings (such as toolbar and position/size of
+                  main window)
+                A description of the Event, a time and date stamp, the ID of the user logged
+                  in at the time and any user-entered comments (if Audit Trail Notification is
+                  turned on)
+
+   Viewing the System Audit Trail:
+        Select System>Audit Trail to open the viewer.
+
+
+---
+
+                                                                           Audit Trail | 397
+
+
+
+Reporting the System Audit Trail:
+    You must export Audit Trail Events to print them from a text or word processing file.
+
+Exporting Audit Trail Events:
+    Gen5 provides a quick and easy method for exporting the System Audit Trail. Use this
+    feature to establish a regular schedule for "archiving" past events and to generate a
+    report of the events, if needed. The export action itself is logged in the audit trail.
+    Exported records can be optionally deleted from the system.
+
+      Important: Gen5 does not retain control over the exported text files.
+        It is your organization's responsibility to ensure the security of the
+        exported audit trail records.
+
+
+---
+
+398 | Chapter 18: Security
+
+
+
+User Accounts
+
+About User Accounts
+
+           For Gen5TM Secure Only
+
+     System> Security> Users
+
+  Prerequisite
+        This function is only available to the System Administrator. You must login: System>
+        Login/Logout as the Administrator to access all the controls. Non-administrators are
+        limited to changing their own password and selecting a Startup Action and Protocol
+        Folder.
+
+  How to Create, Modify or Delete User Accounts
+        Only an Administrator can add, modify, or delete users. Except for the Administrator,
+        any user account can be changed or deleted:
+
+                           Click New to set up a new user
+
+                        (Double-click or) Highlight a user and click Edit to modify its
+                name, password, or Group assignment
+            Highlight a user and click Delete to remove the user account
+
+
+Setting User's Permissions
+     Gen5 Secure: System> Security> Users> Edit
+     All other Gen5 levels: System> User Setup
+
+  Prerequisite
+        This function is only available to the System Administrator. You must login, System>
+        Administrator Login, as the Administrator to access these controls
+        Depending on the level of software, User's are given permission to perform tasks based
+        on their Group assignment in Gen5 Secure or the User Permissions given to all users
+        in all other levels of Gen5.
+
+   Gen5 Secure
+        User Permissions are defined by the User Group. When you select or change a user's
+        Group assignment you're simultaneously assigning their permissions:
+          1.    Select Security> Users
+          2.    Highlight the user and click Edit (or double click the user record)
+          3.    Use the drop-down list to change the Group assignment0.
+
+
+---
+
+                                                                          User Accounts | 399
+
+
+
+         See Modifying User Permissions (on page 401) to change the
+          permissions assigned to a group
+
+  Gen5, Gen5 ELISA, Gen5 Reader Control
+      For all levels of Gen5, except for Gen5 Secure, there are only two types of users: System
+      Administrator and User (non-administrator). The System Administrator can set or
+      change the User Permissions for non-administrators. Gen5 provides all user rights and
+      privileges to administrators.
+
+  To change User Permissions:
+       1.   Login as the System Administrator
+       2.   Select Security> User Permissions
+       3.   Add or remove a tick mark for each permission to give or deny access to it to
+            all non-administrator users0.
+
+
+
+
+About User Groups
+
+        For Gen5TM Secure Only
+
+      Gen5 Secure uses Groups to manage the rights or permissions granted to users. When
+      creating (or maintaining) a group, you define the level of access and the controls
+      available to certain types of users, and then assign actual users to the groups. Gen5
+      ships with three groups: Administrator, Power User, and Standard User.
+      The System Administrator and Power User groups are given access rights to all
+      functions. The Administrator's rights cannot be changed, and include additional rights
+      to manage user accounts that are not extended to Power Users. When Gen5 Secure is
+      installed, the Standard User is limited to the following permissions. The System
+      Administrator can change these controls as needed:
+             Quick Read/Use Default Protocol
+             Add a New Plate
+             Create/Edit Sample IDs
+             Edit Plate Information
+             Edit Report Builder
+             Create folder in database
+
+How to create new and modify existing groups:
+      Only a System Administrator can add, modify, or delete groups. Except for the
+      Administrator group, any group can be changed or deleted, and any group can be
+      renamed.
+
+
+---
+
+400 | Chapter 18: Security
+
+
+
+                           Click New to set up a new group
+
+                         Highlight a group and click Edit to modify its name and
+                permissions
+
+                          Highlight a group and click Delete to remove it as an option. First
+                you must reassign any users to another group. You cannot delete a group with
+                users assigned to it.
+
+
+ Creating/Maintaining User Accounts
+
+           For Gen5TM Secure Only
+
+     System> Security> Users
+
+  Prerequisite
+        Most options for user accounts are only available to the System Administrator. Non-
+        administrators are limited to changing their own password and selecting a Startup
+        Action and Protocol Folder.
+
+  User ID
+        Enter a unique ID using 1 to 16 alphanumeric characters. The user will enter or select
+        this ID when logging into Gen5 and when signing files.
+
+  Full Name
+        Enter the user's name. This name will be associated with events logged by this user's
+        actions and with the digital signature applied by this user.
+
+  Group
+        Choose a Group membership to assign access rights and permissions to the user. Users
+        receive the rights assigned to the Group.
+
+  Status
+        The checkbox shows whether or not the user's account is currently locked. The System
+        Administrator can lock or unlock the account. When a user's account is locked, the
+        user cannot log into Gen5 and cannot sign files. A user's account may become locked
+        due to one of three events:
+                 Intentional lock by the Administrator through this dialog
+                 Automatic lock if the user exceeded the number of successive failed login
+                   attempts
+                 Automatic lock if the user's password expired
+
+           See important information about expired passwords on page 387.
+
+
+---
+
+                                                                           User Accounts | 401
+
+
+
+Startup Action
+     Use the drop-down to select the preferred method for starting Gen5:
+            Startup Window is the default setting, it offers several options including
+              creating a new item or opening a recently used item
+            Create new experiment opens Gen5 with the Protocol selection dialog
+              open, as if the user had selected File>New Experiment
+            Start at main menu opens Gen5 showing the File, System and Help menus
+              only. Since neither a protocol or experiment is open, the workspace is blank.
+
+Protocol and Experiment Folders
+     Browse to or enter the full path and directory to define the folder in which the current
+     user will typically store protocol and experiment files. If a folder is not specified, Gen5
+     will default to the most recently-accessed folder.
+
+Password
+     Assign a password for the user to enter the first time he/she logs in to Gen5. Instruct
+     users to change their password after the first login using the Password you've
+     assigned. Users can only change their own password. System Administrators can
+     change any user's password.
+
+
+Modifying User Permissions in Gen5 Secure
 
----
+       For Gen5TM Secure Only
 
----
+  System> Security> Groups> Edit
+     User's are given permission to perform tasks based on their Group assignment in Gen5
+     Secure.
 
----
+Prerequisite
+     This function is only available to the System Administrator. You must login,
+     System>Login/Logout, as the Administrator to access these controls
 
----
+How to Change User Permissions:
 
----
+      1.               Select System> Security> Groups, highlight the group and click
+           Edit to change the permissions or access rights of group members. Or click
+           New to create a new user group.
 
----
+      2.   Add or remove a check mark for each function to grant access or deny it.0.
 
----
 
 ---
 
----
+402 | Chapter 18: Security
 
----
 
----
 
----
+              Denying user permissions usually results in making the applicable dialog Read
+              Only.
 
----
+Permissions
 
----
+  Protocol/Experiment Controls
+        This table describes the capability each Permission gives users. The Audit Trail icon
+        shows when Gen5 Secure logs the activity in the Protocol or Data Audit Trails. Links
+        are provided to learn more about the function.
 
----
+    Function                                                                          Audit
+                                                                                      Trail
 
----
+    Create a new Protocol: Access to menu options File>New Protocol,
+    File>Save As, and Startup Page options to create a new protocol file
 
----
+    Open a Protocol: Access to File>Open, Recent Files List and Startup Page
+    options to open an existing protocol
 
----
+    Perform a Quick Read/Use default protocol: Access to creating an
+    experiment from the default protocol
 
----
+    Add a New Plate: Access to menu options and toolbar buttons for Adding
+    one or multiple plates to an experiment
 
----
+    Delete a plate: Access to Plate menu option to Delete, i.e. remove the plate
+    information and all data associated with the plate (if any) from an experiment
 
----
+    Create/Edit Sample IDs: Access to Plate menu and menu tree options to
+    enter or modify Sample IDs for each plate or in a Batch for multiple plates
 
----
+    Edit Plate Information: Access to Plate menu and menu tree options to
+    modify the Plate Information. Note: Information is intended to be captured at
+    run-time, for each plate in an experiment
 
----
+    Mask/Unmask values: Access to Mask button in data views to select
+    individual wells and mark them to be ignored in data reduction and curve
+    plotting
 
----
+    Edit values: Access to Change button in data views to select individual wells
+    and change/enter alternative data for use in curve plotting and data reduction
 
----
+    Re-read plate: Access to Read button after plate has been read to overwrite
+    the current measurement results with newly acquired measurements
 
----
+    Simulate Read: Access to Simulate option of the Plate Read dialog to let
+    Gen5 simulate a reading instead of actually reading the plate. (Useful for
+    Gen5 training/tutorials.)
 
----
+    Read from File (import): Access to Read From File option of the Plate Read
+    dialog to acquire/import reading data from a text file
 
----
 
 ---
 
----
+                                                                        User Accounts | 403
 
----
 
----
 
----
+Enter Manually (raw data): Access to Enter Manually option of the Plate
+Read dialog to manually enter (type in) reading data instead of actually
+reading a plate
 
----
+Edit Protocol: This switch gives or denies access to the next nine related
+functions. You can override it by individually selecting the permissions and
+assigning access
 
----
+Edit Procedure: Access to the Procedure dialog to alter the reading
+requirements and related events, like Delay, Shake. Gen5 always prohibits
+users from changing an experiment's Procedure after the first plate is read
 
----
+Edit Plate Layout: Access to the Plate Layout dialog to change the plate
+layout, Well IDs, Concentrations/Dilutions
 
----
+Edit Data Reduction: Access to the Data Reduction dialog to change data
+reduction steps, add new steps or alter existing ones
 
----
+Edit Report Builder: Access to the Report Builder to create or modify the
+report definitions
 
----
+Edit Runtime Prompts: Access to create or modify the "prompts"
+(information requests) presented to users at read time. Users' responses
+become Plate Information
 
----
+Edit Data Views: Access to alter the format/font of data views items; create
+custom data views
 
----
+Edit File Export Builder: Access to select and modify the content for export
+to a text file; define the filename and format settings for export files
 
----
+Edit Power Export Builder: Access to select and modify the content for
+export to Excel(R)
 
----
+Edit Protocol Options: Access to define miscellaneous, protocol-related
+parameters
 
----
 
----
+System Controls
+    This table describes the capability each Permission gives users. The Audit Trail icon
+    shows when Gen5 Secure logs the activity in the System Audit Trail
 
----
+Function                                                                           Audit
+                                                                                   Trail
 
----
+Manage and Maintain Systems: This switch gives or denies access to the
+next five items. You can override it by individually assigning access to the
+permissions
 
----
+Edit Default Protocol: Access to define or modify the Default Protocol
+Settings
 
----
+Edit file storage mode: Access to menu option System>Preferences>File
+Storage to alter the option: database or Windows(R) file system
 
----
 
 ---
 
----
+404 | Chapter 18: Security
 
----
 
----
 
----
+    Edit Read from File options: Access to menu option
+    System>Preferences>Read from File Settings to alter the designation of the
+    text delimiter for importing data via text files
 
----
+    Manage and maintain Database: Access to change the location of the local
+    and shared databases, and their backups. Run maintenance tasks and tests,
+    and repair errors. Only when File Storage "uses the SharedDB"
 
----
+    Delete System Audit Trail Events after export: Access to delete records
+    after exporting them to a text file. All users can export records, only users
+    with this permission are able to delete them
 
----
+    Manage and Maintain Devices: This switch gives or denies access to the
+    next four related permissions. You can override it by individually assigning
+    access to them
 
----
+    Edit Reader Settings: Access to Reader Configuration to set up and alter
+    the settings. Denying access restricts the user's ability to change a reader's
+    filter/wavelength settings in Gen5
 
----
+    Edit Plate Types: Access to create, modify or delete records in the Plate
+    Type Database
 
----
+    Define Universal Plates: Access to Diagnostics options to set up and modify
+    the Universal Test Plate records used to conduct testing
 
----
+    Delete Diagnostic Test History: Ability to delete test records. All users can
+    view the test history, only users with this permission can delete the records
 
----
+    Manage and Maintain File Storage: This switch gives or denies access to
+    the next seven related permissions. You can override it by individually
+    assigning access to them. They are only applicable when File Storage "uses
+    the SharedDB"
 
----
+    Create folder in Database: Ability to create a new folder while maintaining
+    database files and when saving protocol and experiment files. Users denied
+    this function are limited to saving files in existing database folders
 
----
+    Delete/Overwrite folder in Database: Ability to delete or overwrite (Save
+    As) folders and files from/in the database
 
----
+    Export file from Database: When maintaining database files, ability to use
+    the right-click menu to Export to Disk
 
----
+    Rename folder/file in Database: Ability to rename database files and
+    folders in the database
 
----
+    Move folder/file in Database: Ability to relocate folders and files within the
+    database
 
----
+    Import file to Database: Ability to import, paste from clipboard, or drag
+    and drop files from another location
 
----
 
 ---
 
----
+Chapter 19
 
----
 
----
 
----
 
----
+Reader Control
 
----
+     This chapter supplements the Getting Started Guide instructions for
+     attaching a reader to Gen5 with more in-depth information about
+     how to control, configure and test your reader.
 
----
 
----
+ Reader Configuration................................................................ 408
+ Controlling the Clarity............................................................... 409
+ About Com Ports...................................................................... 410
+ Reader Settings ....................................................................... 413
+    Absorbance Wavelengths...................................................... 415
+    Fluorsecence/Luminescence Filters ........................................ 416
+    Dispenser Settings .............................................................. 418
+ Reader Control Panel ................................................................ 417
+    Preheating.......................................................................... 417
+ Testing the Reader................................................................... 422
 
----
 
 ---
 
----
+406 | Chapter 19: Reader Control
 
----
 
----
 
----
 
----
+When you have Two Readers
+        Gen5 lets you set up and control two readers simultaneously. Here's how Gen5
+        determines which reader to deploy when you have two readers attached to your PC.
 
----
+          Note: Fluorescence and Luminescence protocols are not instantly
+            interchangeable between Synergy 2/4 and other BioTek readers. (The
+            Synergy 2 and Synergy 4 have newer basecode.) When you try to read
+            a plate using a protocol defined on a different reader, Gen5 will alert
+            you of the need to edit the Read step. To use a protocol created with a
+            different reader, open all the Read steps while communicating with the
+            current reader. This action will update the protocol to match the
+            current reader's capabilities.
 
----
+Compatibility
+          Gen5 tests the readers for compatibility with the Procedure when you:
+               Edit/Open an Existing Procedure
+               Read a plate
+         1.   All available, i.e. not busy, readers are tested for compatibility. A reader
+              performing a read is considered busy.
+              Compatibility is determined by these criteria:
+               If the protocol was created for the Clarity, then the reader must be a Clarity.
+                  If the protocol was not created for the Clarity, then the reader cannot be a
+                 Clarity
+               If it is not a Clarity protocol, Gen5 tests the reader's capability to perform
+                 the required detection method:
+               Absorbance: minimum and maximum wavelengths supported
+               Fluorescence
+               Luminescence
+               Spectrum Scans
+               Linear Scans
+               Area Scans
+               Gen5 tests the reader's capability to perform:
+               Incubation: minimum and maximum temperature supported
+               Shake
+               Dispense: number of dispensers available
+               Gen5 tests the reader's capability to perform:
+               Well Mode: maximum number of reads, shakes, and dispenses
+               Synchronized Plate Mode: maximum number of synchronized plate reads,
+                 shakes, and dispenses
 
----
 
 ---
 
----
+                                                        When you have Two Readers | 407
 
----
 
----
 
----
+      Pathlength Correction
+2.   If exactly one reader meets the criteria, it is automatically selected to edit the
+     Procedure or read the plate
+3.   If more than one reader meets the criteria, Gen5 determines if one of them was
+     last used to edit the Procedure or read the plate. If so, then it is selected. If not,
+     the user is prompted to select which reader to use.
+     Gen5 checks the Protocol for a reader type and serial number to determine
+     which reader was last used. If it does not find an exact match, but only one of
+     the readers is the same type, that reader is selected.
+4.   If none of the readers matches the criteria:0.
+      Gen5 will display an error message and offer to Continue or Cancel. Users
+        who select Continue can modify the Procedure to make it compatible with
+        their reader
 
----
 
 ---
 
----
+408 | Chapter 19: Reader Control
 
----
 
----
 
----
 
----
+Reader Configuration
+     System> Reader Configuration
+        Use these controls to tell Gen5 about the attached reader(s) and to retrieve software
+        version information for tech support or other purposes. The status of an instrument is
+        displayed as Ready or Busy: Ready to perform a read or Busy doing so.
 
----
+          Special note for Clarity users: Configuration parameters and port
+            settings can only be defined through the Clarity PC software. See
+            Setting up the Clarity Luminometer in the Getting Started Guide
 
----
+Add a Reader
+        Click the Add button to connect up to two readers to the system. You'll select the
+        Reader Type and the Communication Port its plugged into on your PC (see page 410),
+        and if necessary, define Setup properties.
 
----
+                     and              lead to Reader Settings on page 413
 
----
+Modify a Reader
+        Highlight a reader and click Modify (or double click a reader) to change the reader's
+        Com Port or Setup properties
 
----
+Delete a Reader
+        Highlight a reader and click Delete to eliminate it from potential use by Gen5.
 
----
+ActiveX Version
+        Click the Active X button to retrieve the latest software version number:
 
----
 
----
 
----
+        You may need to provide this information when seeking assistance from BioTek's TAC
+        (Technical Assistance Center)
 
----
 
 ---
 
----
+                                                                       Controlling the Clarity | 409
 
----
 
----
 
----
 
----
+Controlling the Clarity
+    System> Reader Control> Clarity
 
----
+Microplate Holder Control
+        The Clarity's microplate holder can be opened and closed only through software
+        control. Under Move Plate:
+                Click Out to extend/open the microplate holder
+                Click In to retract the microplate holder into the reading and heating
+                  chamber
 
----
+          Important: Do not forcibly push in or pull out the microplate holder!
+            If for any reason you cannot control the holder using the software, use
+            the Allan key supplied with the instrument to extend or retract the
+            holder. Refer to the ClarityTM Operator's Manual for more information.
 
----
+Prime
+        The reagent lines and injectors should be primed with the dispensing fluid before
+        running the protocol. Click Priming to open the Priming Parameters dialog.
 
----
+          Refer to the Clarity Operator's Manual for complete priming
+            instructions.
 
----
+To prime the injectors:
+          1.   Fill the reagent bottle(s) with the fluid to be dispensed.
+          2.   Select System>Reader Control>Clarity and click Priming for the Priming
+               Parameters dialog. All installed injectors are displayed. Injectors marked by an
+               asterisk (*) have yet to be initialized. Initialization takes place automatically
+               when the injector is used.
+          3.      Click on the injector's check box. The drop-down list box Direction, Volume
+               [ul] and Strokes are enabled.
+          4.   Set the Direction To Mpl. Specify the Volume [ul] and the number of Strokes or
+               cycles. The total liquid volume is displayed as the Total Volume.
+          5.   Click Prime to prime the injector(s). 0.
 
----
+Heating
+        The Clarity's optional incubator is controlled via software. Click the Incubation...
+        button to access the Sample Incubation dialog.
 
----
+          Refer to the Clarity Operator's Manual for complete heating
+            instructions.
 
----
 
 ---
 
----
+410 | Chapter 19: Reader Control
 
----
 
----
 
----
+About Com Ports
+        Com Ports are communication ports that allow your computer (PC) to connect to and
+        control other devices. BioTek ships the required serial and/or USB cables with the
+        reader. You must tell Gen5 which com port is used to connect to a reader. (More on
+        page 413)
 
----
+  Serial cable (see samples on page 411)
+        Generally, Windows(R)-compatible PCs have two serial com ports, which it assigns as
+        Com1 and Com2. If you're uncertain which com port the serial cable is plugged into,
+        try Com1 and Test Communication. If you receive an error, try Com2.
+        Advanced users can attach additional com ports to a PC, and can use Window's
+        Control Panel to identify or modify the com port number.
 
----
+  USB cable (see samples on page 412)
+        For compatible instruments, BioTek ships USB-Driver software along with the USB
+        cable. Follow the instructions provided for USB installation, e.g. installing the USB
+        Driver software, and review the ComPort Guide to learn how to identify or modify the
+        com port number.
 
----
+  Troubleshooting
+        Review the information provided in the Troubleshooting chapter for resolving
+        communication errors.
 
----
 
 ---
 
----
+                                               Controlling the Clarity | 411
 
----
 
----
 
----
+Serial Communication Cables and Ports 9-pin and 25-pint
 
----
 
 ---
 
----
+412 | Chapter 19: Reader Control
 
----
 
----
 
----
+USB Communication Cables and Ports
 
----
 
 ---
 
----
+                                                                       Reader Settings | 413
 
----
 
----
 
----
 
----
+Reader Settings
+  System> Reader Configuration> Add/View
 
----
+        Prerequisite: You must be authorized to make changes to the
+         Reader Configuration. If the options are grayed out, contact your
+         System Administrator for access rights.
 
----
+       Special note for Clarity users: Configuration parameters and port
+         settings can only be defined through the Clarity PC software.
 
----
+     Use these controls to tell Gen5 the type of reader, communications port and baud rate
+     to use:
 
----
+      1.       Click the down arrow to select the Reader Type
+      2.    Enter number of the Com Port in the text field
+      3.    BioTek recommends retaining the default Baud Rate or transmission speed. If
+            you have a compelling reason you can select another rate from the list
 
----
+       Baud rate settings can cause "serial read" errors: when the baud
+         rate is set to a non-default setting for Synergy and PowerWaveXS
+         readers, Gen5 will be unable to communicate with them if they are
+         turned off and then turned on again while Gen5 is running.
 
----
+      4.    Generally, the Setup option is not needed. Gen5 communicates with the reader
+            to obtain the probe sizes and configuration of the filter/wavelengths tables. 0.
 
----
+ Reader Types
+     Gen5 only needs to know the basic model of reader, then Gen5 can communicate with
+     the reader to learn its specific capabilities, e.g. Incubation, Dispensing. BioTek
+     recommends installing the latest version of basecode for your reader, which is
+     generally free-of-charge and easy to obtain and install. Contact BioTek.
 
----
+ Com Port
+     Enter the serial communications port number. When using a USB connection to the
+     PC, the Windows(R) operating system sets up a "virtual" Com Port. Follow the
+     instructions below:
+     All BioTek Readers except the Clarity
+      1.    Plug in the USB cable
+      2.    For first time set up, Windows recognizes New Hardware, and prompts you to
+            install the required driver. Follow the installation directions provided with the
+            driver. When the wizard is finished installing the driver, a new "COM port"
+            will be available.
 
----
 
 ---
 
----
+414 | Chapter 19: Reader Control
 
----
 
----
 
+          3.   Go to Control Panel>Administrative Tools>Computer Management>Device
+               Manager>Ports(COM & LPT) to see the new virtual Com port assigned to the
+               USB.
+          4.   Enter this port for the reader. 0.
+
+        Clarity Luminometers
+          1.   Connect the Clarity to the PC with the USB cable.
+          2.   Launch the Clarity software, and go to Options>Com Port Settings. Select
+               USB.
+               Once you get this set up initially, you won't have to do it again unless you
+               switch to a serial port connection.
+          3.   Close the Clarity software and launch Gen5. 0.
+               Gen5 will automatically use whatever connection was specified in the Clarity
+               software. All connection information is controlled by the Clarity software only.
+
+  Baud Rate
+        Make sure the Baud Rate matches the reader's settings. Consult your reader's
+        operator's manual for the correct rate. Readers without keypads, Synergy and
+        PowerWaveXS, will issue a "serial read" error when it is powered down and then up
+        again while Gen5 is running if the baud rate is set to other than the default setting.
+
+  Test Communication
+        Use this button when adding or modifying a reader to test the Com Port setting. Gen5
+        attempts to communicate with the reader and reports its results in an on-screen
+        message.
+
+  Setup
+        Generally, the Setup option is not needed. Gen5 communicates with the reader to
+        obtain the information it contains. Occasionally, you may want to view or modify:
+           Absorbance Wavelengths (next page)
+           Fluorescence/Luminescence Filters (on page 416)
+
+
 ---
+
+                                                                       Reader Settings | 415
+
 
+
+Absorbance Wavelengths
+  System> Reader Configuration> Add/Modify button> Setup button
+     Use the Absorbance Wavelength tab to ensure that Gen5's wavelengths table is aligned
+     with the reader's internal table. Depending on the reader, you can specify up to six
+     wavelengths to be made available as default selections in the Read Step dialog
+     (Protocol>Procedure>Read).
+        Get Wavelengths: retrieve wavelength values from the instrument
+        Send Wavelengths: download and calibrate wavelength values. Enter the
+          desired values in the Wavelength fields and then click Send Wavelengths.
+          The values will be downloaded to the instrument, overwriting its existing
+          wavelength table.
+
+       Note: To exchange wavelength information between Gen5 and the
+         reader, the two must be communicating, i.e. the reader must be
+         turned on and correctly configured in Gen5.
+
+     Reader-Specific Information
+
+       Reader Series               Wavelength             Wavelength selection
+                                   range
+
+       ELx-Series                  340-900                Filters: Update the reader
+                                   depends on specific    when changing filters
+                                   model
+
+       uQuant and PowerWave        200-999                Monochromator: selectable
+       series                      depends on specific    by 1nm increments
+                                   model
+
+       Synergy HT and              200-999                Monochromator: selectable
+       Synergy 2/4                                        by 1nm increments
+
+
+       Note: You must conform to the specific BioTek reader procedures
+         when altering the reader's configuration. For filter-based readers, it is
+         your responsibility to ensure that the filters are positioned correctly
+         and recorded here accurately.
+
+     ELx-Series Filter-Based Readers
+     BioTek updates the on-board software with the current configuration of filters before
+     shipping the reader to you. Unless you change the filters without updating the on-
+     board software, Gen5 will capture the filter-wheel configuration when it initiates
+     communication with the reader.
+     If you do change the filter-wheel configuration, you can use Gen5 to update the reader:
+      1.   Precisely record the wavelength and position of the filters before reinstalling
+           the filter wheel
+
+
 ---
+
+416 | Chapter 19: Reader Control
+
+
+
+         2.   In Gen5, select System>Reader Configuration and click the View/Modify
+              button
+         3.   Click the Setup button, and select the Absorbance tab
+         4.   Fill in the Wavelength table to match the filter-wheel configuration
+         5.   Click Send Wavelengths. 0.
 
+
+Fluorescence/Luminescence Filters
+     System> Reader Configuration> View/Modify button> Setup button
+        Normally, these controls are only needed when you are changing a filter wheel
+
+          The Filter Wheel Library can also update the reader's
+            Fluorescence/Luminescence Filters table. See the Filters and Mirrors
+            section beginning on page 173.
+
+  To change the current settings and download them to the instrument:
+         1.   Select the filter Type using the drop-down list for each Filter position in the
+              Excitation and Emission filter wheels.
+         2.   When applicable for the filter Type, enter Wavelength and Bandwidth values
+              in the fields.
+
+          The Wavelength value and its accompanying Bandwidth, in
+            nanometers, are etched into the filters. For example, the
+            Wavelength/Bandwidth combination of 485/20 will transmit light from
+            475 to 495 nm (10 nm on either side of the center). See the reader's
+            operator's manual for details.
+
+         3.   When all values have been entered, click Send Values. The values will be
+              downloaded to the instrument, overwriting its existing wavelength table. 0.
+
+  To retrieve filter wheel settings from the instrument:
+           Click Get Values. This reports the values in the reader's on-board memory.
+             Since the reader does not have the ability to mechanically determine the filter
+             configuration, these values may NOT truly represent the current filter wheels.
+        Find additional information about changing Filter Wheels and recommended
+        configurations in the Filters and Mirrors section beginning on page 173.
+
+
 ---
+
+                                                                    Reader Control Panel | 417
+
+
+
+
+Reader Control Panel
+   System> Reader Control
+
+
+         or, click on the reader button in Gen5's toolbar to open the control panel.
+   If supported by the current reader, you can use this feature to view information about the
+   attached reader, control the reader door or plate carrier, and control incubation.
+   The reader must be connected, turned on, and properly communicating with Gen5TM for
+   the controls to be enabled. This means the reader must be "ready" not busy reading a plate
+   or running a system test, for example.
+         Information
+         Door/Carrier
+         Pre-Heating (below)
+         Dispenser (page 418)
+         Tungsten Lamp (page 422)
+
+        Detailed information about the Filter Wheel and Mirror tabs is provided
+          earlier in this guide.
 
+
+Pre-Heating Parameters
+   System> Reader Control> Pre-Heating
+
+ In the control panel for readers with incubation capability:
+         The Set Temperature Procedure defined for the Protocol offers the ability to
+           activate Pre-Heating. This screen reflects the parameters defined in the protocol
+         To use the reader as incubator in between experiments: enter the temperature
+           in the Requested field and then check On to begin pre-heating. Most BioTek
+           readers allow a temperature range of 20-50^0C.
+         The temperature will rise or fall to the Requested temperature, as appropriate.
+           Off disables the incubation unit; the temperature will return to ambient.
+         The Actual field reports the current temperature (Celsius) of the incubation
+           unit.
+             The Total Time field reports the total time elapsed since the On box was
+               checked. Associated with the Total Time field, you can use the Beep after
+               checkbox to direct Gen5TM to "beep" continuously after the specified
+               duration. The clock starts when the incubation unit is turned On.
+             The Time Since Reached field reports the total time elapsed since the
+               incubation temperature reached the Requested temperature. Associated
+
+
 ---
+
+418 | Chapter 19: Reader Control
+
+
+
+                  with the Time Since Reached field, use the Beep after checkbox and field to
+                  tell Gen5 to "beep" continuously after a specified duration. The clock starts
+                  when the incubation temperature reaches the Requested temperature.
+           Temperature Reached is displayed when the incubation temperature reaches
+             the Requested temperature.
+
+          Note: As the temperature of the incubation unit approaches the
+            Requested temperature, it may take a few minutes to settle within an
+            acceptable tolerance (+/- 0.5^0 C). During this settling period, the
+            Temperature Reached indication may appear for a few seconds,
+            disappear, then reappear moments later. The Time Since Reached field
+            will automatically reset to 00:00:00 each time the indication appears.
+            If the Beep after checkbox associated with Time since reached field is
+            enabled and set to, for example, 10 minutes, Gen5 will "beep" 10
+            minutes after the incubation temperature has consistently settled
+            within +/- 0.5^0 C of the Requested temperature.
+
+
+Dispenser Settings
+     System> Reader Configuration> Add/Modify button> Setup button
+
+          Read Only: for everyone except BioTek qualified technicians, these
+            controls provide information, they do not let you alter it.
+
+
+
+          Use the Reader Control Panel to position the dispensers for performing
+        maintenance.
+
 
+  Calibration Volumes
+        Gen5 shows the minor differences between the expected (Target) dispensing volumes
+        and the actual (Measured) volumes, as determined at the BioTek factory.
+           Click Get Values. Actual measured values will be uploaded from the reader's
+             current internal tables.
+
+  Injector Position
+        Gen5 shows the current position of the injector, if applicable to the reader.
+           Next to Top Probe
+           Above Bottom Probe
+
+        Also see: Special filter position requirements for the Synergy HTTR w/Injectors on
+        page Error! Bookmark not defined..
+
+
 ---
+
+                                                                       Reader Control Panel | 419
+
+
+
+Dispenser Control and Maintenance
+   System> Reader Control> Dispenser
+
+
+
+
+      In the control panel for readers with dispensing or injection capability:
+
+          Dispenser: up to two dispensers may be attached to the reader, use the drop-down
+      list to select the one you want to control or review information about.
+
+ Dispenser Information
+   The fields on the left side of the screen display the current state of the selected dispenser:
+              Connected: the reader detects a live connection (Yes) via serial cables with
+                the dispenser module. "No" indicates a faulty connection. Check the
+                cabling.
+              Initialized: Prior to performing a dispense step the dispenser module must
+                be initialized. Click the Initialize button if this status reports "No."
+              Primed: Prior to performing a dispense step the dispenser must be primed.
+                Place the priming plate on the carrier and click the Prime button if this
+                status reports "No."
+              Injector position: Gen5 reports the position of the injector in relation to the
+                reader's probe
+
+ Dispenser Routines
+                         Ensure normal and correct communication between the
+                         dispenser module and reader
+
+                         Prime the tubing with fluid
 
+
 ---
+
+420 | Chapter 19: Reader Control
+
+
+
+                          Remove and recover fluid from the tubing
+
+                          Move the dispenser's syringe pump into maintenance
+                          position for installation or replacement
+
+          When defining a Dispense Step in the Procedure you can also define
+            Tip Priming
+
 
+Priming the Dispenser
+        This routine is only applicable for Readers with Injectors. Refer to your reader's
+        Operator's Manual for specific and more detailed maintenance guidelines.
+        Priming the tubing with reagent (dispensing fluid) is an important first step when
+        running an experiment. Likewise, flushing the tubing of reagent after each use is an
+        important maintenance step. The priming routine is used for both steps.
+
+          When dispensing volumes less than or equal to 20 ul/well, we
+            recommend specifying a tip prime volume that is equal to the dispense
+            volume. For dispense volumes greater than 20 ul/well, we recommend
+            a tip prime volume of 20 ul.
+
+  To prime the dispenser:
+         1.   Fill the supply bottle(s) with the dispensing fluid when running an experiment
+              or with deionized or distilled water when performing maintenance. Insert the
+              supply (inlet) tubes into the bottles.
+         2.   Place the priming plate on the carrier.
+         3.   Select System> Reader Control> Dispenser
+         4.   Set Dispenser to 1
+         5.   Set the Volume to at least:
+               1000 ul for pre-experiment priming
+               5000 ul for maintenance
+         6.   Set the dispense Rate (BioTek recommends 275 for priming)
+         7.   Click Prime to start the process.
+              When the process is complete, carefully remove the priming plate from the
+              carrier and empty it.
+         8.   Repeat the process for Dispenser 2, if applicable.0.
+
+
+            Maintaining the Tubing: Leave DI water in the system overnight or until the
+        instrument will be used again. Purge the fluid from the system and then prime with
+        the dispense reagent before running an assay.
+
+
 ---
+
+                                                                   Reader Control Panel | 421
+
 
+
+Purging the Dispenser
+       This routine is only applicable for Readers with Injectors. Refer to your reader's
+       Operator's Manual for specific and more detailed maintenance guidelines.
+       Purging the dispenser is an important part of the recommended daily maintenance
+       routine. Gen5's purging capability can also be used to recover and preserve expensive
+       reagents.
+
+  To purge the dispenser of fluid:
+        1.   Remove the inlet tubes from the supply bottles.
+        2.   Select System> Reader Control> Dispenser
+        3.   Select the Dispenser number: 1 or 2
+        4.   Set the Volume (2000ul guarantees all fluid in the system's tubing is removed).
+        5.   Click Purge to start the process.
+        6.   When the purge is complete, repeat the process for the other Dispenser, if
+             applicable. 0.
+
+         After purging the system, you may wish to run a quick Dispense-
+           Only experiment to visually verify the dispense accuracy.
+
+
+Dispenser Prime/Purge Rate
+       The allowable volume ranges for each dispense rate are:
+
+             Rate (ul/sec) Volume Range (ul)
+
+             225                5-5000
+
+             250                15-5000
+
+             275                25-5000
+
+             300                30-5000
+
+       BioTek recommends using the default rate of 275 for priming.
+
+
 ---
+
+422 | Chapter 19: Reader Control
+
+
+
 
----
+Tungsten Lamp Control
+     System> Reader Control > Tungsten Lamp
 
----
 
----
 
----
+        Use this control to turn off the Tungsten Lamp when it is not needed. Follow the menu
+        path shown above to access the controls. Note: when the tungsten lamp is not required
+        in a Procedure, Gen5 turns off the lamp.
+        Conversely, you can use the Turn Lamp On button. The lamp takes approximately
+        180 seconds to warm up before measurements can be taken. When the lamp is not
+        warmed up before a reading is requested Gen5 displays a message that counts down
+        this warm up period before prompting you to put the plate on the carrier.
 
----
 
 ---
 
----
+                                                                           Testing the Reader | 423
 
----
 
----
 
----
 
----
+Testing the Reader
+    Gen5TM provides the following options for testing the reader:
+           Run a System Test
+           If you've purchased BioTek's Gen5 Reader Diagnostics Utility:
+                  Run the Absorbance Test Plate
 
----
 
----
+ Reader System Test
+    System> Diagnostics> Run System Test
 
----
+          The System Test for the ClarityTM Microplate Luminometer must be
+            performed using the Clarity PC software. Refer to the Clarity
+            Operator's Manual for instructions.
 
----
+Run the Test
+      Most BioTek readers perform a self test every time they're turned on, but when you
+      want to view and/or print the results of a system (aka optics) test:
+         1.   Select System> Diagnostics>Run System Test
+         2.   When there is more than one reader attached to the PC, select the desired
+              reader and click OK
+         3.   When the test is completed: 0.
+                   1.   Fill in the text fields, User, Company, Comments, to be included in
+                        the report of the test results. Then, click OK.
+                   2.   Print the report to retain a hard copy for your records
+                   3.   Save As to convert the results to a text file. This is especially useful
+                        when troubleshooting a reader. You can email the text file to BioTek
+                        TAC. 0
 
----
+Test History
+        Gen5 keeps the results of System Tests when they are performed using the menu
+        controls. To review or print them, select System> Diagnostics> History...
 
----
 
 ---
 
----
+424 | Chapter 19: Reader Control
 
----
 
----
 
----
+ System Test Results
+     System> Diagnostics> History
+          Immediately after running a system test on the reader, Gen5 displays the results, and
+          then stores them in History (in the shared database).
 
----
+  Print
+     Click Print to generate a paper version of the results.
 
----
+  Save As
+     Click Save As to convert the results to a text file. This is especially useful when
+     troubleshooting a reader. You can email the text file to BioTek TAC.
+             Gen5 opens the standard Windows(R) file save dialog, and sets the file type to .txt
+               Text files are the default format for Notepad(R) and is recognized by most word
+               processing programs.
+             Optionally, click in the File Name field to modify the default name:
+               SystemTest. Add the date, instrument name, or other information to ensure the
+               file has a distinguishable name.
+             Use the drop-down list and other tools to navigate to the Save In location
 
----
 
----
+ Reader Test History
+     System> Diagnostics> History
+     Gen5TM keeps this database of test results from System (formerly-called Optics) Tests and
+     Diagnostic Tests, if applicable. It is stored in Gen5's shared database.
+             Double-click the desired test to open it on screen and to print it or save it as a
+               text file
 
----
+  Use the options in the Test History dialog to:
 
----
+                   Click the Refresh button to capture any tests that were conducted since
+                 the dialog has been opened
 
----
+                  Use the drop-down lists in the Selection area to filter the list of tests shown
+                 by reader (Device) and user (Operator), if applicable
+             Column Headers can be used to sort the tests: click on a header to sort the files
+               in ascending/descending order by that category. For example, click Status to
+               sort the files by Pass/Fail. Click the same column header to reverse the order
+             Highlight a test and click:
+                  View: to open it for viewing, printing, saving as a text file
+                  Delete: to delete it, erase it from the database.
 
----
 
 ---
 
----
+Chapter 20
 
----
 
----
 
----
 
----
+System Management
 
----
+     This chapter supplements the Getting Started Guide shipped with
+     the Gen5 product CD, which you should consult first for installation
+     and intial set up instructions.
 
----
 
----
+ System Requirements .............................................................. 426
+ Gen5's System Administrator .................................................... 427
+ Changing your password (Gen5 Secure) ..................................... 428
+ Changing your Startup Preferences ............................................ 429
+ Customizing the Toolbar ........................................................... 430
+ Plate Type Database................................................................. 431
 
----
 
 ---
 
----
+426 | System Management
 
----
 
----
 
----
 
----
+System Requirements
+       Before installing Gen5TM make sure your hardware meets the minimum requirements.
 
----
+Computer Requirements
+       For Gen5 to run successfully, the computer must meet the following requirements:
+             Windows XP or Windows 2000 (Professional Editions)
+             Pentium III-Class PC (or compatible) processor (500 MHz or higher)
+             512 MB RAM or higher
+             2 GB Hard Drive space or higher
+             Designed for XGA Resolution at 1024 x 768 or higher
+             CD-ROM Readable Drive
+             Keyboard & Mouse
+             Microsoft Internet Explorer v 5.0 or higher (for online Help)
+             Serial or USB port for BioTek instrument
 
----
+Reader Requirements
+       Verify that the Base Code and Assay Code built into your BioTek reader is compatible
+       with Gen5. BioTek has validated the following list of base codes. Any instrument with
+       the base codes listed below or higher is compatible with Gen5.
 
----
+         If your instrument has a base code with a version lower than these
+           please contact TAC to download and install updated software
 
----
 
----
+            Instrument          Base Code
 
----
+            Powerwave           1.21.1
 
----
+            PowerwaveXS         1.06
 
----
+            Synergy 4           1.03
+            Synergy 2           1.03
 
----
+            Synergy HT          2.24
 
----
+            FLx800              1.15
 
----
+            ELx800              3.07
 
----
+            ELx808              3.15
 
----
+            uQuant              2.02
 
----
 
 ---
 
----
+                                                       Gen5's System Administrator | 427
 
----
 
----
 
----
 
----
+Gen5's System Administrator
+   For all levels of Gen5 except Gen5 Secure
+     It is necessary to login as the System Administrator to change User Permissions and
+     Database Configuration, and to access any features which are denied as Users
+     Permissions
 
----
+ How to change the System Administrator's password:
 
----
+       This function is only available to the System Administrator. You
+         must login, System> Administrator LogIn, as the Administrator to
+         access these controls
 
----
+      1.   Select System> User Setup, and select the Administrator tab
+      2.   Enter the current password in the Current Password field. Gen5 ships with the
+           password set to "admin."
+      3.   Enter the new password in both the New and Confirm password fields
+      4.   Click OK. 0.
 
----
+ How to maintain Users Permissions:
+     Except in Gen5 Secure, access to Gen5's functions, like reading a plate, modifying a
+     protocol, and masking values, is defined equally for all users except the System
+     Administrator, who has all "permissions."
 
----
 
 ---
 
----
+428 | System Management
 
----
 
----
 
----
 
----
+Changing Your Password
 
----
+         For Gen5TM Secure Only
 
----
+    System> Security> Users
+       Users other than the System Administrator are limited to changing their own login
+       password.
 
----
+How to change your password:
+        1.   Select System> Security> Users
+        2.   Identify and open your user account: highlight and click Edit (or double click)
+        3.   Enter your current password in the Current Password field
+        4.   Enter your new password in both the New and Confirm password fields
+        5.   Click OK. 0.
+       The password will take effect the next time you log into Gen5.
 
----
+         Contact your System Administrator if you've forgotten your password.
+           He/she can change your password without knowing the current one.
 
----
 
 ---
 
----
+                                                  Changing Your Startup Preferences | 429
 
----
 
----
 
----
+Changing Your Startup Preferences
 
----
+        For all levels of Gen5 except Gen5 Secure
 
----
+   System> User Setup
 
----
+How to change your startup preferences:
+       1.   Select System> User Setup
 
----
+       2.      Use the drop-down to select the preferred method for Startup Action:
+             Display Welcome dialog is the default setting, it opens Gen5 with a screen
+               that offers several common tasks including creating a new item or opening
+               a recently used item
+             Create new experiment opens Gen5 with the Protocol selection dialog
+               open, as if the user had selected File>New Experiment
+             Start at system menu opens Gen5 showing the File, System and Help
+               menus only. Since neither a protocol nor experiment is open, the workspace
+               is blank.
 
----
+       3.     Use the 3-dot button to change your Protocol and Experiment Folders:
+            browse to the full path and directory to define the folder where you will
+            typically store protocol and experiment files. Gen5 will point to these folders
+            when you save and open a protocol or experiment.
+       4.   Click OK. 0.
+      The changes will take effect the next time you log into Gen5.
 
----
+        Contact your System Administrator if you need assistance.
 
----
 
 ---
 
----
+430 | System Management
 
----
 
----
 
----
 
----
+Customize the Toolbar
 
----
 
----
 
----
 
----
+    Double click the toolbar, anywhere without a button, to open the Customize Toolbar
+    tool or select System> Preferences> Customize Toolbar
+          Gen5 has two toolbars, Protocol and Experiment. Set the current state to
+            correspond to the toolbar you want to customize: select either File>New
+            Protocol or File>New Experiment, accordingly
 
----
+          You can remove unused buttons. Add favorite buttons. Insert separators
+            between buttons to make them easier to distinguish.
+          The Customize Toolbar dialog opens with the Current Toolbar Buttons
+            displayed in the box on the right and any unused buttons and the separator in
+            the box on the left. The Separator is always available and there is no limitation
+            on its use.
 
----
+To remove buttons from the toolbar:
+        1.   Highlight the button you want to remove from the toolbar in the Current
+             toolbar buttons box on the right
+        2.   Click Remove
+             The button is moved into the Available toolbar buttons box and removed from
+             the toolbar when you click Close. 0.
 
----
+To add buttons to the toolbar:
+        1.   Highlight the button you want to add to the toolbar in the Available toolbar
+             buttons box on the left
+        2.   In the Current toolbar buttons box, highlight the button or Separator before
+             which you want to place the button
+        3.   Click Add
+             The button is moved into the Current toolbar buttons box and added to the
+             toolbar when you click Close.0.
 
----
+                 Use the Reset button to restore the toolbar to its default configuration.
 
----
 
----
+          To rearrange the buttons on the toolbar, first remove them and then add them in
+       the desired location
 
----
 
----
+         The toolbar configuration corresponds to the user logged into
+           Windows(R) at the time it is customized.
 
----
 
 ---
 
----
+                                                                    Plate Types Database | 431
 
----
 
----
 
----
+Plate Types Database
+   System> Plate Types
 
----
+About the Plate Types Database
+             All of the default and custom plate types currently stored in the database are
+             listed. When a reading is initiated, Gen5 sends the appropriate plate-type details
+             to the reader. The reader uses this information to precisely position the plate
+             when taking measurements. Most readers support only the Default Plate Types:
+             click the button to view this list. Consult your reader's operator's manual for a list
+             of supported plate sizes.
+             Gen5TM comes with details for more than forty industry-standard microplates. If
+             your reader supports custom plates, you can add your own microplates by
+             selecting Add, or Import them from a previous version of Gen5 or KC4.
 
----
+Plate Types Database Tools:
 
----
+                             Click the Default Plate Types button to view the list and
+             dimension details of the plate types supported by all BioTek readers
+         Double click a plate type in the Default or Custom lists to review its
+           dimensions, such as width, length, height, and the number of rows and
+           columns. Or highlight the plate and click View
 
----
+        Important: Only BioTek's Synergy and PowerWaveXS readers support
+          Custom Plate Types.
 
----
+         Add: to add a new plate type to the database. Take and record careful
+           measurements of its size before creating the new record.
+         View/Modify: to change or update the details of a plate.
 
----
+        Warning! Modifying the dimensions of the installed plate types is not
+          recommended; consider adding a new plate type instead. Please
+          contact BioTek with any questions regarding the current dimensions.
 
----
+         Export and Import: to transfer custom plate types from KC4 or to and from
+           another Gen5 system. Learn more... Since the Plate Type Database is stored in
+           Gen5's SharedDB:
+              you do not need to use the Export-Import tools to archive or backup the
+                database
+              when the SharedDB resides on a network, all users connected to the
+                SharedDB reference the same Plate Types Database, so you do not need to
+                transfer custom plate types between system users
+         Click Delete to remove a selected plate type from the database.
 
----
 
 ---
 
----
+432 | System Management
 
----
 
----
 
----
+Plate Type Measurements
 
----
 
----
 
----
 
----
+    When creating or updating plate dimensions, taking precise measurements is essential.
+    Use calipers with precision to 0.01 millimeters (mm) to gather the following
+    measurements. A standard ruler is not precise enough. Note: when entering values based
+    in 10 micron increments, values always end in 0 (zero).
 
----
+         Important! Dimension values are used by the software to calculate
+           reading positions. Any inaccuracies in these dimensions could
+           significantly affect your results.
 
----
+Dimensions
+          Number of Columns is the number of vertical columns of wells when viewing
+            the plate in its normal orientation. There are 12 in a 96-well plate.
+          Number of Rows is the number of horizontal rows of wells when viewing the
+            plate in its normal orientation. There are 8 in a 96-well plate.
+          Length is the longest dimension of the plasticware (the x axis).
+          Width is the shorter dimension of the plasticware (the y axis).
 
----
 
 ---
 
----
+                                                                   Plate Types Database | 433
 
----
 
----
+         Height is the distance from the bottom mounting surface of the plate to the top
+           face of the plate.
+         Well Diameter is the diameter of any well.
+         Top Left X is the distance from the left side of the plate to the center of well A1.
+         Top Left Y is the distance from the top of the plate to the center of well A1.
+         Bottom Right X is the distance from the left side of the plate to the center of the
+           last well on the plate. In a 96-well plate, this is H12.
+         Bottom Right Y is the distance from the top of the plate to the center of the last
+           well on the plate. In a 96-well plate, this is H12.
 
----
 
----
 
----
+Import and Export Plate Types
+   System> Plate Types
+      Gen5 provides the Export and Import feature to transfer custom plate types from KC4
+      or to and from another Gen5 system. It may be necessary, for example, to import a
+      custom plate type associated with a Gen5 protocol you've received from BioTek or
+      another Gen5 system user.
+      The Import routine examines the plates in the import file and compares them to the
+      current plate type files. New plate types are added to the database. Existing plate types
+      with new dimensions will replace the existing dimensions after user confirmation.
+      Existing plates with identical dimensions are ignored. Gen5 Secure logs the event in
+      the System Audit Trail.
 
----
+  How to Import Plate Types
+      When you have one or more custom plate types exported from KC4 or Gen5 (and
+      therefore in the proper file format):
+       1.   Click Import. Gen5 opens the standard Windows(R) browse dialog.
+       2.   Locate the plate type file and click Open.
+            Gen5, by default, looks for files with the .ptf extension, but, it will accept a file
+            with any extension, as long as the data is correctly formatted. Change the Files
+            of type: using the drop-down list to see all file types. 0.
 
----
+  How to Export Plate Types
+      When you want to export one or more custom plate types:
+       1.   Highlight the files in the Custom Plate Types box. Hold the Ctrl key to select
+            multiple files.
+       2.   Click Export. Gen5 opens the standard Windows(R) Save As dialog.
+       3.   Browse to the storage location for the files, enter a File name and click Save.
+            Gen5, by default, assigns the .ptf extension to the file, but you can change it, if
+            desired, by typing a different filename extension. 0.
 
----
 
 ---
 
----
+434 | System Management
 
----
 
 ---
 
----
+Chapter 21
 
----
 
----
 
----
 
----
+Troubleshooting
 
----
+     This chapter is intended to help you resolve or recover from error
+     messages or other system trouble. The Fluorescence and
+     Luminescence chapter also contains troubleshooting suggestions
+     particular to those detection methods.
 
----
 
----
+ Communication Errors .............................................................. 437
+ Error Messages ........................................................................ 438
+ Calculation Warnings ................................................................ 439
+ Restoring Optimal Performance.................................................. 442
+ System Administrator's Password............................................... 442
 
----
 
 ---
 
----
+436 | Troubleshooting
 
----
 
----
 
----
 
----
+Troubleshooting
+     Here are some guidelines for error recovery, find additional information in Gen5's Help:
+           First Response: Run a System Test on the reader to restore the reader's initial
+             settings and computer communication capability. Note: to stop the alarm on
+             readers without keypads (e.g. Synergy) press the plate-carrier button
+           Reboot your Computer and Reader: When you can't run a system test, e.g.
+             Gen5 is not responding, or when running a system test doesn't resolve the
+             issue, turn off your computer and reader, check all the cabling, i.e. make sure
+             your serial or USB cable is in good condition and is properly connected to the
+             PC and reader, and then, power on your computer and reader. This should
+             refresh the devices and reset communication parameters
+           Communication Errors: PC to Reader on page 437
+           Database Error Recovery in the Managing Files chapter
+           Calculation (Data Reduction) Warnings on page 439
+           Reader Error: #### on page 438
+           Handling Other types of Error Messages refer to Gen5's Help
+           Unknown System Admin's Password on page 442
+           Computer Performance Slowdown on page 442
+           Troubleshooting Fluorescence/Luminescence Measurements in a previous
+             chapter on page 169
+           Excel(R) errors refer to Gen5's Help
 
----
 
----
+           Visit BioTek's website for useful suggestions on getting the most from your reader:
+        http://www.biotek.com/products/technotes.php.
 
----
 
----
+           Other Known Issues
+              Gen5 installs a Read Me file in the root directory, the default path is
+              C:\Program Files\BioTek\Gen5 (software level)\ReadMe.txt. It lists known
+              issues you may have encountered. Locate and review the file and contact
+              BioTek TAC for additional information or support.
+           Synergy 2/4 to non-Synergy 2/4 readers (and vice versa)
+              Protocols created with a Synergy 2 or Synergy 4 reader are not instantly
+              compatible with other readers, and vice versa. You must re-validate the
+              Procedure with the current reader: open the Procedure and click Validate.
+              Generally, this corrects the error. If not, open each step in the Procedure and
+              review it for compatibility with the current reader.
 
----
 
 ---
 
----
+                                          Communication Errors: Reader to Computer | 437
 
----
 
----
 
----
+Communication Errors: Reader to Computer
 
----
+Important Information:
+         To prevent damage to the reader, always turn OFF the reader or the computer
+           before removing or inserting a communications (serial or USB) cable
+         Gen5TM and the reader-communication parameters will supersede the
+           Windows(R) settings. Windows communication port configuration settings
+           should not need adjustment to enable proper communications
 
----
+When the computer (PC) won't communicate with the reader:
+       1.   Confirm that the reader passes its system self test. Most readers perform a self
+            test when turned on. Refer to the reader's user guide for more details. The
+            reader will not communicate if it fails an internal system test. If the reader fails,
+            refer to the user's guide to resolve the failure.
+       2.   Make sure the serial or USB cable is in perfect condition and properly
+            attached to the port defined in the Reader Configuration dialog (e.g. COM 1).
+            Correct and reboot both PC and Reader. Test communication.
+       3.   Confirm the Baud rate (or transmission speed) defined in Gen5's Reader
+            Configuration matches the reader's settings. Consult your reader's user guide
+            for the correct rate. Correct Gen5's Reader Settings to match the reader and
+            reboot both PC and Reader. Test communication.
+       4.   Disable the Calculation Option: Perform data reduction after each read to
+            give Gen5 sufficient time between obtaining measurements to perform
+            calculations
+       5.   Confirm that the serial cable was obtained from BioTek. Serial cables are not
+            universal. Consult the reader's user guide for proper cable configuration or
+            contact BioTek customer service to purchase a factory tested cable. After
+            installing a known, good cable, reboot both PC and Reader. Test
+            communication.
+       6.   Confirm with your computer supplier or a local PC technician that the serial
+            port has been enabled. For example, the IBM Thinkpad(R) was originally
+            shipped with the serial port disabled. Correct and reboot both PC and Reader.
+       7.   For advanced PC users, the serial port of the reader and PC can be
+            independently tested using an independent serial-communication software
+            package such as Windows TerminalTM, Hyper TerminalTM, or ProComTM.
+            BioTek does not support or sell these programs. 0.
+             Select flow control for "XON/XOFF" and send an ASCII asterisk symbol (*)
+               to the reader. The reader should initiate a self test and return the results to
+               the PC. If the reader fails to communicate, test the reader on an alternative
+               PC to confirm which device is at fault. Please contact BioTek if the reader is
+               diagnosed to be faulty.
 
----
 
 ---
 
----
+438 | Troubleshooting
 
----
 
----
 
----
 
----
+Error Messages
+        Here are some guidelines to help you quickly resolve an error:
+         1.   Make note or take a "print screen" of the error message
+         2.   Locate and follow the specific instructions/suggestions for the error provided
+              in the reader's operator's manual
+         3.   Call BioTek's Technical Assistance Center (TAC) if you are unable to resolve
+              the issue yourself. 0.
 
----
+Potential Error Messages and their Resolutions
+           Reader Error ###: refer to the reader's Operator's Manual to identify the
+             specific error. You may be able to resolve it yourself.
+           File Not Found: there are several potential causes for this error. In a shared
+             database environment, another user may have the file open. Check with your
+             colleagues to eliminate this as the cause. When using the Windows(R) File
+             System for file storage, use Windows Explorer to verify the location of the file.
+           Bandpasses overlap: the selected Excitation and Emission filters are too close.
+             Change one of the selected filters. Learn more in the Fluorescence and
+             Luminescence chapter.
+           Baud rate settings can cause "serial read" errors: when the baud rate is set to a
+             non-default setting for Synergy and PowerWaveXS readers, Gen5 may be
+             unable to communicate with them if they are turned off and then turned on
+             again while Gen5 is running. Gen5 may reset the baud rate to the default
+             setting in this scenario. Run a System Test to return readers to their initialized
+             state
 
----
 
 ---
 
----
+                                                                Calculation Warnings | 439
 
----
 
----
 
----
+Calculation Warnings
+      When Data Reduction steps generate an error or cannot be calculated, Gen5 displays
+      and logs a Calculation Warning. Here are some guidelines for pinpointing and
+      correcting the source of the error.
 
----
+Curve Fit
+         Not enough data points to fit
+            If the plate was read successfully, i.e. all the data points obtained, make sure
+            you have defined the minimum number of X-Axis points, e.g standards, for the
+            selected curve fit. See Curve Fit: Minimum Number of Standards in the Data
+            Reduction chapter.
+         Too many data points
+            The Spline curve fit is the only option with a limit on the number of X-axis
+            points. Either change the curve fit method or reduce the number of standards,
+            dilution samples, or calibrators, i.e. the number of X-data points.
+         The selected curve fit method does not accept data points with identical X
+            values
+            The Spline and 4-P curve fits cannot be plotted when X-axis values are
+            identical. Either:
+             select a different curve fit
+             change the Data In selected for the X-axis
+             if the selected X-axis data is based on a Transformation, rewrite the formula
+               to suppress duplicate values in the results
+         The degree of the polynomial regression fit has been reduced
+            If desired, you can either:
+             Reduce the Degree
 
----
 
----
 
----
+             Add more X-axis points, e.g. standards
+         Math overflow error
+            Check the Extrapolation setting
 
----
 
 ---
 
----
+440 | Troubleshooting
 
----
 
----
 
----
+              or Interpolation formulas (on the Data Out tab) to make sure they are not
+              raising values to too high a value.
+           Curve fit generic error
+              Is the curve fit 4-P?
+              Formula: Y = (A-D)/(1+(X/C)^B) + D
+              If so, this error may be indicating that the calculated B parameter <=0
 
----
 
----
+           Curves do not support multi-indexed data sets
+              It is possible the Procedure was changed from an endpoint read to a kinetic
+              analysis (or other multi-index option) without revising the curve generator.
+              Review the Data Reduction steps and make the necessary adjustments, e.g.
+              Well Analysis may be a better fit.
+           The 4-parameter fit is not convergent. It is probably not the best fit
+              Gen5 performs multiple approximations to plot a 4-P curve. It is expected that
+              the err (error) will decrease with each approximation, indicating a better fit is
+              being determined during each iteration. Gen5 displays this message when the
+              err does not decrease.
+              Select another curve fit method.
+           Error during calculation. Data to fit not compatible with axis type
+              Review the Data Reduction> Curve Analysis definition, is the Axis Data set
+              to Log? and some of the Data In values are <0?
 
----
 
----
 
----
 
----
+              If yes, change these settings to eliminate the error.
 
----
+Validation
+           At least one validation condition failed
+              This message alerts you to the results of a Data Reduction>Validation
+              formula. A criterion of your experiment may not have been satisfied. Review
+              the results.
 
----
+Cutoff
+           Cutoffs do not support multi-indexed data sets
+              It is possible the Procedure was changed from an endpoint read to a kinetic
+              analysis (or other multi-index option) without revising a Data Reduction>
+              Cutoff step.
+              Review the Data Reduction steps and make the necessary adjustments, e.g. it
+              may be possible to use a Validation formula in place of Cutoff results.
 
----
 
 ---
 
----
+                                                               Calculation Warnings | 441
 
----
 
----
 
----
 
----
+         Cutoffs are not in increasing order. Symbols can not be determined
+           Review the Data Reduction> Cutoff formulas. They must be input in
+           ascending order, from the lowest (obtained or calculated) value to the highest.
+         Some cutoffs could not be calculated. Symbols cannot be determined
+           Review the Data Reduction> Cutoff formulas. Try rewriting them, making
+           sure to reference valid Well IDs, non-masked data values and logical formulae.
 
----
+Well Analysis
+         Well Analysis requires multi-indexed data set
+           It is possible the Procedure was changed from a kinetic analysis (or other multi-
+           index option) to an endpoint read without revising the Well Analysis step.
+           Review the Data Reduction steps and make the necessary adjustments or
+           update the Procedure to define kinetic or scanning analysis to generate a multi-
+           index data set.
 
----
 
 ---
 
----
+442 | Troubleshooting
 
----
 
----
 
----
 
----
+Restoring Optimal Performance
+        Numerous factors can affect your computer's performance. If you notice a slowdown
+        in Gen5's performance, follow these suggestions:
+               Close all other applications, including Internet browsers, when running
+                 Gen5
+               Do not display Gen5's "Curves" data in the Plate View while performing a
+                 kinetic analysis. Wait until the read step is finished before viewing the
+                 "Curves" data set. Displaying the Curves data set during a Kinetic read can
+                 consume excessive resources resulting in performance degradation. You can
+                 drill down to a Well Zoom to monitor the progress of one well, then,
+                 leaving the Well Zoom open, change the Matrix Data to a numeric view
+               Disable the Calculation Option "Perform data reduction after each read"
+                 to give Gen5 sufficient time between obtaining measurements to perform
+                 calculations
+               Disable the auto-Save options for interim reads: Save Options can be set to
+                 free up resources.
 
----
 
----
 
----
 
----
+System Administrator's Password
+        Contact BioTek Customer Care if you've lost or forgotten the System Administrator's
+        password: BioTek Customer Care
+        The System Administrator's password does not expire, but if a change in personnel, or
+        some other cause has resulted in your team not knowing the password, you can
+        contact BioTek for a new one.
+        Gen5 ships with the System Administrator's password set to "admin."
 
----
 
 ---
 
----
+       Index
 
----
+                           Symbols
+                                                                              individual wells.......................................... 256
+                                                                            Applying calculation to raw data............. 256
+!exclamation points!....................................317                 Area Scan ..................................... 127, 191, 200
+* Asterisks explained ..........................102, 310                    Assay Control.............................................. 223
+.glb...................................................................39   Assay Description....................................... 346
+.pla...................................................................39   Assign Calibrators ...................................... 223
+.prt ...............................................39, 45, 47, 376         Assign Concentrations ............................... 226
+.xpt...............................................39, 45, 47, 376          Assign Sample Names
+?????...............................................................317       Multiple Plates........................................... 239
+[brackets] ................................................39, 317          Assign Standards ........................................ 223
+ss-Galactosidase............................................112              Audit Trail Notification ............................. 391
+                                                                            Audit Trails
 
----
+                                   A
+                                                                              About ......................................................... 391
+                                                                              Exporting ................................................... 392
+A260/A280...................................................112
+                                                                              User Comments ......................................... 391
+                                                                            Audit Trails.................................. 394, 395, 396
+About
+                                                                            Automatic Sensitivity Adjustment
+  Audit Trails ................................................391
+                                                                              Fluorescence/Luminescence .............. 159, 169
+                                                                            Automatic Sensitivity Adjustment........... 156
+  AutoSensitivity ..........................................159
+  Data Reductions .................................116, 246
+  Fields and Field Groups .............................346                  Automatically-generated data reduction 246
+  Fluorescence Analysis ...............................150                                                    B
+  Gen5's Tables.............................................320
+  Luminescence Analysis .............................153                    Backup files.................................. 374, 379, 380
+  Multi-Plate Protocols .................................207                Bandwidth Verification.............................. 169
+  Plate Workspace.........................................313               Bandwidth Verification Failed.................. 169
+  the Menu Tree..............................................38             Basics .............................................................. 28
+Access rights ................................................401           BioTek's Technical Assistance Center........ 41
+Acquiring data.............................110, 116, 246                    Bitmaps......................................................... 319
+Add                                                                         Blank Read1 ................................................. 316
+  Buttons to the toolbar.................................430                Blanks
+  New Plate Type..........................................432                 In plate layout ............................................ 223
+  New User .............................................15, 400               Subtracting blank plates............................... 58
+  Text to a report...........................................346
+Adding fields to a report............................349
+                                                                              Subtracting blank wells ..................... 246, 259
+                                                                            Blanks ..................................................... 58, 223
+Administrator, Power User .................18, 399                          Block light between reads.......................... 129
+Aligning text in views and reports ...........344                           Build
+Append to kinetic file .................................189                   Export File ................................................. 358
+Apply calculation                                                             Report ........................................................ 334
+  entire plate..................................................256         Buttons
 
----
 
 ---
 
----
+444 | Index
 
----
 
----
 
----
+   explained......................................................36       Customize IDs ........................................... 223
+   rearrange toolbar ........................................430           Quality or Validation ................................. 301
+                                 C
+                                                                           Reader Control Panel................................. 417
+                                                                         Controls........................................................ 223
+Calculation Options                                                      Copying
+  Linear Scan ................................................202          Copy and Paste images .............................. 356
+Calculation Zone                                                         Copyright information................................ vii
+  Defining in Well Analysis .........................196                 Corrected...................................................... 316
+  Symbols .....................................................317       Corrected data sets ..................................... 259
+Calculation Zone .........................................191            Creating
+Calculations                                                               Header and Footer for Reports .................. 349
+  formula syntax ...........................................252            New Experiment ........................................ 109
+Calibration Curve................................101, 262                  New Protocol ............................................. 112
+Calibrator Plates ..................206, 208, 212, 214                     Standard Curve .................................. 101, 262
+Calibrator/Standards Plate Protocol112, 212                              Current Password............................... 385, 428
+Cell growth studies.....................................189              Curve
+CFR Part 11 ....................................................44         4 Parameter ................................................ 266
+Change the Format of data values                                           Change the appearance .............................. 330
+  In a curve....................................................330        Generate multiple standard curves............. 282
+  In a report...................................................344        Minimum number of standards.................. 269
+Change the Time Format............................326                      Polynomial................................................. 268
+Changing
+                                                                           Remove/hide text....................................... 330
+                                                                           Standard............................................. 101, 262
+  Filter Cartridges/Wheels ............................173
+                                                                           Titer ........................................................... 283
+  Filter Wheel ...............................................416
+                                                                           Using curve from another plate ................. 214
+                                                                         Curve ............................................................ 320
+  Font ............................................................117
+                                                                         Curve Analysis
+  On-screen appearance ........................117, 315
+  the Procedure/Protocol...............................114
+                                                                           Data In ....................................................... 277
+                                                                         Curve Analysis.................................... 116, 246
+  User's Permissions .....................................398
+  Well IDs .....................................................223
+  Your Password...................................385, 428               Curve Fit Method........................................ 269
+  Your Startup preferences ...........................429                Custom Plate Layout.................................. 229
+Check wells periodically ............................144                 Custom Plate Type ..................................... 431
+Clarity                                                                  Customize Well IDs.................................... 223
+  Controlling .................................................409       Customizing
+  Setup ............................................................23     Data Views ................................................ 117
+Clipping text ................................................344          Reports....................................................... 338
+Close light between reads ..................129, 416                       Toolbar....................................................... 430
+Comments                                                                   Well IDs..................................................... 223
+  Audit Trail..................................................391         Well Zoom View ....................................... 194
+Communication errors ...............................437                  Cutoffs
+Concentrations                                                             About ......................................................... 297
+                                                                           Formula Syntax.......................................... 298
+                                                                         Cutoffs Example.......................................... 298
+  Assigning ...................................................226
+  Determine by Curve Fit .............101, 262, 278
+Concentrations/Dilutions..........................278                                                      D
+Connecting a Reader.....................................21
+Continuous Shake .......................................139              Data
+Controlling the reader ................................123                Change or mask raw data........................... 324
+Controls                                                                  Mask/unmask values.................................. 324
+  Assign ........................................................223     Data Audit Trail .......................................... 394
 
----
 
 ---
 
----
+                                                                                                                                 E | 445
 
----
 
----
+Data Files                                                                Plates from an Experiment................. 109, 114
+ File Storage ................................4, 12, 47, 371            Delta OD ...................................................... 258
+ Maintaining Files ...............................370, 376              Design
+ Organizing your Files ..........................10, 372                  Export ........................................................ 352
+Data In for Curve Analysis ........................277                    Protocol...................................................... 112
+Data points                                                             Difference Between Columns.................... 256
+ not showing................................................344         Difference Between Rows.......................... 256
+Data Reductions                                                         Digital signature ......................................... 390
+ How to set up .....................................116, 246            Dilution Factor ............................................ 252
+ Top 5 things to know .................................246              Dilutions............................................... 226, 278
+ Validation/Quality Control ........................301                 Dispense reagent
+Data Reductions ..................................116, 246                Dispense Rate ............................................ 141
+Data Set Naming Convention....................316                         in a Kinetic Analysis.............................. 94, 97
+Data Views                                                                in an Endpoint Analysis............................... 95
+ Customizing ...............................................117         Dispenser control
+ Modifying ..................................................330          Priming ...................................................... 420
+Data Views ...................................102, 310, 315               Purging....................................................... 421
+Database Configuration .............................374                 Dispenser control........................................ 419
+Database Management                                                     Display measurements....................... 102, 310
+ Database Utilities .......................373, 376, 379                DNA Purity.................................................. 169
+ Error recovery ............................................379         Dual Wavelength
+ Maintaining files ........................................376            Data Reduction .................................. 116, 246
+ Optimize performance ...............................377                  How to perform dual-wavelength subtraction,
+ Plate Types Database .................................431                   Endpoint................................................. 258
+ Reduce the size ..........................................381          Duration
+ Setting up ...................................................374        Kinetic time course.................................... 186
+ Test connection ..........................................374            Long/discontinuous kinetic........................ 189
+Decimal places                                                            Pre-Heating................................................ 417
+ in Data Reduction ......................................255              Shake Step ................................................. 139
+ Setting number of...............315, 323, 328, 330
+Default data reduction ...............................246                                                E
+Default Protocol...................................120, 223             Edit Report Items ........................................ 344
+Default Report .....................................338, 349            Editing
+Define method to display data when it's too                               Procedure................................................... 114
+ long............................................................344      Report elements ......................................... 338
+Defining                                                                Electronic Signature............................ 389, 390
+ Concentrations/Dilutions ...........................226                Email............................................................. 356
+ Filter cartridges ..........................................175        Email Support................................................ 41
+ Procedures..........................................113, 122           Endotoxin Analysis ...................................... 89
+                                                                        Endpoint Absorbance
+ Reporting requirements..............................334
+ Timelines .............................................69, 186
+                                                                          Protein Quantification.................................. 66
+                                                                        Error bars ..................................................... 330
+ User's Permissions .....................................398
+Delay .....................................................143, 146
+                                                                        Error Messages
+Delay before integration (Time-Resolved
+ Fluorescence) ...........................................156
+                                                                          Communication Errors .............................. 437
+Delay Before Sampling...............................156
+                                                                          Database Errors.......................................... 379
+                                                                        Error Messages............................................ 438
+Delay Between Samples .............................156
+                                                                        Essential Concepts ........................................ 44
+Delete
+                                                                        Excel(R)
+ Files............................................................376
 
----
 
 ---
 
----
+446 | Index
 
----
 
----
 
----
+  Shortcuts not working ................................436               Change ....................................................... 344
+Excel(R) ...................................................105, 363        Changing.................................................... 117
+Experiment                                                              Font ....................................................... 117, 344
+  multiple plates............................................208        Force the curve through the origin........... 268
+  printing results ...........................................104       Formula
+  setting up....................................................109       Data point .................................................. 319
+Experiment vs Protocol ................................45                 Easily Make Corrections............................ 256
+Export Builder                                                          Formula ........................................................ 256
+  Using..........................................................358    Formula Syntax
+Export Builder .....................................117, 359              Cutoffs ....................................................... 298
+Export Content ............................................358            Transformations......................................... 252
+Export File Settings .....................................359             Validation/QC criteria ............................... 302
+Export Multiple Plates................................353                                                G
+Exporting
+  Results........................................................352    Gen5 Secure ................................................. 398
+  Sample IDs.................................................243        Gen5TM Secure Only ............................. 18, 399
+  System Audit Trail.....................................396            Getting Technical Assistance ...................... 41
+                                 F                                      Getting to Know Gen5 ........................... 28, 44
+                                                                        Glow Luminescence ................................... 112
+Fast Kinetics ...................................................97     Graph
+FDA Electronic Records Compliance .44, 388                                Change the appearance .............................. 194
+FDA requirements                                                          Modify ....................................................... 330
+      Signature ................................................389     Graph.................................................... 117, 194
+Fields and Field Groups .....................347, 350                   Groups
+File locations ..................................................47       change........................................................ 398
+File Management...................10, 370, 372, 376                     Groups............................................ 18, 398, 399
+File Storage...........................4, 12, 47, 370, 371
+                                                                                                         H
+File types ........................................................47
+Filter Cartridges                                                       hash mark..................................................... 344
+   Changing a filter cartridge .........................173             Header/footer ............................................. 349
+Filter Cartridges ..................................173, 416            Help>About Gen5TM..................................... 41
+Filters ....................................................175, 415    Hide the Legend.......................................... 330
+Fluorescence Analysis ................................150               How to
+Fluorescence Experiment                                                     Set up Kinetic/Time course analysis........ 69
+   Filter Set Options .......................................156            Set up kinetic analysis ............................. 69
+   Monochromator-based ...............................133                   Create a standard curve.......................... 101
+   Processing Modes Comparison..................166                         View results ........................................... 102
+   Read Step ...................................................129         Print results ............................................ 104
+   Time Resolved ...........................................154             Set up Data Reduction ........................... 116
+Fluorescence/Luminescence                                                   Resume a Stop/Resume step.................. 146
+   Automatic Sensitivity Adjustment .............159                        Set up Kinetic/Time course analysis...... 186
+   Background too high..................................169                 Set up kinetic analysis ........................... 186
+   Measurement Options ................................156                  Use the minimum kinetic interval.......... 188
+   Readings too low........................................169              Determine kinetic rate............................ 196
+   Troubleshooting measurements .................169                        Set up Data Reduction ........................... 246
+Fluorescence/Luminescence .....................159                          Perform dual-wavelength subtraction.... 258
+FLx800.....................................................21, 419          Create a standard curve.......................... 262
+Font                                                                        View results ........................................... 310
+                                                                            Mask or change data points/values ........ 324
 
----
 
 ---
 
----
+                                                                                                                                   I | 447
 
----
 
----
+       Create and customize reports .................336                                                   L
+       Change your password...........................385
+       Change your password...........................428                 Lag time........................................................ 196
+                                                                          Lamp
+                                  I                                         tungsten...................................................... 422
+Icons                                                                     Lanthanide ions........................................... 154
+  explained......................................................36       LD50........................................................ 86, 112
+Import Sample IDs......................................242                Learn About
+Importing data.............................................110              Buttons......................................................... 28
+Improve the transfection............................169                     FDA Electronic records submission .......... 388
+Incubation ....................................................417
+                                                                            Gen5 Databases ......................................... 373
+Individual Well Auto Scaling......................39
+                                                                            Plate Workspace ........................................ 313
+                                                                          Legend
+Industry-standard microplates .................431
+Initial Setup Tasks...........................................8
+                                                                            show/hide in graphs ................................... 330
+                                                                          Light shutter ................................................ 129
+Initialize the dispenser ...............................419
+                                                                          Linear Scan................................................... 127
+INJECT..........................................................317
+                                                                          LocalDB ........................................................ 370
+Injection assays..............................................97
+                                                                          Login
+Injectors ..........................................................94
+Install Gen5 Secure..........................................8
+                                                                            changing another user's password........ 15, 400
+                                                                            changing your password .................... 385, 428
+Instrument Not Achieving Desired                                            controls/parameters.............................. 17, 386
+  Fluorescence Detection Limit ................169                        Long-period kinetic analysis..................... 189
+Instrument Over-ranging...........................169                     Low UV Applications................................. 112
+Interpolations                                                            Lowry Protein Assay............................ 66, 112
+  Curve Analysis...........................................278            Lum............................................................... 316
+  Example .....................................................281        Lum/E............................................................ 39
+  Formula syntax...........................................279            Luminescence
+Introduction ...................................................28          About Luminescence ................................. 153
+                                  K                                         Read Step................................................... 135
+                                                                            Troubleshooting......................................... 169
+KC4..................................................................39
+Kinetic                                                                                                    M
+  Fast Kinetics for Absorbance.......................97                   Maintain Files .............................................. 401
+  Long Interval, Discontinuous.....................189                    Manually entering data.............................. 110
+  Monitoring in real time ..............................295               Matrix
+Kinetic...................................................191, 295
+Kinetic Absorbance Assays........................112
+                                                                           Modify ....................................................... 330
+                                                                          Matrix ................................................... 102, 310
+Kinetic Analysis.....................................69, 186              Max V ........................................................... 196
+Kinetic Data Reduction Options listing ..196,                             Mean Maximum OD................................... 196
+  291                                                                     Mean Minimum OD ................................... 196
+Kinetic Fluorescence .............................69, 186                 Mean V ......................................................... 196
+Kinetic Multi-Detection Protocols                                         Measurement Mode.................................... 162
+  Restrictions ................................................183        Measurement Options........................ 150, 156
+Kinetic Multi-Detection Protocols ............184                         Menu Tree...................................................... 38
+Kinetic reads
+                                                                          Microplate
+  How to create a protocol ......................69, 186
+                                                                           Layout samples .................................. 115, 221
+  Setting the minimum time interval.............188
+Kinetics Time format ..................................326
+                                                                           Plate Types ................................................ 431
+Known-concentration samples..................223
+                                                                           Quick Read ................................................ 100
+                                                                           Read........................................................... 110
 
----
 
 ---
 
----
+448 | Index
 
----
 
----
 
----
+ Read a blank plate........................................58          Optics Position .................................... 150, 169
+Microsoft Word .............................39, 352, 356               Optics Test ........................................... 108, 423
+Microsoft(R) Excel 2000 ..........................39, 352                Optimize the database................................ 377
+Minimum kinetic interval ..........................188                 OUT+/OUT-................................................ 297
+Minimum Number of Standards ..............269                          Outlook......................................................... 356
+Minimum Requirements ............................426                   Out-of-range values.................................... 317
+Mirrors                                                                Overflow (OVRFLW) ................................. 317
+ Dichroic .....................................................177     Overlay multiple curves in one view....... 191
+                                                                                                         P
+ Mirror Holder Library................................180
+ Setting up a mirror .....................................178
+Mixing...........................................................123   Page Break
+Modify                                                                   add to report............................................... 334
+ Fields and Field Groups .............................347              Password
+ Graph .................................................194, 330         expired ......................................................... 18
+ Matrix View...............................................328         Password, Changing your ................. 385, 428
+                                                                       Pathlength Correction ................................ 246
+ Reports .......................................................338
+Monitor Wells ..............................................144
+                                                                       Perform
+Monochromator-based reads
+                                                                         Calculation................................................. 256
+ About Fluorescence Monochromator.........151
+Monochromator-based reads ....................133
+                                                                         Kinetic analysis.................................... 69, 186
+Multi-detection kinetic ...............................183
+                                                                         Multiple detection methods ......... 69, 182, 186
+                                                                         Quick Read ................................................ 100
+Multi-Detection Protocols                                              Performance degradation .......................... 436
+ Examples....................................................184       Periodically check wells............................. 144
+Multi-Detection Protocols ..........................182                Permissions.................................... 18, 399, 401
+Multi-index reads................................102, 310              Plate In/Out ................................................ 146
+Multi-Mode Reading                                                     Plate Information ........................................ 230
+ See                                                                   Plate Layout................................. 223, 226, 229
+                                                                       Plate Reading....................................... 100, 110
+    Multi-Detection......................................182
+Multi-Plate Protocols
+                                                                       Plate Types................................................... 431
+                                                                       Plate types currently stored....................... 431
+ Plate Layout for..........................................210
+                                                                       Plate Types Database.......................... 431, 432
+ Running a...................................................209
+ Using calibrator/standard curve .........212, 214
+Multi-Plate Protocols ..........................207, 208               Plate Workspace
+Multiple curves in one view ..............191, 330                       Resizing ............................................. 312, 313
+Multiple plates.............................................229        Plate Workspace.......................................... 313
+Multiple reads..............................................123        Plate#
+Multiple standard curves...................226, 282                      About the workspace ................................. 313
+                                                                         Information ................................................ 230
+                                N                                        Viewing results .................................. 102, 310
+                                                                       Plate>Audit Trail ........................................ 394
+Naming                                                                 Plots
+ Data points .................................................319        Curves........................................................ 330
+ Data Sets ....................................................316
+New User Accounts ..............................15, 400
+                                                                         Select ......................................................... 330
+                                                                       Plots .............................................................. 330
+Numeric Format                                                         PMT Sensitivity........................................... 159
+ Scientific, Decimal, Best Fit ......323, 328, 330                     Polynomial Regression............................... 269
+                                O                                      Polynomial Regression Curve Fit............. 268
+                                                                       Positive Control........................................... 223
+Onset OD......................................................144      Pound sign ................................................... 344
 
----
 
 ---
 
----
+                                                                                                                                Q | 449
 
----
 
----
+Power Export                                                            Question marks ........................................... 317
+  Run.............................................................365   Quick Read .................................................. 100
+Power Export ...............................................365
+                                                                                                         R
+Power Export Designer ..............................363
+Power Export toolbar..................................363               R and R Squared ......................................... 320
+Power User.............................................18, 399          Read Step
+Preferences                                                               About the Procedures................................. 123
+  Startup..........................................15, 400, 429           Fluorescence .............................................. 129
+Pre-Heating ..................................................417         Luminescence ............................................ 135
+Pre-Read Blank Plate ..............................39, 58                 Spectrum Analysis..................................... 136
+Pre-read for specific value .........................144                Read Step ..................................... 100, 135, 136
+Print Preview ...............................................334        Read Type .................................... 127, 150, 153
+Printing                                                                Reader
+  Defining the Report....................................334              Connecting................................................... 21
+  Headers and Footers...................................349             Reader............................................................. 21
+  Quick Print .................................................104      Reader Control .............................. 44, 123, 417
+  Reader test results ......................................424         Reader System Test............................. 108, 423
+  Results........................................................118    Reader Test History.................................... 424
+Printing.................................................104, 334       Reading Parameters.................................... 123
+Privileges                                                              Reading Procedure
+  User Permissions........................................401             Defining..................................... 100, 113, 122
+Procedure                                                               Read-only permission ................................ 401
+  Delay..........................................................143    Reagent dispensing................................. 94, 95
+  Discontinuous Kinetic................................189              Reduce database size.................................. 381
+  How to change ...........................................114          Reduce photo bleaching............................. 129
+                                                                        Reduction Requirements ................... 116, 246
+  Monitor wells .............................................144
+                                                                        Remove buttons .......................................... 430
+  Read Step ...................................................200
+                                                                        Repair/compact the database ........... 377, 381
+  Validating...................................................125
+Procedure .....................................113, 122, 123
+Procedure Summary ...................................320                Report Builder ............. 117, 334, 338, 344, 349
+Procedure, set up.........................113, 122, 123                 Report Content.................................... 334, 344
+Protein Quantification                                                  Reporting
+                                                                          method to display data when it's too long.. 344
+                                                                        Reporting Engine ........................................ 334
+  Endpoint Absorbance...................................66
+Protein Quantification ..................................66
+Protein Quantitation ...................................112             Reports
+Protocol                                                                  Adding fields to ......................................... 350
+                                                                          Customizing....................................... 117, 338
+  Applying Signature ....................................389
+                                                                          Defining..................................................... 334
+  Default Setup .............................................120
+                                                                          Headers and Footers .................................. 349
+  Protocol Folder...............................................5
+Protocol.........................................................389
+                                                                          Include Sensitivity value............................ 161
+Protocol Type
+                                                                          Meaning of symbols, asterisks................... 317
+                                                                          Rules and Best Practice ............................. 117
+  Default Protocol .........................................119           Well Analysis Results................................ 340
+  Multi-Plate .................................................206      Reports ......................................................... 334
+Protocol vs Experiment ................................45
+                                                                        Requirements for plotting a curve.... 101, 262
+Protocol's Procedure ...........................113, 122
+                                                                        Reset Connection button............................ 374
+                                 Q                                      Resize columns and rows .......................... 313
+                                                                        Resize the windows.................................... 312
+Quality Controls..........................................301           Resolutions .................................................. 438
 
----
 
 ---
 
----
+450 | Index
 
----
 
----
 
----
+Restrictions and liabilities........................... vii                Sensitivity
+Results                                                                      Determine optimal setting.......................... 159
+  Meaning of symbols, asterisks ...................317                       Lower/Raise............................................... 169
+  Viewing......................................102, 117, 310                 Report the Sensitivity setting..................... 161
+Results...........................................316, 317, 320            Sensitivity............................................. 156, 169
+Results Object ..............................................363           Serial read errors......................................... 438
+Resume button.....................................110, 146                 Set Temperature Procedure............... 145, 417
+Rights and privileges..................................401                 Setting
+RNA Quantitation.......................................112                   Start-up Preferences................................... 429
+Running                                                                      User's Permissions ..................................... 398
+  Multi-Plate Experiment..............................209                  Shake the plate ............................................ 139
+Run-Time Prompts                                                           Shared Database.................................... 10, 372
+  Creating......................................................231        SharedDB ............................................. 370, 374
+  In experiments............................................230            Show
+  Include in reports .......................................346              Plate Layout............................................... 313
+                                  S
+                                                                             Reading results .................................. 102, 310
+                                                                           Sign a protocol or experiment................... 390
+Sample Control Wells                                                       Sign off.......................................................... 389
+  Spiked or Known-concentration ................226                        Signature Reasons....................................... 389
+Sample Control Wells.........115, 221, 223, 283                            Signatures .................................................... 389
+Sample Dilutions.........................115, 221, 283                     Significant digits ......................................... 323
+Sample IDs                                                                 Slow response time from Gen5 ................. 437
+  Batch creation ............................................239           Software performance degradation ......... 437
+  Erase/Clear IDs ..........................................239            Spectrum ...................................................... 316
+  Export.........................................................243       Spectrum Analysis
+  Import.........................................................242         Read Step................................................... 136
+Sample IDs ...................................235, 242, 243                  Viewing ..................................................... 191
+Sample naming............................................235               Spectrum Analysis...................................... 203
+Sample Protocols...............................28, 58, 66                  Spiked samples.............................................. 89
+Samples.........................................................223        Stand-Alone Multi-Detection Protocol .... 182
+Save                                                                       Standard Curve ... 101, 212, 214, 223, 262, 313
+  Curves/Graphs as pictures..........................356                   Standard User........................................ 18, 399
+  Experiment...................................................45          Standards
+  Protocol......................................109, 112, 125                Assigning........................................... 223, 263
+Save .................................................................48     Minimum Number ..................................... 269
+Scales for Kinetic Reads................................39                 Startup Preference ...................................... 429
+Scan Options ........................127, 191, 200, 203                    Statistics
+Scanning Data Reduction Options listing291                                   Inter-Plates................................................. 209
+Scientific notation and significant digits                                 Statistics................................................ 102, 310
+  in Data Reduction ......................................255              StepWiseTM................................................... 123
+Scientific notation and significant digits.323,                            Stop/Resume............................... 110, 143, 146
+  330                                                                      Subtracting a blank plate read .................... 58
+Security                                                                   Symbols and special notations.................. 317
+  Audit Trails ................................................391         Synergy 2...................................................... 131
+  Digital Signatures.......................................389             Synergy 4...................................................... 133
+  File Storage ......................................4, 12, 371            Synergy HTTR............................... 21, 182, 183
+                                                                           Synergy HTTR w/Injectors ......... 94, 416, 419
+  User Accounts......................................15, 398
+Selecting Data Sets ......................................255
+                                                                           Syntax
 
----
 
 ---
 
----
+                                                                                                                                    T | 451
 
----
 
----
+  in formulas                                                              Tutorials ......................................................... 28
+                                                                                                            U
+     Cutoffs....................................................298
+     Interpolations .........................................279
+     Transformations .....................................252              Upgrade utility............................................ 374
+     Validation/Quality Control ....................302                    Use first filter set sensitivity.............. 156, 159
+System Administrator
+                                                                           User Groups
+  Changing password......................................14
+                                                                             Defining/Modifying................................... 401
+                                                                           User Groups................................... 18, 398, 399
+  To Do List ......................................................8
+System Audit Trail
+                                                                           Users ..................................... 5, 15, 18, 398, 399
+                                                                           User's Permissions
+  Exporting ...................................................396
+  Viewing......................................................396
+System Test ..........................................108, 423               Changing your password ................... 385, 428
+System> Security.........................................384
+                                                                             Setting................................................ 398, 401
+System-generated data reduction .............246
+                                                                             User's Account..................................... 15, 400
+                                                                           User's Permissions ...................................... 401
+                                  T
+                                                                                                            V
+Table..............................................................320
+                                                                           Validate
+TAC .................................................................41
+Technical Assistance.............................41, 438
+                                                                             Procedures ................................................. 125
+                                                                             Set up quality controls for experiment....... 301
+Temperature                                                                Validation Criteria ...................................... 301
+  Incubation during an experiment ...............145                       Validation Examples .................................. 304
+  Pre-heading the Reader ..............................417                 Viewing
+Temporary Files...........................................373
+Text
+                                                                             Audit Trails................................ 394, 395, 396
+                                                                             AutoSensitivity .......................................... 161
+  not fully displayed......................................344               Excel(R) ....................................................... 358
+Time                                                                         Results ............................................... 102, 310
+  hours, seconds format ................................326                  System Audit Trail..................................... 396
+Time to Peak ................................................196             Well Analysis ............................................ 191
+Time-Resolved Fluorescence .....................154                        Viewing Data
+Titer Assay ...................................................112           Customizing views ............................ 117, 194
+Titer Curve ...................................................283           Defining Data Views ................................. 315
+Toolbar                                                                      Masking data point .................................... 325
+  Buttons and Icons Guide..............................36                    Modify views..................................... 328, 330
+  Customize ..................................................430            Well Zoom................................................. 191
+Top Probe Vertical Offset...........................169                    Viewing Data............... 117, 191, 194, 320, 330
+Trademarks ................................................... vii         Viewing Preferences............................. 24, 328
+Transformation............................................256              Viewing Results
+Transformation formula syntax ................252                            Method to display data too long to fit........ 344
+Troubleshooting                                                            Viewing Results ............................ 24, 102, 310
+  Communication Errors...............................437                                                    W
+  Fluorescence/Luminescence Measurements
+      ...............................................................169   Well Analysis Data Reduction . 191, 196, 246,
+  Restore optimal performance.....................442                       290
+Troubleshooting ..........................................436              Well Analysis Results Table ...... 191, 320, 340
+Truncated text..............................................344            Well IDs................................................ 223, 252
+Tungsten lamp control ...............................422                   Well Settings................................................ 226
+Turn on/off incubator ................................145                  Well Zoom
+Turn on/off lamp........................................422                 Modify view ...................................... 194, 330
 
----
 
 ---
 
----
+452 | Index
 
----
 
----
 
----
+ Monitor experiment ...................................295           Introduction ................................................. 28
+ Report multiple wells simultaneously........340                     Plate View.................................................. 313
+ View multiple wells simultaneously..........191                    Wrong pH .................................................... 169
+Well Zoom View
+ Customizing ...............................................194                                    X
+Well Zoom View .........................................194         X Axis/Y Axis ............................................. 330
+Wells to Monitor..........................................144
+Windows Explorer ........................................47                                        Y
+WordPad ......................................................356   Y Axis Intercept........................................... 268
+Workspace
 
----
 
 ---
 
----

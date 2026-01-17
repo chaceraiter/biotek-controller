@@ -44,6 +44,7 @@ Source: `docs/op-man` (Appendix B: computer control protocol).
 - Two formats: 312 mode vs ELx mode (select with `n`).
 - In ELx status mode, any non-zero character indicates an error; read commands may include a final status string at end of data.
 - `o` (Get Current Status) returns ELx status format and clears non-fatal errors unless a self-test is required.
+- Empirical: sending `n1` (set status to ELx) before `o` and `e` yields ELx status `0000` suffixes; without it, `e` may return 312 status `000`.
 
 ## Useful commands (Appendix B)
 - `*` Self-test: runs calibration/self-test, returns variable ASCII data then status.
@@ -53,7 +54,8 @@ Source: `docs/op-man` (Appendix B: computer control protocol).
 - `n` Set status format: `0` 312, `1` ELx.
 - `i` Include temperature response in read data: `0`/`1`.
 - `A` Store plate carrier (move inside), `J` Present plate carrier (move outside).
-- `S` Read plate (full assay definition), `d` Read well set (up to 8 wells).
+- `S` Read plate: no arguments; uses the currently loaded assay definition.
+- `d` Read well set: 33-byte payload (8 wells × row/col as ASCII "01"-"16"/"01"-"24", unused wells "00"), plus position byte `'0'`-`'3'`, terminated by `<ETX>`; returns ELx-format data only.
 
 ## Data response notes (high level)
 - ELx format uses RS/ETX framing with checksum and final terminator (CTRL-Z).
