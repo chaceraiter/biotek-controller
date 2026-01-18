@@ -233,6 +233,35 @@ def _flag_present(flags: set[str], name: str) -> bool:
     return any(flag.startswith(f"{name}=") for flag in flags)
 
 
+def _resolve_read_wavelengths(args: argparse.Namespace) -> list[int]:
+    wavelengths: list[int] = []
+    wl_list = getattr(args, "wavelength", None)
+    if wl_list:
+        for value in wl_list:
+            if value:
+                wavelengths.append(int(value))
+        return wavelengths
+    measurement = getattr(args, "measurement_wavelength", None)
+    if measurement:
+        wavelengths.append(int(measurement))
+    reference = getattr(args, "reference_wavelength", None)
+    if reference:
+        ref = int(reference)
+        if ref:
+            wavelengths.append(ref)
+    return wavelengths
+
+
+def _lookup_wavelength_nm(
+    wavelengths_nm: list[int] | None, wavelength_index: int
+) -> int | None:
+    if not wavelengths_nm:
+        return None
+    if 1 <= wavelength_index <= len(wavelengths_nm):
+        return wavelengths_nm[wavelength_index - 1]
+    return None
+
+
 def _expected_intervals(args: argparse.Namespace) -> int | None:
     if args.read_type != "kinetic":
         return None
@@ -611,7 +640,12 @@ def _parse_plate_block(
 
 
 def _decode_read_plate_payload(
-    data: bytes, *, wavelengths_per_interval: int, rows: int, cols: int
+    data: bytes,
+    *,
+    wavelengths_per_interval: int,
+    rows: int,
+    cols: int,
+    wavelengths_nm: list[int] | None = None,
 ) -> list[dict]:
     initial_status, remainder = core.split_leading_status(data)
     _ = initial_status
@@ -625,6 +659,7 @@ def _decode_read_plate_payload(
         )
         interval_index = block_index // wavelengths_per_interval + 1
         wavelength_index = block_index % wavelengths_per_interval + 1
+        wavelength_nm = _lookup_wavelength_nm(wavelengths_nm, wavelength_index)
         for r in range(rows):
             row_letter = chr(ord("A") + r)
             for c in range(cols):
@@ -632,6 +667,7 @@ def _decode_read_plate_payload(
                     {
                         "interval": interval_index,
                         "wavelength_index": wavelength_index,
+                        "wavelength_nm": wavelength_nm,
                         "row": r + 1,
                         "col": c + 1,
                         "well": f"{row_letter}{c + 1}",
@@ -665,6 +701,7 @@ def _write_read_plate_csv(rows: list[dict], path: str) -> None:
             [
                 "interval",
                 "wavelength_index",
+                "wavelength_nm",
                 "row",
                 "col",
                 "well",
@@ -676,10 +713,12 @@ def _write_read_plate_csv(rows: list[dict], path: str) -> None:
         for row in rows:
             value = "" if row["value"] is None else f"{row['value']:.3f}"
             temp = "" if row["temperature"] is None else f"{row['temperature']:.1f}"
+            wavelength_nm = "" if row.get("wavelength_nm") is None else row["wavelength_nm"]
             writer.writerow(
                 [
                     row["interval"],
                     row["wavelength_index"],
+                    wavelength_nm,
                     row["row"],
                     row["col"],
                     row["well"],
@@ -691,17 +730,26 @@ def _write_read_plate_csv(rows: list[dict], path: str) -> None:
 
 
 class _IncrementalPlateCsvWriter:
-    def __init__(self, path: str, *, rows: int, cols: int) -> None:
+    def __init__(
+        self,
+        path: str,
+        *,
+        rows: int,
+        cols: int,
+        wavelengths_nm: list[int] | None = None,
+    ) -> None:
         import csv
 
         self._rows = rows
         self._cols = cols
+        self._wavelengths_nm = wavelengths_nm
         self._handle = open(path, "w", encoding="utf-8", newline="")
         self._writer = csv.writer(self._handle)
         self._writer.writerow(
             [
                 "interval",
                 "wavelength_index",
+                "wavelength_nm",
                 "row",
                 "col",
                 "well",
@@ -717,6 +765,7 @@ class _IncrementalPlateCsvWriter:
         values_rows, status_rows, temp = _parse_plate_block(
             payload, rows=self._rows, cols=self._cols
         )
+        wavelength_nm = _lookup_wavelength_nm(self._wavelengths_nm, wavelength_index)
         for r in range(self._rows):
             row_letter = chr(ord("A") + r)
             for c in range(self._cols):
@@ -727,6 +776,7 @@ class _IncrementalPlateCsvWriter:
                     [
                         interval_index,
                         wavelength_index,
+                        "" if wavelength_nm is None else wavelength_nm,
                         r + 1,
                         c + 1,
                         f"{row_letter}{c + 1}",
@@ -780,7 +830,11 @@ def _parse_well_block(payload: bytes) -> tuple[list[float | None], list[str], fl
 
 
 def _decode_read_wells_payload(
-    data: bytes, *, wavelengths_per_interval: int, well_labels: list[str]
+    data: bytes,
+    *,
+    wavelengths_per_interval: int,
+    well_labels: list[str],
+    wavelengths_nm: list[int] | None = None,
 ) -> list[dict]:
     initial_status, remainder = core.split_leading_status(data)
     _ = initial_status
@@ -792,12 +846,14 @@ def _decode_read_wells_payload(
         values, statuses, temp = _parse_well_block(block.payload)
         interval_index = block_index // wavelengths_per_interval + 1
         wavelength_index = block_index % wavelengths_per_interval + 1
+        wavelength_nm = _lookup_wavelength_nm(wavelengths_nm, wavelength_index)
         for i in range(8):
             label = well_labels[i] if i < len(well_labels) else f"W{i + 1}"
             rows.append(
                 {
                     "interval": interval_index,
                     "wavelength_index": wavelength_index,
+                    "wavelength_nm": wavelength_nm,
                     "well_index": i + 1,
                     "well_label": label,
                     "value": values[i],
@@ -817,6 +873,7 @@ def _write_read_wells_csv(rows: list[dict], path: str) -> None:
             [
                 "interval",
                 "wavelength_index",
+                "wavelength_nm",
                 "well_index",
                 "well_label",
                 "value",
@@ -827,10 +884,12 @@ def _write_read_wells_csv(rows: list[dict], path: str) -> None:
         for row in rows:
             value = "" if row["value"] is None else f"{row['value']:.3f}"
             temp = "" if row["temperature"] is None else f"{row['temperature']:.1f}"
+            wavelength_nm = "" if row.get("wavelength_nm") is None else row["wavelength_nm"]
             writer.writerow(
                 [
                     row["interval"],
                     row["wavelength_index"],
+                    wavelength_nm,
                     row["well_index"],
                     row["well_label"],
                     value,
@@ -873,6 +932,7 @@ def _read_plate_streaming(
     overall_timeout: float,
     quiet_timeout: float,
     wavelengths_per_interval: int,
+    wavelengths_nm: list[int] | None,
     rows: int,
     cols: int,
     csv_path: str,
@@ -886,7 +946,9 @@ def _read_plate_streaming(
     done_marker = False
     complete_seen = False
     effective_quiet = quiet_timeout
-    writer = _IncrementalPlateCsvWriter(csv_path, rows=rows, cols=cols)
+    writer = _IncrementalPlateCsvWriter(
+        csv_path, rows=rows, cols=cols, wavelengths_nm=wavelengths_nm
+    )
     if wavelengths_per_interval < 1:
         wavelengths_per_interval = 1
     start = time.monotonic()
@@ -965,6 +1027,18 @@ def _run_simple_command(
     time.sleep(0.2)
 
 
+def _run_post_read_status(
+    fd: int,
+    label: str,
+    timeout: float,
+    quiet: float,
+    log,
+) -> None:
+    status_timeout = min(2.0, timeout)
+    status_quiet = min(0.4, quiet)
+    _run_simple_command(fd, f"{label}-status", b"o", status_timeout, status_quiet, log)
+
+
 def _run_get_wavelengths(
     fd: int,
     label: str,
@@ -996,6 +1070,7 @@ def _run_read_plate(
     *,
     decode: bool,
     wavelengths_per_interval: int,
+    wavelengths_nm: list[int] | None,
     rows: int,
     cols: int,
     csv_path: str,
@@ -1010,6 +1085,7 @@ def _run_read_plate(
             overall_timeout=timeout,
             quiet_timeout=quiet,
             wavelengths_per_interval=wavelengths_per_interval,
+            wavelengths_nm=wavelengths_nm,
             rows=rows,
             cols=cols,
             csv_path=csv_path,
@@ -1036,6 +1112,7 @@ def _run_read_plate(
             rows_out = _decode_read_plate_payload(
                 parsed.data,
                 wavelengths_per_interval=wavelengths_per_interval,
+                wavelengths_nm=wavelengths_nm,
                 rows=rows,
                 cols=cols,
             )
@@ -1052,6 +1129,7 @@ def _run_read_plate(
             parsed.data, wavelengths_per_interval=wavelengths_per_interval
         )
         summary = {"intervals": intervals, "blocks": blocks, "complete": complete}
+    _run_post_read_status(fd, label, timeout, quiet, log)
     time.sleep(0.2)
     return summary
 
@@ -1066,6 +1144,7 @@ def _run_read_wells(
     *,
     decode: bool,
     wavelengths_per_interval: int,
+    wavelengths_nm: list[int] | None,
     csv_path: str,
     well_labels: list[str],
 ) -> None:
@@ -1088,6 +1167,7 @@ def _run_read_wells(
             parsed.data,
             wavelengths_per_interval=wavelengths_per_interval,
             well_labels=well_labels,
+            wavelengths_nm=wavelengths_nm,
         )
         if rows:
             if wavelengths_per_interval == 1 and len(rows) > 8:
@@ -1104,14 +1184,18 @@ def _run_read_wells(
                 ):
                     current_interval = row["interval"]
                     current_wavelength = row["wavelength_index"]
+                    wavelength_label = str(current_wavelength)
+                    if row.get("wavelength_nm"):
+                        wavelength_label = f"{current_wavelength} ({row['wavelength_nm']}nm)"
                     print(
-                        f"{label}-interval {current_interval} wavelength {current_wavelength}:"
+                        f"{label}-interval {current_interval} wavelength {wavelength_label}:"
                     )
                 value = "*****" if row["value"] is None else f"{row['value']:.3f}"
                 print(f"  {row['well_label']}={value}")
             if csv_path:
                 _write_read_wells_csv(rows, csv_path)
                 print(f"{label}-csv: {csv_path}")
+    _run_post_read_status(fd, label, timeout, quiet, log)
     time.sleep(0.2)
 
 
@@ -1657,6 +1741,11 @@ def main() -> int:
                 assay_args = _load_assay_from_profile(args.profile, profile_path)
             except ValueError as exc:
                 parser.error(str(exc))
+            assay_wavelengths = _resolve_read_wavelengths(assay_args)
+            if assay_wavelengths:
+                setattr(args, "_wavelengths_nm", assay_wavelengths)
+                if not _flag_present(provided_flags, "--wavelengths-per-interval"):
+                    args.wavelengths_per_interval = len(assay_wavelengths)
             payload = _build_assay_definition(assay_args)
             commands.append(("set-assay", payload))
             commands.append(("read-plate", b"S"))
@@ -1688,6 +1777,11 @@ def main() -> int:
                     restore_args = _load_assay_from_profile(args.restore_profile, profile_path)
             except ValueError as exc:
                 parser.error(str(exc))
+            assay_wavelengths = _resolve_read_wavelengths(assay_args)
+            if assay_wavelengths:
+                setattr(args, "_wavelengths_nm", assay_wavelengths)
+                if not _flag_present(provided_flags, "--wavelengths-per-interval"):
+                    args.wavelengths_per_interval = len(assay_wavelengths)
             validation_plan = {
                 "assay_args": assay_args,
                 "restore_args": restore_args,
@@ -1698,16 +1792,12 @@ def main() -> int:
             needs_read = True
             needs_assay = True
             if not _flag_present(provided_flags, "--timeout"):
-                if assay_args.assay_name == "ECO60":
-                    args.timeout = max(args.timeout, 900.0)
                 duration = _estimate_kinetic_duration_seconds(assay_args)
                 if duration:
                     interval = assay_args.kinetic_interval or 0
                     buffer = max(600.0, float(interval) + 60.0)
                     args.timeout = max(args.timeout, duration + buffer)
             if not _flag_present(provided_flags, "--quiet"):
-                if assay_args.assay_name == "ECO60":
-                    args.quiet = max(args.quiet, 240.0)
                 interval = assay_args.kinetic_interval or 0
                 if interval:
                     args.quiet = max(args.quiet, float(interval) + 60.0)
@@ -1739,6 +1829,7 @@ def main() -> int:
 
     read_wells_opts = None
     read_plate_opts = None
+    wavelengths_nm = getattr(args, "_wavelengths_nm", None)
     if args.command == "read-wells":
         if args.payload_hex or args.payload_file:
             well_labels = [f"W{i + 1}" for i in range(8)]
@@ -1749,6 +1840,7 @@ def main() -> int:
         read_wells_opts = {
             "decode": bool(args.decode or args.csv),
             "wavelengths_per_interval": args.wavelengths_per_interval,
+            "wavelengths_nm": wavelengths_nm,
             "csv_path": args.csv,
             "well_labels": well_labels,
         }
@@ -1766,6 +1858,7 @@ def main() -> int:
         read_plate_opts = {
             "decode": decode,
             "wavelengths_per_interval": args.wavelengths_per_interval,
+            "wavelengths_nm": wavelengths_nm,
             "rows": args.rows,
             "cols": args.cols,
             "csv_path": args.csv,
@@ -1852,6 +1945,7 @@ def main() -> int:
     if args.manifest:
         import json
 
+        wavelengths_nm = getattr(args, "_wavelengths_nm", None)
         manifest = {
             "command": args.command,
             "port": args.port,
@@ -1868,6 +1962,10 @@ def main() -> int:
         }
         if hasattr(args, "csv"):
             manifest["csv"] = args.csv
+        if hasattr(args, "wavelengths_per_interval"):
+            manifest["wavelengths_per_interval"] = args.wavelengths_per_interval
+        if wavelengths_nm:
+            manifest["wavelengths_nm"] = wavelengths_nm
         if args.command in ("run-ecoplate", "validate-short-run"):
             manifest["profile"] = args.profile
         if args.command == "validate-short-run":

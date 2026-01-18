@@ -36,6 +36,9 @@
 - Added `get-wavelengths` command to query installed filters.
 - Documented Appendix B protocol details and successful self-test in `research/elx808/*`.
 - Converted EcoPlate and Gen5 PDFs into markdown + summaries under `docs/`.
+- Web UI now decodes instrument status codes, surfaces error descriptions, and auto-checks status after run errors.
+- Web UI now shows instrument alert recommendations based on error codes from Appendix B.
+- Control stack now issues a post-read `o` status query after read-plate/read-wells to capture error codes in run logs.
 
 ## What’s working
 - Documentation scaffolding exists under `research/elx808/` capturing the system model, pinouts, and Appendix B protocol details.
@@ -49,6 +52,7 @@
 - ECO60 validation captured two intervals with default ECO60 quiet/timeout; missing terminator treated as warning by default.
 - Manifest output verified at `/tmp/elx808-validate.json`.
 - Local web UI available at `http://127.0.0.1:8088` for running and monitoring jobs.
+ - ECO60 validation run confirmed two intervals and produced CSV/log/manifest in `/tmp`.
 
 ## Unknowns / active questions
 - Status format persistence (ELx vs 312) and when the reader auto-switches formats.

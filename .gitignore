@@ -2,3 +2,5 @@ elx808-serial-*.log
 logs/
 __pycache__/
 *.pyc
+.env
+.venv/

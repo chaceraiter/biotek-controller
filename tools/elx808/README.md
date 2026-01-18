@@ -136,11 +136,11 @@ python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
   --decode --wavelengths-per-interval 2 --csv /tmp/elx808-read-wells.csv
 ```
 
-Decode full-plate read and write CSV (96-well, dual-wavelength subtraction uses 1 block per interval):
+Decode full-plate read and write CSV (96-well; multi-wavelength reads use 2 blocks per interval):
 ```bash
 python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
   read-plate --confirm-write --confirm-movement --confirm-read \
-  --decode --wavelengths-per-interval 1 --rows 8 --cols 12 \
+  --decode --wavelengths-per-interval 2 --rows 8 --cols 12 \
   --csv /tmp/elx808-read-plate.csv
 ```
 
@@ -148,7 +148,7 @@ Incremental CSV logging (append rows as each interval arrives):
 ```bash
 python3 tools/elx808/control_stack.py --port /dev/cu.usbserial-XXXX \
   read-plate --confirm-write --confirm-movement --confirm-read \
-  --decode --wavelengths-per-interval 1 --rows 8 --cols 12 \
+  --decode --wavelengths-per-interval 2 --rows 8 --cols 12 \
   --csv /tmp/elx808-read-plate.csv --incremental
 ```
 
@@ -185,7 +185,7 @@ python3 tools/elx808/playback_decode.py \
   --log /tmp/elx808-run.log \
   --format control-stack \
   --label read-plate \
-  --wavelengths-per-interval 1 \
+  --wavelengths-per-interval 2 \
   --rows 8 --cols 12 \
   --csv /tmp/elx808-playback.csv
 ```
@@ -195,7 +195,7 @@ Serial capture log example (decode RX after last TX):
 python3 tools/elx808/playback_decode.py \
   --log /tmp/elx808-serial.log \
   --format serial-capture \
-  --wavelengths-per-interval 1 \
+  --wavelengths-per-interval 2 \
   --rows 8 --cols 12 \
   --csv /tmp/elx808-playback.csv
 ```
@@ -221,6 +221,12 @@ python3 tools/elx808/web_ui.py
 ```
 
 Then open `http://127.0.0.1:8088` in your browser.
+
+Database-backed storage (Postgres):
+```bash
+export ELX808_DB_URL="postgresql://USER:PASSWORD@localhost:5432/biotek"
+pip install psycopg[binary]
+```
 
 Set assay definition (writes to instrument; requires confirm flags):
 ```bash
